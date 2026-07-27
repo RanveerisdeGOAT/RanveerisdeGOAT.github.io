@@ -25,15 +25,13 @@
 var NAVTREE =
 [
   [ "LavaVK", "index.html", [
-    [ "LavaVK", "md__r_e_a_d_m_e.html", [
-      [ "Features", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-      [ "Reqirements &amp; dependencies", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
-      [ "Installation", "md__r_e_a_d_m_e.html#autotoc_md5", [
-        [ "Cmake support", "md__r_e_a_d_m_e.html#autotoc_md6", null ]
-      ] ],
-      [ "Documentation", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
-      [ "Contributing", "md__r_e_a_d_m_e.html#autotoc_md8", null ]
+    [ "Features", "index.html#autotoc_md2", null ],
+    [ "Reqirements &amp; dependencies", "index.html#autotoc_md4", null ],
+    [ "Installation", "index.html#autotoc_md5", [
+      [ "Cmake support", "index.html#autotoc_md6", null ]
     ] ],
+    [ "Documentation", "index.html#autotoc_md7", null ],
+    [ "Contributing", "index.html#autotoc_md8", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

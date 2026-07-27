@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LavaVK: Main Page</title>
+<title>LavaVK: LavaVK</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -115,10 +115,65 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">LavaVK Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">LavaVK </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<p>A modern, user-friendly C++ wrapper around the Vulkan graphics API.</p>
+<p>LavaVK aims to make Vulkan easier to use while keeping the power and flexibility of the original API. It provides clean C++ abstractions for Vulkan objects without forcing a rendering architecture, allowing users to build their own engines, renderers, tools, and applications.</p>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Features</h1>
+<p>Currently in development.</p>
+<p>Planned features:</p>
+<ul>
+<li>Modern C++20 interface</li>
+<li>Vulkan instance management</li>
+<li>Physical device enumeration and selection</li>
+<li>Logical device creation</li>
+<li>Queue abstraction</li>
+<li>Command buffers</li>
+<li>Swapchain management</li>
+<li>Buffer and image helpers</li>
+<li>Shader management</li>
+<li>Pipeline creation helpers</li>
+<li>Vulkan validation layer support</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Reqirements &amp; dependencies</h1>
+<ul>
+<li>Vulkan SDK Download: <a href="https://vulkan.lunarg.com/">https://vulkan.lunarg.com/</a></li>
+<li>shaderc (included in repo)</li>
+<li>GLM (included in repo)</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Installation</h1>
+<div class="fragment"><div class="line">git clone https://github.com/RanveerisdeGOAT/LavaVK.git</div>
+</div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Cmake support</h2>
+<div class="fragment"><div class="line">project(Example)</div>
+<div class="line"> </div>
+<div class="line">add_subdirectory(LavaVK)</div>
+<div class="line"> </div>
+<div class="line">add_executable(Example</div>
+<div class="line">        main.cpp</div>
+<div class="line">)</div>
+<div class="line"> </div>
+<div class="line">target_link_libraries(Example</div>
+<div class="line">        PRIVATE</div>
+<div class="line">        LavaVK::LavaVK</div>
+<div class="line">)</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Documentation</h1>
+<p>Visit <a href="https://ranveerisdegoat.github.io/LavaVK/html/index.html">https://ranveerisdegoat.github.io/LavaVK/html/index.html</a> for documentation</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Contributing</h1>
+<p>Contributions are welcome! Please open an issue before submitting large changes.</p>
+<hr  />
+<p>LavaVK 2026 Author: @RanveerisdeGOAT Co-Authors: Deepseek, Gemini, ChatGPT ;) Open source: Free to use, modify and improve: <a href="https://github.com/RanveerisdeGOAT?tab=repositories">https://github.com/RanveerisdeGOAT?tab=repositories</a> MIT Licence </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->
