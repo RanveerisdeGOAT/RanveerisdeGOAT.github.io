@@ -139,15 +139,40 @@ Features</h1>
 <li>Shader management</li>
 <li>Pipeline creation helpers</li>
 <li>Vulkan validation layer support</li>
-<li>GLFW integration helpers</li>
 </ul>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 Reqirements &amp; dependencies</h1>
 <ul>
-<li>Vulkan SDK</li>
+<li>Vulkan SDK Download: <a href="https://vulkan.lunarg.com/">https://vulkan.lunarg.com/</a></li>
+<li>shaderc (included in repo)</li>
+<li>GLM (included in repo)</li>
 </ul>
-<p>Download: <a href="https://vulkan.lunarg.com/">https://vulkan.lunarg.com/</a> </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Installation</h1>
+<div class="fragment"><div class="line">git clone https://github.com/RanveerisdeGOAT/LavaVK.git</div>
+</div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Cmake support</h2>
+<div class="fragment"><div class="line">project(Example)</div>
+<div class="line"> </div>
+<div class="line">add_subdirectory(LavaVK)</div>
+<div class="line"> </div>
+<div class="line">add_executable(Example</div>
+<div class="line">        main.cpp</div>
+<div class="line">)</div>
+<div class="line"> </div>
+<div class="line">target_link_libraries(Example</div>
+<div class="line">        PRIVATE</div>
+<div class="line">        LavaVK::LavaVK</div>
+<div class="line">)</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Documentation</h1>
+<p>Visit <a href="https://ranveerisdegoat.github.io/LavaVK/html/index.html">https://ranveerisdegoat.github.io/LavaVK/html/index.html</a> for documentation</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Contributing</h1>
+<p>Contributions are welcome! Please open an issue before submitting large changes.</p>
+<hr  />
+<p>LavaVK 2026 Author: @RanveerisdeGOAT Co-Authors: Deepseek, Gemini, ChatGPT ;) Open source: Free to use, modify and improve: <a href="https://github.com/RanveerisdeGOAT?tab=repositories">https://github.com/RanveerisdeGOAT?tab=repositories</a> MIT Licence </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
