@@ -1,0 +1,114 @@
+\doxysection{Lava\+VK::\+Surface Class Reference}
+\hypertarget{class_lava_v_k_1_1_surface}{}\label{class_lava_v_k_1_1_surface}\index{LavaVK::Surface@{LavaVK::Surface}}
+
+
+Manages the lifetime of a Vk\+Surface\+KHR handle without exposing Vulkan handles directly in its public method signatures.  
+
+
+
+
+{\ttfamily \+\#include $<$Surface.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_surface_affd73f2d165e44d1acd0ebca95ac926b}{Surface}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_instance}{Instance}} \&instance, const Surface\+Creator \&creator)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_lava_v_k_1_1_surface}{Surface} object by invoking a surface creator delegate. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_surface_ab7b9d7ae5b3925496f03dadbf4d6efe5}\label{class_lava_v_k_1_1_surface_ab7b9d7ae5b3925496f03dadbf4d6efe5} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Surface} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Destroys the managed Vk\+Surface\+KHR handle if valid. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_surface_a69e29b4608ad6de9c6425825dd4b32c6}\label{class_lava_v_k_1_1_surface_a69e29b4608ad6de9c6425825dd4b32c6} 
+{\bfseries Surface} (Surface \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_surface_a9087501daa39a3a20fd5ea85dc05a073}\label{class_lava_v_k_1_1_surface_a9087501daa39a3a20fd5ea85dc05a073} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_surface_affd73f2d165e44d1acd0ebca95ac926b}{Surface}} \& {\bfseries operator=} (\doxymbox{\hyperlink{class_lava_v_k_1_1_surface_affd73f2d165e44d1acd0ebca95ac926b}{Surface}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+Vk\+Surface\+KHR \doxymbox{\hyperlink{class_lava_v_k_1_1_surface_a75161f357541f25ef8fa6b5c67ea4f89}{native}} () const
+\begin{DoxyCompactList}\small\item\em Internal getter for Lava\+VK engine components (e.\+g., \doxylink{class_lava_v_k_1_1_device}{Device}, Swapchain). \end{DoxyCompactList}\item 
+uint64\+\_\+t \doxymbox{\hyperlink{class_lava_v_k_1_1_surface_a85776c5feea856629ae185f34a0937d2}{raw\+Handle}} () const
+\begin{DoxyCompactList}\small\item\em Non-\/\+Vulkan handle exporter for external window/\+\+UI frameworks (e.\+g., Im\+Gui). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Deleted Copy Operations}\par
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lava_v_k_1_1_surface_a59c816b0a6226defe8f282ff88c7ba51}\label{class_lava_v_k_1_1_surface_a59c816b0a6226defe8f282ff88c7ba51} 
+{\bfseries Surface} (const Surface \&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_surface_ad4ec93f218c9a7d790dd70ae5afad442}\label{class_lava_v_k_1_1_surface_ad4ec93f218c9a7d790dd70ae5afad442} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_surface_affd73f2d165e44d1acd0ebca95ac926b}{Surface}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_surface_affd73f2d165e44d1acd0ebca95ac926b}{Surface}} \&)=delete
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Manages the lifetime of a Vk\+Surface\+KHR handle without exposing Vulkan handles directly in its public method signatures. 
+
+\label{class_lava_v_k_1_1_surface_doc-constructors}
+\Hypertarget{class_lava_v_k_1_1_surface_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_lava_v_k_1_1_surface_affd73f2d165e44d1acd0ebca95ac926b}\index{LavaVK::Surface@{LavaVK::Surface}!Surface@{Surface}}
+\index{Surface@{Surface}!LavaVK::Surface@{LavaVK::Surface}}
+\doxysubsubsection{\texorpdfstring{Surface()}{Surface()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_surface_affd73f2d165e44d1acd0ebca95ac926b} 
+Lava\+VK::\+\+Surface::\+\+Surface (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_instance}{Instance}} \&}]{instance}{, }\item[{const Surface\+Creator \&}]{creator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_lava_v_k_1_1_surface}{Surface} object by invoking a surface creator delegate. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em instance} & Reference to the active Lava\+VK \doxylink{class_lava_v_k_1_1_instance}{Instance}. \\
+\hline
+{\em creator} & Callable function (e.\+g. GLFW, SDL, or native OS lambda) that generates the Vk\+Surface\+KHR handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & Thrown if the creator returns a null handle. \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyItemize}
+
+\label{class_lava_v_k_1_1_surface_doc-func-members}
+\Hypertarget{class_lava_v_k_1_1_surface_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lava_v_k_1_1_surface_a75161f357541f25ef8fa6b5c67ea4f89}\index{LavaVK::Surface@{LavaVK::Surface}!native@{native}}
+\index{native@{native}!LavaVK::Surface@{LavaVK::Surface}}
+\doxysubsubsection{\texorpdfstring{native()}{native()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_surface_a75161f357541f25ef8fa6b5c67ea4f89} 
+Vk\+Surface\+KHR Lava\+VK::\+\+Surface::\+native (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Internal getter for Lava\+VK engine components (e.\+g., \doxylink{class_lava_v_k_1_1_device}{Device}, Swapchain). 
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyReturn}{Returns}
+Native Vk\+Surface\+KHR handle. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_lava_v_k_1_1_surface_a85776c5feea856629ae185f34a0937d2}\index{LavaVK::Surface@{LavaVK::Surface}!rawHandle@{rawHandle}}
+\index{rawHandle@{rawHandle}!LavaVK::Surface@{LavaVK::Surface}}
+\doxysubsubsection{\texorpdfstring{rawHandle()}{rawHandle()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_surface_a85776c5feea856629ae185f34a0937d2} 
+uint64\+\_\+t Lava\+VK::\+\+Surface::\+raw\+Handle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Non-\/\+Vulkan handle exporter for external window/\+\+UI frameworks (e.\+g., Im\+Gui). 
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyReturn}{Returns}
+Raw uint64\+\_\+t representation of the underlying Vulkan surface pointer. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Surface.\+hpp\end{DoxyCompactItemize}

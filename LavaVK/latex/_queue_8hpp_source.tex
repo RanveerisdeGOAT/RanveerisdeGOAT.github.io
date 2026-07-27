@@ -1,0 +1,113 @@
+\doxysection{Queue.\+hpp}
+\hypertarget{_queue_8hpp_source}{}\label{_queue_8hpp_source}\index{include/LavaVK/Queue.hpp@{include/LavaVK/Queue.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LAVAVK\_QUEUE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LAVAVK\_QUEUE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vulkan/vulkan.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }LavaVK\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}};}
+\DoxyCodeLine{00011\ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }LavaVK\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_fence}{Fence}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{enum\ class}\ QueueType\ :\ uint32\_t\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ GRAPHICS\ =\ VK\_QUEUE\_GRAPHICS\_BIT,\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ COMPUTE\ =\ VK\_QUEUE\_COMPUTE\_BIT,\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ TRANSFER\ =\ VK\_QUEUE\_TRANSFER\_BIT,\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ SPARSE\ =\ VK\_QUEUE\_SPARSE\_BINDING\_BIT,\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Custom\ bit\ flag\ for\ Presentation\ (avoiding\ Vulkan's\ bit\ flags)}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ PRESENT\ =\ 0x00000020\ }
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_ac4237581b5ae4b46a6099859c76111ad}{SubmitInfo}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_ac4237581b5ae4b46a6099859c76111ad}{SubmitInfo}}()\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.sType\ =\ VK\_STRUCTURE\_TYPE\_SUBMIT\_INFO;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.pNext\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.waitSemaphoreCount\ =\ 0;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.pWaitSemaphores\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.pWaitDstStageMask\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.commandBufferCount\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.pCommandBuffers\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.signalSemaphoreCount\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.pSignalSemaphores\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_ac4237581b5ae4b46a6099859c76111ad}{SubmitInfo}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_ae273d89c01a38f374a9209b05931ad75}{setWaitSemaphores}}(\textcolor{keyword}{const}\ std::vector<VkSemaphore>\ \&semaphores,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<VkPipelineStageFlags>\ \&stages)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ m\_waitSemaphores\ =\ semaphores;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ m\_waitDstStageMasks\ =\ stages;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.waitSemaphoreCount\ =\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(m\_waitSemaphores.size());}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.pWaitSemaphores\ =\ m\_waitSemaphores.data();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.pWaitDstStageMask\ =\ m\_waitDstStageMasks.data();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_ac4237581b5ae4b46a6099859c76111ad}{SubmitInfo}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_adf43582cd5ad4a39e3bd9a360e67509c}{setCommandBuffers}}(\textcolor{keyword}{const}\ std::vector<VkCommandBuffer>\ \&commandBuffers)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ m\_commandBuffers\ =\ commandBuffers;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.commandBufferCount\ =\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(m\_commandBuffers.size());}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.pCommandBuffers\ =\ m\_commandBuffers.data();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_ac4237581b5ae4b46a6099859c76111ad}{SubmitInfo}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_ac36f1f214fa36453ca25f26e72295498}{setSignalSemaphores}}(\textcolor{keyword}{const}\ std::vector<VkSemaphore>\ \&semaphores)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ m\_signalSemaphores\ =\ semaphores;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.signalSemaphoreCount\ =\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(m\_signalSemaphores.size());}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ m\_info.pSignalSemaphores\ =\ m\_signalSemaphores.data();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ VkSubmitInfo\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_aa9de0c6e9e8c109e2c909bd0e72c2ff9}{native}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_info;\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ VkSubmitInfo\ m\_info\{\};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ std::vector<VkSemaphore>\ m\_waitSemaphores;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ std::vector<VkPipelineStageFlags>\ m\_waitDstStageMasks;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ std::vector<VkCommandBuffer>\ m\_commandBuffers;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::vector<VkSemaphore>\ m\_signalSemaphores;}
+\DoxyCodeLine{00106\ \ \ \ \ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_queue_a102df77771a33d44f588a88b1b708893}{Queue}}\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_queue_a102df77771a33d44f588a88b1b708893}{Queue}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_queue_a102df77771a33d44f588a88b1b708893}{Queue}}(}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&device,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_queue_a6f301c9ff710c86fd0efb9245f177194}{family}}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_queue_a30e9863baba3fa0ddc8faa169f1a587a}{submit}}(}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info}{SubmitInfo}}\ \&submitInfo,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_fence}{Fence}}\ \&fence}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_queue_aef19252212737e63b05933084db55e36}{waitIdle}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkQueue\ \doxymbox{\hyperlink{class_lava_v_k_1_1_queue_a83921619abb2298f075cdf843325acfe}{native}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_queue;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_queue_a6f301c9ff710c86fd0efb9245f177194}{family}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_family;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ VkQueue\ m\_queue\ =\ VK\_NULL\_HANDLE;\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ uint32\_t\ m\_family\ =\ 0;\ }
+\DoxyCodeLine{00162\ \ \ \ \ \};}
+\DoxyCodeLine{00163\ \}\ \textcolor{comment}{//\ namespace\ LavaVK}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LAVAVK\_QUEUE\_H}}
+
+\end{DoxyCode}

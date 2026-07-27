@@ -1,0 +1,110 @@
+\doxysection{Lava\+VK::\+Render\+Pass Class Reference}
+\hypertarget{class_lava_v_k_1_1_render_pass}{}\label{class_lava_v_k_1_1_render_pass}\index{LavaVK::RenderPass@{LavaVK::RenderPass}}
+
+
+Wrapper for Vulkan {\ttfamily Vk\+Render\+Pass}.  
+
+
+
+
+{\ttfamily \+\#include $<$Pipeline.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_afb98af29baa57615e3f3d0136b386b8b}{Render\+Pass}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, Vk\+Format color\+Format, Vk\+Format depth\+Format, Vk\+Sample\+Count\+Flag\+Bits samples=VK\+\_\+\+SAMPLE\+\_\+\+COUNT\+\_\+1\+\_\+\+BIT)
+\begin{DoxyCompactList}\small\item\em Helper constructor for a standard single-\/subpass color + depth render pass. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_ad3aefb60cabc547d9b67e7a71ba0ff40}{Render\+Pass}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, const Vk\+Render\+Pass\+Create\+Info \&create\+Info)
+\begin{DoxyCompactList}\small\item\em Explicit constructor using full Vulkan create info. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_render_pass_a98c62209832152ee96227c14d902f837}\label{class_lava_v_k_1_1_render_pass_a98c62209832152ee96227c14d902f837} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Render\+Pass} ()
+\begin{DoxyCompactList}\small\item\em Destroys the underlying {\ttfamily Vk\+Render\+Pass}. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_render_pass_a68fc8653e0f6eb581267e749c8fad5a1}\label{class_lava_v_k_1_1_render_pass_a68fc8653e0f6eb581267e749c8fad5a1} 
+{\bfseries Render\+Pass} (const Render\+Pass \&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_render_pass_aad224f12da9292227e7564498e9d07a0}\label{class_lava_v_k_1_1_render_pass_aad224f12da9292227e7564498e9d07a0} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_afb98af29baa57615e3f3d0136b386b8b}{Render\+Pass}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_afb98af29baa57615e3f3d0136b386b8b}{Render\+Pass}} \&)=delete
+\item 
+Vk\+Render\+Pass \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_a27d479cc899203dbd0a5e1198a024a69}{native}} () const
+\begin{DoxyCompactList}\small\item\em Gets the native Vulkan {\ttfamily Vk\+Render\+Pass} handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper for Vulkan {\ttfamily Vk\+Render\+Pass}. 
+
+
+\begin{DoxyItemize}
+\item Configures attachments (color, depth/\+stencil), subpasses, and dependencies. 
+\end{DoxyItemize}
+
+\label{class_lava_v_k_1_1_render_pass_doc-constructors}
+\Hypertarget{class_lava_v_k_1_1_render_pass_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_lava_v_k_1_1_render_pass_afb98af29baa57615e3f3d0136b386b8b}\index{LavaVK::RenderPass@{LavaVK::RenderPass}!RenderPass@{RenderPass}}
+\index{RenderPass@{RenderPass}!LavaVK::RenderPass@{LavaVK::RenderPass}}
+\doxysubsubsection{\texorpdfstring{RenderPass()}{RenderPass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_render_pass_afb98af29baa57615e3f3d0136b386b8b} 
+Lava\+VK::\+\+Render\+Pass::\+\+Render\+Pass (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{, }\item[{Vk\+Format}]{color\+Format}{, }\item[{Vk\+Format}]{depth\+Format}{, }\item[{Vk\+Sample\+Count\+Flag\+Bits}]{samples}{ = {\ttfamily VK\+\_\+SAMPLE\+\_\+COUNT\+\_\+1\+\_\+BIT}}\end{DoxyParamCaption})}
+
+
+
+Helper constructor for a standard single-\/subpass color + depth render pass. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em device} & Reference to the Lava\+VK logical device. \\
+\hline
+{\em color\+Format} & Vulkan format for the color attachment. \\
+\hline
+{\em depth\+Format} & Vulkan format for depth attachment ({\ttfamily VK\+\_\+\+FORMAT\+\_\+\+UNDEFINED} to disable depth). \\
+\hline
+{\em samples} & Multisample count flag (defaults to 1 sample). \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{class_lava_v_k_1_1_render_pass_ad3aefb60cabc547d9b67e7a71ba0ff40}\index{LavaVK::RenderPass@{LavaVK::RenderPass}!RenderPass@{RenderPass}}
+\index{RenderPass@{RenderPass}!LavaVK::RenderPass@{LavaVK::RenderPass}}
+\doxysubsubsection{\texorpdfstring{RenderPass()}{RenderPass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_render_pass_ad3aefb60cabc547d9b67e7a71ba0ff40} 
+Lava\+VK::\+\+Render\+Pass::\+\+Render\+Pass (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{, }\item[{const Vk\+Render\+Pass\+Create\+Info \&}]{create\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Explicit constructor using full Vulkan create info. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em device} & Reference to the Lava\+VK logical device. \\
+\hline
+{\em create\+Info} & Raw Vulkan {\ttfamily Vk\+Render\+Pass\+Create\+Info} structure. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+\label{class_lava_v_k_1_1_render_pass_doc-func-members}
+\Hypertarget{class_lava_v_k_1_1_render_pass_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lava_v_k_1_1_render_pass_a27d479cc899203dbd0a5e1198a024a69}\index{LavaVK::RenderPass@{LavaVK::RenderPass}!native@{native}}
+\index{native@{native}!LavaVK::RenderPass@{LavaVK::RenderPass}}
+\doxysubsubsection{\texorpdfstring{native()}{native()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_render_pass_a27d479cc899203dbd0a5e1198a024a69} 
+Vk\+Render\+Pass Lava\+VK::\+\+Render\+Pass::\+native (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Gets the native Vulkan {\ttfamily Vk\+Render\+Pass} handle. 
+
+\begin{DoxyReturn}{Returns}
+Native Vk\+Render\+Pass handle. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Pipeline.\+hpp\item 
+src/\+Pipeline.\+cpp\end{DoxyCompactItemize}

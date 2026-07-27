@@ -1,0 +1,92 @@
+\doxysection{Lava\+VK::\+GPUHardware Class Reference}
+\hypertarget{class_lava_v_k_1_1_g_p_u_hardware}{}\label{class_lava_v_k_1_1_g_p_u_hardware}\index{LavaVK::GPUHardware@{LavaVK::GPUHardware}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_a217d574725a089139b9e10a06cc5782a}\label{class_lava_v_k_1_1_g_p_u_hardware_a217d574725a089139b9e10a06cc5782a} 
+{\bfseries GPUHardware} (Vk\+Physical\+Device device)
+\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_aa85ca5dbcbbedcfc7ecc9e670f4f4b26}\label{class_lava_v_k_1_1_g_p_u_hardware_aa85ca5dbcbbedcfc7ecc9e670f4f4b26} 
+const std::\+string \& {\bfseries name} () const
+\begin{DoxyCompactList}\small\item\em Returns the GPU name. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_a0a7a4158146aa5a66083142b5ead9f26}\label{class_lava_v_k_1_1_g_p_u_hardware_a0a7a4158146aa5a66083142b5ead9f26} 
+GPUType {\bfseries type} () const
+\begin{DoxyCompactList}\small\item\em Returns the GPU type. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_adc881ab4d9041b8c5f24da36cda942fd}\label{class_lava_v_k_1_1_g_p_u_hardware_adc881ab4d9041b8c5f24da36cda942fd} 
+uint32\+\_\+t {\bfseries api\+Version} () const
+\begin{DoxyCompactList}\small\item\em Returns the Vulkan API version. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_a098ec418d46e1511329d2359bc38efa0}\label{class_lava_v_k_1_1_g_p_u_hardware_a098ec418d46e1511329d2359bc38efa0} 
+uint32\+\_\+t {\bfseries driver\+Version} () const
+\begin{DoxyCompactList}\small\item\em Returns the Vulkan driver version. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_a1c0bfc53b5e574e237f3cbd7563c5edb}\label{class_lava_v_k_1_1_g_p_u_hardware_a1c0bfc53b5e574e237f3cbd7563c5edb} 
+uint32\+\_\+t {\bfseries vendor\+ID} () const
+\begin{DoxyCompactList}\small\item\em Returns the Vulkan vendor ID. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_aad25570cc9cc96f107b99e03106af965}\label{class_lava_v_k_1_1_g_p_u_hardware_aad25570cc9cc96f107b99e03106af965} 
+uint32\+\_\+t {\bfseries device\+ID} () const
+\begin{DoxyCompactList}\small\item\em Returns the Vulkan device ID. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_aa9bab6a220bdf618747e4d3a2c486dfa}\label{class_lava_v_k_1_1_g_p_u_hardware_aa9bab6a220bdf618747e4d3a2c486dfa} 
+uint32\+\_\+t {\bfseries find\+Queue\+Family} (Queue\+Type type, const \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \texorpdfstring{$\ast$}{*}surface) const
+\begin{DoxyCompactList}\small\item\em Finds a queue family supporting the requested operations. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_a8fbacd4ba6e4e6634ab0284d2daaa08b}\label{class_lava_v_k_1_1_g_p_u_hardware_a8fbacd4ba6e4e6634ab0284d2daaa08b} 
+Vk\+Physical\+Device {\bfseries native} () const
+\begin{DoxyCompactList}\small\item\em Returns the underlying Vulkan handle. \end{DoxyCompactList}\item 
+uint32\+\_\+t \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a34ba9b55eb4cb529c7005ee8e4e9ef87}{find\+Present\+Queue\+Family}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&surface) const
+\begin{DoxyCompactList}\small\item\em Finds a queue family supporting surface presentation. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_ac8a59ab62edf8b76aeca0664e87c2ac5}\label{class_lava_v_k_1_1_g_p_u_hardware_ac8a59ab62edf8b76aeca0664e87c2ac5} 
+bool {\bfseries supports\+Presentation} (uint32\+\_\+t queue\+Family\+Index, const \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&surface) const
+\begin{DoxyCompactList}\small\item\em Checks if a specific queue family supports presenting to a given surface. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_a6bf46c24c82c40b2c041ace9d349a3e7}\label{class_lava_v_k_1_1_g_p_u_hardware_a6bf46c24c82c40b2c041ace9d349a3e7} 
+bool {\bfseries is\+Surface\+Supported} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&surface) const
+\begin{DoxyCompactList}\small\item\em Checks if the physical GPU supports swapchain rendering on a given surface. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_a65a8820aa7ec5c64f5a76a4f84124cf8}\label{class_lava_v_k_1_1_g_p_u_hardware_a65a8820aa7ec5c64f5a76a4f84124cf8} 
+\doxymbox{\hyperlink{struct_lava_v_k_1_1_surface_capabilities}{Surface\+Capabilities}} {\bfseries get\+Surface\+Capabilities} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&surface) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_a2d844ff8c3ab6da2f42eac379dc745db}\label{class_lava_v_k_1_1_g_p_u_hardware_a2d844ff8c3ab6da2f42eac379dc745db} 
+static std::\+vector$<$ GPUHardware $>$ {\bfseries enumerate} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_instance}{Instance}} \&instance)
+\begin{DoxyCompactList}\small\item\em Returns every Vulkan compatible GPU in the system. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_af09d173c7b96ba8e154d76dae1c9488b}\label{class_lava_v_k_1_1_g_p_u_hardware_af09d173c7b96ba8e154d76dae1c9488b} 
+static GPUHardware {\bfseries select\+Optimal\+GPU} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_instance}{Instance}} \&instance, const \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&surface)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_a520fa05e0bf58785da428f7a0241eee2}\label{class_lava_v_k_1_1_g_p_u_hardware_a520fa05e0bf58785da428f7a0241eee2} 
+class {\bfseries Device}
+\end{DoxyCompactItemize}
+
+
+\label{class_lava_v_k_1_1_g_p_u_hardware_doc-func-members}
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lava_v_k_1_1_g_p_u_hardware_a34ba9b55eb4cb529c7005ee8e4e9ef87}\index{LavaVK::GPUHardware@{LavaVK::GPUHardware}!findPresentQueueFamily@{findPresentQueueFamily}}
+\index{findPresentQueueFamily@{findPresentQueueFamily}!LavaVK::GPUHardware@{LavaVK::GPUHardware}}
+\doxysubsubsection{\texorpdfstring{findPresentQueueFamily()}{findPresentQueueFamily()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_g_p_u_hardware_a34ba9b55eb4cb529c7005ee8e4e9ef87} 
+uint32\+\_\+t Lava\+VK::\+\+GPUHardware::\+find\+Present\+Queue\+Family (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&}]{surface}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Finds a queue family supporting surface presentation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The surface to present to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_lava_v_k_1_1_queue}{Queue} family index supporting presentation. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & if no queue family supports presentation. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Device.\+hpp\item 
+src/\+Device.\+cpp\end{DoxyCompactItemize}

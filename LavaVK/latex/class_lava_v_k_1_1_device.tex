@@ -1,0 +1,63 @@
+\doxysection{Lava\+VK::\+Device Class Reference}
+\hypertarget{class_lava_v_k_1_1_device}{}\label{class_lava_v_k_1_1_device}\index{LavaVK::Device@{LavaVK::Device}}
+
+
+Manages the Vulkan physical device selection, logical device instantiation ({\ttfamily Vk\+Device}), and graphics queue retrieval.  
+
+
+
+
+{\ttfamily \+\#include $<$Device.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}\label{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2} 
+{\bfseries Device} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware}{GPUHardware}} \&gpu\+\_\+hardware, const std::\+vector$<$ Queue\+Type $>$ \&requested\+Queues, const \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \texorpdfstring{$\ast$}{*}surface)
+\begin{DoxyCompactList}\small\item\em Constructs a Lava\+VK \doxylink{class_lava_v_k_1_1_device}{Device}, selecting a physical GPU and creating a logical device. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_device_a288ad958754b393656dd6ef9e94d7c08}\label{class_lava_v_k_1_1_device_a288ad958754b393656dd6ef9e94d7c08} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Device} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Destroys the managed {\ttfamily Vk\+Device} if valid. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_device_a1589524d8415f94600b91675ec319f3d}\label{class_lava_v_k_1_1_device_a1589524d8415f94600b91675ec319f3d} 
+{\bfseries Device} (Device \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. Transfers logical device and queue ownership from another {\ttfamily \doxylink{class_lava_v_k_1_1_device}{Device}}. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_device_aa468b16722dd0e41b62499f30ed45de8}\label{class_lava_v_k_1_1_device_aa468b16722dd0e41b62499f30ed45de8} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}} \& {\bfseries operator=} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment operator. Destroys current resources and acquires ownership from {\ttfamily other}. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_device_a03cd2d1f5b5f977e4df4b4ed086494b9}\label{class_lava_v_k_1_1_device_a03cd2d1f5b5f977e4df4b4ed086494b9} 
+Vk\+Device {\bfseries native} () const
+\begin{DoxyCompactList}\small\item\em Gets the native Vulkan logical device handle ({\ttfamily Vk\+Device}). \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_device_a8bed146bb80384eadbb4719f398a9285}\label{class_lava_v_k_1_1_device_a8bed146bb80384eadbb4719f398a9285} 
+Vk\+Physical\+Device {\bfseries physical} () const
+\begin{DoxyCompactList}\small\item\em Gets the native Vulkan physical device handle ({\ttfamily Vk\+Physical\+Device}). \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_device_a19246dc1b26956fff4638de045c2ba47}\label{class_lava_v_k_1_1_device_a19246dc1b26956fff4638de045c2ba47} 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_queue}{Queue}} \& {\bfseries get\+Queue} (Queue\+Type type) const
+\begin{DoxyCompactList}\small\item\em Gets a specific \doxylink{class_lava_v_k_1_1_queue}{Queue} by Queue\+Type. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_device_ab7a2a10637019725efffc064f07b96ee}\label{class_lava_v_k_1_1_device_ab7a2a10637019725efffc064f07b96ee} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_queue}{Queue}} \& {\bfseries get\+Queue} (Queue\+Type type)
+\item 
+\Hypertarget{class_lava_v_k_1_1_device_a6b6c18bc1f012ff319c9e4a196449361}\label{class_lava_v_k_1_1_device_a6b6c18bc1f012ff319c9e4a196449361} 
+uint32\+\_\+t {\bfseries get\+Queue\+Family} (Queue\+Type type) const
+\begin{DoxyCompactList}\small\item\em Gets queue family index for a specific Queue\+Type. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_device_a44aba55d3e77dbd4b3255e05d2ade759}\label{class_lava_v_k_1_1_device_a44aba55d3e77dbd4b3255e05d2ade759} 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_queue}{Queue}} \& {\bfseries graphics\+Queue} () const
+\begin{DoxyCompactList}\small\item\em Convenience helper for graphics queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Deleted Copy Operations}\par
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lava_v_k_1_1_device_a74c03c4e109d6044265e1dcf718f3fef}\label{class_lava_v_k_1_1_device_a74c03c4e109d6044265e1dcf718f3fef} 
+{\bfseries Device} (const Device \&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_device_aec1943815aeda476ff81ac1feca960a9}\label{class_lava_v_k_1_1_device_aec1943815aeda476ff81ac1feca960a9} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}} \&)=delete
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Manages the Vulkan physical device selection, logical device instantiation ({\ttfamily Vk\+Device}), and graphics queue retrieval. 
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Device.\+hpp\item 
+src/\+Device.\+cpp\end{DoxyCompactItemize}
