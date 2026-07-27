@@ -107,107 +107,145 @@
 </head>
 <body>
 
-  <header>
-    <h1 id="repo-title">Portfolio Projects</h1>
-    <p class="subtitle">An automated directory index powered by the GitHub API</p>
-  </header>
+<header>
+  <h1 id="repo-title">Portfolio Projects</h1>
+  <p class="subtitle">An automated directory index powered by the GitHub API</p>
+</header>
 
-  <div id="error-box"></div>
+<div id="error-box"></div>
 
-  <section>
-    <h2>Directories & Demos</h2>
-    <div id="grid" class="project-grid">
-      <div class="status-msg">Scanning repository directories...</div>
-    </div>
-  </section>
+<section>
+  <h2>Directories & Demos</h2>
+  <div id="grid" class="project-grid">
+    <div class="status-msg">Scanning repository directories...</div>
+  </div>
+</section>
 
-  <script>
-    // 1. Automatically detect user and repo name from GitHub Pages URL
-    // e.g., https://username.github.io/reponame/ OR https://username.github.io/
-    const host = window.location.hostname; // username.github.io
-    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+<script>
+  // 1. Detect GitHub username and repository from URL
+  const host = window.location.hostname; // e.g. username.github.io
+  const pathSegments = window.location.pathname.split('/').filter(Boolean);
 
-    const username = host.split('.')[0]; 
-    // If hosted at username.github.io/reponame, pathSegments[0] is the repo name.
-    // If hosted at username.github.io (root user page), the repo name is username.github.io.
-    const repoName = pathSegments.length > 0 ? pathSegments[0] : `${username}.github.io`;
+  const username = host.split('.')[0];
+  const currentRepo = pathSegments.length > 0 ? pathSegments[0] : `${username}.github.io`;
 
-    document.getElementById('repo-title').textContent = `${repoName} Directory Index`;
+  // Target repos: current repo + the special user/user repo (deduplicated)
+  const targetRepos = Array.from(new Set([currentRepo, username]));
 
-    // 2. Fetch root contents from GitHub REST API
-    const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents`;
-    const errorBox = document.getElementById('error-box');
-    const grid = document.getElementById('grid');
+  document.getElementById('repo-title').textContent = `${username}'s Directory Index`;
 
-    async function loadDirectories() {
-      try {
+  const errorBox = document.getElementById('error-box');
+  const grid = document.getElementById('grid');
+
+  async function loadDirectories() {
+    try {
+      let allDirectories = [];
+
+      // Fetch directory contents from target repositories
+      for (const repo of targetRepos) {
+        const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents`;
         const response = await fetch(apiUrl);
-        if (!response.ok) {
-          throw new Error(`Failed to load repository contents (HTTP ${response.status}). Make sure this repository is public.`);
+
+        if (response.ok) {
+          const items = await response.json();
+          const dirs = items
+                  .filter(item => item.type === 'dir' && !item.name.startsWith('.'))
+                  .map(item => ({ ...item, targetRepo: repo }));
+          allDirectories.push(...dirs);
         }
+      }
 
-        const items = await response.json();
-        
-        // Filter out hidden folders, root files, and non-directory items
-        const directories = items.filter(item => item.type === 'dir' && !item.name.startsWith('.'));
+      if (allDirectories.length === 0) {
+        grid.innerHTML = `<div class="status-msg">No subdirectories found in the scanned repositories.</div>`;
+        return;
+      }
 
-        if (directories.length === 0) {
-          grid.innerHTML = `<div class="status-msg">No subdirectories found in the repository root.</div>`;
-          return;
+      // Parallelize checks for index.html or html/index.html
+      const checkedDirs = await Promise.all(
+              allDirectories.map(async (dir) => {
+                const indexPath = await findIndexPath(dir.targetRepo, dir.path);
+                return { dir, indexPath };
+              })
+      );
+
+      grid.innerHTML = ''; // Clear loading message
+
+      let count = 0;
+      for (const { dir, indexPath } of checkedDirs) {
+        if (indexPath) {
+          // Build target URL relative to GitHub Pages layout
+          const baseUrl = dir.targetRepo === currentRepo ? '.' : `https://${username}.github.io/${dir.targetRepo}`;
+          renderCard(dir.name, `${baseUrl}/${dir.path}/${indexPath}`, `${dir.targetRepo}/${dir.path}/${indexPath}`);
+          count++;
         }
+      }
 
-        grid.innerHTML = ''; // Clear loading state
+      if (count === 0) {
+        grid.innerHTML = `<div class="status-msg">No valid subdirectories containing index.html found.</div>`;
+      }
 
-        // 3. Process each directory and verify if index.html exists inside it
-        for (const dir of directories) {
-          const hasIndex = await checkIndexHtml(dir.path);
-          
-          if (hasIndex) {
-            renderCard(dir.name, `./${dir.path}/index.html`);
+    } catch (err) {
+      grid.innerHTML = '';
+      errorBox.style.display = 'block';
+      errorBox.textContent = err.message;
+    }
+  }
+
+  // Helper: Checks if folder has index.html, html/index.html, public/index.html, etc.
+  async function findIndexPath(repo, dirPath) {
+    try {
+      const checkUrl = `https://api.github.com/repos/${username}/${repo}/contents/${dirPath}`;
+      const res = await fetch(checkUrl);
+      if (!res.ok) return null;
+
+      const files = await res.json();
+
+      // 1. Direct check: root of directory (e.g., /index.html)
+      const hasRootIndex = files.some(file => file.type === 'file' && file.name.toLowerCase() === 'index.html');
+      if (hasRootIndex) return 'index.html';
+
+      // 2. Subfolder check: common paths like /html/index.html or /public/index.html
+      const subfoldersToCheck = ['html', 'public', 'dist'];
+      for (const folder of subfoldersToCheck) {
+        const hasSubFolder = files.some(file => file.type === 'dir' && file.name.toLowerCase() === folder);
+        if (hasSubFolder) {
+          const subRes = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/${dirPath}/${folder}`);
+          if (subRes.ok) {
+            const subFiles = await subRes.json();
+            if (subFiles.some(f => f.type === 'file' && f.name.toLowerCase() === 'index.html')) {
+              return `${folder}/index.html`;
+            }
           }
         }
-
-      } catch (err) {
-        grid.innerHTML = '';
-        errorBox.style.display = 'block';
-        errorBox.textContent = err.message;
       }
+
+      return null;
+    } catch {
+      return null;
     }
+  }
 
-    // Helper: Checks if subfolder contains an index.html file
-    async function checkIndexHtml(dirPath) {
-      try {
-        const checkUrl = `https://api.github.com/repos/${username}/${repoName}/contents/${dirPath}`;
-        const res = await fetch(checkUrl);
-        if (!res.ok) return false;
-        const files = await res.json();
-        return files.some(file => file.name.toLowerCase() === 'index.html');
-      } catch {
-        return false;
-      }
-    }
+  // Helper: Renders directory card link
+  function renderCard(name, targetUrl, displayPath) {
+    const card = document.createElement('a');
+    card.className = 'card';
+    card.href = targetUrl;
 
-    // Helper: Renders directory card link
-    function renderCard(name, targetUrl) {
-      const card = document.createElement('a');
-      card.className = 'card';
-      card.href = targetUrl;
+    // Formatting: capitalization & spacing
+    const cleanName = name
+            .replace(/[-_]/g, ' ')
+            .replace(/\b\w/g, char => char.toUpperCase());
 
-      // Clean display name (capitalizes words, replaces hyphens/underscores with spaces)
-      const cleanName = name
-        .replace(/[-_]/g, ' ')
-        .replace(/\b\w/g, char => char.toUpperCase());
-
-      card.innerHTML = `
+    card.innerHTML = `
         <div>
           <div class="card-title">${cleanName}</div>
-          <div class="card-path">/${name}/index.html</div>
+          <div class="card-path">/${displayPath}</div>
         </div>
       `;
-      grid.appendChild(card);
-    }
+    grid.appendChild(card);
+  }
 
-    loadDirectories();
-  </script>
+  loadDirectories();
+</script>
 </body>
 </html>
