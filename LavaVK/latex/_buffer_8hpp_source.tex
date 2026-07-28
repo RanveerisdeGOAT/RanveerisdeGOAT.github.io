@@ -1,0 +1,178 @@
+\doxysection{Buffer.\+hpp}
+\hypertarget{_buffer_8hpp_source}{}\label{_buffer_8hpp_source}\index{include/LavaVK/Buffer.hpp@{include/LavaVK/Buffer.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LAVAVK\_BUFFER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LAVAVK\_BUFFER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vulkan/vulkan.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Pipeline.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }LavaVK\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{enum\ class}\ ImageType}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ IMAGE\_1D,}
+\DoxyCodeLine{00017\ \ \ \ \ IMAGE\_2D,}
+\DoxyCodeLine{00018\ \ \ \ \ IMAGE\_3D}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{enum\ class}\ ImageUsage\ :\ VkImageUsageFlags}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00029\ \ \ \ \ TRANSFER\_SRC\ \ \ \ \ \ \ =\ VK\_IMAGE\_USAGE\_TRANSFER\_SRC\_BIT,}
+\DoxyCodeLine{00030\ \ \ \ \ TRANSFER\_DST\ \ \ \ \ \ \ =\ VK\_IMAGE\_USAGE\_TRANSFER\_DST\_BIT,}
+\DoxyCodeLine{00031\ \ \ \ \ SAMPLED\ \ \ \ \ \ \ \ \ \ \ \ =\ VK\_IMAGE\_USAGE\_SAMPLED\_BIT,}
+\DoxyCodeLine{00032\ \ \ \ \ STORAGE\ \ \ \ \ \ \ \ \ \ \ \ =\ VK\_IMAGE\_USAGE\_STORAGE\_BIT,}
+\DoxyCodeLine{00033\ \ \ \ \ COLOR\_ATTACHMENT\ \ \ =\ VK\_IMAGE\_USAGE\_COLOR\_ATTACHMENT\_BIT,}
+\DoxyCodeLine{00034\ \ \ \ \ DEPTH\_ATTACHMENT\ \ \ =\ VK\_IMAGE\_USAGE\_DEPTH\_STENCIL\_ATTACHMENT\_BIT,}
+\DoxyCodeLine{00035\ \ \ \ \ TRANSIENT\ \ \ \ \ \ \ \ \ \ =\ VK\_IMAGE\_USAGE\_TRANSIENT\_ATTACHMENT\_BIT,}
+\DoxyCodeLine{00036\ \ \ \ \ INPUT\_ATTACHMENT\ \ \ =\ VK\_IMAGE\_USAGE\_INPUT\_ATTACHMENT\_BIT}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{inline}\ ImageUsage\ operator|(ImageUsage\ a,\ ImageUsage\ b)}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}ImageUsage\textcolor{keyword}{>}(}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}VkImageUsageFlags\textcolor{keyword}{>}(a)\ |}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}VkImageUsageFlags\textcolor{keyword}{>}(b));}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info}{ImageCreateInfo}}}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ ImageType\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_aeb301341d9a3d0c64494d35b4537c395}{type}}\ =\ ImageType::IMAGE\_2D;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ VkExtent3D\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_abef2d37092138f5158bd7702524a48e9}{extent}}}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ 1,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ 1,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ 1}
+\DoxyCodeLine{00067\ \ \ \ \ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00072\ \ \ \ \ VkFormat\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_a16f9666098e1b669ce44ce76fad22cc3}{format}}\ =\ VK\_FORMAT\_R8G8B8A8\_UNORM;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ ImageUsage\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_a8ddbbcb2a35823df33262e0dc6970e19}{usage}}\ =\ ImageUsage::SAMPLED;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \ \ \ \ VkImageAspectFlags\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_a4a2313eec7bb043f6e13d8c7e02a8ee0}{aspect}}\ =\ VK\_IMAGE\_ASPECT\_COLOR\_BIT;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ VkSampleCountFlagBits\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_a7471f7145d9d7136d84450cd506b9751}{samples}}\ =}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ VK\_SAMPLE\_COUNT\_1\_BIT;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00093\ \ \ \ \ VkImageTiling\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_aaf779a68325954a9c5f783886c7a20a8}{tiling}}\ =}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ VK\_IMAGE\_TILING\_OPTIMAL;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ VkMemoryPropertyFlags\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_a26ec0b3311e1b7be82c2aa973683c32d}{memory}}\ =}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ VK\_MEMORY\_PROPERTY\_DEVICE\_LOCAL\_BIT;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_a71035eb8eb02bbc130dfa7a002bd50c7}{mipLevels}}\ =\ 1;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00110\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_aa375f9fd0acbfcb2116f12516f053427}{arrayLayers}}\ =\ 1;}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00126\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00134\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}(}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\&\ device,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info}{ImageCreateInfo}}\&\ info);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00150\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}(}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\&\ device,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ VkImage\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_ace8b47745ef03df9c7936fea5613b7ae}{image}},}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ VkFormat\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_a1420c5467583133130a351ae8561b66a}{format}},}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ VkImageAspectFlags\ aspect,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ VkExtent3D\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_a1865b91906d0f4f28c071f48db596388}{extent}});}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00160\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_ae156a328b5e29b0706d15d0158422a41}{\string~Image}}();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00163\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}\&\ operator=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00168\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}(\doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00175\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}\&\ operator=(\doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00180\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00181\ \ \ \ \ VkImage\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_ace8b47745ef03df9c7936fea5613b7ae}{image}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00182\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_image;}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00189\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00190\ \ \ \ \ VkImageView\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_afd9c6188f74389bb1be9287653d25e9b}{view}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00191\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_view;}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00198\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00199\ \ \ \ \ VkFormat\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_a1420c5467583133130a351ae8561b66a}{format}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00200\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_format;}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00207\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00208\ \ \ \ \ VkExtent3D\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_a1865b91906d0f4f28c071f48db596388}{extent}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00209\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_extent;}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00218\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_ae798fb44e9277eec633f663d9e509979}{ownsImage}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00220\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_ownsImage;}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00225\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}*\ m\_device\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ VkImage\ m\_image\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00228\ \ \ \ \ VkImageView\ m\_view\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00229\ \ \ \ \ VkDeviceMemory\ m\_memory\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ VkExtent3D\ m\_extent\{\};}
+\DoxyCodeLine{00232\ \ \ \ \ VkFormat\ m\_format\ =\ VK\_FORMAT\_UNDEFINED;}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_ownsImage\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00235\ \};}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00244\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer_a13c2a85656ad5d710bd7beb1b960368e}{Framebuffer}}}
+\DoxyCodeLine{00245\ \{}
+\DoxyCodeLine{00246\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00255\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer_a13c2a85656ad5d710bd7beb1b960368e}{Framebuffer}}(}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\&\ device,}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{RenderPass}}\&\ renderPass,}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Image*>\&\ \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer_a2bf3e41791a9dbda664eb3462a32f110}{attachments}});}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00263\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer_a39fea7c9ea60ed3770e1d9e9fcd54bfe}{\string~Framebuffer}}();}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{comment}{//\ Framebuffer(const\ Framebuffer\&)\ =\ delete;}}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{comment}{//\ Framebuffer\&\ operator=(const\ Framebuffer\&)\ =\ delete;}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00271\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00272\ \ \ \ \ VkFramebuffer\ \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer_aea765421bdb25305d77a43cc0908940a}{native}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00273\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_framebuffer;}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00280\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Image*>\&\ \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer_a2bf3e41791a9dbda664eb3462a32f110}{attachments}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00282\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_attachments;}
+\DoxyCodeLine{00284\ \ \ \ \ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00287\ \ \ \ \ VkFramebuffer\ m\_framebuffer\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00288\ \ \ \ \ std::vector<Image*>\ m\_attachments;}
+\DoxyCodeLine{00289\ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\&\ m\_device;}
+\DoxyCodeLine{00290\ \};}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \}\ \textcolor{comment}{//\ namespace\ LavaVK}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LAVAVK\_BUFFER\_HPP}}
+
+\end{DoxyCode}

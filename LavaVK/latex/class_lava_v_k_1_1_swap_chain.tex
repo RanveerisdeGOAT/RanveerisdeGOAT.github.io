@@ -1,0 +1,342 @@
+\doxysection{Lava\+VK::\+Swap\+Chain Class Reference}
+\hypertarget{class_lava_v_k_1_1_swap_chain}{}\label{class_lava_v_k_1_1_swap_chain}\index{LavaVK::SwapChain@{LavaVK::SwapChain}}
+
+
+Manages the Vulkan Swapchain and associated frame/\+image synchronization primitives.  
+
+
+
+
+{\ttfamily \+\#include $<$Swap\+Chain.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a87f055ddc61bc359f5f4ef3b7319bc10}{Swap\+Chain}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&surface, Vk\+Format format, Vk\+Extent2D extent)
+\begin{DoxyCompactList}\small\item\em Constructs a Lava\+VK \doxylink{class_lava_v_k_1_1_swap_chain}{Swap\+Chain} instance and creates internal synchronization objects. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_swap_chain_ad281472f2bfb2481291edbadc08481be}\label{class_lava_v_k_1_1_swap_chain_ad281472f2bfb2481291edbadc08481be} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Swap\+Chain} ()
+\begin{DoxyCompactList}\small\item\em Destroys the swapchain object and releases the native Vk\+Swapchain\+KHR handle. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_swap_chain_acca125631361c9d757b5d41b1baffff9}\label{class_lava_v_k_1_1_swap_chain_acca125631361c9d757b5d41b1baffff9} 
+{\bfseries Swap\+Chain} (const Swap\+Chain \&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_swap_chain_a091b8056d88afdeaa8c2139c307100e4}\label{class_lava_v_k_1_1_swap_chain_a091b8056d88afdeaa8c2139c307100e4} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a87f055ddc61bc359f5f4ef3b7319bc10}{Swap\+Chain}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a87f055ddc61bc359f5f4ef3b7319bc10}{Swap\+Chain}} \&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_swap_chain_a6a614e45caeed72532eaf403002c4280}\label{class_lava_v_k_1_1_swap_chain_a6a614e45caeed72532eaf403002c4280} 
+{\bfseries Swap\+Chain} (Swap\+Chain \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. Transfers ownership of Vulkan swapchain handles and synchronization vectors. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_swap_chain_a6c84880a85bbadb3baedcb768dffb250}\label{class_lava_v_k_1_1_swap_chain_a6c84880a85bbadb3baedcb768dffb250} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a87f055ddc61bc359f5f4ef3b7319bc10}{Swap\+Chain}} \& {\bfseries operator=} (\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a87f055ddc61bc359f5f4ef3b7319bc10}{Swap\+Chain}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment operator. Cleans up existing swapchain resources and transfers ownership from {\ttfamily other}. \end{DoxyCompactList}\item 
+Vk\+Result \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_aeb607e805784abd17d973e49fa5ffd8f}{acquire\+Image}} (uint32\+\_\+t \&image\+Index)
+\begin{DoxyCompactList}\small\item\em Prepares for rendering the next frame by waiting on fences and acquiring an image index. \end{DoxyCompactList}\item 
+Vk\+Result \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ad3b4aaacf2d4b43fbed617fa7f761f4a}{present}} (uint32\+\_\+t image\+Index)
+\begin{DoxyCompactList}\small\item\em Submits the acquired swapchain image to the presentation engine and advances the frame slot. \end{DoxyCompactList}\item 
+uint32\+\_\+t \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a3af5def3eec1f678a8e0a53c67da69af}{image\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total number of images retrieved from the Vulkan swapchain. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac2482f22c1f7c9b629e4c760ccfc5c9c}{image}} (uint32\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Retrieves a const reference to a wrapped swapchain image by index. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_acc2598a0ccb8ab6d5ebbe3c28d243d30}{image}} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Retrieves a mutable reference to a wrapped swapchain image by index. \end{DoxyCompactList}\item 
+const std::\+vector$<$ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} $>$ \& \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac90f12c1b47ac6fa3bc62adacab49c64}{images}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves all wrapped swapchain images. \end{DoxyCompactList}\item 
+Vk\+Extent2D \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a6adc5dcdb0b629e02817bd984671101c}{extent}} () const
+\begin{DoxyCompactList}\small\item\em Gets the 2D resolution extent of the swapchain images. \end{DoxyCompactList}\item 
+Vk\+Format \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ada309bfd1b07944d450431f3e1a9fad2}{format}} () const
+\begin{DoxyCompactList}\small\item\em Gets the Vulkan color format selected for the swapchain. \end{DoxyCompactList}\item 
+Vk\+Swapchain\+KHR \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a0c829d3f220bbd50ba50b191871b8f4d}{native}} () const
+\begin{DoxyCompactList}\small\item\em Returns the native Vulkan Vk\+Swapchain\+KHR handle. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a80a196f7b7418e06aa01b1cbc703635d}{surface}} () const
+\begin{DoxyCompactList}\small\item\em Gets the surface object associated with this swapchain. \end{DoxyCompactList}\item 
+size\+\_\+t \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_adb79bd90d8fce3661bf9d29d4e482ffc}{current\+Frame}} () const
+\begin{DoxyCompactList}\small\item\em Returns the index of the current frame in flight \+[0..MAX\+\_\+\+FRAMES\+\_\+\+IN\+\_\+\+FLIGHT -\/ 1]\+. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a4d7545a1b7f5e3fc4773327f037a42e1}{image\+Available\+Semaphore}} () const
+\begin{DoxyCompactList}\small\item\em Returns the GPU-\/\+GPU semaphore signaled when the current frame slot\textquotesingle{}s image is acquired. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a3f40543d23de10d609186599a46d68ca}{render\+Finished\+Semaphore}} (uint32\+\_\+t image\+Index) const
+\begin{DoxyCompactList}\small\item\em Returns the GPU-\/\+GPU semaphore signaled when rendering to a specific swapchain image is completed. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_fence}{Fence}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a207da8099ee8caf481b20f4132cbfd2e}{in\+Flight\+Fence}} () const
+\begin{DoxyCompactList}\small\item\em Returns the CPU-\/\+GPU fence used to synchronize CPU command buffer recording with GPU execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the Vulkan Swapchain and associated frame/\+image synchronization primitives. 
+
+
+\begin{DoxyItemize}
+\item The \doxylink{class_lava_v_k_1_1_swap_chain}{Swap\+Chain} class abstracts creation of the Vk\+Swapchain\+KHR handle, acquisition of swapchain images, queue presentation, and synchronization objects (semaphores and fences) required for multi-\/frame in-\/flight rendering. 
+\end{DoxyItemize}
+
+\label{class_lava_v_k_1_1_swap_chain_doc-constructors}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_a87f055ddc61bc359f5f4ef3b7319bc10}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!SwapChain@{SwapChain}}
+\index{SwapChain@{SwapChain}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{SwapChain()}{SwapChain()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_a87f055ddc61bc359f5f4ef3b7319bc10} 
+Lava\+VK::\+\+Swap\+Chain::\+\+Swap\+Chain (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{, }\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&}]{surface}{, }\item[{Vk\+Format}]{format}{, }\item[{Vk\+Extent2D}]{extent}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a Lava\+VK \doxylink{class_lava_v_k_1_1_swap_chain}{Swap\+Chain} instance and creates internal synchronization objects. 
+
+
+\begin{DoxyItemize}
+\item Queries physical device capabilities, chooses optimal surface formats, present modes, and extents, constructs the Vk\+Swapchain\+KHR, and creates per-\/frame and per-\/image sync objects.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em device} & Logical device wrapper used to manage Vulkan resources. \\
+\hline
+{\em surface} & Presentation surface to bind the swapchain against. \\
+\hline
+{\em format} & Preferred color format (e.\+g., VK\+\_\+\+FORMAT\+\_\+\+B8\+G8\+R8\+A8\+\_\+\+SRGB). \\
+\hline
+{\em extent} & Desired width and height of the swapchain images in pixels. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+\label{class_lava_v_k_1_1_swap_chain_doc-func-members}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_aeb607e805784abd17d973e49fa5ffd8f}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!acquireImage@{acquireImage}}
+\index{acquireImage@{acquireImage}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{acquireImage()}{acquireImage()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_aeb607e805784abd17d973e49fa5ffd8f} 
+Vk\+Result Lava\+VK::\+\+Swap\+Chain::\+acquire\+Image (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \&}]{image\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Prepares for rendering the next frame by waiting on fences and acquiring an image index. 
+
+
+\begin{DoxyItemize}
+\item 1. Waits for the CPU-\/\+GPU fence of the current frame slot ({\ttfamily m\+\_\+current\+Frame}).
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item Acquires the next available image index from the Vulkan presentation engine.
+\item Ensures the acquired swapchain image is not still in flight from an earlier frame.
+\item Resets the current frame\textquotesingle{}s in-\/flight fence.
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em image\+Index} & Variable populated with the index of the acquired swapchain image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vk\+Result Status code (e.\+g., VK\+\_\+\+SUCCESS or VK\+\_\+\+ERROR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+DATE\+\_\+\+KHR). 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_lava_v_k_1_1_swap_chain_adb79bd90d8fce3661bf9d29d4e482ffc}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!currentFrame@{currentFrame}}
+\index{currentFrame@{currentFrame}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{currentFrame()}{currentFrame()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_adb79bd90d8fce3661bf9d29d4e482ffc} 
+size\+\_\+t Lava\+VK::\+\+Swap\+Chain::\+current\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Returns the index of the current frame in flight \+[0..MAX\+\_\+\+FRAMES\+\_\+\+IN\+\_\+\+FLIGHT -\/ 1]\+. 
+
+\begin{DoxyReturn}{Returns}
+Current frame slot index. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_a6adc5dcdb0b629e02817bd984671101c}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!extent@{extent}}
+\index{extent@{extent}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{extent()}{extent()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_a6adc5dcdb0b629e02817bd984671101c} 
+Vk\+Extent2D Lava\+VK::\+\+Swap\+Chain::\+extent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Gets the 2D resolution extent of the swapchain images. 
+
+\begin{DoxyReturn}{Returns}
+Vk\+Extent2D containing width and height. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_ada309bfd1b07944d450431f3e1a9fad2}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!format@{format}}
+\index{format@{format}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_ada309bfd1b07944d450431f3e1a9fad2} 
+Vk\+Format Lava\+VK::\+\+Swap\+Chain::\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Gets the Vulkan color format selected for the swapchain. 
+
+\begin{DoxyReturn}{Returns}
+Vk\+Format enum value. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_acc2598a0ccb8ab6d5ebbe3c28d243d30}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!image@{image}}
+\index{image@{image}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{image()}{image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_acc2598a0ccb8ab6d5ebbe3c28d243d30} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \& Lava\+VK::\+\+Swap\+Chain::\+image (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Retrieves a mutable reference to a wrapped swapchain image by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Swapchain image index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \doxylink{class_lava_v_k_1_1_image}{Lava\+VK::\+\+Image}. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_ac2482f22c1f7c9b629e4c760ccfc5c9c}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!image@{image}}
+\index{image@{image}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{image()}{image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_ac2482f22c1f7c9b629e4c760ccfc5c9c} 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \& Lava\+VK::\+\+Swap\+Chain::\+image (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Retrieves a const reference to a wrapped swapchain image by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Swapchain image index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Const reference to \doxylink{class_lava_v_k_1_1_image}{Lava\+VK::\+\+Image}. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_a4d7545a1b7f5e3fc4773327f037a42e1}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!imageAvailableSemaphore@{imageAvailableSemaphore}}
+\index{imageAvailableSemaphore@{imageAvailableSemaphore}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{imageAvailableSemaphore()}{imageAvailableSemaphore()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_a4d7545a1b7f5e3fc4773327f037a42e1} 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} \& Lava\+VK::\+\+Swap\+Chain::\+image\+Available\+Semaphore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Returns the GPU-\/\+GPU semaphore signaled when the current frame slot\textquotesingle{}s image is acquired. 
+
+
+\begin{DoxyItemize}
+\item Pass this to {\ttfamily Vk\+Submit\+Info::\+p\+Wait\+Semaphores} when submitting command buffers for the current frame.
+\item \begin{DoxyReturn}{Returns}
+Const reference to the current frame\textquotesingle{}s image-\/available semaphore. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_lava_v_k_1_1_swap_chain_a3af5def3eec1f678a8e0a53c67da69af}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!imageCount@{imageCount}}
+\index{imageCount@{imageCount}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{imageCount()}{imageCount()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_a3af5def3eec1f678a8e0a53c67da69af} 
+uint32\+\_\+t Lava\+VK::\+\+Swap\+Chain::\+image\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Gets the total number of images retrieved from the Vulkan swapchain. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_lava_v_k_1_1_image}{Image} count (typically 2 or 3). 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_ac90f12c1b47ac6fa3bc62adacab49c64}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!images@{images}}
+\index{images@{images}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{images()}{images()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_ac90f12c1b47ac6fa3bc62adacab49c64} 
+const std::\+vector$<$ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} $>$ \& Lava\+VK::\+\+Swap\+Chain::\+images (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Retrieves all wrapped swapchain images. 
+
+\begin{DoxyReturn}{Returns}
+Const reference to vector of \doxylink{class_lava_v_k_1_1_image}{Lava\+VK::\+\+Image} objects. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_a207da8099ee8caf481b20f4132cbfd2e}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!inFlightFence@{inFlightFence}}
+\index{inFlightFence@{inFlightFence}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{inFlightFence()}{inFlightFence()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_a207da8099ee8caf481b20f4132cbfd2e} 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_fence}{Fence}} \& Lava\+VK::\+\+Swap\+Chain::\+in\+Flight\+Fence (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Returns the CPU-\/\+GPU fence used to synchronize CPU command buffer recording with GPU execution. 
+
+
+\begin{DoxyItemize}
+\item Pass this to {\ttfamily vk\+Queue\+Submit} to be signaled when GPU work for the current frame finishes.
+\item \begin{DoxyReturn}{Returns}
+Const reference to the current frame\textquotesingle{}s in-\/flight fence. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_lava_v_k_1_1_swap_chain_a0c829d3f220bbd50ba50b191871b8f4d}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!native@{native}}
+\index{native@{native}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{native()}{native()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_a0c829d3f220bbd50ba50b191871b8f4d} 
+Vk\+Swapchain\+KHR Lava\+VK::\+\+Swap\+Chain::\+native (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Returns the native Vulkan Vk\+Swapchain\+KHR handle. 
+
+\begin{DoxyReturn}{Returns}
+Raw Vk\+Swapchain\+KHR handle. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_ad3b4aaacf2d4b43fbed617fa7f761f4a}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!present@{present}}
+\index{present@{present}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{present()}{present()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_ad3b4aaacf2d4b43fbed617fa7f761f4a} 
+Vk\+Result Lava\+VK::\+\+Swap\+Chain::\+present (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{image\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Submits the acquired swapchain image to the presentation engine and advances the frame slot. 
+
+
+\begin{DoxyItemize}
+\item Waits on the {\ttfamily render\+Finished} semaphore corresponding to {\ttfamily image\+Index}, submits the presentation request to the queue, and advances {\ttfamily m\+\_\+current\+Frame} modulo {\ttfamily MAX\+\_\+\+FRAMES\+\_\+\+IN\+\_\+\+FLIGHT}.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em image\+Index} & The index of the swapchain image to present. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vk\+Result Status code (e.\+g., VK\+\_\+\+SUCCESS, VK\+\_\+\+SUBOPTIMAL\+\_\+\+KHR, or VK\+\_\+\+ERROR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+DATE\+\_\+\+KHR). 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_lava_v_k_1_1_swap_chain_a3f40543d23de10d609186599a46d68ca}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!renderFinishedSemaphore@{renderFinishedSemaphore}}
+\index{renderFinishedSemaphore@{renderFinishedSemaphore}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{renderFinishedSemaphore()}{renderFinishedSemaphore()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_a3f40543d23de10d609186599a46d68ca} 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} \& Lava\+VK::\+\+Swap\+Chain::\+render\+Finished\+Semaphore (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{image\+Index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Returns the GPU-\/\+GPU semaphore signaled when rendering to a specific swapchain image is completed. 
+
+
+\begin{DoxyItemize}
+\item Pass this to {\ttfamily Vk\+Submit\+Info::\+p\+Signal\+Semaphores} when submitting draw commands for {\ttfamily image\+Index}.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em image\+Index} & Swapchain image index being rendered to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Const reference to the render-\/finished semaphore bound to {\ttfamily image\+Index}. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_lava_v_k_1_1_swap_chain_a80a196f7b7418e06aa01b1cbc703635d}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!surface@{surface}}
+\index{surface@{surface}!LavaVK::SwapChain@{LavaVK::SwapChain}}
+\doxysubsubsection{\texorpdfstring{surface()}{surface()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_a80a196f7b7418e06aa01b1cbc703635d} 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \& Lava\+VK::\+\+Swap\+Chain::\+surface (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Gets the surface object associated with this swapchain. 
+
+\begin{DoxyReturn}{Returns}
+Const reference to \doxylink{class_lava_v_k_1_1_surface}{Lava\+VK::\+\+Surface}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Swap\+Chain.\+hpp\item 
+src/\+Swap\+Chain.\+cpp\end{DoxyCompactItemize}

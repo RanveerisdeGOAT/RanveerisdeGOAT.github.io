@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['family_0',['family',['../class_lava_v_k_1_1_queue.html#a6f301c9ff710c86fd0efb9245f177194',1,'LavaVK::Queue']]],
-  ['fence_1',['Fence',['../class_lava_v_k_1_1_fence.html#a7c26fe31f797cb16e1deee9d089e5838',1,'LavaVK::Fence']]],
-  ['findpresentqueuefamily_2',['findPresentQueueFamily',['../class_lava_v_k_1_1_g_p_u_hardware.html#a34ba9b55eb4cb529c7005ee8e4e9ef87',1,'LavaVK::GPUHardware']]],
-  ['findqueuefamily_3',['findQueueFamily',['../class_lava_v_k_1_1_g_p_u_hardware.html#aa9bab6a220bdf618747e4d3a2c486dfa',1,'LavaVK::GPUHardware']]],
-  ['freedescriptorsets_4',['freeDescriptorSets',['../class_lava_v_k_1_1_descriptor_pool.html#aac99486e48a1a2e66dc02ea41090173a',1,'LavaVK::DescriptorPool']]]
+  ['enumerate_0',['enumerate',['../class_lava_v_k_1_1_g_p_u_hardware.html#a2d844ff8c3ab6da2f42eac379dc745db',1,'LavaVK::GPUHardware']]],
+  ['extent_1',['extent',['../class_lava_v_k_1_1_image.html#a1865b91906d0f4f28c071f48db596388',1,'LavaVK::Image::extent()'],['../class_lava_v_k_1_1_swap_chain.html#a6adc5dcdb0b629e02817bd984671101c',1,'LavaVK::SwapChain::extent()']]]
 ];

@@ -1,0 +1,135 @@
+\doxysection{Lava\+VK::\+Image Class Reference}
+\hypertarget{class_lava_v_k_1_1_image}{}\label{class_lava_v_k_1_1_image}\index{LavaVK::Image@{LavaVK::Image}}
+
+
+Represents a Vulkan image and its associated image view.  
+
+
+
+
+{\ttfamily \+\#include $<$Buffer.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}\label{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4} 
+{\bfseries Image} ()=default
+\begin{DoxyCompactList}\small\item\em Constructs an empty image. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_image_ae9fe0f009b9969a29cd965ff8637a404}{Image}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, const \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info}{Image\+Create\+Info}} \&info)
+\begin{DoxyCompactList}\small\item\em Creates a new Vulkan image. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_image_a28bb4b65efd4d3425bb62304a2f4c61b}{Image}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, Vk\+Image image, Vk\+Format format, Vk\+Image\+Aspect\+Flags aspect, Vk\+Extent3D extent)
+\begin{DoxyCompactList}\small\item\em Wraps an existing Vulkan image. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_image_ae156a328b5e29b0706d15d0158422a41}\label{class_lava_v_k_1_1_image_ae156a328b5e29b0706d15d0158422a41} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Image} ()
+\begin{DoxyCompactList}\small\item\em Destroys the image view and owned image resources. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_image_ab4b77493332be9f211f2e0163d595396}\label{class_lava_v_k_1_1_image_ab4b77493332be9f211f2e0163d595396} 
+{\bfseries Image} (const Image \&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_image_a71e02899cc35651cd6204c7ac11ba101}\label{class_lava_v_k_1_1_image_a71e02899cc35651cd6204c7ac11ba101} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}} \&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_image_a5630d9d83df23e083bdc823d7df55d94}\label{class_lava_v_k_1_1_image_a5630d9d83df23e083bdc823d7df55d94} 
+{\bfseries Image} (Image \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Transfers ownership from another \doxylink{class_lava_v_k_1_1_image}{Image}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_image_a85f95ad6079bec7051a10bfbedc4f1a3}{operator=}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Transfers ownership from another \doxylink{class_lava_v_k_1_1_image}{Image}. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_image_ace8b47745ef03df9c7936fea5613b7ae}\label{class_lava_v_k_1_1_image_ace8b47745ef03df9c7936fea5613b7ae} 
+Vk\+Image {\bfseries image} () const
+\begin{DoxyCompactList}\small\item\em Returns the underlying Vulkan image. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_image_afd9c6188f74389bb1be9287653d25e9b}\label{class_lava_v_k_1_1_image_afd9c6188f74389bb1be9287653d25e9b} 
+Vk\+Image\+View {\bfseries view} () const
+\begin{DoxyCompactList}\small\item\em Returns the associated image view. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_image_a1420c5467583133130a351ae8561b66a}\label{class_lava_v_k_1_1_image_a1420c5467583133130a351ae8561b66a} 
+Vk\+Format {\bfseries format} () const
+\begin{DoxyCompactList}\small\item\em Returns the image format. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_image_a1865b91906d0f4f28c071f48db596388}\label{class_lava_v_k_1_1_image_a1865b91906d0f4f28c071f48db596388} 
+Vk\+Extent3D {\bfseries extent} () const
+\begin{DoxyCompactList}\small\item\em Returns the image dimensions. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_lava_v_k_1_1_image_ae798fb44e9277eec633f663d9e509979}{owns\+Image}} () const
+\begin{DoxyCompactList}\small\item\em Returns whether this object owns the underlying image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a Vulkan image and its associated image view. 
+
+An \doxylink{class_lava_v_k_1_1_image}{Image} may either own its underlying Vk\+Image and allocated memory, or simply wrap an externally created image (such as a swapchain image). 
+
+\label{class_lava_v_k_1_1_image_doc-constructors}
+\Hypertarget{class_lava_v_k_1_1_image_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_lava_v_k_1_1_image_ae9fe0f009b9969a29cd965ff8637a404}\index{LavaVK::Image@{LavaVK::Image}!Image@{Image}}
+\index{Image@{Image}!LavaVK::Image@{LavaVK::Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_image_ae9fe0f009b9969a29cd965ff8637a404} 
+Lava\+VK::\+\+Image::\+\+Image (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{, }\item[{const \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info}{Image\+Create\+Info}} \&}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new Vulkan image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Logical device used to create the image. \\
+\hline
+{\em info} & \doxylink{class_lava_v_k_1_1_image}{Image} creation parameters. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_image_a28bb4b65efd4d3425bb62304a2f4c61b}\index{LavaVK::Image@{LavaVK::Image}!Image@{Image}}
+\index{Image@{Image}!LavaVK::Image@{LavaVK::Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_image_a28bb4b65efd4d3425bb62304a2f4c61b} 
+Lava\+VK::\+\+Image::\+\+Image (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{, }\item[{Vk\+Image}]{image}{, }\item[{Vk\+Format}]{format}{, }\item[{Vk\+Image\+Aspect\+Flags}]{aspect}{, }\item[{Vk\+Extent3D}]{extent}{}\end{DoxyParamCaption})}
+
+
+
+Wraps an existing Vulkan image. 
+
+No image memory is allocated and the image will not be destroyed by this object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Logical device owning the image. \\
+\hline
+{\em image} & Existing Vulkan image. \\
+\hline
+{\em format} & \doxylink{class_lava_v_k_1_1_image}{Image} format. \\
+\hline
+{\em aspect} & \doxylink{class_lava_v_k_1_1_image}{Image} aspect used for the created image view. \\
+\hline
+{\em extent} & \doxylink{class_lava_v_k_1_1_image}{Image} dimensions. \\
+\hline
+\end{DoxyParams}
+
+
+\label{class_lava_v_k_1_1_image_doc-func-members}
+\Hypertarget{class_lava_v_k_1_1_image_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lava_v_k_1_1_image_a85f95ad6079bec7051a10bfbedc4f1a3}\index{LavaVK::Image@{LavaVK::Image}!operator=@{operator=}}
+\index{operator=@{operator=}!LavaVK::Image@{LavaVK::Image}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_image_a85f95ad6079bec7051a10bfbedc4f1a3} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}} \& Lava\+VK::\+\+Image::\+operator= (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_image_abf9e91b93d3bfcb554e69a91015cc2d4}{Image}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Transfers ownership from another \doxylink{class_lava_v_k_1_1_image}{Image}. 
+
+\begin{DoxyReturn}{Returns}
+Reference to this image. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_image_ae798fb44e9277eec633f663d9e509979}\index{LavaVK::Image@{LavaVK::Image}!ownsImage@{ownsImage}}
+\index{ownsImage@{ownsImage}!LavaVK::Image@{LavaVK::Image}}
+\doxysubsubsection{\texorpdfstring{ownsImage()}{ownsImage()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_image_ae798fb44e9277eec633f663d9e509979} 
+bool Lava\+VK::\+\+Image::\+owns\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Returns whether this object owns the underlying image. 
+
+Images wrapping swapchain images return false. 
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Buffer.\+hpp\item 
+src/\+Buffer.\+cpp\end{DoxyCompactItemize}

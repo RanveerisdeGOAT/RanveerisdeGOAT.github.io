@@ -119,28 +119,43 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_lava_v_k
   <div class="headertitle"><div class="title">LavaVK::Fence Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>CPU-GPU synchronization primitive.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_sync_8hpp_source.html">Sync.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aaff960a70983d2ea7945af615c0e1f43" id="r_aaff960a70983d2ea7945af615c0e1f43"><td class="memItemLeft"><a id="aaff960a70983d2ea7945af615c0e1f43" name="aaff960a70983d2ea7945af615c0e1f43"></a>
+&#160;</td><td class="memItemRight"><b>Fence</b> ()=default</td></tr>
+<tr class="memdesc:aaff960a70983d2ea7945af615c0e1f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty fence. <br /></td></tr>
 <tr class="memitem:a7c26fe31f797cb16e1deee9d089e5838" id="r_a7c26fe31f797cb16e1deee9d089e5838"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7c26fe31f797cb16e1deee9d089e5838">Fence</a> (<a class="el" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device, bool signaled=false)</td></tr>
-<tr class="memdesc:a7c26fe31f797cb16e1deee9d089e5838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Vulkan <a class="el" href="class_lava_v_k_1_1_fence.html">Fence</a> wrapper.  <br /></td></tr>
+<tr class="memdesc:a7c26fe31f797cb16e1deee9d089e5838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Vulkan fence.  <br /></td></tr>
+<tr class="memitem:ab3c979a9968a9fdf03cf5051f3cae0bd" id="r_ab3c979a9968a9fdf03cf5051f3cae0bd"><td class="memItemLeft"><a id="ab3c979a9968a9fdf03cf5051f3cae0bd" name="ab3c979a9968a9fdf03cf5051f3cae0bd"></a>
+&#160;</td><td class="memItemRight"><b>~Fence</b> ()</td></tr>
+<tr class="memdesc:ab3c979a9968a9fdf03cf5051f3cae0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the fence. <br /></td></tr>
 <tr class="memitem:abb813c0759cd93786f0aadffa0cd39dc" id="r_abb813c0759cd93786f0aadffa0cd39dc"><td class="memItemLeft"><a id="abb813c0759cd93786f0aadffa0cd39dc" name="abb813c0759cd93786f0aadffa0cd39dc"></a>
 &#160;</td><td class="memItemRight"><b>Fence</b> (const Fence &amp;)=delete</td></tr>
 <tr class="memitem:a71aacf0739e18f615bbbe87065201d38" id="r_a71aacf0739e18f615bbbe87065201d38"><td class="memItemLeft"><a id="a71aacf0739e18f615bbbe87065201d38" name="a71aacf0739e18f615bbbe87065201d38"></a>
-Fence &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const Fence &amp;)=delete</td></tr>
+<a class="el" href="#aaff960a70983d2ea7945af615c0e1f43">Fence</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="#aaff960a70983d2ea7945af615c0e1f43">Fence</a> &amp;)=delete</td></tr>
 <tr class="memitem:aa1ee49826f084389d23aa0b2416e3e5d" id="r_aa1ee49826f084389d23aa0b2416e3e5d"><td class="memItemLeft"><a id="aa1ee49826f084389d23aa0b2416e3e5d" name="aa1ee49826f084389d23aa0b2416e3e5d"></a>
 &#160;</td><td class="memItemRight"><b>Fence</b> (Fence &amp;&amp;other) noexcept</td></tr>
-<tr class="memitem:ae2ced3698ebda30c649e3b12bfb690a7" id="r_ae2ced3698ebda30c649e3b12bfb690a7"><td class="memItemLeft"><a id="ae2ced3698ebda30c649e3b12bfb690a7" name="ae2ced3698ebda30c649e3b12bfb690a7"></a>
-Fence &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (Fence &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:aa1ee49826f084389d23aa0b2416e3e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers ownership from another fence. <br /></td></tr>
+<tr class="memitem:ae2ced3698ebda30c649e3b12bfb690a7" id="r_ae2ced3698ebda30c649e3b12bfb690a7"><td class="memItemLeft"><a class="el" href="#aaff960a70983d2ea7945af615c0e1f43">Fence</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ae2ced3698ebda30c649e3b12bfb690a7">operator=</a> (<a class="el" href="#aaff960a70983d2ea7945af615c0e1f43">Fence</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:ae2ced3698ebda30c649e3b12bfb690a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers ownership from another fence.  <br /></td></tr>
 <tr class="memitem:ad0d834be1e7fef9f07e1313399174205" id="r_ad0d834be1e7fef9f07e1313399174205"><td class="memItemLeft">VkResult&#160;</td><td class="memItemRight"><a class="el" href="#ad0d834be1e7fef9f07e1313399174205">wait</a> (uint64_t timeout=UINT64_MAX) const</td></tr>
-<tr class="memdesc:ad0d834be1e7fef9f07e1313399174205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the fence to reach the signaled state.  <br /></td></tr>
+<tr class="memdesc:ad0d834be1e7fef9f07e1313399174205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits until the fence becomes signaled.  <br /></td></tr>
 <tr class="memitem:a09d94207721d36b6a2134760764f9080" id="r_a09d94207721d36b6a2134760764f9080"><td class="memItemLeft">VkResult&#160;</td><td class="memItemRight"><a class="el" href="#a09d94207721d36b6a2134760764f9080">reset</a> () const</td></tr>
-<tr class="memdesc:a09d94207721d36b6a2134760764f9080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the fence to an unsignaled state.  <br /></td></tr>
+<tr class="memdesc:a09d94207721d36b6a2134760764f9080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the fence to the unsignaled state.  <br /></td></tr>
 <tr class="memitem:a157631b1deea51961146cf607cb6c303" id="r_a157631b1deea51961146cf607cb6c303"><td class="memItemLeft"><a id="a157631b1deea51961146cf607cb6c303" name="a157631b1deea51961146cf607cb6c303"></a>
 VkFence&#160;</td><td class="memItemRight"><b>native</b> () const</td></tr>
-<tr class="memdesc:a157631b1deea51961146cf607cb6c303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying VkFence handle. <br /></td></tr>
+<tr class="memdesc:a157631b1deea51961146cf607cb6c303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the native Vulkan fence. <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>CPU-GPU synchronization primitive. </p>
+<p>A <a class="el" href="class_lava_v_k_1_1_fence.html" title="CPU-GPU synchronization primitive.">Fence</a> is used by the CPU to determine when GPU work has completed. Unlike semaphores, fences can be waited on and reset directly by the CPU. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7c26fe31f797cb16e1deee9d089e5838" name="a7c26fe31f797cb16e1deee9d089e5838"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c26fe31f797cb16e1deee9d089e5838">&#9670;&#160;</a></span>Fence()</h2>
 
@@ -160,11 +175,11 @@ VkFence&#160;</td><td class="memItemRight"><b>native</b> () const</td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a Vulkan <a class="el" href="class_lava_v_k_1_1_fence.html">Fence</a> wrapper. </p>
+<p>Creates a Vulkan fence. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">device</td><td>The LavaVK <a class="el" href="class_lava_v_k_1_1_device.html" title="Manages the Vulkan physical device selection, logical device instantiation (VkDevice),...">Device</a> instance. </td></tr>
-    <tr><td class="paramname">signaled</td><td>Whether to create the fence in a signaled state (default: false). </td></tr>
+    <tr><td class="paramname">device</td><td>Logical device used to create the fence. </td></tr>
+    <tr><td class="paramname">signaled</td><td>Whether the fence should begin in the signaled state. </td></tr>
   </table>
   </dd>
 </dl>
@@ -172,11 +187,42 @@ VkFence&#160;</td><td class="memItemRight"><b>native</b> () const</td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ae2ced3698ebda30c649e3b12bfb690a7" name="ae2ced3698ebda30c649e3b12bfb690a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2ced3698ebda30c649e3b12bfb690a7">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aaff960a70983d2ea7945af615c0e1f43">Fence</a> &amp; LavaVK::Fence::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aaff960a70983d2ea7945af615c0e1f43">Fence</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transfers ownership from another fence. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to this fence. </dd></dl>
+
+</div>
+</div>
 <a id="a09d94207721d36b6a2134760764f9080" name="a09d94207721d36b6a2134760764f9080"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09d94207721d36b6a2134760764f9080">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">VkResult LavaVK::Fence::reset </td>
@@ -185,10 +231,15 @@ VkFence&#160;</td><td class="memItemRight"><b>native</b> () const</td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Resets the fence to an unsignaled state. </p>
-<dl class="section return"><dt>Returns</dt><dd>VkResult status code. </dd></dl>
+<p>Resets the fence to the unsignaled state. </p>
+<dl class="section return"><dt>Returns</dt><dd>Vulkan status code. </dd></dl>
 
 </div>
 </div>
@@ -197,6 +248,9 @@ VkFence&#160;</td><td class="memItemRight"><b>native</b> () const</td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">VkResult LavaVK::Fence::wait </td>
@@ -205,22 +259,27 @@ VkFence&#160;</td><td class="memItemRight"><b>native</b> () const</td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Waits for the fence to reach the signaled state. </p>
+<p>Waits until the fence becomes signaled. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">timeout</td><td>Timeout in nanoseconds (default: UINT64_MAX). </td></tr>
+    <tr><td class="paramname">timeout</td><td>Maximum wait time in nanoseconds. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>VkResult status code. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Vulkan status code. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/LavaVK/<a class="el" href="_fence_8hpp_source.html">Fence.hpp</a></li>
-<li>src/<b>Fence.cpp</b></li>
+<li>include/LavaVK/<a class="el" href="_sync_8hpp_source.html">Sync.hpp</a></li>
+<li>src/<b>Sync.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

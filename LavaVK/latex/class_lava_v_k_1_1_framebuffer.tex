@@ -1,0 +1,60 @@
+\doxysection{Lava\+VK::\+Framebuffer Class Reference}
+\hypertarget{class_lava_v_k_1_1_framebuffer}{}\label{class_lava_v_k_1_1_framebuffer}\index{LavaVK::Framebuffer@{LavaVK::Framebuffer}}
+
+
+Represents a Vulkan framebuffer.  
+
+
+
+
+{\ttfamily \+\#include $<$Buffer.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer_a13c2a85656ad5d710bd7beb1b960368e}{Framebuffer}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \&render\+Pass, const std::\+vector$<$ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} $>$ \&attachments)
+\begin{DoxyCompactList}\small\item\em Creates a framebuffer from a collection of image attachments. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_framebuffer_a39fea7c9ea60ed3770e1d9e9fcd54bfe}\label{class_lava_v_k_1_1_framebuffer_a39fea7c9ea60ed3770e1d9e9fcd54bfe} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Framebuffer} ()
+\begin{DoxyCompactList}\small\item\em Destroys the framebuffer. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_framebuffer_aea765421bdb25305d77a43cc0908940a}\label{class_lava_v_k_1_1_framebuffer_aea765421bdb25305d77a43cc0908940a} 
+Vk\+Framebuffer {\bfseries native} () const
+\begin{DoxyCompactList}\small\item\em Returns the native Vulkan framebuffer. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_framebuffer_a2bf3e41791a9dbda664eb3462a32f110}\label{class_lava_v_k_1_1_framebuffer_a2bf3e41791a9dbda664eb3462a32f110} 
+const std::\+vector$<$ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} $>$ \& {\bfseries attachments} () const
+\begin{DoxyCompactList}\small\item\em Returns the images attached to this framebuffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a Vulkan framebuffer. 
+
+A framebuffer is a collection of image attachments compatible with a specific \doxylink{class_lava_v_k_1_1_render_pass}{Render\+Pass}. Attachments typically include a color image, depth image, or additional render targets. 
+
+\label{class_lava_v_k_1_1_framebuffer_doc-constructors}
+\Hypertarget{class_lava_v_k_1_1_framebuffer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_lava_v_k_1_1_framebuffer_a13c2a85656ad5d710bd7beb1b960368e}\index{LavaVK::Framebuffer@{LavaVK::Framebuffer}!Framebuffer@{Framebuffer}}
+\index{Framebuffer@{Framebuffer}!LavaVK::Framebuffer@{LavaVK::Framebuffer}}
+\doxysubsubsection{\texorpdfstring{Framebuffer()}{Framebuffer()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_framebuffer_a13c2a85656ad5d710bd7beb1b960368e} 
+Lava\+VK::\+\+Framebuffer::\+\+Framebuffer (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{, }\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \&}]{render\+Pass}{, }\item[{const std::\+vector$<$ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} $>$ \&}]{attachments}{}\end{DoxyParamCaption})}
+
+
+
+Creates a framebuffer from a collection of image attachments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Logical device used to create the framebuffer. \\
+\hline
+{\em render\+Pass} & Compatible render pass. \\
+\hline
+{\em attachments} & Images attached to the framebuffer. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Buffer.\+hpp\item 
+src/\+Buffer.\+cpp\end{DoxyCompactItemize}

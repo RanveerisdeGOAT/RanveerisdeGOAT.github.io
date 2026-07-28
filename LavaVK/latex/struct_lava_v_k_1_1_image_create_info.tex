@@ -1,0 +1,120 @@
+\doxysection{Lava\+VK::\+Image\+Create\+Info Struct Reference}
+\hypertarget{struct_lava_v_k_1_1_image_create_info}{}\label{struct_lava_v_k_1_1_image_create_info}\index{LavaVK::ImageCreateInfo@{LavaVK::ImageCreateInfo}}
+
+
+Describes the properties of an image to be created.  
+
+
+
+
+{\ttfamily \+\#include $<$Buffer.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_lava_v_k_1_1_image_create_info_aeb301341d9a3d0c64494d35b4537c395}\label{struct_lava_v_k_1_1_image_create_info_aeb301341d9a3d0c64494d35b4537c395} 
+Image\+Type {\bfseries type} = Image\+Type::\+\+IMAGE\+\_\+2D
+\begin{DoxyCompactList}\small\item\em \doxylink{class_lava_v_k_1_1_image}{Image} dimensionality. \end{DoxyCompactList}\item 
+Vk\+Extent3D \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_abef2d37092138f5158bd7702524a48e9}{extent}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_lava_v_k_1_1_image}{Image} width, height, and depth. \end{DoxyCompactList}\item 
+\Hypertarget{struct_lava_v_k_1_1_image_create_info_a16f9666098e1b669ce44ce76fad22cc3}\label{struct_lava_v_k_1_1_image_create_info_a16f9666098e1b669ce44ce76fad22cc3} 
+Vk\+Format {\bfseries format} = VK\+\_\+\+FORMAT\+\_\+\+R8\+G8\+B8\+A8\+\_\+\+UNORM
+\begin{DoxyCompactList}\small\item\em Pixel format of the image. \end{DoxyCompactList}\item 
+\Hypertarget{struct_lava_v_k_1_1_image_create_info_a8ddbbcb2a35823df33262e0dc6970e19}\label{struct_lava_v_k_1_1_image_create_info_a8ddbbcb2a35823df33262e0dc6970e19} 
+Image\+Usage {\bfseries usage} = Image\+Usage::\+\+SAMPLED
+\begin{DoxyCompactList}\small\item\em Intended usage of the image. \end{DoxyCompactList}\item 
+\Hypertarget{struct_lava_v_k_1_1_image_create_info_a4a2313eec7bb043f6e13d8c7e02a8ee0}\label{struct_lava_v_k_1_1_image_create_info_a4a2313eec7bb043f6e13d8c7e02a8ee0} 
+Vk\+Image\+Aspect\+Flags {\bfseries aspect} = VK\+\_\+\+IMAGE\+\_\+\+ASPECT\+\_\+\+COLOR\+\_\+\+BIT
+\begin{DoxyCompactList}\small\item\em Aspect(s) accessible through the image view. \end{DoxyCompactList}\item 
+Vk\+Sample\+Count\+Flag\+Bits \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_a7471f7145d9d7136d84450cd506b9751}{samples}}
+\begin{DoxyCompactList}\small\item\em Number of MSAA samples. \end{DoxyCompactList}\item 
+Vk\+Image\+Tiling \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_aaf779a68325954a9c5f783886c7a20a8}{tiling}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_lava_v_k_1_1_image}{Image} tiling mode. \end{DoxyCompactList}\item 
+Vk\+Memory\+Property\+Flags \doxymbox{\hyperlink{struct_lava_v_k_1_1_image_create_info_a26ec0b3311e1b7be82c2aa973683c32d}{memory}}
+\begin{DoxyCompactList}\small\item\em Memory properties required for the image allocation. \end{DoxyCompactList}\item 
+\Hypertarget{struct_lava_v_k_1_1_image_create_info_a71035eb8eb02bbc130dfa7a002bd50c7}\label{struct_lava_v_k_1_1_image_create_info_a71035eb8eb02bbc130dfa7a002bd50c7} 
+uint32\+\_\+t {\bfseries mip\+Levels} = 1
+\begin{DoxyCompactList}\small\item\em Number of mip levels. \end{DoxyCompactList}\item 
+\Hypertarget{struct_lava_v_k_1_1_image_create_info_aa375f9fd0acbfcb2116f12516f053427}\label{struct_lava_v_k_1_1_image_create_info_aa375f9fd0acbfcb2116f12516f053427} 
+uint32\+\_\+t {\bfseries array\+Layers} = 1
+\begin{DoxyCompactList}\small\item\em Number of array layers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describes the properties of an image to be created. 
+
+\label{struct_lava_v_k_1_1_image_create_info_doc-variable-members}
+\Hypertarget{struct_lava_v_k_1_1_image_create_info_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_lava_v_k_1_1_image_create_info_abef2d37092138f5158bd7702524a48e9}\index{LavaVK::ImageCreateInfo@{LavaVK::ImageCreateInfo}!extent@{extent}}
+\index{extent@{extent}!LavaVK::ImageCreateInfo@{LavaVK::ImageCreateInfo}}
+\doxysubsubsection{\texorpdfstring{extent}{extent}}
+{\footnotesize\ttfamily \label{struct_lava_v_k_1_1_image_create_info_abef2d37092138f5158bd7702524a48e9} 
+Vk\+Extent3D Lava\+VK::\+\+Image\+Create\+Info::\+extent}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 1}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxylink{class_lava_v_k_1_1_image}{Image} width, height, and depth. 
+
+\Hypertarget{struct_lava_v_k_1_1_image_create_info_a26ec0b3311e1b7be82c2aa973683c32d}\index{LavaVK::ImageCreateInfo@{LavaVK::ImageCreateInfo}!memory@{memory}}
+\index{memory@{memory}!LavaVK::ImageCreateInfo@{LavaVK::ImageCreateInfo}}
+\doxysubsubsection{\texorpdfstring{memory}{memory}}
+{\footnotesize\ttfamily \label{struct_lava_v_k_1_1_image_create_info_a26ec0b3311e1b7be82c2aa973683c32d} 
+Vk\+Memory\+Property\+Flags Lava\+VK::\+\+Image\+Create\+Info::\+memory}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =}
+\DoxyCodeLine{VK\_MEMORY\_PROPERTY\_DEVICE\_LOCAL\_BIT}
+
+\end{DoxyCode}
+
+
+Memory properties required for the image allocation. 
+
+\Hypertarget{struct_lava_v_k_1_1_image_create_info_a7471f7145d9d7136d84450cd506b9751}\index{LavaVK::ImageCreateInfo@{LavaVK::ImageCreateInfo}!samples@{samples}}
+\index{samples@{samples}!LavaVK::ImageCreateInfo@{LavaVK::ImageCreateInfo}}
+\doxysubsubsection{\texorpdfstring{samples}{samples}}
+{\footnotesize\ttfamily \label{struct_lava_v_k_1_1_image_create_info_a7471f7145d9d7136d84450cd506b9751} 
+Vk\+Sample\+Count\+Flag\+Bits Lava\+VK::\+\+Image\+Create\+Info::\+samples}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =}
+\DoxyCodeLine{VK\_SAMPLE\_COUNT\_1\_BIT}
+
+\end{DoxyCode}
+
+
+Number of MSAA samples. 
+
+\Hypertarget{struct_lava_v_k_1_1_image_create_info_aaf779a68325954a9c5f783886c7a20a8}\index{LavaVK::ImageCreateInfo@{LavaVK::ImageCreateInfo}!tiling@{tiling}}
+\index{tiling@{tiling}!LavaVK::ImageCreateInfo@{LavaVK::ImageCreateInfo}}
+\doxysubsubsection{\texorpdfstring{tiling}{tiling}}
+{\footnotesize\ttfamily \label{struct_lava_v_k_1_1_image_create_info_aaf779a68325954a9c5f783886c7a20a8} 
+Vk\+Image\+Tiling Lava\+VK::\+\+Image\+Create\+Info::\+tiling}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =}
+\DoxyCodeLine{VK\_IMAGE\_TILING\_OPTIMAL}
+
+\end{DoxyCode}
+
+
+\doxylink{class_lava_v_k_1_1_image}{Image} tiling mode. 
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Buffer.\+hpp\end{DoxyCompactItemize}

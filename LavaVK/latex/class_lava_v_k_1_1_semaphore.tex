@@ -1,0 +1,87 @@
+\doxysection{Lava\+VK::\+Semaphore Class Reference}
+\hypertarget{class_lava_v_k_1_1_semaphore}{}\label{class_lava_v_k_1_1_semaphore}\index{LavaVK::Semaphore@{LavaVK::Semaphore}}
+
+
+GPU-\/\+GPU synchronization primitive.  
+
+
+
+
+{\ttfamily \+\#include $<$Sync.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lava_v_k_1_1_semaphore_a7d16d2ab352bf3727a79c08496f9b99a}\label{class_lava_v_k_1_1_semaphore_a7d16d2ab352bf3727a79c08496f9b99a} 
+{\bfseries Semaphore} ()=default
+\begin{DoxyCompactList}\small\item\em Constructs an empty semaphore. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore_a5e17eee80b60ae89f638995a4091861a}{Semaphore}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device)
+\begin{DoxyCompactList}\small\item\em Creates a Vulkan semaphore. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_semaphore_a7a482c8ce0c64b0efb36cbfe85bc7698}\label{class_lava_v_k_1_1_semaphore_a7a482c8ce0c64b0efb36cbfe85bc7698} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Semaphore} ()
+\begin{DoxyCompactList}\small\item\em Destroys the semaphore. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_semaphore_a3663fed5091a440e4f084f4a5186fe51}\label{class_lava_v_k_1_1_semaphore_a3663fed5091a440e4f084f4a5186fe51} 
+{\bfseries Semaphore} (const Semaphore \&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_semaphore_a0b11dd7e704417507523a93d84adf3b7}\label{class_lava_v_k_1_1_semaphore_a0b11dd7e704417507523a93d84adf3b7} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore_a7d16d2ab352bf3727a79c08496f9b99a}{Semaphore}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore_a7d16d2ab352bf3727a79c08496f9b99a}{Semaphore}} \&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_semaphore_aaccbad9424af245f6b7008866902ff2e}\label{class_lava_v_k_1_1_semaphore_aaccbad9424af245f6b7008866902ff2e} 
+{\bfseries Semaphore} (Semaphore \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Transfers ownership from another semaphore. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore_a7d16d2ab352bf3727a79c08496f9b99a}{Semaphore}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore_a2c9298e1548e7890cb223d8308809081}{operator=}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore_a7d16d2ab352bf3727a79c08496f9b99a}{Semaphore}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Transfers ownership from another semaphore. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_semaphore_aef187844bbfdb9d2c621af44fe702e29}\label{class_lava_v_k_1_1_semaphore_aef187844bbfdb9d2c621af44fe702e29} 
+Vk\+Semaphore {\bfseries native} () const
+\begin{DoxyCompactList}\small\item\em Returns the native Vulkan semaphore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GPU-\/\+GPU synchronization primitive. 
+
+A \doxylink{class_lava_v_k_1_1_semaphore}{Semaphore} is used to synchronize operations performed by GPU queues. Semaphores are commonly used when acquiring swapchain images, submitting command buffers, and presenting rendered images.
+
+Unlike \doxylink{class_lava_v_k_1_1_fence}{Fence}, semaphores cannot be waited on or reset directly by the CPU. 
+
+\label{class_lava_v_k_1_1_semaphore_doc-constructors}
+\Hypertarget{class_lava_v_k_1_1_semaphore_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_lava_v_k_1_1_semaphore_a5e17eee80b60ae89f638995a4091861a}\index{LavaVK::Semaphore@{LavaVK::Semaphore}!Semaphore@{Semaphore}}
+\index{Semaphore@{Semaphore}!LavaVK::Semaphore@{LavaVK::Semaphore}}
+\doxysubsubsection{\texorpdfstring{Semaphore()}{Semaphore()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_semaphore_a5e17eee80b60ae89f638995a4091861a} 
+Lava\+VK::\+\+Semaphore::\+\+Semaphore (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Creates a Vulkan semaphore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Logical device used to create the semaphore. \\
+\hline
+\end{DoxyParams}
+
+
+\label{class_lava_v_k_1_1_semaphore_doc-func-members}
+\Hypertarget{class_lava_v_k_1_1_semaphore_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lava_v_k_1_1_semaphore_a2c9298e1548e7890cb223d8308809081}\index{LavaVK::Semaphore@{LavaVK::Semaphore}!operator=@{operator=}}
+\index{operator=@{operator=}!LavaVK::Semaphore@{LavaVK::Semaphore}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_semaphore_a2c9298e1548e7890cb223d8308809081} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore_a7d16d2ab352bf3727a79c08496f9b99a}{Semaphore}} \& Lava\+VK::\+\+Semaphore::\+operator= (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore_a7d16d2ab352bf3727a79c08496f9b99a}{Semaphore}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Transfers ownership from another semaphore. 
+
+\begin{DoxyReturn}{Returns}
+Reference to this semaphore. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Sync.\+hpp\item 
+src/\+Sync.\+cpp\end{DoxyCompactItemize}

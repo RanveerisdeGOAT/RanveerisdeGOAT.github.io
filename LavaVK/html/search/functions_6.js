@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['instance_0',['Instance',['../class_lava_v_k_1_1_instance.html#a574c21c9318ebbd15334a7c502bac5e9',1,'LavaVK::Instance::Instance(const InstanceCreateInfo &amp;info={})'],['../class_lava_v_k_1_1_instance.html#aa6068c1c3c95b7845d261ced664f668d',1,'LavaVK::Instance::Instance(Instance &amp;&amp;other) noexcept']]],
-  ['issurfacesupported_1',['isSurfaceSupported',['../class_lava_v_k_1_1_g_p_u_hardware.html#a6bf46c24c82c40b2c041ace9d349a3e7',1,'LavaVK::GPUHardware']]]
+  ['getbindings_0',['getBindings',['../class_lava_v_k_1_1_descriptor_set_layout.html#a8cbbad077537de4e21c430b27e08cdfb',1,'LavaVK::DescriptorSetLayout']]],
+  ['getqueue_1',['getQueue',['../class_lava_v_k_1_1_device.html#a19246dc1b26956fff4638de045c2ba47',1,'LavaVK::Device']]],
+  ['getqueuefamily_2',['getQueueFamily',['../class_lava_v_k_1_1_device.html#a6b6c18bc1f012ff319c9e4a196449361',1,'LavaVK::Device']]],
+  ['graphicspipeline_3',['GraphicsPipeline',['../class_lava_v_k_1_1_graphics_pipeline.html#a3bcb009360b1c33c520f43fde75c393b',1,'LavaVK::GraphicsPipeline']]],
+  ['graphicsqueue_4',['graphicsQueue',['../class_lava_v_k_1_1_device.html#a44aba55d3e77dbd4b3255e05d2ade759',1,'LavaVK::Device']]]
 ];
