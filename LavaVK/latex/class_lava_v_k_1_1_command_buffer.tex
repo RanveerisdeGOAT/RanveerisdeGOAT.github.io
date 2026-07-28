@@ -1,0 +1,358 @@
+\doxysection{Lava\+VK::\+Command\+Buffer Class Reference}
+\hypertarget{class_lava_v_k_1_1_command_buffer}{}\label{class_lava_v_k_1_1_command_buffer}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+
+
+Wrapper around Vk\+Command\+Buffer for recording GPU rendering and compute instructions.  
+
+
+
+
+{\ttfamily \+\#include $<$Command.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a41af976109b6ee79722e33e9e45db162}\label{class_lava_v_k_1_1_command_buffer_a41af976109b6ee79722e33e9e45db162} 
+{\bfseries Command\+Buffer} ()=default
+\begin{DoxyCompactList}\small\item\em Constructs an uninitialized \doxylink{class_lava_v_k_1_1_command_buffer}{Command\+Buffer} handle. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a9af1a3b839014a0b42a418cb1be65782}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Begins recording commands into the command buffer. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_abb37dea67982113feb0acc7c26339020}{end}} () const
+\begin{DoxyCompactList}\small\item\em Ends command recording. Must be called before queue submission. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a62e7362c3477a44e3eb0bf4bafec83cb}{reset}} () const
+\begin{DoxyCompactList}\small\item\em Clears all pre-\/recorded commands from the buffer. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a35985fdf1065c1aa1a7744e3f72a6a1e}{bind\+Pipeline}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_graphics_pipeline}{Graphics\+Pipeline}} \&pipeline) const
+\begin{DoxyCompactList}\small\item\em Binds a graphics pipeline to the command buffer. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_af754c88a5deb7f46cb63d2f39aa16e94}{bind\+Vertex\+Buffer}} (Vk\+Buffer buffer, Vk\+Device\+Size offset=0) const
+\begin{DoxyCompactList}\small\item\em Binds a vertex buffer to the pipeline. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_afeba5d6a21ad4970bbf976685c0824f8}{bind\+Index\+Buffer}} (Vk\+Buffer buffer, Vk\+Device\+Size offset=0, Vk\+Index\+Type index\+Type=VK\+\_\+\+INDEX\+\_\+\+TYPE\+\_\+\+UINT32) const
+\begin{DoxyCompactList}\small\item\em Binds an index buffer for indexed drawing commands. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a16541b9c8d52ccde1daffff059b1a224}{begin\+Render\+Pass}} (const Vk\+Render\+Pass\+Begin\+Info \&render\+Pass\+Info, Vk\+Subpass\+Contents contents=VK\+\_\+\+SUBPASS\+\_\+\+CONTENTS\+\_\+\+INLINE) const
+\begin{DoxyCompactList}\small\item\em Begins a render pass using explicit Vulkan begin info. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a376522ef3814292226375f4ba02ff785}{begin\+Render\+Pass}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \&render\+Pass, const \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer}{Framebuffer}} \&framebuffer, Vk\+Extent2D extent, const std::\+array$<$ float, 4 $>$ \&clear\+Color=\{0.\+1f, 0.\+1f, 0.\+1f, 1.\+0f\}, float clear\+Depth=1.\+0f, uint32\+\_\+t clear\+Stencil=0, bool auto\+Set\+Viewport\+And\+Scissor=true) const
+\begin{DoxyCompactList}\small\item\em Convenience overload to begin a render pass with sensible default clear values. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_aa799785d1a4460451b6f04fea6b1483f}{record}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \&render\+Pass, const \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer}{Framebuffer}} \&framebuffer, Vk\+Extent2D extent, const std::\+function$<$ void(\doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a41af976109b6ee79722e33e9e45db162}{Command\+Buffer}} \&)$>$ \&draw\+Commands)
+\begin{DoxyCompactList}\small\item\em Higher-\/level helper that manages the entire lifecycle of recording a render pass. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_command_buffer_ada508b2a5afce09a8608becbc31d9e3e}\label{class_lava_v_k_1_1_command_buffer_ada508b2a5afce09a8608becbc31d9e3e} 
+void {\bfseries end\+Render\+Pass} () const
+\begin{DoxyCompactList}\small\item\em Ends the active render pass. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a0825edb9005f4cb63900ebf0e19df743}{draw}} (uint32\+\_\+t vertex\+Count, uint32\+\_\+t instance\+Count=1, uint32\+\_\+t first\+Vertex=0, uint32\+\_\+t first\+Instance=0) const
+\begin{DoxyCompactList}\small\item\em Records a non-\/indexed draw command. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_ad9aec4b8bec4c86b351d31a99dfa33dc}{draw\+Indexed}} (uint32\+\_\+t index\+Count, uint32\+\_\+t instance\+Count=1, uint32\+\_\+t first\+Index=0, int32\+\_\+t vertex\+Offset=0, uint32\+\_\+t first\+Instance=0) const
+\begin{DoxyCompactList}\small\item\em Records an indexed draw command. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a6ff0db89cd8dd1d310d65f3c88888ff7}\label{class_lava_v_k_1_1_command_buffer_a6ff0db89cd8dd1d310d65f3c88888ff7} 
+Vk\+Command\+Buffer {\bfseries native} () const
+\begin{DoxyCompactList}\small\item\em Returns the underlying Vulkan Vk\+Command\+Buffer handle. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a7a96e1ac3d0c4c782cb0481f59516345}{set\+Viewport}} (Vk\+Extent2D extent, float min\+Depth=0.\+0f, float max\+Depth=1.\+0f) const
+\begin{DoxyCompactList}\small\item\em Sets dynamic viewport dimensions using a Vk\+Extent2D. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a66aedfe3742062165c701255c3ce5521}{set\+Viewport}} (float width, float height, float x=0.\+0f, float y=0.\+0f, float min\+Depth=0.\+0f, float max\+Depth=1.\+0f) const
+\begin{DoxyCompactList}\small\item\em Sets dynamic viewport dimensions explicitly. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_aa3dfe2948318f1875491a7af51a2a72f}{set\+Scissor}} (Vk\+Extent2D extent, Vk\+Offset2D offset=\{0, 0\}) const
+\begin{DoxyCompactList}\small\item\em Sets the dynamic scissor rectangle. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a01b8e75d1436cb3cebbc2ef4713cceaf}{set\+Viewport\+And\+Scissor}} (Vk\+Extent2D extent) const
+\begin{DoxyCompactList}\small\item\em Convenience function to configure both viewport and scissor rectangle simultaneously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a7a92bbad605726aca732f86118a128e4}\label{class_lava_v_k_1_1_command_buffer_a7a92bbad605726aca732f86118a128e4} 
+class {\bfseries Command\+Pool}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper around Vk\+Command\+Buffer for recording GPU rendering and compute instructions. 
+
+Command buffers are allocated from a \doxylink{class_lava_v_k_1_1_command_pool}{Command\+Pool} and submitted to a GPU queue for execution. Members are marked const as recording commands modifies the GPU recording state pointed to by the handle, rather than the C++ handle itself. 
+
+\label{class_lava_v_k_1_1_command_buffer_doc-func-members}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a9af1a3b839014a0b42a418cb1be65782}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!begin@{begin}}
+\index{begin@{begin}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a9af1a3b839014a0b42a418cb1be65782} 
+void Lava\+VK::\+\+Command\+Buffer::\+begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Begins recording commands into the command buffer. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If starting recording fails. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a376522ef3814292226375f4ba02ff785}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!beginRenderPass@{beginRenderPass}}
+\index{beginRenderPass@{beginRenderPass}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{beginRenderPass()}{beginRenderPass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a376522ef3814292226375f4ba02ff785} 
+void Lava\+VK::\+\+Command\+Buffer::\+begin\+Render\+Pass (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \&}]{render\+Pass}{, }\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer}{Framebuffer}} \&}]{framebuffer}{, }\item[{Vk\+Extent2D}]{extent}{, }\item[{const std::\+array$<$ float, 4 $>$ \&}]{clear\+Color}{ = {\ttfamily \{0.1f,~0.1f,~0.1f,~1.0f\}}, }\item[{float}]{clear\+Depth}{ = {\ttfamily 1.0f}, }\item[{uint32\+\_\+t}]{clear\+Stencil}{ = {\ttfamily 0}, }\item[{bool}]{auto\+Set\+Viewport\+And\+Scissor}{ = {\ttfamily true}}\end{DoxyParamCaption}) const}
+
+
+
+Convenience overload to begin a render pass with sensible default clear values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em render\+Pass} & The \doxylink{class_lava_v_k_1_1_render_pass}{Render\+Pass} object defining attachments and subpasses. \\
+\hline
+{\em framebuffer} & Native Vk\+Framebuffer target to draw into. \\
+\hline
+{\em extent} & The width and height of the rendering area (typically matching swapchain extent). \\
+\hline
+{\em clear\+Color} & RGBA clear colors for the color attachment. \\
+\hline
+{\em clear\+Depth} & Depth clear value (default is 1.\+0f). \\
+\hline
+{\em clear\+Stencil} & Stencil clear value (default is 0). \\
+\hline
+{\em auto\+Set\+Viewport\+And\+Scissor} & Automatically sets viewport and scissor states to match extent. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a16541b9c8d52ccde1daffff059b1a224}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!beginRenderPass@{beginRenderPass}}
+\index{beginRenderPass@{beginRenderPass}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{beginRenderPass()}{beginRenderPass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a16541b9c8d52ccde1daffff059b1a224} 
+void Lava\+VK::\+\+Command\+Buffer::\+begin\+Render\+Pass (\begin{DoxyParamCaption}\item[{const Vk\+Render\+Pass\+Begin\+Info \&}]{render\+Pass\+Info}{, }\item[{Vk\+Subpass\+Contents}]{contents}{ = {\ttfamily VK\+\_\+SUBPASS\+\_\+CONTENTS\+\_\+INLINE}}\end{DoxyParamCaption}) const}
+
+
+
+Begins a render pass using explicit Vulkan begin info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em render\+Pass\+Info} & Native Vk\+Render\+Pass\+Begin\+Info detailing framebuffers, clear values, and render area. \\
+\hline
+{\em contents} & Defines if instructions are recorded directly inline or via secondary command buffers. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_afeba5d6a21ad4970bbf976685c0824f8}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!bindIndexBuffer@{bindIndexBuffer}}
+\index{bindIndexBuffer@{bindIndexBuffer}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{bindIndexBuffer()}{bindIndexBuffer()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_afeba5d6a21ad4970bbf976685c0824f8} 
+void Lava\+VK::\+\+Command\+Buffer::\+bind\+Index\+Buffer (\begin{DoxyParamCaption}\item[{Vk\+Buffer}]{buffer}{, }\item[{Vk\+Device\+Size}]{offset}{ = {\ttfamily 0}, }\item[{Vk\+Index\+Type}]{index\+Type}{ = {\ttfamily VK\+\_\+INDEX\+\_\+TYPE\+\_\+UINT32}}\end{DoxyParamCaption}) const}
+
+
+
+Binds an index buffer for indexed drawing commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Native handle to the Vulkan index buffer. \\
+\hline
+{\em offset} & Byte offset into the buffer. \\
+\hline
+{\em index\+Type} & Type of indices stored in the buffer (e.\+g., VK\+\_\+\+INDEX\+\_\+\+TYPE\+\_\+\+UINT16 or VK\+\_\+\+INDEX\+\_\+\+TYPE\+\_\+\+UINT32). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a35985fdf1065c1aa1a7744e3f72a6a1e}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!bindPipeline@{bindPipeline}}
+\index{bindPipeline@{bindPipeline}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{bindPipeline()}{bindPipeline()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a35985fdf1065c1aa1a7744e3f72a6a1e} 
+void Lava\+VK::\+\+Command\+Buffer::\+bind\+Pipeline (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_graphics_pipeline}{Graphics\+Pipeline}} \&}]{pipeline}{}\end{DoxyParamCaption}) const}
+
+
+
+Binds a graphics pipeline to the command buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pipeline} & The \doxylink{class_lava_v_k_1_1_graphics_pipeline}{Graphics\+Pipeline} instance containing shader stages and pipeline state. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_af754c88a5deb7f46cb63d2f39aa16e94}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!bindVertexBuffer@{bindVertexBuffer}}
+\index{bindVertexBuffer@{bindVertexBuffer}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{bindVertexBuffer()}{bindVertexBuffer()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_af754c88a5deb7f46cb63d2f39aa16e94} 
+void Lava\+VK::\+\+Command\+Buffer::\+bind\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{Vk\+Buffer}]{buffer}{, }\item[{Vk\+Device\+Size}]{offset}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const}
+
+
+
+Binds a vertex buffer to the pipeline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Native handle to the Vulkan vertex buffer. \\
+\hline
+{\em offset} & Byte offset into the buffer from which vertex reading starts. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a0825edb9005f4cb63900ebf0e19df743}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!draw@{draw}}
+\index{draw@{draw}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a0825edb9005f4cb63900ebf0e19df743} 
+void Lava\+VK::\+\+Command\+Buffer::\+draw (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{vertex\+Count}{, }\item[{uint32\+\_\+t}]{instance\+Count}{ = {\ttfamily 1}, }\item[{uint32\+\_\+t}]{first\+Vertex}{ = {\ttfamily 0}, }\item[{uint32\+\_\+t}]{first\+Instance}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const}
+
+
+
+Records a non-\/indexed draw command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Count} & Number of vertices to draw. \\
+\hline
+{\em instance\+Count} & Number of instances to draw (default 1). \\
+\hline
+{\em first\+Vertex} & Index of the first vertex to draw. \\
+\hline
+{\em first\+Instance} & \doxylink{class_lava_v_k_1_1_instance}{Instance} ID of the first instance. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_ad9aec4b8bec4c86b351d31a99dfa33dc}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!drawIndexed@{drawIndexed}}
+\index{drawIndexed@{drawIndexed}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{drawIndexed()}{drawIndexed()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_ad9aec4b8bec4c86b351d31a99dfa33dc} 
+void Lava\+VK::\+\+Command\+Buffer::\+draw\+Indexed (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index\+Count}{, }\item[{uint32\+\_\+t}]{instance\+Count}{ = {\ttfamily 1}, }\item[{uint32\+\_\+t}]{first\+Index}{ = {\ttfamily 0}, }\item[{int32\+\_\+t}]{vertex\+Offset}{ = {\ttfamily 0}, }\item[{uint32\+\_\+t}]{first\+Instance}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const}
+
+
+
+Records an indexed draw command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+Count} & Number of indices to draw. \\
+\hline
+{\em instance\+Count} & Number of instances to draw (default 1). \\
+\hline
+{\em first\+Index} & Byte offset index in the index buffer. \\
+\hline
+{\em vertex\+Offset} & Value added to vertex indices before indexing into the vertex buffer. \\
+\hline
+{\em first\+Instance} & \doxylink{class_lava_v_k_1_1_instance}{Instance} ID of the first instance. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_abb37dea67982113feb0acc7c26339020}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!end@{end}}
+\index{end@{end}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_abb37dea67982113feb0acc7c26339020} 
+void Lava\+VK::\+\+Command\+Buffer::\+end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Ends command recording. Must be called before queue submission. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If ending recording fails. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_aa799785d1a4460451b6f04fea6b1483f}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!record@{record}}
+\index{record@{record}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{record()}{record()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_aa799785d1a4460451b6f04fea6b1483f} 
+void Lava\+VK::\+\+Command\+Buffer::\+record (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \&}]{render\+Pass}{, }\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer}{Framebuffer}} \&}]{framebuffer}{, }\item[{Vk\+Extent2D}]{extent}{, }\item[{const std::\+function$<$ void(\doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a41af976109b6ee79722e33e9e45db162}{Command\+Buffer}} \&)$>$ \&}]{draw\+Commands}{}\end{DoxyParamCaption})}
+
+
+
+Higher-\/level helper that manages the entire lifecycle of recording a render pass. 
+
+Automatically handles reset, begin, begin\+Render\+Pass, executing the draw callback, end\+Render\+Pass, and end in one block.
+
+
+\begin{DoxyParams}{Parameters}
+{\em render\+Pass} & The \doxylink{class_lava_v_k_1_1_render_pass}{Render\+Pass} to record into. \\
+\hline
+{\em framebuffer} & Target framebuffer. \\
+\hline
+{\em extent} & Rendering extent. \\
+\hline
+{\em draw\+Commands} & Lambda callback containing draw calls and pipeline bindings. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a62e7362c3477a44e3eb0bf4bafec83cb}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!reset@{reset}}
+\index{reset@{reset}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a62e7362c3477a44e3eb0bf4bafec83cb} 
+void Lava\+VK::\+\+Command\+Buffer::\+reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Clears all pre-\/recorded commands from the buffer. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If resetting the buffer fails. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_aa3dfe2948318f1875491a7af51a2a72f}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!setScissor@{setScissor}}
+\index{setScissor@{setScissor}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{setScissor()}{setScissor()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_aa3dfe2948318f1875491a7af51a2a72f} 
+void Lava\+VK::\+\+Command\+Buffer::\+set\+Scissor (\begin{DoxyParamCaption}\item[{Vk\+Extent2D}]{extent}{, }\item[{Vk\+Offset2D}]{offset}{ = {\ttfamily \{0,~0\}}}\end{DoxyParamCaption}) const}
+
+
+
+Sets the dynamic scissor rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extent} & Width and height of the scissor rectangle. \\
+\hline
+{\em offset} & Upper-\/left coordinate offset. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a66aedfe3742062165c701255c3ce5521}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!setViewport@{setViewport}}
+\index{setViewport@{setViewport}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{setViewport()}{setViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a66aedfe3742062165c701255c3ce5521} 
+void Lava\+VK::\+\+Command\+Buffer::\+set\+Viewport (\begin{DoxyParamCaption}\item[{float}]{width}{, }\item[{float}]{height}{, }\item[{float}]{x}{ = {\ttfamily 0.0f}, }\item[{float}]{y}{ = {\ttfamily 0.0f}, }\item[{float}]{min\+Depth}{ = {\ttfamily 0.0f}, }\item[{float}]{max\+Depth}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption}) const}
+
+
+
+Sets dynamic viewport dimensions explicitly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Viewport width. \\
+\hline
+{\em height} & Viewport height. \\
+\hline
+{\em x} & Upper-\/left X coordinate. \\
+\hline
+{\em y} & Upper-\/left Y coordinate. \\
+\hline
+{\em min\+Depth} & Minimum depth value range (0.\+0f to 1.\+0f). \\
+\hline
+{\em max\+Depth} & Maximum depth value range (0.\+0f to 1.\+0f). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a7a96e1ac3d0c4c782cb0481f59516345}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!setViewport@{setViewport}}
+\index{setViewport@{setViewport}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{setViewport()}{setViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a7a96e1ac3d0c4c782cb0481f59516345} 
+void Lava\+VK::\+\+Command\+Buffer::\+set\+Viewport (\begin{DoxyParamCaption}\item[{Vk\+Extent2D}]{extent}{, }\item[{float}]{min\+Depth}{ = {\ttfamily 0.0f}, }\item[{float}]{max\+Depth}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption}) const}
+
+
+
+Sets dynamic viewport dimensions using a Vk\+Extent2D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extent} & Width and height of the viewport. \\
+\hline
+{\em min\+Depth} & Minimum depth value range (0.\+0f to 1.\+0f). \\
+\hline
+{\em max\+Depth} & Maximum depth value range (0.\+0f to 1.\+0f). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a01b8e75d1436cb3cebbc2ef4713cceaf}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!setViewportAndScissor@{setViewportAndScissor}}
+\index{setViewportAndScissor@{setViewportAndScissor}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{setViewportAndScissor()}{setViewportAndScissor()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a01b8e75d1436cb3cebbc2ef4713cceaf} 
+void Lava\+VK::\+\+Command\+Buffer::\+set\+Viewport\+And\+Scissor (\begin{DoxyParamCaption}\item[{Vk\+Extent2D}]{extent}{}\end{DoxyParamCaption}) const}
+
+
+
+Convenience function to configure both viewport and scissor rectangle simultaneously. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extent} & Extent applied to both viewport dimensions and scissor rectangle. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Command.\+hpp\item 
+src/\+Command.\+cpp\end{DoxyCompactItemize}

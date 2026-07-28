@@ -36,7 +36,7 @@ var NAVTREE =
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
@@ -49,7 +49,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_buffer_8hpp_source.html"
+"_buffer_8hpp_source.html",
+"struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a8071b51330ee9da9547c25d489e93269"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -39,9 +39,15 @@ const \doxymbox{\hyperlink{class_lava_v_k_1_1_queue}{Queue}} \& {\bfseries get\+
 \Hypertarget{class_lava_v_k_1_1_device_a6b6c18bc1f012ff319c9e4a196449361}\label{class_lava_v_k_1_1_device_a6b6c18bc1f012ff319c9e4a196449361} 
 uint32\+\_\+t {\bfseries get\+Queue\+Family} (Queue\+Type type) const
 \begin{DoxyCompactList}\small\item\em Gets queue family index for a specific Queue\+Type. \end{DoxyCompactList}\item 
-\Hypertarget{class_lava_v_k_1_1_device_a44aba55d3e77dbd4b3255e05d2ade759}\label{class_lava_v_k_1_1_device_a44aba55d3e77dbd4b3255e05d2ade759} 
-const \doxymbox{\hyperlink{class_lava_v_k_1_1_queue}{Queue}} \& {\bfseries graphics\+Queue} () const
-\begin{DoxyCompactList}\small\item\em Convenience helper for graphics queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{class_lava_v_k_1_1_device_a3f7243b142b20cc71f541ec7a2444683}\label{class_lava_v_k_1_1_device_a3f7243b142b20cc71f541ec7a2444683} 
+void {\bfseries wait\+Idle} () const
+\begin{DoxyCompactList}\small\item\em Waits till command pool is finished. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_command_pool}{Command\+Pool}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a22b0ab567bd146918dd2bdfe88fc93ab}{get\+Command\+Pool}} (Queue\+Type queue\+Type)
+\begin{DoxyCompactList}\small\item\em Return \doxylink{class_lava_v_k_1_1_command_pool}{Command\+Pool} of qiven queue type. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a67e5f24f8cf17d8b6e73ca45b3b3bc8a}{submit}} (Queue\+Type queue\+Type, const \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer}{Command\+Buffer}} \&cmd\+Buffer, const std::\+vector$<$ std::\+reference\+\_\+wrapper$<$ const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} $>$ $>$ \&wait\+Semaphores=\{\}, const std::\+vector$<$ Vk\+Pipeline\+Stage\+Flags $>$ \&wait\+Stages=\{\}, const std::\+vector$<$ std::\+reference\+\_\+wrapper$<$ const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} $>$ $>$ \&signal\+Semaphores=\{\}, const \doxymbox{\hyperlink{class_lava_v_k_1_1_fence}{Fence}} \texorpdfstring{$\ast$}{*}fence=nullptr)
+\begin{DoxyCompactList}\small\item\em Submits a \doxylink{class_lava_v_k_1_1_command_buffer}{Command\+Buffer}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a41c1bc2884544e66b82ce434ae88da10}{submit}} (Queue\+Type queue\+Type, size\+\_\+t command\+Buffer\+Index, const std::\+vector$<$ std::\+reference\+\_\+wrapper$<$ const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} $>$ $>$ \&wait\+Semaphores=\{\}, const std::\+vector$<$ Vk\+Pipeline\+Stage\+Flags $>$ \&wait\+Stages=\{\}, const std::\+vector$<$ std::\+reference\+\_\+wrapper$<$ const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} $>$ $>$ \&signal\+Semaphores=\{\}, const \doxymbox{\hyperlink{class_lava_v_k_1_1_fence}{Fence}} \texorpdfstring{$\ast$}{*}fence=nullptr)
+\begin{DoxyCompactList}\small\item\em Submits a \doxylink{class_lava_v_k_1_1_command_buffer}{Command\+Buffer} by index in \doxylink{class_lava_v_k_1_1_command_pool}{Command\+Pool}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \begin{Indent}\textbf{ Deleted Copy Operations}\par
 \begin{DoxyCompactItemize}
 \item 
@@ -56,6 +62,68 @@ const \doxymbox{\hyperlink{class_lava_v_k_1_1_queue}{Queue}} \& {\bfseries graph
 
 \doxysubsection{Detailed Description}
 Manages the Vulkan physical device selection, logical device instantiation ({\ttfamily Vk\+Device}), and graphics queue retrieval. 
+
+\label{class_lava_v_k_1_1_device_doc-func-members}
+\Hypertarget{class_lava_v_k_1_1_device_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lava_v_k_1_1_device_a22b0ab567bd146918dd2bdfe88fc93ab}\index{LavaVK::Device@{LavaVK::Device}!getCommandPool@{getCommandPool}}
+\index{getCommandPool@{getCommandPool}!LavaVK::Device@{LavaVK::Device}}
+\doxysubsubsection{\texorpdfstring{getCommandPool()}{getCommandPool()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_device_a22b0ab567bd146918dd2bdfe88fc93ab} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_command_pool}{Command\+Pool}} \& Lava\+VK::\+\+Device::\+get\+Command\+Pool (\begin{DoxyParamCaption}\item[{Queue\+Type}]{queue\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Return \doxylink{class_lava_v_k_1_1_command_pool}{Command\+Pool} of qiven queue type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue\+Type} & Type of command pool to be returned. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_device_a67e5f24f8cf17d8b6e73ca45b3b3bc8a}\index{LavaVK::Device@{LavaVK::Device}!submit@{submit}}
+\index{submit@{submit}!LavaVK::Device@{LavaVK::Device}}
+\doxysubsubsection{\texorpdfstring{submit()}{submit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_device_a67e5f24f8cf17d8b6e73ca45b3b3bc8a} 
+void Lava\+VK::\+\+Device::\+submit (\begin{DoxyParamCaption}\item[{Queue\+Type}]{queue\+Type}{, }\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer}{Command\+Buffer}} \&}]{cmd\+Buffer}{, }\item[{const std::\+vector$<$ std::\+reference\+\_\+wrapper$<$ const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} $>$ $>$ \&}]{wait\+Semaphores}{ = {\ttfamily \{\}}, }\item[{const std::\+vector$<$ Vk\+Pipeline\+Stage\+Flags $>$ \&}]{wait\+Stages}{ = {\ttfamily \{\}}, }\item[{const std::\+vector$<$ std::\+reference\+\_\+wrapper$<$ const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} $>$ $>$ \&}]{signal\+Semaphores}{ = {\ttfamily \{\}}, }\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_fence}{Fence}} \texorpdfstring{$\ast$}{*}}]{fence}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Submits a \doxylink{class_lava_v_k_1_1_command_buffer}{Command\+Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue\+Type} & Type of the \doxylink{class_lava_v_k_1_1_command_pool}{Command\+Pool}. \\
+\hline
+{\em cmd\+Buffer} & \doxylink{class_lava_v_k_1_1_command_buffer}{Command\+Buffer} reference. \\
+\hline
+{\em wait\+Semaphores} & Semaphores to wait. \\
+\hline
+{\em signal\+Semaphores} & Semaphores to be signaled. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_device_a41c1bc2884544e66b82ce434ae88da10}\index{LavaVK::Device@{LavaVK::Device}!submit@{submit}}
+\index{submit@{submit}!LavaVK::Device@{LavaVK::Device}}
+\doxysubsubsection{\texorpdfstring{submit()}{submit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_device_a41c1bc2884544e66b82ce434ae88da10} 
+void Lava\+VK::\+\+Device::\+submit (\begin{DoxyParamCaption}\item[{Queue\+Type}]{queue\+Type}{, }\item[{size\+\_\+t}]{command\+Buffer\+Index}{, }\item[{const std::\+vector$<$ std::\+reference\+\_\+wrapper$<$ const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} $>$ $>$ \&}]{wait\+Semaphores}{ = {\ttfamily \{\}}, }\item[{const std::\+vector$<$ Vk\+Pipeline\+Stage\+Flags $>$ \&}]{wait\+Stages}{ = {\ttfamily \{\}}, }\item[{const std::\+vector$<$ std::\+reference\+\_\+wrapper$<$ const \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}} $>$ $>$ \&}]{signal\+Semaphores}{ = {\ttfamily \{\}}, }\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_fence}{Fence}} \texorpdfstring{$\ast$}{*}}]{fence}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Submits a \doxylink{class_lava_v_k_1_1_command_buffer}{Command\+Buffer} by index in \doxylink{class_lava_v_k_1_1_command_pool}{Command\+Pool}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue\+Type} & Type of the \doxylink{class_lava_v_k_1_1_command_pool}{Command\+Pool}. \\
+\hline
+{\em command\+Buffer\+Index} & \doxylink{class_lava_v_k_1_1_command_buffer}{Command\+Buffer} index. \\
+\hline
+{\em wait\+Semaphores} & Semaphores to wait. \\
+\hline
+{\em signal\+Semaphores} & Semaphores to be signaled. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 

@@ -6,5 +6,6 @@ var searchData=
   ['findqueuefamily_3',['findQueueFamily',['../class_lava_v_k_1_1_g_p_u_hardware.html#aa9bab6a220bdf618747e4d3a2c486dfa',1,'LavaVK::GPUHardware']]],
   ['format_4',['format',['../class_lava_v_k_1_1_image.html#a1420c5467583133130a351ae8561b66a',1,'LavaVK::Image::format()'],['../class_lava_v_k_1_1_swap_chain.html#ada309bfd1b07944d450431f3e1a9fad2',1,'LavaVK::SwapChain::format()']]],
   ['framebuffer_5',['Framebuffer',['../class_lava_v_k_1_1_framebuffer.html#a13c2a85656ad5d710bd7beb1b960368e',1,'LavaVK::Framebuffer']]],
-  ['freedescriptorsets_6',['freeDescriptorSets',['../class_lava_v_k_1_1_descriptor_pool.html#aac99486e48a1a2e66dc02ea41090173a',1,'LavaVK::DescriptorPool']]]
+  ['framebuffer_6',['framebuffer',['../class_lava_v_k_1_1_swap_chain.html#a49d1fed77d0b1fa24f34bffa84f5e2ce',1,'LavaVK::SwapChain']]],
+  ['freedescriptorsets_7',['freeDescriptorSets',['../class_lava_v_k_1_1_descriptor_pool.html#aac99486e48a1a2e66dc02ea41090173a',1,'LavaVK::DescriptorPool']]]
 ];

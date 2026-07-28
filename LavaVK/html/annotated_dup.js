@@ -1,6 +1,8 @@
 var annotated_dup =
 [
     [ "LavaVK", null, [
+      [ "CommandBuffer", "class_lava_v_k_1_1_command_buffer.html", "class_lava_v_k_1_1_command_buffer" ],
+      [ "CommandPool", "class_lava_v_k_1_1_command_pool.html", "class_lava_v_k_1_1_command_pool" ],
       [ "DescriptorPool", "class_lava_v_k_1_1_descriptor_pool.html", "class_lava_v_k_1_1_descriptor_pool" ],
       [ "DescriptorSetLayout", "class_lava_v_k_1_1_descriptor_set_layout.html", "class_lava_v_k_1_1_descriptor_set_layout" ],
       [ "DescriptorSetLayoutBinding", "struct_lava_v_k_1_1_descriptor_set_layout_binding.html", "struct_lava_v_k_1_1_descriptor_set_layout_binding" ],

@@ -120,32 +120,32 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_lava_v_k
 </div><!--header-->
 <div class="contents">
 
-<p>Manages the Vulkan Swapchain and associated frame/image synchronization primitives.  
+<p>Manages the Vulkan Swapchain and associated frame/image synchronization primitives. The <a class="el" href="class_lava_v_k_1_1_swap_chain.html" title="Manages the Vulkan Swapchain and associated frame/image synchronization primitives....">SwapChain</a> class abstracts creation of the VkSwapchainKHR handle, acquisition of swapchain images, queue presentation, and synchronization objects (semaphores and fences) required for multi-frame in-flight rendering.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_swap_chain_8hpp_source.html">SwapChain.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a87f055ddc61bc359f5f4ef3b7319bc10" id="r_a87f055ddc61bc359f5f4ef3b7319bc10"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a87f055ddc61bc359f5f4ef3b7319bc10">SwapChain</a> (<a class="el" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device, <a class="el" href="class_lava_v_k_1_1_surface.html">Surface</a> &amp;surface, VkFormat format, VkExtent2D extent)</td></tr>
-<tr class="memdesc:a87f055ddc61bc359f5f4ef3b7319bc10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a LavaVK <a class="el" href="class_lava_v_k_1_1_swap_chain.html" title="Manages the Vulkan Swapchain and associated frame/image synchronization primitives.">SwapChain</a> instance and creates internal synchronization objects.  <br /></td></tr>
+<tr class="memitem:ac7aee2875e0746e555d273560a4b8f73" id="r_ac7aee2875e0746e555d273560a4b8f73"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac7aee2875e0746e555d273560a4b8f73">SwapChain</a> (<a class="el" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device, <a class="el" href="class_lava_v_k_1_1_surface.html">Surface</a> &amp;surface, <a class="el" href="class_lava_v_k_1_1_render_pass.html">RenderPass</a> &amp;renderPass, VkFormat colorFormat, VkFormat depthFormat, VkExtent2D extent)</td></tr>
+<tr class="memdesc:ac7aee2875e0746e555d273560a4b8f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a LavaVK <a class="el" href="class_lava_v_k_1_1_swap_chain.html" title="Manages the Vulkan Swapchain and associated frame/image synchronization primitives....">SwapChain</a> instance and creates internal synchronization objects. Queries physical device capabilities, chooses optimal surface formats, present modes, and extents, constructs the VkSwapchainKHR, and creates per-frame and per-image sync objects.  <br /></td></tr>
 <tr class="memitem:ad281472f2bfb2481291edbadc08481be" id="r_ad281472f2bfb2481291edbadc08481be"><td class="memItemLeft"><a id="ad281472f2bfb2481291edbadc08481be" name="ad281472f2bfb2481291edbadc08481be"></a>
 &#160;</td><td class="memItemRight"><b>~SwapChain</b> ()</td></tr>
 <tr class="memdesc:ad281472f2bfb2481291edbadc08481be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the swapchain object and releases the native VkSwapchainKHR handle. <br /></td></tr>
 <tr class="memitem:acca125631361c9d757b5d41b1baffff9" id="r_acca125631361c9d757b5d41b1baffff9"><td class="memItemLeft"><a id="acca125631361c9d757b5d41b1baffff9" name="acca125631361c9d757b5d41b1baffff9"></a>
 &#160;</td><td class="memItemRight"><b>SwapChain</b> (const SwapChain &amp;)=delete</td></tr>
 <tr class="memitem:a091b8056d88afdeaa8c2139c307100e4" id="r_a091b8056d88afdeaa8c2139c307100e4"><td class="memItemLeft"><a id="a091b8056d88afdeaa8c2139c307100e4" name="a091b8056d88afdeaa8c2139c307100e4"></a>
-<a class="el" href="#a87f055ddc61bc359f5f4ef3b7319bc10">SwapChain</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="#a87f055ddc61bc359f5f4ef3b7319bc10">SwapChain</a> &amp;)=delete</td></tr>
+<a class="el" href="#ac7aee2875e0746e555d273560a4b8f73">SwapChain</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="#ac7aee2875e0746e555d273560a4b8f73">SwapChain</a> &amp;)=delete</td></tr>
 <tr class="memitem:a6a614e45caeed72532eaf403002c4280" id="r_a6a614e45caeed72532eaf403002c4280"><td class="memItemLeft"><a id="a6a614e45caeed72532eaf403002c4280" name="a6a614e45caeed72532eaf403002c4280"></a>
 &#160;</td><td class="memItemRight"><b>SwapChain</b> (SwapChain &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a6a614e45caeed72532eaf403002c4280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor. Transfers ownership of Vulkan swapchain handles and synchronization vectors. <br /></td></tr>
 <tr class="memitem:a6c84880a85bbadb3baedcb768dffb250" id="r_a6c84880a85bbadb3baedcb768dffb250"><td class="memItemLeft"><a id="a6c84880a85bbadb3baedcb768dffb250" name="a6c84880a85bbadb3baedcb768dffb250"></a>
-<a class="el" href="#a87f055ddc61bc359f5f4ef3b7319bc10">SwapChain</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (<a class="el" href="#a87f055ddc61bc359f5f4ef3b7319bc10">SwapChain</a> &amp;&amp;other) noexcept</td></tr>
+<a class="el" href="#ac7aee2875e0746e555d273560a4b8f73">SwapChain</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (<a class="el" href="#ac7aee2875e0746e555d273560a4b8f73">SwapChain</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a6c84880a85bbadb3baedcb768dffb250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Cleans up existing swapchain resources and transfers ownership from <code class="param">other</code>. <br /></td></tr>
 <tr class="memitem:aeb607e805784abd17d973e49fa5ffd8f" id="r_aeb607e805784abd17d973e49fa5ffd8f"><td class="memItemLeft">VkResult&#160;</td><td class="memItemRight"><a class="el" href="#aeb607e805784abd17d973e49fa5ffd8f">acquireImage</a> (uint32_t &amp;imageIndex)</td></tr>
 <tr class="memdesc:aeb607e805784abd17d973e49fa5ffd8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares for rendering the next frame by waiting on fences and acquiring an image index.  <br /></td></tr>
 <tr class="memitem:ad3b4aaacf2d4b43fbed617fa7f761f4a" id="r_ad3b4aaacf2d4b43fbed617fa7f761f4a"><td class="memItemLeft">VkResult&#160;</td><td class="memItemRight"><a class="el" href="#ad3b4aaacf2d4b43fbed617fa7f761f4a">present</a> (uint32_t imageIndex)</td></tr>
-<tr class="memdesc:ad3b4aaacf2d4b43fbed617fa7f761f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submits the acquired swapchain image to the presentation engine and advances the frame slot.  <br /></td></tr>
+<tr class="memdesc:ad3b4aaacf2d4b43fbed617fa7f761f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submits the acquired swapchain image to the presentation engine and advances the frame slot. Waits on the <span class="tt">renderFinished</span> semaphore corresponding to <code class="param">imageIndex</code>, submits the presentation request to the queue, and advances <span class="tt">m_currentFrame</span> modulo <span class="tt">MAX_FRAMES_IN_FLIGHT</span>.  <br /></td></tr>
 <tr class="memitem:a3af5def3eec1f678a8e0a53c67da69af" id="r_a3af5def3eec1f678a8e0a53c67da69af"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a3af5def3eec1f678a8e0a53c67da69af">imageCount</a> () const</td></tr>
 <tr class="memdesc:a3af5def3eec1f678a8e0a53c67da69af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total number of images retrieved from the Vulkan swapchain.  <br /></td></tr>
 <tr class="memitem:ac2482f22c1f7c9b629e4c760ccfc5c9c" id="r_ac2482f22c1f7c9b629e4c760ccfc5c9c"><td class="memItemLeft">const <a class="el" href="class_lava_v_k_1_1_image.html">Image</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac2482f22c1f7c9b629e4c760ccfc5c9c">image</a> (uint32_t index) const</td></tr>
@@ -165,20 +165,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adb79bd90d8fce3661bf9d29d4e482ffc" id="r_adb79bd90d8fce3661bf9d29d4e482ffc"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#adb79bd90d8fce3661bf9d29d4e482ffc">currentFrame</a> () const</td></tr>
 <tr class="memdesc:adb79bd90d8fce3661bf9d29d4e482ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the current frame in flight [0..MAX_FRAMES_IN_FLIGHT - 1].  <br /></td></tr>
 <tr class="memitem:a4d7545a1b7f5e3fc4773327f037a42e1" id="r_a4d7545a1b7f5e3fc4773327f037a42e1"><td class="memItemLeft">const <a class="el" href="class_lava_v_k_1_1_semaphore.html">Semaphore</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4d7545a1b7f5e3fc4773327f037a42e1">imageAvailableSemaphore</a> () const</td></tr>
-<tr class="memdesc:a4d7545a1b7f5e3fc4773327f037a42e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GPU-GPU semaphore signaled when the current frame slot's image is acquired.  <br /></td></tr>
+<tr class="memdesc:a4d7545a1b7f5e3fc4773327f037a42e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GPU-GPU semaphore signaled when the current frame slot's image is acquired. Pass this to <span class="tt">VkSubmitInfo::pWaitSemaphores</span> when submitting command buffers for the current frame.  <br /></td></tr>
 <tr class="memitem:a3f40543d23de10d609186599a46d68ca" id="r_a3f40543d23de10d609186599a46d68ca"><td class="memItemLeft">const <a class="el" href="class_lava_v_k_1_1_semaphore.html">Semaphore</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a3f40543d23de10d609186599a46d68ca">renderFinishedSemaphore</a> (uint32_t imageIndex) const</td></tr>
-<tr class="memdesc:a3f40543d23de10d609186599a46d68ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GPU-GPU semaphore signaled when rendering to a specific swapchain image is completed.  <br /></td></tr>
+<tr class="memdesc:a3f40543d23de10d609186599a46d68ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GPU-GPU semaphore signaled when rendering to a specific swapchain image is completed. Pass this to <span class="tt">VkSubmitInfo::pSignalSemaphores</span> when submitting draw commands for <code class="param">imageIndex</code>.  <br /></td></tr>
 <tr class="memitem:a207da8099ee8caf481b20f4132cbfd2e" id="r_a207da8099ee8caf481b20f4132cbfd2e"><td class="memItemLeft">const <a class="el" href="class_lava_v_k_1_1_fence.html">Fence</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a207da8099ee8caf481b20f4132cbfd2e">inFlightFence</a> () const</td></tr>
-<tr class="memdesc:a207da8099ee8caf481b20f4132cbfd2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the CPU-GPU fence used to synchronize CPU command buffer recording with GPU execution.  <br /></td></tr>
+<tr class="memdesc:a207da8099ee8caf481b20f4132cbfd2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the CPU-GPU fence used to synchronize CPU command buffer recording with GPU execution. Pass this to <span class="tt">vkQueueSubmit</span> to be signaled when GPU work for the current frame finishes.  <br /></td></tr>
+<tr class="memitem:a49d1fed77d0b1fa24f34bffa84f5e2ce" id="r_a49d1fed77d0b1fa24f34bffa84f5e2ce"><td class="memItemLeft"><a id="a49d1fed77d0b1fa24f34bffa84f5e2ce" name="a49d1fed77d0b1fa24f34bffa84f5e2ce"></a>
+const <a class="el" href="class_lava_v_k_1_1_framebuffer.html">Framebuffer</a> &amp;&#160;</td><td class="memItemRight"><b>framebuffer</b> (uint32_t index) const</td></tr>
+<tr class="memdesc:a49d1fed77d0b1fa24f34bffa84f5e2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to <a class="el" href="class_lava_v_k_1_1_framebuffer.html" title="Represents a Vulkan framebuffer.">Framebuffer</a> bound to swapchain image index. <br /></td></tr>
+<tr class="memitem:a3baf50360b8422af2335161949ac9472" id="r_a3baf50360b8422af2335161949ac9472"><td class="memItemLeft"><a id="a3baf50360b8422af2335161949ac9472" name="a3baf50360b8422af2335161949ac9472"></a>
+void&#160;</td><td class="memItemRight"><b>recreate</b> ()</td></tr>
+<tr class="memdesc:a3baf50360b8422af2335161949ac9472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recreates the swapchain when the window size or surface capabilities change. <br /></td></tr>
+<tr class="memitem:a84af9a1ce101467e69017d5594262c32" id="r_a84af9a1ce101467e69017d5594262c32"><td class="memItemLeft"><a id="a84af9a1ce101467e69017d5594262c32" name="a84af9a1ce101467e69017d5594262c32"></a>
+VkExtent2D&#160;</td><td class="memItemRight"><b>getLatestExtent</b> () const</td></tr>
+<tr class="memdesc:a84af9a1ce101467e69017d5594262c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the latest surface extent directly from Vulkan. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Manages the Vulkan Swapchain and associated frame/image synchronization primitives. </p>
-<ul>
-<li>The <a class="el" href="class_lava_v_k_1_1_swap_chain.html" title="Manages the Vulkan Swapchain and associated frame/image synchronization primitives.">SwapChain</a> class abstracts creation of the VkSwapchainKHR handle, acquisition of swapchain images, queue presentation, and synchronization objects (semaphores and fences) required for multi-frame in-flight rendering. </li>
-</ul>
+<div class="textblock"><p>Manages the Vulkan Swapchain and associated frame/image synchronization primitives. The <a class="el" href="class_lava_v_k_1_1_swap_chain.html" title="Manages the Vulkan Swapchain and associated frame/image synchronization primitives....">SwapChain</a> class abstracts creation of the VkSwapchainKHR handle, acquisition of swapchain images, queue presentation, and synchronization objects (semaphores and fences) required for multi-frame in-flight rendering. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a87f055ddc61bc359f5f4ef3b7319bc10" name="a87f055ddc61bc359f5f4ef3b7319bc10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87f055ddc61bc359f5f4ef3b7319bc10">&#9670;&#160;</a></span>SwapChain()</h2>
+<a id="ac7aee2875e0746e555d273560a4b8f73" name="ac7aee2875e0746e555d273560a4b8f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7aee2875e0746e555d273560a4b8f73">&#9670;&#160;</a></span>SwapChain()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,7 +202,17 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">VkFormat</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+          <td class="paramtype"><a class="el" href="class_lava_v_k_1_1_render_pass.html">RenderPass</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>renderPass</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkFormat</td>          <td class="paramname"><span class="paramname"><em>colorFormat</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkFormat</td>          <td class="paramname"><span class="paramname"><em>depthFormat</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -206,20 +222,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a LavaVK <a class="el" href="class_lava_v_k_1_1_swap_chain.html" title="Manages the Vulkan Swapchain and associated frame/image synchronization primitives.">SwapChain</a> instance and creates internal synchronization objects. </p>
-<ul>
-<li>Queries physical device capabilities, chooses optimal surface formats, present modes, and extents, constructs the VkSwapchainKHR, and creates per-frame and per-image sync objects.</li>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<p>Constructs a LavaVK <a class="el" href="class_lava_v_k_1_1_swap_chain.html" title="Manages the Vulkan Swapchain and associated frame/image synchronization primitives....">SwapChain</a> instance and creates internal synchronization objects. Queries physical device capabilities, chooses optimal surface formats, present modes, and extents, constructs the VkSwapchainKHR, and creates per-frame and per-image sync objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device</td><td>Logical device wrapper used to manage Vulkan resources. </td></tr>
     <tr><td class="paramname">surface</td><td>Presentation surface to bind the swapchain against. </td></tr>
-    <tr><td class="paramname">format</td><td>Preferred color format (e.g., VK_FORMAT_B8G8R8A8_SRGB). </td></tr>
+    <tr><td class="paramname">renderPass</td><td>Render pass compatible with framebuffers created by this swapchain. </td></tr>
+    <tr><td class="paramname">colorFormat</td><td>Preferred color attachment format. </td></tr>
+    <tr><td class="paramname">depthFormat</td><td>Preferred depth attachment format. </td></tr>
     <tr><td class="paramname">extent</td><td>Desired width and height of the swapchain images in pixels. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 </div>
 </div>
@@ -240,16 +254,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Prepares for rendering the next frame by waiting on fences and acquiring an image index. </p>
-<ul>
-<li>1. Waits for the CPU-GPU fence of the current frame slot (<span class="tt">m_currentFrame</span>).</li>
-</ul>
 <ol type="1">
+<li>Waits for the CPU-GPU fence of the current frame slot (<span class="tt">m_currentFrame</span>).</li>
 <li>Acquires the next available image index from the Vulkan presentation engine.</li>
 <li>Ensures the acquired swapchain image is not still in flight from an earlier frame.</li>
-<li>Resets the current frame's in-flight fence.</li>
-</ol>
-<ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<li>Resets the current frame's in-flight fence. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">imageIndex</td><td>Variable populated with the index of the acquired swapchain image. </td></tr>
   </table>
@@ -257,7 +266,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>VkResult Status code (e.g., VK_SUCCESS or VK_ERROR_OUT_OF_DATE_KHR). </dd></dl>
 </li>
-</ul>
+</ol>
 
 </div>
 </div>
@@ -436,12 +445,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the GPU-GPU semaphore signaled when the current frame slot's image is acquired. </p>
-<ul>
-<li>Pass this to <span class="tt">VkSubmitInfo::pWaitSemaphores</span> when submitting command buffers for the current frame.</li>
-<li><dl class="section return"><dt>Returns</dt><dd>Const reference to the current frame's image-available semaphore. </dd></dl>
-</li>
-</ul>
+<p>Returns the GPU-GPU semaphore signaled when the current frame slot's image is acquired. Pass this to <span class="tt">VkSubmitInfo::pWaitSemaphores</span> when submitting command buffers for the current frame. </p>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the current frame's image-available semaphore. </dd></dl>
 
 </div>
 </div>
@@ -524,12 +529,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the CPU-GPU fence used to synchronize CPU command buffer recording with GPU execution. </p>
-<ul>
-<li>Pass this to <span class="tt">vkQueueSubmit</span> to be signaled when GPU work for the current frame finishes.</li>
-<li><dl class="section return"><dt>Returns</dt><dd>Const reference to the current frame's in-flight fence. </dd></dl>
-</li>
-</ul>
+<p>Returns the CPU-GPU fence used to synchronize CPU command buffer recording with GPU execution. Pass this to <span class="tt">vkQueueSubmit</span> to be signaled when GPU work for the current frame finishes. </p>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the current frame's in-flight fence. </dd></dl>
 
 </div>
 </div>
@@ -576,18 +577,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Submits the acquired swapchain image to the presentation engine and advances the frame slot. </p>
-<ul>
-<li>Waits on the <span class="tt">renderFinished</span> semaphore corresponding to <code class="param">imageIndex</code>, submits the presentation request to the queue, and advances <span class="tt">m_currentFrame</span> modulo <span class="tt">MAX_FRAMES_IN_FLIGHT</span>.</li>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<p>Submits the acquired swapchain image to the presentation engine and advances the frame slot. Waits on the <span class="tt">renderFinished</span> semaphore corresponding to <code class="param">imageIndex</code>, submits the presentation request to the queue, and advances <span class="tt">m_currentFrame</span> modulo <span class="tt">MAX_FRAMES_IN_FLIGHT</span>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">imageIndex</td><td>The index of the swapchain image to present. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>VkResult Status code (e.g., VK_SUCCESS, VK_SUBOPTIMAL_KHR, or VK_ERROR_OUT_OF_DATE_KHR). </dd></dl>
-</li>
-</ul>
 
 </div>
 </div>
@@ -614,18 +611,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the GPU-GPU semaphore signaled when rendering to a specific swapchain image is completed. </p>
-<ul>
-<li>Pass this to <span class="tt">VkSubmitInfo::pSignalSemaphores</span> when submitting draw commands for <code class="param">imageIndex</code>.</li>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<p>Returns the GPU-GPU semaphore signaled when rendering to a specific swapchain image is completed. Pass this to <span class="tt">VkSubmitInfo::pSignalSemaphores</span> when submitting draw commands for <code class="param">imageIndex</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">imageIndex</td><td>Swapchain image index being rendered to. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Const reference to the render-finished semaphore bound to <code class="param">imageIndex</code>. </dd></dl>
-</li>
-</ul>
 
 </div>
 </div>
