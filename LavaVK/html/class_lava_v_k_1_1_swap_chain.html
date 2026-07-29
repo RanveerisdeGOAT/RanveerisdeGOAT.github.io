@@ -142,10 +142,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c84880a85bbadb3baedcb768dffb250" id="r_a6c84880a85bbadb3baedcb768dffb250"><td class="memItemLeft"><a id="a6c84880a85bbadb3baedcb768dffb250" name="a6c84880a85bbadb3baedcb768dffb250"></a>
 <a class="el" href="#ac7aee2875e0746e555d273560a4b8f73">SwapChain</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (<a class="el" href="#ac7aee2875e0746e555d273560a4b8f73">SwapChain</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a6c84880a85bbadb3baedcb768dffb250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Cleans up existing swapchain resources and transfers ownership from <code class="param">other</code>. <br /></td></tr>
-<tr class="memitem:aeb607e805784abd17d973e49fa5ffd8f" id="r_aeb607e805784abd17d973e49fa5ffd8f"><td class="memItemLeft">VkResult&#160;</td><td class="memItemRight"><a class="el" href="#aeb607e805784abd17d973e49fa5ffd8f">acquireImage</a> (uint32_t &amp;imageIndex)</td></tr>
-<tr class="memdesc:aeb607e805784abd17d973e49fa5ffd8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares for rendering the next frame by waiting on fences and acquiring an image index.  <br /></td></tr>
-<tr class="memitem:ad3b4aaacf2d4b43fbed617fa7f761f4a" id="r_ad3b4aaacf2d4b43fbed617fa7f761f4a"><td class="memItemLeft">VkResult&#160;</td><td class="memItemRight"><a class="el" href="#ad3b4aaacf2d4b43fbed617fa7f761f4a">present</a> (uint32_t imageIndex)</td></tr>
-<tr class="memdesc:ad3b4aaacf2d4b43fbed617fa7f761f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submits the acquired swapchain image to the presentation engine and advances the frame slot. Waits on the <span class="tt">renderFinished</span> semaphore corresponding to <code class="param">imageIndex</code>, submits the presentation request to the queue, and advances <span class="tt">m_currentFrame</span> modulo <span class="tt">MAX_FRAMES_IN_FLIGHT</span>.  <br /></td></tr>
+<tr class="memitem:a94c3ed6a3e35f153479e58039bfae990" id="r_a94c3ed6a3e35f153479e58039bfae990"><td class="memItemLeft"><a class="el" href="struct_lava_v_k_1_1_result.html">Result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a94c3ed6a3e35f153479e58039bfae990">acquireImage</a> (uint32_t &amp;imageIndex)</td></tr>
+<tr class="memdesc:a94c3ed6a3e35f153479e58039bfae990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares for rendering the next frame by waiting on fences and acquiring an image index.  <br /></td></tr>
+<tr class="memitem:a6dc5eafd83ed848d8bb912df571c0307" id="r_a6dc5eafd83ed848d8bb912df571c0307"><td class="memItemLeft"><a class="el" href="struct_lava_v_k_1_1_result.html">Result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6dc5eafd83ed848d8bb912df571c0307">present</a> (uint32_t imageIndex)</td></tr>
+<tr class="memdesc:a6dc5eafd83ed848d8bb912df571c0307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submits the acquired swapchain image to the presentation engine and advances the frame slot. Waits on the <span class="tt">renderFinished</span> semaphore corresponding to <code class="param">imageIndex</code>, submits the presentation request to the queue, and advances <span class="tt">m_currentFrame</span> modulo <span class="tt">MAX_FRAMES_IN_FLIGHT</span>.  <br /></td></tr>
 <tr class="memitem:a3af5def3eec1f678a8e0a53c67da69af" id="r_a3af5def3eec1f678a8e0a53c67da69af"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a3af5def3eec1f678a8e0a53c67da69af">imageCount</a> () const</td></tr>
 <tr class="memdesc:a3af5def3eec1f678a8e0a53c67da69af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total number of images retrieved from the Vulkan swapchain.  <br /></td></tr>
 <tr class="memitem:ac2482f22c1f7c9b629e4c760ccfc5c9c" id="r_ac2482f22c1f7c9b629e4c760ccfc5c9c"><td class="memItemLeft">const <a class="el" href="class_lava_v_k_1_1_image.html">Image</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac2482f22c1f7c9b629e4c760ccfc5c9c">image</a> (uint32_t index) const</td></tr>
@@ -238,14 +238,14 @@ VkExtent2D&#160;</td><td class="memItemRight"><b>getLatestExtent</b> () const</t
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aeb607e805784abd17d973e49fa5ffd8f" name="aeb607e805784abd17d973e49fa5ffd8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb607e805784abd17d973e49fa5ffd8f">&#9670;&#160;</a></span>acquireImage()</h2>
+<a id="a94c3ed6a3e35f153479e58039bfae990" name="a94c3ed6a3e35f153479e58039bfae990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c3ed6a3e35f153479e58039bfae990">&#9670;&#160;</a></span>acquireImage()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">VkResult LavaVK::SwapChain::acquireImage </td>
+          <td class="memname"><a class="el" href="struct_lava_v_k_1_1_result.html">Result</a> LavaVK::SwapChain::acquireImage </td>
           <td>(</td>
           <td class="paramtype">uint32_t &amp;</td>          <td class="paramname"><span class="paramname"><em>imageIndex</em></span></td><td>)</td>
           <td></td>
@@ -264,7 +264,7 @@ VkExtent2D&#160;</td><td class="memItemRight"><b>getLatestExtent</b> () const</t
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>VkResult Status code (e.g., VK_SUCCESS or VK_ERROR_OUT_OF_DATE_KHR). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_lava_v_k_1_1_result.html">Result</a> Status code. </dd></dl>
 </li>
 </ol>
 
@@ -562,14 +562,14 @@ VkExtent2D&#160;</td><td class="memItemRight"><b>getLatestExtent</b> () const</t
 
 </div>
 </div>
-<a id="ad3b4aaacf2d4b43fbed617fa7f761f4a" name="ad3b4aaacf2d4b43fbed617fa7f761f4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3b4aaacf2d4b43fbed617fa7f761f4a">&#9670;&#160;</a></span>present()</h2>
+<a id="a6dc5eafd83ed848d8bb912df571c0307" name="a6dc5eafd83ed848d8bb912df571c0307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dc5eafd83ed848d8bb912df571c0307">&#9670;&#160;</a></span>present()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">VkResult LavaVK::SwapChain::present </td>
+          <td class="memname"><a class="el" href="struct_lava_v_k_1_1_result.html">Result</a> LavaVK::SwapChain::present </td>
           <td>(</td>
           <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>imageIndex</em></span></td><td>)</td>
           <td></td>
@@ -584,7 +584,7 @@ VkExtent2D&#160;</td><td class="memItemRight"><b>getLatestExtent</b> () const</t
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>VkResult Status code (e.g., VK_SUCCESS, VK_SUBOPTIMAL_KHR, or VK_ERROR_OUT_OF_DATE_KHR). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_lava_v_k_1_1_result.html">Result</a> Status code. </dd></dl>
 
 </div>
 </div>

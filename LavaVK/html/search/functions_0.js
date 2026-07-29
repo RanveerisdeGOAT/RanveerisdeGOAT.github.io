@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['acquireimage_0',['acquireImage',['../class_lava_v_k_1_1_swap_chain.html#aeb607e805784abd17d973e49fa5ffd8f',1,'LavaVK::SwapChain']]],
+  ['acquireimage_0',['acquireImage',['../class_lava_v_k_1_1_swap_chain.html#a94c3ed6a3e35f153479e58039bfae990',1,'LavaVK::SwapChain']]],
   ['addbinding_1',['addBinding',['../class_lava_v_k_1_1_descriptor_set_layout_1_1_builder.html#a40941877424d164d58384954ec29006e',1,'LavaVK::DescriptorSetLayout::Builder']]],
   ['addpoolsize_2',['addPoolSize',['../class_lava_v_k_1_1_descriptor_pool_1_1_builder.html#ad07616e4609b1dbba8024f8b5a8b71d5',1,'LavaVK::DescriptorPool::Builder']]],
   ['allocate_3',['allocate',['../class_lava_v_k_1_1_command_pool.html#a6ae48ce3bb16545a0439d7602a09e9e8',1,'LavaVK::CommandPool::allocate()'],['../class_lava_v_k_1_1_command_pool.html#a5bd905725aedecf87d5028203fb71e76',1,'LavaVK::CommandPool::allocate(uint32_t count)']]],

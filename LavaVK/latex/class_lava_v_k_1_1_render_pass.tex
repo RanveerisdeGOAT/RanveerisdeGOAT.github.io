@@ -12,7 +12,7 @@ Wrapper for Vulkan {\ttfamily Vk\+Render\+Pass}.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_a6dca34c285fbbfe9354f9f1ba04dbc22}{Render\+Pass}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, Vk\+Format color\+Format, Vk\+Format depth\+Format=VK\+\_\+\+FORMAT\+\_\+\+UNDEFINED, Vk\+Sample\+Count\+Flag\+Bits samples=VK\+\_\+\+SAMPLE\+\_\+\+COUNT\+\_\+1\+\_\+\+BIT)
+\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_af49eeebe8012a425427401f134f3bd2f}{Render\+Pass}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, \doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}} color\+Format, \doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}} depth\+Format=\doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}}(Channel\+Order::\+\+Undefined, Bit\+Depth::\+\+Undefined, Numeric\+Type::\+\+Undefined), Vk\+Sample\+Count\+Flag\+Bits samples=VK\+\_\+\+SAMPLE\+\_\+\+COUNT\+\_\+1\+\_\+\+BIT)
 \begin{DoxyCompactList}\small\item\em Helper constructor for a standard single-\/subpass color + depth render pass. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_ad3aefb60cabc547d9b67e7a71ba0ff40}{Render\+Pass}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, const Vk\+Render\+Pass\+Create\+Info \&create\+Info)
 \begin{DoxyCompactList}\small\item\em Explicit constructor using full Vulkan create info. \end{DoxyCompactList}\item 
@@ -23,7 +23,7 @@ Wrapper for Vulkan {\ttfamily Vk\+Render\+Pass}.
 {\bfseries Render\+Pass} (const Render\+Pass \&)=delete
 \item 
 \Hypertarget{class_lava_v_k_1_1_render_pass_aad224f12da9292227e7564498e9d07a0}\label{class_lava_v_k_1_1_render_pass_aad224f12da9292227e7564498e9d07a0} 
-\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_a6dca34c285fbbfe9354f9f1ba04dbc22}{Render\+Pass}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_a6dca34c285fbbfe9354f9f1ba04dbc22}{Render\+Pass}} \&)=delete
+\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_af49eeebe8012a425427401f134f3bd2f}{Render\+Pass}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_af49eeebe8012a425427401f134f3bd2f}{Render\+Pass}} \&)=delete
 \item 
 \Hypertarget{class_lava_v_k_1_1_render_pass_ad7f7b26378e3dd0a2f118812d4a7db17}\label{class_lava_v_k_1_1_render_pass_ad7f7b26378e3dd0a2f118812d4a7db17} 
 Vk\+Format {\bfseries get\+Color\+Format} () const
@@ -46,11 +46,11 @@ Wrapper for Vulkan {\ttfamily Vk\+Render\+Pass}.
 \label{class_lava_v_k_1_1_render_pass_doc-constructors}
 \Hypertarget{class_lava_v_k_1_1_render_pass_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_lava_v_k_1_1_render_pass_a6dca34c285fbbfe9354f9f1ba04dbc22}\index{LavaVK::RenderPass@{LavaVK::RenderPass}!RenderPass@{RenderPass}}
+\Hypertarget{class_lava_v_k_1_1_render_pass_af49eeebe8012a425427401f134f3bd2f}\index{LavaVK::RenderPass@{LavaVK::RenderPass}!RenderPass@{RenderPass}}
 \index{RenderPass@{RenderPass}!LavaVK::RenderPass@{LavaVK::RenderPass}}
 \doxysubsubsection{\texorpdfstring{RenderPass()}{RenderPass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_lava_v_k_1_1_render_pass_a6dca34c285fbbfe9354f9f1ba04dbc22} 
-Lava\+VK::\+\+Render\+Pass::\+\+Render\+Pass (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{, }\item[{Vk\+Format}]{color\+Format}{, }\item[{Vk\+Format}]{depth\+Format}{ = {\ttfamily VK\+\_\+FORMAT\+\_\+UNDEFINED}, }\item[{Vk\+Sample\+Count\+Flag\+Bits}]{samples}{ = {\ttfamily VK\+\_\+SAMPLE\+\_\+COUNT\+\_\+1\+\_\+BIT}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_render_pass_af49eeebe8012a425427401f134f3bd2f} 
+Lava\+VK::\+\+Render\+Pass::\+\+Render\+Pass (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{, }\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}}}]{color\+Format}{, }\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}}}]{depth\+Format}{ = {\ttfamily \doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}}(ChannelOrder:\+:\+Undefined,~BitDepth:\+:\+Undefined,~NumericType:\+:\+Undefined)}, }\item[{Vk\+Sample\+Count\+Flag\+Bits}]{samples}{ = {\ttfamily VK\+\_\+SAMPLE\+\_\+COUNT\+\_\+1\+\_\+BIT}}\end{DoxyParamCaption})}
 
 
 
@@ -62,9 +62,9 @@ Helper constructor for a standard single-\/subpass color + depth render pass.
 \begin{DoxyParams}{Parameters}
 {\em device} & Reference to the Lava\+VK logical device. \\
 \hline
-{\em color\+Format} & Vulkan format for the color attachment. \\
+{\em color\+Format} & \doxylink{class_lava_v_k_1_1_format}{Format} for the color attachment. \\
 \hline
-{\em depth\+Format} & Vulkan format for depth attachment ({\ttfamily VK\+\_\+\+FORMAT\+\_\+\+UNDEFINED} to disable depth). \\
+{\em depth\+Format} & \doxylink{class_lava_v_k_1_1_format}{Format} for depth attachment ({\ttfamily VK\+\_\+\+FORMAT\+\_\+\+UNDEFINED} to disable depth). \\
 \hline
 {\em samples} & Multisample count flag (defaults to 1 sample). \\
 \hline

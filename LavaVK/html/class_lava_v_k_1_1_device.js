@@ -9,7 +9,7 @@ var class_lava_v_k_1_1_device =
     [ "native", "class_lava_v_k_1_1_device.html#a03cd2d1f5b5f977e4df4b4ed086494b9", null ],
     [ "operator=", "class_lava_v_k_1_1_device.html#aa468b16722dd0e41b62499f30ed45de8", null ],
     [ "physical", "class_lava_v_k_1_1_device.html#a8bed146bb80384eadbb4719f398a9285", null ],
-    [ "submit", "class_lava_v_k_1_1_device.html#a67e5f24f8cf17d8b6e73ca45b3b3bc8a", null ],
-    [ "submit", "class_lava_v_k_1_1_device.html#a41c1bc2884544e66b82ce434ae88da10", null ],
+    [ "submit", "class_lava_v_k_1_1_device.html#ab7bd0f3a7aa436b39579aefa5249c41a", null ],
+    [ "submit", "class_lava_v_k_1_1_device.html#aa300ab69c678e982c0a9df029023faa8", null ],
     [ "waitIdle", "class_lava_v_k_1_1_device.html#a3f7243b142b20cc71f541ec7a2444683", null ]
 ];

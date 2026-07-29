@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['support_0',['Cmake support',['../index.html#autotoc_md6',1,'']]]
+  ['hello_20triangle_0',['Voila, Hello triangle.',['../index.html#autotoc_md27',1,'']]]
 ];

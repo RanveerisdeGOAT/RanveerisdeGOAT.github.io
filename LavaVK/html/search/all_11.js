@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['usage_0',['usage',['../struct_lava_v_k_1_1_image_create_info.html#a8ddbbcb2a35823df33262e0dc6970e19',1,'LavaVK::ImageCreateInfo']]]
+  ['tiling_0',['tiling',['../struct_lava_v_k_1_1_image_create_info.html#aaf779a68325954a9c5f783886c7a20a8',1,'LavaVK::ImageCreateInfo']]],
+  ['to_20gpu_1',['Submit command buffers to GPU.',['../index.html#autotoc_md24',1,'']]],
+  ['to_20window_2',['Present to window.',['../index.html#autotoc_md25',1,'']]],
+  ['topology_3',['topology',['../struct_lava_v_k_1_1_graphics_pipeline_create_info.html#ab13a71a703a39d18c897bb1ead885904',1,'LavaVK::GraphicsPipelineCreateInfo']]],
+  ['triangle_4',['Voila, Hello triangle.',['../index.html#autotoc_md27',1,'']]],
+  ['type_5',['type',['../struct_lava_v_k_1_1_image_create_info.html#aeb301341d9a3d0c64494d35b4537c395',1,'LavaVK::ImageCreateInfo::type'],['../class_lava_v_k_1_1_g_p_u_hardware.html#a0a7a4158146aa5a66083142b5ead9f26',1,'LavaVK::GPUHardware::type()']]]
 ];

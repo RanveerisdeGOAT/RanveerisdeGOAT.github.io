@@ -158,10 +158,10 @@ void&#160;</td><td class="memItemRight"><b>waitIdle</b> () const</td></tr>
 <tr class="memdesc:a3f7243b142b20cc71f541ec7a2444683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits till command pool is finished. <br /></td></tr>
 <tr class="memitem:a22b0ab567bd146918dd2bdfe88fc93ab" id="r_a22b0ab567bd146918dd2bdfe88fc93ab"><td class="memItemLeft"><a class="el" href="class_lava_v_k_1_1_command_pool.html">CommandPool</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a22b0ab567bd146918dd2bdfe88fc93ab">getCommandPool</a> (QueueType queueType)</td></tr>
 <tr class="memdesc:a22b0ab567bd146918dd2bdfe88fc93ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return <a class="el" href="class_lava_v_k_1_1_command_pool.html" title="Opaque container managing GPU memory pools for command buffer allocation.">CommandPool</a> of qiven queue type.  <br /></td></tr>
-<tr class="memitem:a67e5f24f8cf17d8b6e73ca45b3b3bc8a" id="r_a67e5f24f8cf17d8b6e73ca45b3b3bc8a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a67e5f24f8cf17d8b6e73ca45b3b3bc8a">submit</a> (QueueType queueType, const <a class="el" href="class_lava_v_k_1_1_command_buffer.html">CommandBuffer</a> &amp;cmdBuffer, const std::vector&lt; std::reference_wrapper&lt; const <a class="el" href="class_lava_v_k_1_1_semaphore.html">Semaphore</a> &gt; &gt; &amp;waitSemaphores={}, const std::vector&lt; VkPipelineStageFlags &gt; &amp;waitStages={}, const std::vector&lt; std::reference_wrapper&lt; const <a class="el" href="class_lava_v_k_1_1_semaphore.html">Semaphore</a> &gt; &gt; &amp;signalSemaphores={}, const <a class="el" href="class_lava_v_k_1_1_fence.html">Fence</a> *fence=nullptr)</td></tr>
-<tr class="memdesc:a67e5f24f8cf17d8b6e73ca45b3b3bc8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submits a <a class="el" href="class_lava_v_k_1_1_command_buffer.html" title="Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions.">CommandBuffer</a>.  <br /></td></tr>
-<tr class="memitem:a41c1bc2884544e66b82ce434ae88da10" id="r_a41c1bc2884544e66b82ce434ae88da10"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a41c1bc2884544e66b82ce434ae88da10">submit</a> (QueueType queueType, size_t commandBufferIndex, const std::vector&lt; std::reference_wrapper&lt; const <a class="el" href="class_lava_v_k_1_1_semaphore.html">Semaphore</a> &gt; &gt; &amp;waitSemaphores={}, const std::vector&lt; VkPipelineStageFlags &gt; &amp;waitStages={}, const std::vector&lt; std::reference_wrapper&lt; const <a class="el" href="class_lava_v_k_1_1_semaphore.html">Semaphore</a> &gt; &gt; &amp;signalSemaphores={}, const <a class="el" href="class_lava_v_k_1_1_fence.html">Fence</a> *fence=nullptr)</td></tr>
-<tr class="memdesc:a41c1bc2884544e66b82ce434ae88da10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submits a <a class="el" href="class_lava_v_k_1_1_command_buffer.html" title="Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions.">CommandBuffer</a> by index in <a class="el" href="class_lava_v_k_1_1_command_pool.html" title="Opaque container managing GPU memory pools for command buffer allocation.">CommandPool</a>.  <br /></td></tr>
+<tr class="memitem:ab7bd0f3a7aa436b39579aefa5249c41a" id="r_ab7bd0f3a7aa436b39579aefa5249c41a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab7bd0f3a7aa436b39579aefa5249c41a">submit</a> (QueueType queueType, const <a class="el" href="class_lava_v_k_1_1_command_buffer.html">CommandBuffer</a> &amp;cmdBuffer, const std::vector&lt; std::reference_wrapper&lt; const <a class="el" href="class_lava_v_k_1_1_semaphore.html">Semaphore</a> &gt; &gt; &amp;waitSemaphores={}, const std::vector&lt; PipelineStage &gt; &amp;waitStages={}, const std::vector&lt; std::reference_wrapper&lt; const <a class="el" href="class_lava_v_k_1_1_semaphore.html">Semaphore</a> &gt; &gt; &amp;signalSemaphores={}, const <a class="el" href="class_lava_v_k_1_1_fence.html">Fence</a> *fence=nullptr)</td></tr>
+<tr class="memdesc:ab7bd0f3a7aa436b39579aefa5249c41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submits a <a class="el" href="class_lava_v_k_1_1_command_buffer.html" title="Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions.">CommandBuffer</a>.  <br /></td></tr>
+<tr class="memitem:aa300ab69c678e982c0a9df029023faa8" id="r_aa300ab69c678e982c0a9df029023faa8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa300ab69c678e982c0a9df029023faa8">submit</a> (QueueType queueType, size_t commandBufferIndex, const std::vector&lt; std::reference_wrapper&lt; const <a class="el" href="class_lava_v_k_1_1_semaphore.html">Semaphore</a> &gt; &gt; &amp;waitSemaphores={}, const std::vector&lt; PipelineStage &gt; &amp;waitStages={}, const std::vector&lt; std::reference_wrapper&lt; const <a class="el" href="class_lava_v_k_1_1_semaphore.html">Semaphore</a> &gt; &gt; &amp;signalSemaphores={}, const <a class="el" href="class_lava_v_k_1_1_fence.html">Fence</a> *fence=nullptr)</td></tr>
+<tr class="memdesc:aa300ab69c678e982c0a9df029023faa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submits a <a class="el" href="class_lava_v_k_1_1_command_buffer.html" title="Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions.">CommandBuffer</a> by index in <a class="el" href="class_lava_v_k_1_1_command_pool.html" title="Opaque container managing GPU memory pools for command buffer allocation.">CommandPool</a>.  <br /></td></tr>
 <tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Deleted Copy Operations</div></td></tr>
 <tr class="memitem:a74c03c4e109d6044265e1dcf718f3fef" id="r_a74c03c4e109d6044265e1dcf718f3fef"><td class="memItemLeft"><a id="a74c03c4e109d6044265e1dcf718f3fef" name="a74c03c4e109d6044265e1dcf718f3fef"></a>
 &#160;</td><td class="memItemRight"><b>Device</b> (const Device &amp;)=delete</td></tr>
@@ -204,8 +204,8 @@ void&#160;</td><td class="memItemRight"><b>waitIdle</b> () const</td></tr>
 
 </div>
 </div>
-<a id="a67e5f24f8cf17d8b6e73ca45b3b3bc8a" name="a67e5f24f8cf17d8b6e73ca45b3b3bc8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67e5f24f8cf17d8b6e73ca45b3b3bc8a">&#9670;&#160;</a></span>submit() <span class="overload">[1/2]</span></h2>
+<a id="ab7bd0f3a7aa436b39579aefa5249c41a" name="ab7bd0f3a7aa436b39579aefa5249c41a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7bd0f3a7aa436b39579aefa5249c41a">&#9670;&#160;</a></span>submit() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,7 +228,7 @@ void&#160;</td><td class="memItemRight"><b>waitIdle</b> () const</td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; VkPipelineStageFlags &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>waitStages</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+          <td class="paramtype">const std::vector&lt; PipelineStage &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>waitStages</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -256,8 +256,8 @@ void&#160;</td><td class="memItemRight"><b>waitIdle</b> () const</td></tr>
 
 </div>
 </div>
-<a id="a41c1bc2884544e66b82ce434ae88da10" name="a41c1bc2884544e66b82ce434ae88da10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41c1bc2884544e66b82ce434ae88da10">&#9670;&#160;</a></span>submit() <span class="overload">[2/2]</span></h2>
+<a id="aa300ab69c678e982c0a9df029023faa8" name="aa300ab69c678e982c0a9df029023faa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa300ab69c678e982c0a9df029023faa8">&#9670;&#160;</a></span>submit() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,7 +280,7 @@ void&#160;</td><td class="memItemRight"><b>waitIdle</b> () const</td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; VkPipelineStageFlags &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>waitStages</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+          <td class="paramtype">const std::vector&lt; PipelineStage &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>waitStages</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

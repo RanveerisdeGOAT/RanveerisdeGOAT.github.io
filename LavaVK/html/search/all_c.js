@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['physical_0',['physical',['../class_lava_v_k_1_1_device.html#a8bed146bb80384eadbb4719f398a9285',1,'LavaVK::Device']]],
-  ['pipelinelayout_1',['PipelineLayout',['../class_lava_v_k_1_1_pipeline_layout.html',1,'LavaVK::PipelineLayout'],['../class_lava_v_k_1_1_pipeline_layout.html#ab046b1de3b8009b0d8dcd803af50043e',1,'LavaVK::PipelineLayout::PipelineLayout()']]],
-  ['polygonmode_2',['polygonMode',['../struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a2be83a2e1eaf7b6b1f7fe350c30adbae',1,'LavaVK::GraphicsPipelineCreateInfo']]],
-  ['present_3',['present',['../class_lava_v_k_1_1_swap_chain.html#ad3b4aaacf2d4b43fbed617fa7f761f4a',1,'LavaVK::SwapChain']]],
-  ['pushconstantrange_4',['PushConstantRange',['../struct_lava_v_k_1_1_push_constant_range.html',1,'LavaVK']]]
+  ['offset_0',['offset',['../struct_lava_v_k_1_1_push_constant_range.html#a23a60fb7d24464a49c25724ac816ac49',1,'LavaVK::PushConstantRange']]],
+  ['operator_3d_1',['operator=',['../class_lava_v_k_1_1_image.html#a85f95ad6079bec7051a10bfbedc4f1a3',1,'LavaVK::Image::operator=()'],['../class_lava_v_k_1_1_command_pool.html#abd0c8c24253f1857780273dc0ad5ead3',1,'LavaVK::CommandPool::operator=()'],['../class_lava_v_k_1_1_device.html#aa468b16722dd0e41b62499f30ed45de8',1,'LavaVK::Device::operator=()'],['../class_lava_v_k_1_1_instance.html#a9ca4516fc9586b70508556d9c96b74e0',1,'LavaVK::Instance::operator=()'],['../class_lava_v_k_1_1_surface.html#a9087501daa39a3a20fd5ea85dc05a073',1,'LavaVK::Surface::operator=()'],['../class_lava_v_k_1_1_swap_chain.html#a6c84880a85bbadb3baedcb768dffb250',1,'LavaVK::SwapChain::operator=()'],['../class_lava_v_k_1_1_fence.html#ae2ced3698ebda30c649e3b12bfb690a7',1,'LavaVK::Fence::operator=()'],['../class_lava_v_k_1_1_semaphore.html#a2c9298e1548e7890cb223d8308809081',1,'LavaVK::Semaphore::operator=()']]],
+  ['overwrite_2',['overwrite',['../class_lava_v_k_1_1_descriptor_writer.html#a12dd260fed5b45c1cf2b6085ccba0026',1,'LavaVK::DescriptorWriter']]],
+  ['ownsimage_3',['ownsImage',['../class_lava_v_k_1_1_image.html#ae798fb44e9277eec633f663d9e509979',1,'LavaVK::Image']]]
 ];

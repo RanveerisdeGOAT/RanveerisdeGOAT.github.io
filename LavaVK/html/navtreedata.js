@@ -25,13 +25,39 @@
 var NAVTREE =
 [
   [ "LavaVK", "index.html", [
-    [ "Features", "index.html#autotoc_md2", null ],
-    [ "Reqirements &amp; dependencies", "index.html#autotoc_md4", null ],
-    [ "Installation", "index.html#autotoc_md5", [
-      [ "Cmake support", "index.html#autotoc_md6", null ]
+    [ "Features", "index.html#autotoc_md3", [
+      [ "Why LavaVK?", "index.html#autotoc_md1", null ],
+      [ "Current Features:", "index.html#autotoc_md4", null ]
     ] ],
-    [ "Documentation", "index.html#autotoc_md7", null ],
-    [ "Contributing", "index.html#autotoc_md8", null ],
+    [ "<ul class=\"check\">
+<li class=\"checked\">Compatible with any Window API</li>
+</ul>
+", "index.html#autotoc_md5", [
+      [ "Planned Features", "index.html#autotoc_md6", null ]
+    ] ],
+    [ "Reqirements &amp; dependencies", "index.html#autotoc_md8", null ],
+    [ "Installation", "index.html#autotoc_md9", [
+      [ "Cmake support", "index.html#autotoc_md10", null ]
+    ] ],
+    [ "Documentation", "index.html#autotoc_md11", null ],
+    [ "Getting started", "index.html#autotoc_md12", [
+      [ "Setup GLFW", "index.html#autotoc_md13", null ],
+      [ "Get application instance.", "index.html#autotoc_md14", null ],
+      [ "Create surface.", "index.html#autotoc_md15", null ],
+      [ "Create device.", "index.html#autotoc_md16", null ],
+      [ "Create graphics pipeline.", "index.html#autotoc_md17", null ],
+      [ "Create graphics pipeline.", "index.html#autotoc_md18", null ],
+      [ "Program shaders.", "index.html#autotoc_md19", null ],
+      [ "Create swapchain.", "index.html#autotoc_md20", null ],
+      [ "Create command buffers.", "index.html#autotoc_md21", null ],
+      [ "Acquire swapchain image.", "index.html#autotoc_md22", null ],
+      [ "Record command buffers.", "index.html#autotoc_md23", null ],
+      [ "Submit command buffers to GPU.", "index.html#autotoc_md24", null ],
+      [ "Present to window.", "index.html#autotoc_md25", null ],
+      [ "Clean shutdown.", "index.html#autotoc_md26", null ],
+      [ "Voila, Hello triangle.", "index.html#autotoc_md27", null ]
+    ] ],
+    [ "Contributing", "index.html#autotoc_md28", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -50,7 +76,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_buffer_8hpp_source.html",
-"struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a8071b51330ee9da9547c25d489e93269"
+"index.html#autotoc_md5"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

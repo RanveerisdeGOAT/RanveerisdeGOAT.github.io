@@ -31,9 +31,9 @@ CPU-\/\+GPU synchronization primitive.
 \begin{DoxyCompactList}\small\item\em Transfers ownership from another fence. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{class_lava_v_k_1_1_fence_aaff960a70983d2ea7945af615c0e1f43}{Fence}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_fence_ae2ced3698ebda30c649e3b12bfb690a7}{operator=}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_fence_aaff960a70983d2ea7945af615c0e1f43}{Fence}} \&\&other) noexcept
 \begin{DoxyCompactList}\small\item\em Transfers ownership from another fence. \end{DoxyCompactList}\item 
-Vk\+Result \doxymbox{\hyperlink{class_lava_v_k_1_1_fence_ad0d834be1e7fef9f07e1313399174205}{wait}} (uint64\+\_\+t timeout=UINT64\+\_\+\+MAX) const
+\doxymbox{\hyperlink{struct_lava_v_k_1_1_result}{Result}} \doxymbox{\hyperlink{class_lava_v_k_1_1_fence_a1b7335408c2fc7a5853736d5a8c6afb1}{wait}} (uint64\+\_\+t timeout=UINT64\+\_\+\+MAX) const
 \begin{DoxyCompactList}\small\item\em Waits until the fence becomes signaled. \end{DoxyCompactList}\item 
-Vk\+Result \doxymbox{\hyperlink{class_lava_v_k_1_1_fence_a09d94207721d36b6a2134760764f9080}{reset}} () const
+\doxymbox{\hyperlink{struct_lava_v_k_1_1_result}{Result}} \doxymbox{\hyperlink{class_lava_v_k_1_1_fence_ac0069cdb61b5379e2a412a8721c77fca}{reset}} () const
 \begin{DoxyCompactList}\small\item\em Resets the fence to the unsignaled state. \end{DoxyCompactList}\item 
 \Hypertarget{class_lava_v_k_1_1_fence_a157631b1deea51961146cf607cb6c303}\label{class_lava_v_k_1_1_fence_a157631b1deea51961146cf607cb6c303} 
 Vk\+Fence {\bfseries native} () const
@@ -83,11 +83,11 @@ Transfers ownership from another fence.
 \begin{DoxyReturn}{Returns}
 Reference to this fence. 
 \end{DoxyReturn}
-\Hypertarget{class_lava_v_k_1_1_fence_a09d94207721d36b6a2134760764f9080}\index{LavaVK::Fence@{LavaVK::Fence}!reset@{reset}}
+\Hypertarget{class_lava_v_k_1_1_fence_ac0069cdb61b5379e2a412a8721c77fca}\index{LavaVK::Fence@{LavaVK::Fence}!reset@{reset}}
 \index{reset@{reset}!LavaVK::Fence@{LavaVK::Fence}}
 \doxysubsubsection{\texorpdfstring{reset()}{reset()}}
-{\footnotesize\ttfamily \label{class_lava_v_k_1_1_fence_a09d94207721d36b6a2134760764f9080} 
-Vk\+Result Lava\+VK::\+\+Fence::\+reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_fence_ac0069cdb61b5379e2a412a8721c77fca} 
+\doxymbox{\hyperlink{struct_lava_v_k_1_1_result}{Result}} Lava\+VK::\+\+Fence::\+reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
 
 
 
@@ -96,11 +96,11 @@ Resets the fence to the unsignaled state.
 \begin{DoxyReturn}{Returns}
 Vulkan status code. 
 \end{DoxyReturn}
-\Hypertarget{class_lava_v_k_1_1_fence_ad0d834be1e7fef9f07e1313399174205}\index{LavaVK::Fence@{LavaVK::Fence}!wait@{wait}}
+\Hypertarget{class_lava_v_k_1_1_fence_a1b7335408c2fc7a5853736d5a8c6afb1}\index{LavaVK::Fence@{LavaVK::Fence}!wait@{wait}}
 \index{wait@{wait}!LavaVK::Fence@{LavaVK::Fence}}
 \doxysubsubsection{\texorpdfstring{wait()}{wait()}}
-{\footnotesize\ttfamily \label{class_lava_v_k_1_1_fence_ad0d834be1e7fef9f07e1313399174205} 
-Vk\+Result Lava\+VK::\+\+Fence::\+wait (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{timeout}{ = {\ttfamily UINT64\+\_\+MAX}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_fence_a1b7335408c2fc7a5853736d5a8c6afb1} 
+\doxymbox{\hyperlink{struct_lava_v_k_1_1_result}{Result}} Lava\+VK::\+\+Fence::\+wait (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{timeout}{ = {\ttfamily UINT64\+\_\+MAX}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
 
 
 

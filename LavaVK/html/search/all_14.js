@@ -1,18 +1,17 @@
 var searchData=
 [
-  ['_7ecommandpool_0',['~CommandPool',['../class_lava_v_k_1_1_command_pool.html#aa5b1fe4c7944ea3407060034c0a106c2',1,'LavaVK::CommandPool']]],
-  ['_7edescriptorpool_1',['~DescriptorPool',['../class_lava_v_k_1_1_descriptor_pool.html#aac7afad389ca32b3261dc0fc41981c97',1,'LavaVK::DescriptorPool']]],
-  ['_7edescriptorsetlayout_2',['~DescriptorSetLayout',['../class_lava_v_k_1_1_descriptor_set_layout.html#a169afc8c437b263dbdab11768dba4aa4',1,'LavaVK::DescriptorSetLayout']]],
-  ['_7edevice_3',['~Device',['../class_lava_v_k_1_1_device.html#a288ad958754b393656dd6ef9e94d7c08',1,'LavaVK::Device']]],
-  ['_7efence_4',['~Fence',['../class_lava_v_k_1_1_fence.html#ab3c979a9968a9fdf03cf5051f3cae0bd',1,'LavaVK::Fence']]],
-  ['_7eframebuffer_5',['~Framebuffer',['../class_lava_v_k_1_1_framebuffer.html#a39fea7c9ea60ed3770e1d9e9fcd54bfe',1,'LavaVK::Framebuffer']]],
-  ['_7egraphicspipeline_6',['~GraphicsPipeline',['../class_lava_v_k_1_1_graphics_pipeline.html#a49161fba268f6028fa0189bdb3e2b039',1,'LavaVK::GraphicsPipeline']]],
-  ['_7eimage_7',['~Image',['../class_lava_v_k_1_1_image.html#ae156a328b5e29b0706d15d0158422a41',1,'LavaVK::Image']]],
-  ['_7einstance_8',['~Instance',['../class_lava_v_k_1_1_instance.html#a0cdbb00095f6365b18bf23eee79f564f',1,'LavaVK::Instance']]],
-  ['_7epipelinelayout_9',['~PipelineLayout',['../class_lava_v_k_1_1_pipeline_layout.html#a0409738ff60d2eaaeacf98bc5ec8a647',1,'LavaVK::PipelineLayout']]],
-  ['_7erenderpass_10',['~RenderPass',['../class_lava_v_k_1_1_render_pass.html#a98c62209832152ee96227c14d902f837',1,'LavaVK::RenderPass']]],
-  ['_7esemaphore_11',['~Semaphore',['../class_lava_v_k_1_1_semaphore.html#a7a482c8ce0c64b0efb36cbfe85bc7698',1,'LavaVK::Semaphore']]],
-  ['_7eshader_12',['~Shader',['../class_lava_v_k_1_1_shader.html#a72c764c096a432608c53662bf4d0d683',1,'LavaVK::Shader']]],
-  ['_7esurface_13',['~Surface',['../class_lava_v_k_1_1_surface.html#ab7b9d7ae5b3925496f03dadbf4d6efe5',1,'LavaVK::Surface']]],
-  ['_7eswapchain_14',['~SwapChain',['../class_lava_v_k_1_1_swap_chain.html#ad281472f2bfb2481291edbadc08481be',1,'LavaVK::SwapChain']]]
+  ['wait_0',['wait',['../class_lava_v_k_1_1_fence.html#a1b7335408c2fc7a5853736d5a8c6afb1',1,'LavaVK::Fence']]],
+  ['waitidle_1',['waitIdle',['../class_lava_v_k_1_1_device.html#a3f7243b142b20cc71f541ec7a2444683',1,'LavaVK::Device::waitIdle()'],['../class_lava_v_k_1_1_queue.html#aef19252212737e63b05933084db55e36',1,'LavaVK::Queue::waitIdle()']]],
+  ['why_20lavavk_2',['Why LavaVK?',['../index.html#autotoc_md1',1,'']]],
+  ['window_3',['Present to window.',['../index.html#autotoc_md25',1,'']]],
+  ['window_20api_4',['&lt;ul class=&quot;check&quot;&gt;
+&lt;li class=&quot;checked&quot;&gt;Compatible with any Window API&lt;/li&gt;
+&lt;/ul&gt;
+',['../index.html#autotoc_md5',1,'']]],
+  ['with_20any_20window_20api_5',['&lt;ul class=&quot;check&quot;&gt;
+&lt;li class=&quot;checked&quot;&gt;Compatible with any Window API&lt;/li&gt;
+&lt;/ul&gt;
+',['../index.html#autotoc_md5',1,'']]],
+  ['writebuffer_6',['writeBuffer',['../class_lava_v_k_1_1_descriptor_writer.html#a63e65c3bbda705a90abfb6742b8d4da8',1,'LavaVK::DescriptorWriter']]],
+  ['writeimage_7',['writeImage',['../class_lava_v_k_1_1_descriptor_writer.html#a1135f9ec80e11a01b2256f6e1a8884a3',1,'LavaVK::DescriptorWriter']]]
 ];
