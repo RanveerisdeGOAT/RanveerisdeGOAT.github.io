@@ -1,0 +1,21 @@
+\doxysection{Error.\+hpp}
+\hypertarget{_error_8hpp_source}{}\label{_error_8hpp_source}\index{include/LavaVK/Error.hpp@{include/LavaVK/Error.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ paikr\ on\ 7/30/2026.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ LAVAVK\_ERROR\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ LAVAVK\_ERROR\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ LAVAVK\_ERROR\_HANDLER}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ LAVAVK\_ERROR\_HANDLER}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ NDEBUG}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ LAVAVK\_ERROR(msg)\ throw\ std::runtime\_error(msg)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ LAVAVK\_ERROR(msg)\ std::cerr\ <<\ msg\ <<\ std::endl}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//LAVAVK\_ERROR\_HPP}}
+
+\end{DoxyCode}

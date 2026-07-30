@@ -48,6 +48,8 @@ void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a92ff010f25662d901a8
 \begin{DoxyCompactList}\small\item\em Bind multiple vertex buffers at once starting at first\+Binding. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a444c9fecc4e4fb501a612c75bdb3a8c8}{bind\+Index\+Buffer}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_buffer}{Buffer}} \&index\+Buffer, Vk\+Index\+Type index\+Type=VK\+\_\+\+INDEX\+\_\+\+TYPE\+\_\+\+UINT16, Vk\+Device\+Size offset=0) const
 \begin{DoxyCompactList}\small\item\em Binds an index buffer (defaults to VK\+\_\+\+INDEX\+\_\+\+TYPE\+\_\+\+UINT16). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a2338a95c8a665ca24b4ad1daec4a0f4b}{bind\+Descriptor\+Sets}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_pipeline_layout}{Pipeline\+Layout}} \&layout, Pipeline\+Bind\+Point pipeline\+\_\+bind\+\_\+point, const std::\+vector$<$ Vk\+Descriptor\+Set $>$ \&descriptor\+\_\+sets, uint32\+\_\+t first\+\_\+set=0) const
+\begin{DoxyCompactList}\small\item\em Bind descriptor sets. \end{DoxyCompactList}\item 
 Vk\+Command\+Buffer \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a6ff0db89cd8dd1d310d65f3c88888ff7}{native}} () const
 \begin{DoxyCompactList}\small\item\em Returns the underlying Vulkan Vk\+Command\+Buffer handle. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a7a96e1ac3d0c4c782cb0481f59516345}{set\+Viewport}} (Vk\+Extent2D extent, float min\+Depth=0.\+0f, float max\+Depth=1.\+0f) const
@@ -174,6 +176,25 @@ Low-\/level entry point for callers that need full control over {\ttfamily Vk\+R
 {\em render\+Pass\+Info} & Native Vk\+Render\+Pass\+Begin\+Info detailing framebuffers, clear values, and render area. \\
 \hline
 {\em contents} & Defines if instructions are recorded directly inline or via secondary command buffers. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a2338a95c8a665ca24b4ad1daec4a0f4b}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!bindDescriptorSets@{bindDescriptorSets}}
+\index{bindDescriptorSets@{bindDescriptorSets}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{bindDescriptorSets()}{bindDescriptorSets()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a2338a95c8a665ca24b4ad1daec4a0f4b} 
+void Lava\+VK::\+\+Command\+Buffer::\+bind\+Descriptor\+Sets (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_pipeline_layout}{Pipeline\+Layout}} \&}]{layout}{, }\item[{Pipeline\+Bind\+Point}]{pipeline\+\_\+bind\+\_\+point}{, }\item[{const std::\+vector$<$ Vk\+Descriptor\+Set $>$ \&}]{descriptor\+\_\+sets}{, }\item[{uint32\+\_\+t}]{first\+\_\+set}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const}
+
+
+
+Bind descriptor sets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layout} & The Lava\+VK \doxylink{class_lava_v_k_1_1_pipeline_layout}{Pipeline\+Layout}. \\
+\hline
+{\em descriptor\+\_\+sets} & The list of descriptor sets to bind. \\
+\hline
+{\em first\+\_\+set} & The first set \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_lava_v_k_1_1_command_buffer_a444c9fecc4e4fb501a612c75bdb3a8c8}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!bindIndexBuffer@{bindIndexBuffer}}

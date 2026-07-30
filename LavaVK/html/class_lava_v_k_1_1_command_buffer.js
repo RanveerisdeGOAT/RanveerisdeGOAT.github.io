@@ -4,6 +4,7 @@ var class_lava_v_k_1_1_command_buffer =
     [ "begin", "class_lava_v_k_1_1_command_buffer.html#a9af1a3b839014a0b42a418cb1be65782", null ],
     [ "beginRenderPass", "class_lava_v_k_1_1_command_buffer.html#a376522ef3814292226375f4ba02ff785", null ],
     [ "beginRenderPass", "class_lava_v_k_1_1_command_buffer.html#a16541b9c8d52ccde1daffff059b1a224", null ],
+    [ "bindDescriptorSets", "class_lava_v_k_1_1_command_buffer.html#a2338a95c8a665ca24b4ad1daec4a0f4b", null ],
     [ "bindIndexBuffer", "class_lava_v_k_1_1_command_buffer.html#a444c9fecc4e4fb501a612c75bdb3a8c8", null ],
     [ "bindIndexBuffer", "class_lava_v_k_1_1_command_buffer.html#afeba5d6a21ad4970bbf976685c0824f8", null ],
     [ "bindPipeline", "class_lava_v_k_1_1_command_buffer.html#a35985fdf1065c1aa1a7744e3f72a6a1e", null ],

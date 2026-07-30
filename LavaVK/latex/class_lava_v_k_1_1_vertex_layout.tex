@@ -1,0 +1,162 @@
+\doxysection{Lava\+VK::\+Vertex\+Layout Class Reference}
+\hypertarget{class_lava_v_k_1_1_vertex_layout}{}\label{class_lava_v_k_1_1_vertex_layout}\index{LavaVK::VertexLayout@{LavaVK::VertexLayout}}
+
+
+Builder describing a vertex buffer\textquotesingle{}s binding and per-\/attribute layout for a pipeline.  
+
+
+
+
+{\ttfamily \+\#include $<$Buffer.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$auto Member\+Ptr$>$ }\\\doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout}{Vertex\+Layout}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout_a23f6cc315daacbff95341c303e984cae}{attribute}} (uint32\+\_\+t location, \doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}} format)
+\begin{DoxyCompactList}\small\item\em Adds a vertex attribute derived from a struct member pointer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout_aaf238c24008e01681c097c067ecfe8d3}{binding\+Index}} () const
+\begin{DoxyCompactList}\small\item\em Returns the vertex input binding slot this layout describes. \end{DoxyCompactList}\item 
+uint32\+\_\+t \doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout_af481d5b6e32b8b423de9d448043e75b4}{stride}} () const
+\begin{DoxyCompactList}\small\item\em Returns the byte stride between consecutive vertices. \end{DoxyCompactList}\item 
+const std::\+vector$<$ Vk\+Vertex\+Input\+Binding\+Description $>$ \& \doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout_a74a3ed7252c33394927077b049526eb2}{bindings}} () const
+\begin{DoxyCompactList}\small\item\em Returns the binding description(s) for this layout. \end{DoxyCompactList}\item 
+const std::\+vector$<$ Vk\+Vertex\+Input\+Attribute\+Description $>$ \& \doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout_ac4b3bf92206e8a4ea9762ad0c8dd520e}{attributes}} () const
+\begin{DoxyCompactList}\small\item\em Returns the attribute descriptions added to this layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Vertex$>$ }\\static \doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout}{Vertex\+Layout}} \doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout_a3a051452c47b81ea49e28791b42b93c7}{create}} (uint32\+\_\+t binding=0, Vk\+Vertex\+Input\+Rate input\+Rate=VK\+\_\+\+VERTEX\+\_\+\+INPUT\+\_\+\+RATE\+\_\+\+VERTEX)
+\begin{DoxyCompactList}\small\item\em Creates a vertex layout bound to a given binding slot, with stride derived from {\ttfamily Vertex}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Builder describing a vertex buffer\textquotesingle{}s binding and per-\/attribute layout for a pipeline. 
+
+{\ttfamily \doxylink{class_lava_v_k_1_1_vertex_layout}{Vertex\+Layout}} produces the {\ttfamily Vk\+Vertex\+Input\+Binding\+Description} and {\ttfamily Vk\+Vertex\+Input\+Attribute\+Description} list a {\ttfamily \doxylink{class_lava_v_k_1_1_graphics_pipeline}{Graphics\+Pipeline}} needs to interpret vertex buffer data, without the caller manually computing strides or {\ttfamily offsetof}-\/style byte offsets. \doxylink{class_lava_v_k_1_1_vertex_layout_a3a051452c47b81ea49e28791b42b93c7}{create()} establishes the binding (stride taken from {\ttfamily sizeof(\+Vertex)}), and chained calls to \doxylink{class_lava_v_k_1_1_vertex_layout_a23f6cc315daacbff95341c303e984cae}{attribute()} add one attribute per struct member, using a pointer-\/to-\/member template argument so the byte offset is computed automatically via \doxylink{struct_lava_v_k_1_1_member_traits}{Member\+Traits}.
+
+Example:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }Vertex\ \{}
+\DoxyCodeLine{\ \ \ \ glm::vec3\ position;}
+\DoxyCodeLine{\ \ \ \ glm::vec3\ color;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{LavaVK::VertexLayout\ vertexLayout\ =\ \doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout_a3a051452c47b81ea49e28791b42b93c7}{LavaVK::VertexLayout::create<Vertex>}}()}
+\DoxyCodeLine{\ \ \ \ .\doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout_a23f6cc315daacbff95341c303e984cae}{attribute}}<\&Vertex::position>(0,\ LavaVK::Format(LavaVK::ChannelOrder::RGB,\ LavaVK::BitDepth::B32,\ LavaVK::NumericType::Float))}
+\DoxyCodeLine{\ \ \ \ .\doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout_a23f6cc315daacbff95341c303e984cae}{attribute<\&Vertex::color>}}(1,\ LavaVK::Format(LavaVK::ChannelOrder::RGB,\ LavaVK::BitDepth::B32,\ LavaVK::NumericType::Float));}
+
+\end{DoxyCode}
+ 
+
+\label{class_lava_v_k_1_1_vertex_layout_doc-func-members}
+\Hypertarget{class_lava_v_k_1_1_vertex_layout_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lava_v_k_1_1_vertex_layout_a23f6cc315daacbff95341c303e984cae}\index{LavaVK::VertexLayout@{LavaVK::VertexLayout}!attribute@{attribute}}
+\index{attribute@{attribute}!LavaVK::VertexLayout@{LavaVK::VertexLayout}}
+\doxysubsubsection{\texorpdfstring{attribute()}{attribute()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_vertex_layout_a23f6cc315daacbff95341c303e984cae} 
+template$<$auto Member\+Ptr$>$ \\
+\doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout}{Vertex\+Layout}} \& Lava\+VK::\+\+Vertex\+Layout::\+attribute (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{location}{, }\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}}}]{format}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a vertex attribute derived from a struct member pointer. 
+
+The attribute\textquotesingle{}s byte offset within the vertex struct is computed automatically via \doxylink{struct_lava_v_k_1_1_member_traits}{Member\+Traits} from {\ttfamily Member\+Ptr}, so callers do not need to specify it manually. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Member\+Ptr} & Pointer-\/to-\/member of the vertex struct this attribute reads from (e.\+g. {\ttfamily \&Vertex::\+position}). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \doxylink{class_lava_v_k_1_1_shader}{Shader} input location this attribute binds to. \\
+\hline
+{\em format} & Vulkan-\/compatible \doxylink{class_lava_v_k_1_1_format}{Format} describing the attribute\textquotesingle{}s data layout. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this {\ttfamily \doxylink{class_lava_v_k_1_1_vertex_layout}{Vertex\+Layout}}, to allow chained {\ttfamily .\doxylink{class_lava_v_k_1_1_vertex_layout_a23f6cc315daacbff95341c303e984cae}{attribute}\texorpdfstring{$<$}{<}...\texorpdfstring{$>$}{>}(...)} calls. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_vertex_layout_ac4b3bf92206e8a4ea9762ad0c8dd520e}\index{LavaVK::VertexLayout@{LavaVK::VertexLayout}!attributes@{attributes}}
+\index{attributes@{attributes}!LavaVK::VertexLayout@{LavaVK::VertexLayout}}
+\doxysubsubsection{\texorpdfstring{attributes()}{attributes()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_vertex_layout_ac4b3bf92206e8a4ea9762ad0c8dd520e} 
+const std::\+vector$<$ Vk\+Vertex\+Input\+Attribute\+Description $>$ \& Lava\+VK::\+\+Vertex\+Layout::\+attributes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Returns the attribute descriptions added to this layout. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the vector of {\ttfamily Vk\+Vertex\+Input\+Attribute\+Description} entries added via \doxylink{class_lava_v_k_1_1_vertex_layout_a23f6cc315daacbff95341c303e984cae}{attribute()}. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_vertex_layout_aaf238c24008e01681c097c067ecfe8d3}\index{LavaVK::VertexLayout@{LavaVK::VertexLayout}!bindingIndex@{bindingIndex}}
+\index{bindingIndex@{bindingIndex}!LavaVK::VertexLayout@{LavaVK::VertexLayout}}
+\doxysubsubsection{\texorpdfstring{bindingIndex()}{bindingIndex()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_vertex_layout_aaf238c24008e01681c097c067ecfe8d3} 
+uint32\+\_\+t Lava\+VK::\+\+Vertex\+Layout::\+binding\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Returns the vertex input binding slot this layout describes. 
+
+\begin{DoxyReturn}{Returns}
+The binding index passed to \doxylink{class_lava_v_k_1_1_vertex_layout_a3a051452c47b81ea49e28791b42b93c7}{create()}. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_vertex_layout_a74a3ed7252c33394927077b049526eb2}\index{LavaVK::VertexLayout@{LavaVK::VertexLayout}!bindings@{bindings}}
+\index{bindings@{bindings}!LavaVK::VertexLayout@{LavaVK::VertexLayout}}
+\doxysubsubsection{\texorpdfstring{bindings()}{bindings()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_vertex_layout_a74a3ed7252c33394927077b049526eb2} 
+const std::\+vector$<$ Vk\+Vertex\+Input\+Binding\+Description $>$ \& Lava\+VK::\+\+Vertex\+Layout::\+bindings (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Returns the binding description(s) for this layout. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the vector of {\ttfamily Vk\+Vertex\+Input\+Binding\+Description} entries (populated with a single entry by \doxylink{class_lava_v_k_1_1_vertex_layout_a3a051452c47b81ea49e28791b42b93c7}{create()}). 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_vertex_layout_a3a051452c47b81ea49e28791b42b93c7}\index{LavaVK::VertexLayout@{LavaVK::VertexLayout}!create@{create}}
+\index{create@{create}!LavaVK::VertexLayout@{LavaVK::VertexLayout}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_vertex_layout_a3a051452c47b81ea49e28791b42b93c7} 
+template$<$typename Vertex$>$ \\
+\doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout}{Vertex\+Layout}} Lava\+VK::\+\+Vertex\+Layout::\+create (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{binding}{ = {\ttfamily 0}, }\item[{Vk\+Vertex\+Input\+Rate}]{input\+Rate}{ = {\ttfamily VK\+\_\+VERTEX\+\_\+INPUT\+\_\+RATE\+\_\+VERTEX}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a vertex layout bound to a given binding slot, with stride derived from {\ttfamily Vertex}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Vertex} & The vertex struct type this layout describes; its size (via {\ttfamily sizeof(\+Vertex)}) becomes the binding\textquotesingle{}s stride. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em binding} & Vertex input binding slot this layout describes. \\
+\hline
+{\em input\+Rate} & Whether vertex data advances per-\/vertex or per-\/instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{class_lava_v_k_1_1_vertex_layout}{Vertex\+Layout} with its binding description populated; call \doxylink{class_lava_v_k_1_1_vertex_layout_a23f6cc315daacbff95341c303e984cae}{attribute()} on the result to add per-\/member attributes. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_vertex_layout_af481d5b6e32b8b423de9d448043e75b4}\index{LavaVK::VertexLayout@{LavaVK::VertexLayout}!stride@{stride}}
+\index{stride@{stride}!LavaVK::VertexLayout@{LavaVK::VertexLayout}}
+\doxysubsubsection{\texorpdfstring{stride()}{stride()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_vertex_layout_af481d5b6e32b8b423de9d448043e75b4} 
+uint32\+\_\+t Lava\+VK::\+\+Vertex\+Layout::\+stride (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Returns the byte stride between consecutive vertices. 
+
+\begin{DoxyReturn}{Returns}
+The stride, in bytes, derived from {\ttfamily sizeof(\+Vertex)} in \doxylink{class_lava_v_k_1_1_vertex_layout_a3a051452c47b81ea49e28791b42b93c7}{create()}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Buffer.\+hpp\end{DoxyCompactItemize}

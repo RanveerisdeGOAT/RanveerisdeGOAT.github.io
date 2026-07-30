@@ -1,5 +1,12 @@
 var NAVTREEINDEX1 =
 {
+"class_lava_v_k_1_1_vertex_layout.html":[7,0,0,36],
+"class_lava_v_k_1_1_vertex_layout.html#a23f6cc315daacbff95341c303e984cae":[7,0,0,36,0],
+"class_lava_v_k_1_1_vertex_layout.html#a74a3ed7252c33394927077b049526eb2":[7,0,0,36,3],
+"class_lava_v_k_1_1_vertex_layout.html#aaf238c24008e01681c097c067ecfe8d3":[7,0,0,36,2],
+"class_lava_v_k_1_1_vertex_layout.html#ac4b3bf92206e8a4ea9762ad0c8dd520e":[7,0,0,36,1],
+"class_lava_v_k_1_1_vertex_layout.html#af481d5b6e32b8b423de9d448043e75b4":[7,0,0,36,4],
+"classes.html":[7,1],
 "dir_b0d76d92ce496aed673b3b487890bd48.html":[8,0,0,0],
 "dir_d44c64559bbebec7f509842c48db8b23.html":[8,0,0],
 "files.html":[8,0],
@@ -160,5 +167,13 @@ var NAVTREEINDEX1 =
 "struct_lava_v_k_1_1_surface_capabilities.html#af7e0b979e0745a14aa2251af3fff9f03":[7,0,0,31,2],
 "struct_lava_v_k_1_1_surface_format_info.html":[7,0,0,32],
 "struct_lava_v_k_1_1_surface_format_info.html#a5b4007b2dfe1104886b2cf0a3aa31136":[7,0,0,32,1],
-"struct_lava_v_k_1_1_surface_format_info.html#af32e8beea36ace425c469921828fb4c1":[7,0,0,32,0]
+"struct_lava_v_k_1_1_surface_format_info.html#af32e8beea36ace425c469921828fb4c1":[7,0,0,32,0],
+"struct_lava_v_k_1_1_texture_sampler_create_info.html":[7,0,0,35],
+"struct_lava_v_k_1_1_texture_sampler_create_info.html#a21c1d08faa1ca650307a03a7101a5509":[7,0,0,35,4],
+"struct_lava_v_k_1_1_texture_sampler_create_info.html#a2a2745e460c515d0bb2632ed9d5128c4":[7,0,0,35,0],
+"struct_lava_v_k_1_1_texture_sampler_create_info.html#a34a22465fa4f656cd8a53e04bff36ce3":[7,0,0,35,5],
+"struct_lava_v_k_1_1_texture_sampler_create_info.html#a6e011e6c678f66097916ed41b1b4ff36":[7,0,0,35,1],
+"struct_lava_v_k_1_1_texture_sampler_create_info.html#aa81badcdb401e79e1c1b73b85a9303cd":[7,0,0,35,6],
+"struct_lava_v_k_1_1_texture_sampler_create_info.html#ac8f4ba29f4f5b9ccfd0ceb90085e650c":[7,0,0,35,3],
+"struct_lava_v_k_1_1_texture_sampler_create_info.html#af915efc5a8a9279127e5381ee24aac95":[7,0,0,35,2]
 };

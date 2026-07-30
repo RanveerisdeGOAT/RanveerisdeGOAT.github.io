@@ -35,6 +35,8 @@ var annotated_dup =
       [ "SurfaceCapabilities", "struct_lava_v_k_1_1_surface_capabilities.html", "struct_lava_v_k_1_1_surface_capabilities" ],
       [ "SurfaceFormatInfo", "struct_lava_v_k_1_1_surface_format_info.html", "struct_lava_v_k_1_1_surface_format_info" ],
       [ "SwapChain", "class_lava_v_k_1_1_swap_chain.html", "class_lava_v_k_1_1_swap_chain" ],
+      [ "Texture", "class_lava_v_k_1_1_texture.html", "class_lava_v_k_1_1_texture" ],
+      [ "TextureSamplerCreateInfo", "struct_lava_v_k_1_1_texture_sampler_create_info.html", "struct_lava_v_k_1_1_texture_sampler_create_info" ],
       [ "VertexLayout", "class_lava_v_k_1_1_vertex_layout.html", "class_lava_v_k_1_1_vertex_layout" ]
     ] ]
 ];

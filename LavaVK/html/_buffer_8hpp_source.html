@@ -134,424 +134,275 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_buffer_8hpp_s
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;Error.hpp&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span>LavaVK {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">class </span><a class="code hl_class" href="class_lava_v_k_1_1_render_pass.html">RenderPass</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">enum class</span> ImageType {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        IMAGE_1D, </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        IMAGE_2D, </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        IMAGE_3D </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    };</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">enum class</span> ImageUsage : VkImageUsageFlags {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        NONE = 0, </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        TRANSFER_SRC = VK_IMAGE_USAGE_TRANSFER_SRC_BIT, </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        TRANSFER_DST = VK_IMAGE_USAGE_TRANSFER_DST_BIT, </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        SAMPLED = VK_IMAGE_USAGE_SAMPLED_BIT, </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        STORAGE = VK_IMAGE_USAGE_STORAGE_BIT, </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        COLOR_ATTACHMENT = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT, </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        DEPTH_ATTACHMENT = VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        TRANSIENT = VK_IMAGE_USAGE_TRANSIENT_ATTACHMENT_BIT, </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        INPUT_ATTACHMENT = VK_IMAGE_USAGE_INPUT_ATTACHMENT_BIT </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    };</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">inline</span> ImageUsage operator|(ImageUsage a, ImageUsage b) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>ImageUsage<span class="keyword">&gt;</span>(</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keyword">static_cast&lt;</span>VkImageUsageFlags<span class="keyword">&gt;</span>(a) |</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keyword">static_cast&lt;</span>VkImageUsageFlags<span class="keyword">&gt;</span>(b));</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="foldopen" id="foldopen00059" data-start="{" data-end="};">
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_image_create_info.html">   59</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_lava_v_k_1_1_image_create_info.html">ImageCreateInfo</a> {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_image_create_info.html#aeb301341d9a3d0c64494d35b4537c395">   63</a></span>        ImageType <a class="code hl_variable" href="struct_lava_v_k_1_1_image_create_info.html#aeb301341d9a3d0c64494d35b4537c395">type</a> = ImageType::IMAGE_2D;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
-<div class="foldopen" id="foldopen00068" data-start="{" data-end="};">
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_image_create_info.html#abef2d37092138f5158bd7702524a48e9">   68</a></span>        VkExtent3D <a class="code hl_variable" href="struct_lava_v_k_1_1_image_create_info.html#abef2d37092138f5158bd7702524a48e9">extent</a></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            1,</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            1,</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            1</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        };</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">class </span><a class="code hl_class" href="class_lava_v_k_1_1_image.html">Image</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">class </span><a class="code hl_class" href="class_lava_v_k_1_1_render_pass.html">RenderPass</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_framebuffer.html">   37</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#a13c2a85656ad5d710bd7beb1b960368e">Framebuffer</a> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#a13c2a85656ad5d710bd7beb1b960368e">Framebuffer</a>(</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <a class="code hl_class" href="class_lava_v_k_1_1_render_pass.html">RenderPass</a> &amp;renderPass,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keyword">const</span> std::vector&lt;Image *&gt; &amp;<a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#a2bf3e41791a9dbda664eb3462a32f110">attachments</a>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#a39fea7c9ea60ed3770e1d9e9fcd54bfe">~Framebuffer</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="comment">// Framebuffer(const Framebuffer&amp;) = delete;</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="comment">// Framebuffer&amp; operator=(const Framebuffer&amp;) = delete;</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        [[nodiscard]]</div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_framebuffer.html#aea765421bdb25305d77a43cc0908940a">   72</a></span>        VkFramebuffer <a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#aea765421bdb25305d77a43cc0908940a">native</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">return</span> m_framebuffer;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
 </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_image_create_info.html#a16f9666098e1b669ce44ce76fad22cc3">   78</a></span>        VkFormat <a class="code hl_variable" href="struct_lava_v_k_1_1_image_create_info.html#a16f9666098e1b669ce44ce76fad22cc3">format</a> = VK_FORMAT_R8G8B8A8_UNORM;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_image_create_info.html#a8ddbbcb2a35823df33262e0dc6970e19">   83</a></span>        ImageUsage <a class="code hl_variable" href="struct_lava_v_k_1_1_image_create_info.html#a8ddbbcb2a35823df33262e0dc6970e19">usage</a> = ImageUsage::SAMPLED;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_image_create_info.html#a4a2313eec7bb043f6e13d8c7e02a8ee0">   88</a></span>        VkImageAspectFlags <a class="code hl_variable" href="struct_lava_v_k_1_1_image_create_info.html#a4a2313eec7bb043f6e13d8c7e02a8ee0">aspect</a> = VK_IMAGE_ASPECT_COLOR_BIT;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_image_create_info.html#a7471f7145d9d7136d84450cd506b9751">   93</a></span>        VkSampleCountFlagBits <a class="code hl_variable" href="struct_lava_v_k_1_1_image_create_info.html#a7471f7145d9d7136d84450cd506b9751">samples</a> =</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                VK_SAMPLE_COUNT_1_BIT;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_image_create_info.html#aaf779a68325954a9c5f783886c7a20a8">   99</a></span>        VkImageTiling <a class="code hl_variable" href="struct_lava_v_k_1_1_image_create_info.html#aaf779a68325954a9c5f783886c7a20a8">tiling</a> =</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                VK_IMAGE_TILING_OPTIMAL;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_image_create_info.html#a26ec0b3311e1b7be82c2aa973683c32d">  105</a></span>        VkMemoryPropertyFlags <a class="code hl_variable" href="struct_lava_v_k_1_1_image_create_info.html#a26ec0b3311e1b7be82c2aa973683c32d">memory</a> =</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_image_create_info.html#a71035eb8eb02bbc130dfa7a002bd50c7">  111</a></span>        uint32_t <a class="code hl_variable" href="struct_lava_v_k_1_1_image_create_info.html#a71035eb8eb02bbc130dfa7a002bd50c7">mipLevels</a> = 1;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_image_create_info.html#aa375f9fd0acbfcb2116f12516f053427">  116</a></span>        uint32_t <a class="code hl_variable" href="struct_lava_v_k_1_1_image_create_info.html#aa375f9fd0acbfcb2116f12516f053427">arrayLayers</a> = 1;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    };</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        [[nodiscard]]</div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_framebuffer.html#a2bf3e41791a9dbda664eb3462a32f110">   81</a></span>        <span class="keyword">const</span> std::vector&lt;Image *&gt; &amp;<a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#a2bf3e41791a9dbda664eb3462a32f110">attachments</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">return</span> m_attachments;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
 </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
-<div class="foldopen" id="foldopen00148" data-start="{" data-end="};">
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_image.html">  148</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> {</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">  156</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a>(</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device,</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <span class="keyword">const</span> <a class="code hl_struct" href="struct_lava_v_k_1_1_image_create_info.html">ImageCreateInfo</a> &amp;info);</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span></div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a>(</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device,</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            VkImage <a class="code hl_function" href="class_lava_v_k_1_1_image.html#ace8b47745ef03df9c7936fea5613b7ae">image</a>,</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            VkFormat <a class="code hl_function" href="class_lava_v_k_1_1_image.html#a1420c5467583133130a351ae8561b66a">format</a>,</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            VkImageAspectFlags aspect,</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            VkExtent3D <a class="code hl_function" href="class_lava_v_k_1_1_image.html#a1865b91906d0f4f28c071f48db596388">extent</a>);</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <a class="code hl_function" href="class_lava_v_k_1_1_image.html#ae156a328b5e29b0706d15d0158422a41">~Image</a>();</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> &amp;operator=(<span class="keyword">const</span> <a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a>(<a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> &amp;&amp;other) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span></div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> &amp;operator=(<a class="code hl_function" href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> &amp;&amp;other) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        [[nodiscard]]</div>
-<div class="foldopen" id="foldopen00225" data-start="{" data-end="}">
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_image.html#ace8b47745ef03df9c7936fea5613b7ae">  225</a></span>        VkImage <a class="code hl_function" href="class_lava_v_k_1_1_image.html#ace8b47745ef03df9c7936fea5613b7ae">image</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="keywordflow">return</span> m_image;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        VkFramebuffer m_framebuffer = VK_NULL_HANDLE;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        std::vector&lt;Image *&gt; m_attachments;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> &amp;m_device;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    };</div>
 </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        [[nodiscard]]</div>
-<div class="foldopen" id="foldopen00234" data-start="{" data-end="}">
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_image.html#afd9c6188f74389bb1be9287653d25e9b">  234</a></span>        VkImageView <a class="code hl_function" href="class_lava_v_k_1_1_image.html#afd9c6188f74389bb1be9287653d25e9b">view</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            <span class="keywordflow">return</span> m_view;</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">enum class</span> BufferUsage : VkBufferUsageFlags {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        Vertex = VK_BUFFER_USAGE_VERTEX_BUFFER_BIT, </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        Index = VK_BUFFER_USAGE_INDEX_BUFFER_BIT, </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        Uniform = VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        Storage = VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        TransferSrc = VK_BUFFER_USAGE_TRANSFER_SRC_BIT, </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        TransferDst = VK_BUFFER_USAGE_TRANSFER_DST_BIT, </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    };</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">inline</span> BufferUsage operator|(BufferUsage a, BufferUsage b) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>BufferUsage<span class="keyword">&gt;</span>(</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keyword">static_cast&lt;</span>VkBufferUsageFlags<span class="keyword">&gt;</span>(a) |</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <span class="keyword">static_cast&lt;</span>VkBufferUsageFlags<span class="keyword">&gt;</span>(b));</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keyword">enum class</span> MemoryUsage {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        GPU, </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        CPU, </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        CPU_TO_GPU, </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        GPU_TO_CPU </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    };</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="};">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_buffer_create_info.html">  130</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_lava_v_k_1_1_buffer_create_info.html">BufferCreateInfo</a> {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_buffer_create_info.html#a45be35a889168f71d608aa3fdcdcc05a">  132</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_variable" href="struct_lava_v_k_1_1_buffer_create_info.html#a45be35a889168f71d608aa3fdcdcc05a">size</a> = 0;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_buffer_create_info.html#a90e2ce6082adfd17c7fbef5d16891bd3">  135</a></span>        BufferUsage <a class="code hl_variable" href="struct_lava_v_k_1_1_buffer_create_info.html#a90e2ce6082adfd17c7fbef5d16891bd3">usage</a> =</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                BufferUsage::Vertex;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_buffer_create_info.html#a8bd028fbcab252ad137e2d187b425f1b">  139</a></span>        MemoryUsage <a class="code hl_variable" href="struct_lava_v_k_1_1_buffer_create_info.html#a8bd028fbcab252ad137e2d187b425f1b">memory</a> =</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                MemoryUsage::GPU;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    };</div>
 </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        [[nodiscard]]</div>
-<div class="foldopen" id="foldopen00243" data-start="{" data-end="}">
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_image.html#a1420c5467583133130a351ae8561b66a">  243</a></span>        VkFormat <a class="code hl_function" href="class_lava_v_k_1_1_image.html#a1420c5467583133130a351ae8561b66a">format</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            <span class="keywordflow">return</span> m_format;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="foldopen" id="foldopen00168" data-start="{" data-end="};">
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html">  168</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">  175</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a>(</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device,</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keyword">const</span> <a class="code hl_struct" href="struct_lava_v_k_1_1_buffer_create_info.html">BufferCreateInfo</a> &amp;info);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#ada5126479a61c24847a289427472a329">~Buffer</a>();</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;operator=(<span class="keyword">const</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a>(<a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;&amp;) noexcept;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;operator=(<a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;&amp;) noexcept;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordtype">void</span> *<a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a4c38f9aa95fa71b777cc8993bd29f7da">map</a>();</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a9240a18aadb722251e4653a5e25b4ddb">unmap</a>();</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a92e71f79f87085f93c0aba83676243e4">upload</a>(const <span class="keywordtype">void</span> *data, <span class="keywordtype">size_t</span> bytes);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        template&lt;typename T&gt;</div>
+<div class="foldopen" id="foldopen00245" data-start="{" data-end="}">
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#a114f30206a5b80a9576eb1df1cc1d533">  245</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a92e71f79f87085f93c0aba83676243e4">upload</a>(const T &amp;<span class="keywordtype">object</span>) {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a92e71f79f87085f93c0aba83676243e4">upload</a>(&amp;<span class="keywordtype">object</span>, <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        }</div>
 </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        [[nodiscard]]</div>
-<div class="foldopen" id="foldopen00252" data-start="{" data-end="}">
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_image.html#a1865b91906d0f4f28c071f48db596388">  252</a></span>        VkExtent3D <a class="code hl_function" href="class_lava_v_k_1_1_image.html#a1865b91906d0f4f28c071f48db596388">extent</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            <span class="keywordflow">return</span> m_extent;</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00255" data-start="{" data-end="}">
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#a8754d3644d50dc7389b48d992e79a782">  255</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a8754d3644d50dc7389b48d992e79a782">upload</a>(<span class="keyword">const</span> std::vector&lt;T&gt; &amp;data) {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a92e71f79f87085f93c0aba83676243e4">upload</a>(data.data(), data.size() * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        }</div>
 </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span></div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        [[nodiscard]]</div>
-<div class="foldopen" id="foldopen00266" data-start="{" data-end="}">
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_image.html#ae798fb44e9277eec633f663d9e509979">  266</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_lava_v_k_1_1_image.html#ae798fb44e9277eec633f663d9e509979">ownsImage</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            <span class="keywordflow">return</span> m_ownsImage;</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        }</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#ab101ca2089609dc1a6a22f59b76ba736">  263</a></span>        VkBuffer <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#ab101ca2089609dc1a6a22f59b76ba736">native</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_buffer; }</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#ad57af3cdf5f6be326bd9ab1b1bc8b1bd">  269</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#ad57af3cdf5f6be326bd9ab1b1bc8b1bd">size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_size; }</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#a08d56e68ab0e3792b5ad7e144e90ba09">  275</a></span>        BufferUsage <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a08d56e68ab0e3792b5ad7e144e90ba09">buffer</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_usage; }</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#a7aa710c684b547355fe86bf1f382d1fa">  281</a></span>        MemoryUsage <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a7aa710c684b547355fe86bf1f382d1fa">memory</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_memoryUsage; }</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> *m_device = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        VkBuffer m_buffer = VK_NULL_HANDLE;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        VkDeviceMemory m_memory = VK_NULL_HANDLE;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <span class="keywordtype">void</span> *m_mapped = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        <span class="keywordtype">size_t</span> m_size = 0;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        BufferUsage m_usage;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        MemoryUsage m_memoryUsage;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        <span class="keyword">static</span> uint32_t findMemoryType(VkPhysicalDevice physical, uint32_t uint32, VkFlags properties);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    };</div>
 </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> *m_device = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        VkImage m_image = VK_NULL_HANDLE;</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        VkImageView m_view = VK_NULL_HANDLE;</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        VkDeviceMemory m_memory = VK_NULL_HANDLE;</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        VkExtent3D m_extent{};</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        VkFormat m_format = VK_FORMAT_UNDEFINED;</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <span class="keywordtype">bool</span> m_ownsImage = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    };</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="keyword">template</span>&lt;auto MemberPtr&gt;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_member_traits.html">  316</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_lava_v_k_1_1_member_traits.html">MemberTraits</a>;</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> M, <span class="keyword">typename</span> S, M S::* MemberPtr&gt;</div>
+<div class="foldopen" id="foldopen00329" data-start="{" data-end="};">
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html">  329</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_lava_v_k_1_1_member_traits.html">MemberTraits</a>&lt;MemberPtr&gt; {</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#ae69cc2b020f4bbd4ee651387490c224f">  331</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#ae69cc2b020f4bbd4ee651387490c224f">MemberType</a> = M;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a01902eb0bffae303979efb474962d191">  333</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a01902eb0bffae303979efb474962d191">StructType</a> = S;</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span></div>
+<div class="foldopen" id="foldopen00342" data-start="{" data-end="}">
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a55cd85abc586e70c4c7f0b723302caa6">  342</a></span>        <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a55cd85abc586e70c4c7f0b723302caa6">offset</a>() {</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>            <span class="keyword">alignas</span>(S) <span class="keywordtype">char</span> buffer[<span class="keyword">sizeof</span>(S)];</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>            S *dummy = <span class="keyword">reinterpret_cast&lt;</span>S *<span class="keyword">&gt;</span>(buffer);</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(&amp;(dummy-&gt;*MemberPtr)) - buffer</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>            );</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        }</div>
 </div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span></div>
-<div class="foldopen" id="foldopen00301" data-start="{" data-end="};">
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_framebuffer.html">  301</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#a13c2a85656ad5d710bd7beb1b960368e">Framebuffer</a> {</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        <a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#a13c2a85656ad5d710bd7beb1b960368e">Framebuffer</a>(</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>            <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device,</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>            <a class="code hl_class" href="class_lava_v_k_1_1_render_pass.html">RenderPass</a> &amp;renderPass,</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>            <span class="keyword">const</span> std::vector&lt;Image *&gt; &amp;<a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#a2bf3e41791a9dbda664eb3462a32f110">attachments</a>);</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span></div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        <a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#a39fea7c9ea60ed3770e1d9e9fcd54bfe">~Framebuffer</a>();</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        <span class="comment">// Framebuffer(const Framebuffer&amp;) = delete;</span></div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        <span class="comment">// Framebuffer&amp; operator=(const Framebuffer&amp;) = delete;</span></div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span></div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        [[nodiscard]]</div>
-<div class="foldopen" id="foldopen00336" data-start="{" data-end="}">
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_framebuffer.html#aea765421bdb25305d77a43cc0908940a">  336</a></span>        VkFramebuffer <a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#aea765421bdb25305d77a43cc0908940a">native</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>            <span class="keywordflow">return</span> m_framebuffer;</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        }</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    };</div>
 </div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span></div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        [[nodiscard]]</div>
-<div class="foldopen" id="foldopen00345" data-start="{" data-end="}">
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_framebuffer.html#a2bf3e41791a9dbda664eb3462a32f110">  345</a></span>        <span class="keyword">const</span> std::vector&lt;Image *&gt; &amp;<a class="code hl_function" href="class_lava_v_k_1_1_framebuffer.html#a2bf3e41791a9dbda664eb3462a32f110">attachments</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>            <span class="keywordflow">return</span> m_attachments;</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        }</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span></div>
+<div class="foldopen" id="foldopen00376" data-start="{" data-end="};">
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html">  376</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_lava_v_k_1_1_vertex_layout.html">VertexLayout</a> {</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Vertex&gt;</div>
+<div class="foldopen" id="foldopen00388" data-start="{" data-end="}">
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#a3a051452c47b81ea49e28791b42b93c7">  388</a></span>        <span class="keyword">static</span> <a class="code hl_class" href="class_lava_v_k_1_1_vertex_layout.html">VertexLayout</a> <a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#a3a051452c47b81ea49e28791b42b93c7">create</a>(uint32_t binding = 0, VkVertexInputRate inputRate = VK_VERTEX_INPUT_RATE_VERTEX) {</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>            <a class="code hl_class" href="class_lava_v_k_1_1_vertex_layout.html">VertexLayout</a> layout;</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>            layout.m_stride = <span class="keyword">sizeof</span>(Vertex);</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>            layout.m_bindingIndex = binding;</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>            VkVertexInputBindingDescription bindingDescription{};</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>            bindingDescription.binding = binding;</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>            bindingDescription.stride = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(Vertex));</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>            bindingDescription.inputRate = inputRate;</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>            layout.m_bindings.push_back(bindingDescription);</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>            <span class="keywordflow">return</span> layout;</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>        }</div>
 </div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        VkFramebuffer m_framebuffer = VK_NULL_HANDLE;</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        std::vector&lt;Image *&gt; m_attachments;</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> &amp;m_device;</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    };</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span></div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        <span class="keyword">template</span>&lt;auto MemberPtr&gt;</div>
+<div class="foldopen" id="foldopen00415" data-start="{" data-end="}">
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#a23f6cc315daacbff95341c303e984cae">  415</a></span>        <a class="code hl_class" href="class_lava_v_k_1_1_vertex_layout.html">VertexLayout</a> &amp;<a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#a23f6cc315daacbff95341c303e984cae">attribute</a>(uint32_t location, <a class="code hl_class" href="class_lava_v_k_1_1_format.html">Format</a> format) {</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>            <span class="keyword">using </span>Traits = <a class="code hl_struct" href="struct_lava_v_k_1_1_member_traits.html">MemberTraits&lt;MemberPtr&gt;</a>;</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>            VkVertexInputAttributeDescription attr{};</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>            attr.location = location;</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>            attr.binding = m_bindingIndex; <span class="comment">// Uses the configured binding slot!</span></div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>            attr.format = <span class="keyword">static_cast&lt;</span>VkFormat<span class="keyword">&gt;</span>(format);</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>            attr.offset = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(Traits::offset());</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>            m_attributes.push_back(attr);</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span> </div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>        }</div>
 </div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span></div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <span class="keyword">enum class</span> BufferUsage : VkBufferUsageFlags {</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        Vertex = VK_BUFFER_USAGE_VERTEX_BUFFER_BIT, </div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        Index = VK_BUFFER_USAGE_INDEX_BUFFER_BIT, </div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>        Uniform = VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, </div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        Storage = VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, </div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span> </div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        TransferSrc = VK_BUFFER_USAGE_TRANSFER_SRC_BIT, </div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        TransferDst = VK_BUFFER_USAGE_TRANSFER_DST_BIT, </div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>    };</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span></div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    <span class="keyword">inline</span> BufferUsage operator|(BufferUsage a, BufferUsage b) {</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>BufferUsage<span class="keyword">&gt;</span>(</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>            <span class="keyword">static_cast&lt;</span>VkBufferUsageFlags<span class="keyword">&gt;</span>(a) |</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>            <span class="keyword">static_cast&lt;</span>VkBufferUsageFlags<span class="keyword">&gt;</span>(b));</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>    }</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span></div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    <span class="keyword">enum class</span> MemoryUsage {</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        GPU, </div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        CPU, </div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        CPU_TO_GPU, </div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        GPU_TO_CPU </div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    };</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span></div>
-<div class="foldopen" id="foldopen00394" data-start="{" data-end="};">
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_buffer_create_info.html">  394</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_lava_v_k_1_1_buffer_create_info.html">BufferCreateInfo</a> {</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_buffer_create_info.html#a45be35a889168f71d608aa3fdcdcc05a">  396</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_variable" href="struct_lava_v_k_1_1_buffer_create_info.html#a45be35a889168f71d608aa3fdcdcc05a">size</a> = 0;</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span></div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_buffer_create_info.html#a90e2ce6082adfd17c7fbef5d16891bd3">  399</a></span>        BufferUsage <a class="code hl_variable" href="struct_lava_v_k_1_1_buffer_create_info.html#a90e2ce6082adfd17c7fbef5d16891bd3">usage</a> =</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>                BufferUsage::Vertex;</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span></div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_buffer_create_info.html#a8bd028fbcab252ad137e2d187b425f1b">  403</a></span>        MemoryUsage <a class="code hl_variable" href="struct_lava_v_k_1_1_buffer_create_info.html#a8bd028fbcab252ad137e2d187b425f1b">memory</a> =</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>                MemoryUsage::GPU;</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    };</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span></div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        [[nodiscard]]</div>
+<div class="foldopen" id="foldopen00434" data-start="{" data-end="}">
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#aaf238c24008e01681c097c067ecfe8d3">  434</a></span>        uint32_t <a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#aaf238c24008e01681c097c067ecfe8d3">bindingIndex</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>            <span class="keywordflow">return</span> m_bindingIndex;</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        }</div>
 </div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span></div>
-<div class="foldopen" id="foldopen00432" data-start="{" data-end="};">
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html">  432</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> {</div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">  439</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span></div>
-<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a>(</div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>            <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device,</div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>            <span class="keyword">const</span> <a class="code hl_struct" href="struct_lava_v_k_1_1_buffer_create_info.html">BufferCreateInfo</a> &amp;info);</div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span></div>
-<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#ada5126479a61c24847a289427472a329">~Buffer</a>();</div>
-<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span> </div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span> </div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;operator=(<span class="keyword">const</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span></div>
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a>(<a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;&amp;) noexcept;</div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span></div>
-<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>        <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;operator=(<a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">Buffer</a> &amp;&amp;) noexcept;</div>
-<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span></div>
-<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>        <span class="keywordtype">void</span> *<a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a4c38f9aa95fa71b777cc8993bd29f7da">map</a>();</div>
-<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span></div>
-<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a9240a18aadb722251e4653a5e25b4ddb">unmap</a>();</div>
-<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span></div>
-<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a92e71f79f87085f93c0aba83676243e4">upload</a>(const <span class="keywordtype">void</span> *data, <span class="keywordtype">size_t</span> bytes);</div>
-<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span></div>
-<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        template&lt;typename T&gt;</div>
-<div class="foldopen" id="foldopen00509" data-start="{" data-end="}">
-<div class="line"><a id="l00509" name="l00509"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#a114f30206a5b80a9576eb1df1cc1d533">  509</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a92e71f79f87085f93c0aba83676243e4">upload</a>(const T &amp;<span class="keywordtype">object</span>) {</div>
-<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>            <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a92e71f79f87085f93c0aba83676243e4">upload</a>(&amp;<span class="keywordtype">object</span>, <span class="keyword">sizeof</span>(T));</div>
-<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>        }</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span></div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>        [[nodiscard]]</div>
+<div class="foldopen" id="foldopen00443" data-start="{" data-end="}">
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#af481d5b6e32b8b423de9d448043e75b4">  443</a></span>        uint32_t <a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#af481d5b6e32b8b423de9d448043e75b4">stride</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>            <span class="keywordflow">return</span> m_stride;</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>        }</div>
 </div>
-<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span></div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00519" data-start="{" data-end="}">
-<div class="line"><a id="l00519" name="l00519"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#a8754d3644d50dc7389b48d992e79a782">  519</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a8754d3644d50dc7389b48d992e79a782">upload</a>(<span class="keyword">const</span> std::vector&lt;T&gt; &amp;data) {</div>
-<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>            <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a92e71f79f87085f93c0aba83676243e4">upload</a>(data.data(), data.size() * <span class="keyword">sizeof</span>(T));</div>
-<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>        }</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span></div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>        [[nodiscard]]</div>
+<div class="foldopen" id="foldopen00453" data-start="{" data-end="}">
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#a74a3ed7252c33394927077b049526eb2">  453</a></span>        <span class="keyword">const</span> std::vector&lt;VkVertexInputBindingDescription&gt; &amp;<a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#a74a3ed7252c33394927077b049526eb2">bindings</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>            <span class="keywordflow">return</span> m_bindings;</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>        }</div>
 </div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span></div>
-<div class="line"><a id="l00527" name="l00527"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#ab101ca2089609dc1a6a22f59b76ba736">  527</a></span>        VkBuffer <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#ab101ca2089609dc1a6a22f59b76ba736">native</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_buffer; }</div>
-<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span></div>
-<div class="line"><a id="l00533" name="l00533"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#ad57af3cdf5f6be326bd9ab1b1bc8b1bd">  533</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#ad57af3cdf5f6be326bd9ab1b1bc8b1bd">size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_size; }</div>
-<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span></div>
-<div class="line"><a id="l00539" name="l00539"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#a08d56e68ab0e3792b5ad7e144e90ba09">  539</a></span>        BufferUsage <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a08d56e68ab0e3792b5ad7e144e90ba09">buffer</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_usage; }</div>
-<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span></div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_buffer.html#a7aa710c684b547355fe86bf1f382d1fa">  545</a></span>        MemoryUsage <a class="code hl_function" href="class_lava_v_k_1_1_buffer.html#a7aa710c684b547355fe86bf1f382d1fa">memory</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_memoryUsage; }</div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span> </div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>        <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> *m_device = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span> </div>
-<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>        VkBuffer m_buffer = VK_NULL_HANDLE;</div>
-<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span> </div>
-<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>        VkDeviceMemory m_memory = VK_NULL_HANDLE;</div>
-<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span> </div>
-<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>        <span class="keywordtype">void</span> *m_mapped = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span> </div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>        <span class="keywordtype">size_t</span> m_size = 0;</div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span> </div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>        BufferUsage m_usage;</div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span> </div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        MemoryUsage m_memoryUsage;</div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span></div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>        <span class="keyword">static</span> uint32_t findMemoryType(VkPhysicalDevice physical, uint32_t uint32, VkFlags properties);</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>    };</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span></div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>        [[nodiscard]]</div>
+<div class="foldopen" id="foldopen00463" data-start="{" data-end="}">
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#ac4b3bf92206e8a4ea9762ad0c8dd520e">  463</a></span>        <span class="keyword">const</span> std::vector&lt;VkVertexInputAttributeDescription&gt; &amp;<a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#ac4b3bf92206e8a4ea9762ad0c8dd520e">attributes</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>            <span class="keywordflow">return</span> m_attributes;</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>        }</div>
 </div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span></div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>    <span class="keyword">template</span>&lt;auto MemberPtr&gt;</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_member_traits.html">  580</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_lava_v_k_1_1_member_traits.html">MemberTraits</a>;</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span></div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> M, <span class="keyword">typename</span> S, M S::* MemberPtr&gt;</div>
-<div class="foldopen" id="foldopen00593" data-start="{" data-end="};">
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html">  593</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_lava_v_k_1_1_member_traits.html">MemberTraits</a>&lt;MemberPtr&gt; {</div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#ae69cc2b020f4bbd4ee651387490c224f">  595</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#ae69cc2b020f4bbd4ee651387490c224f">MemberType</a> = M;</div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a01902eb0bffae303979efb474962d191">  597</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a01902eb0bffae303979efb474962d191">StructType</a> = S;</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span></div>
-<div class="foldopen" id="foldopen00606" data-start="{" data-end="}">
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno"><a class="line" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a55cd85abc586e70c4c7f0b723302caa6">  606</a></span>        <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a55cd85abc586e70c4c7f0b723302caa6">offset</a>() {</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>            <span class="keyword">alignas</span>(S) <span class="keywordtype">char</span> buffer[<span class="keyword">sizeof</span>(S)];</div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>            S *dummy = <span class="keyword">reinterpret_cast&lt;</span>S *<span class="keyword">&gt;</span>(buffer);</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>                <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(&amp;(dummy-&gt;*MemberPtr)) - buffer</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>            );</div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>        }</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>        uint32_t m_stride = 0;</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>        uint32_t m_bindingIndex = 0;</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span> </div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>        std::vector&lt;VkVertexInputBindingDescription&gt; m_bindings;</div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>        std::vector&lt;VkVertexInputAttributeDescription&gt; m_attributes;</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>    };</div>
 </div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    };</div>
-</div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span></div>
-<div class="foldopen" id="foldopen00640" data-start="{" data-end="};">
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html">  640</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_lava_v_k_1_1_vertex_layout.html">VertexLayout</a> {</div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Vertex&gt;</div>
-<div class="foldopen" id="foldopen00652" data-start="{" data-end="}">
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#a3a051452c47b81ea49e28791b42b93c7">  652</a></span>        <span class="keyword">static</span> <a class="code hl_class" href="class_lava_v_k_1_1_vertex_layout.html">VertexLayout</a> <a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#a3a051452c47b81ea49e28791b42b93c7">create</a>(uint32_t binding = 0, VkVertexInputRate inputRate = VK_VERTEX_INPUT_RATE_VERTEX) {</div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>            <a class="code hl_class" href="class_lava_v_k_1_1_vertex_layout.html">VertexLayout</a> layout;</div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>            layout.m_stride = <span class="keyword">sizeof</span>(Vertex);</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>            layout.m_bindingIndex = binding;</div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span> </div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>            VkVertexInputBindingDescription bindingDescription{};</div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>            bindingDescription.binding = binding;</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>            bindingDescription.stride = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(Vertex));</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>            bindingDescription.inputRate = inputRate;</div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span> </div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>            layout.m_bindings.push_back(bindingDescription);</div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span> </div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>            <span class="keywordflow">return</span> layout;</div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>        }</div>
-</div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span></div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>        <span class="keyword">template</span>&lt;auto MemberPtr&gt;</div>
-<div class="foldopen" id="foldopen00679" data-start="{" data-end="}">
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#a23f6cc315daacbff95341c303e984cae">  679</a></span>        <a class="code hl_class" href="class_lava_v_k_1_1_vertex_layout.html">VertexLayout</a> &amp;<a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#a23f6cc315daacbff95341c303e984cae">attribute</a>(uint32_t location, <a class="code hl_class" href="class_lava_v_k_1_1_format.html">Format</a> format) {</div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>            <span class="keyword">using </span>Traits = <a class="code hl_struct" href="struct_lava_v_k_1_1_member_traits.html">MemberTraits&lt;MemberPtr&gt;</a>;</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span> </div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>            VkVertexInputAttributeDescription attr{};</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>            attr.location = location;</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>            attr.binding = m_bindingIndex; <span class="comment">// Uses the configured binding slot!</span></div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>            attr.format = <span class="keyword">static_cast&lt;</span>VkFormat<span class="keyword">&gt;</span>(format);</div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>            attr.offset = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(Traits::offset());</div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span> </div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>            m_attributes.push_back(attr);</div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span> </div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>        }</div>
-</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span></div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>        [[nodiscard]]</div>
-<div class="foldopen" id="foldopen00698" data-start="{" data-end="}">
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#aaf238c24008e01681c097c067ecfe8d3">  698</a></span>        uint32_t <a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#aaf238c24008e01681c097c067ecfe8d3">bindingIndex</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>            <span class="keywordflow">return</span> m_bindingIndex;</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>        }</div>
-</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span></div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        [[nodiscard]]</div>
-<div class="foldopen" id="foldopen00707" data-start="{" data-end="}">
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#af481d5b6e32b8b423de9d448043e75b4">  707</a></span>        uint32_t <a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#af481d5b6e32b8b423de9d448043e75b4">stride</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>            <span class="keywordflow">return</span> m_stride;</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>        }</div>
-</div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span></div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>        [[nodiscard]]</div>
-<div class="foldopen" id="foldopen00717" data-start="{" data-end="}">
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#a74a3ed7252c33394927077b049526eb2">  717</a></span>        <span class="keyword">const</span> std::vector&lt;VkVertexInputBindingDescription&gt; &amp;<a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#a74a3ed7252c33394927077b049526eb2">bindings</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>            <span class="keywordflow">return</span> m_bindings;</div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        }</div>
-</div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span></div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>        [[nodiscard]]</div>
-<div class="foldopen" id="foldopen00727" data-start="{" data-end="}">
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_vertex_layout.html#ac4b3bf92206e8a4ea9762ad0c8dd520e">  727</a></span>        <span class="keyword">const</span> std::vector&lt;VkVertexInputAttributeDescription&gt; &amp;<a class="code hl_function" href="class_lava_v_k_1_1_vertex_layout.html#ac4b3bf92206e8a4ea9762ad0c8dd520e">attributes</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>            <span class="keywordflow">return</span> m_attributes;</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>        }</div>
-</div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span> </div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        uint32_t m_stride = 0;</div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        uint32_t m_bindingIndex = 0;</div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span> </div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>        std::vector&lt;VkVertexInputBindingDescription&gt; m_bindings;</div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>        std::vector&lt;VkVertexInputAttributeDescription&gt; m_attributes;</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>    };</div>
-</div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>} <span class="comment">// namespace LavaVK</span></div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span> </div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span><span class="preprocessor">#endif </span><span class="comment">// LAVAVK_BUFFER_HPP</span></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a08d56e68ab0e3792b5ad7e144e90ba09"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a08d56e68ab0e3792b5ad7e144e90ba09">LavaVK::Buffer::buffer</a></div><div class="ttdeci">BufferUsage buffer() const</div><div class="ttdoc">Returns the usage flags this buffer was created with.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:539</div></div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>} <span class="comment">// namespace LavaVK</span></div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span> </div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span><span class="preprocessor">#endif </span><span class="comment">// LAVAVK_BUFFER_HPP</span></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a08d56e68ab0e3792b5ad7e144e90ba09"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a08d56e68ab0e3792b5ad7e144e90ba09">LavaVK::Buffer::buffer</a></div><div class="ttdeci">BufferUsage buffer() const</div><div class="ttdoc">Returns the usage flags this buffer was created with.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:275</div></div>
 <div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a0bbc6acb1d0662403cf08fa1abc2f769"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a0bbc6acb1d0662403cf08fa1abc2f769">LavaVK::Buffer::Buffer</a></div><div class="ttdeci">Buffer()=default</div><div class="ttdoc">Constructs an empty buffer.</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a4c38f9aa95fa71b777cc8993bd29f7da"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a4c38f9aa95fa71b777cc8993bd29f7da">LavaVK::Buffer::map</a></div><div class="ttdeci">void * map()</div><div class="ttdoc">Maps the buffer&#39;s memory into host address space.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:375</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a7aa710c684b547355fe86bf1f382d1fa"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a7aa710c684b547355fe86bf1f382d1fa">LavaVK::Buffer::memory</a></div><div class="ttdeci">MemoryUsage memory() const</div><div class="ttdoc">Returns the memory placement this buffer was created with.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:545</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a8754d3644d50dc7389b48d992e79a782"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a8754d3644d50dc7389b48d992e79a782">LavaVK::Buffer::upload</a></div><div class="ttdeci">void upload(const std::vector&lt; T &gt; &amp;data)</div><div class="ttdoc">Uploads the contents of a std::vector into the buffer.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:519</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a9240a18aadb722251e4653a5e25b4ddb"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a9240a18aadb722251e4653a5e25b4ddb">LavaVK::Buffer::unmap</a></div><div class="ttdeci">void unmap()</div><div class="ttdoc">Unmaps previously mapped buffer memory.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:384</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a92e71f79f87085f93c0aba83676243e4"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a92e71f79f87085f93c0aba83676243e4">LavaVK::Buffer::upload</a></div><div class="ttdeci">void upload(const void *data, size_t bytes)</div><div class="ttdoc">Uploads raw bytes into the buffer.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:391</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_ab101ca2089609dc1a6a22f59b76ba736"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#ab101ca2089609dc1a6a22f59b76ba736">LavaVK::Buffer::native</a></div><div class="ttdeci">VkBuffer native() const</div><div class="ttdoc">Returns the native Vulkan buffer handle.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:527</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_ad57af3cdf5f6be326bd9ab1b1bc8b1bd"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#ad57af3cdf5f6be326bd9ab1b1bc8b1bd">LavaVK::Buffer::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">Returns the size of the buffer.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:533</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_ada5126479a61c24847a289427472a329"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#ada5126479a61c24847a289427472a329">LavaVK::Buffer::~Buffer</a></div><div class="ttdeci">~Buffer()</div><div class="ttdoc">Destroys the buffer and frees its backing memory.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:320</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a4c38f9aa95fa71b777cc8993bd29f7da"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a4c38f9aa95fa71b777cc8993bd29f7da">LavaVK::Buffer::map</a></div><div class="ttdeci">void * map()</div><div class="ttdoc">Maps the buffer&#39;s memory into host address space.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:171</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a7aa710c684b547355fe86bf1f382d1fa"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a7aa710c684b547355fe86bf1f382d1fa">LavaVK::Buffer::memory</a></div><div class="ttdeci">MemoryUsage memory() const</div><div class="ttdoc">Returns the memory placement this buffer was created with.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:281</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a8754d3644d50dc7389b48d992e79a782"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a8754d3644d50dc7389b48d992e79a782">LavaVK::Buffer::upload</a></div><div class="ttdeci">void upload(const std::vector&lt; T &gt; &amp;data)</div><div class="ttdoc">Uploads the contents of a std::vector into the buffer.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:255</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a9240a18aadb722251e4653a5e25b4ddb"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a9240a18aadb722251e4653a5e25b4ddb">LavaVK::Buffer::unmap</a></div><div class="ttdeci">void unmap()</div><div class="ttdoc">Unmaps previously mapped buffer memory.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:180</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_a92e71f79f87085f93c0aba83676243e4"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#a92e71f79f87085f93c0aba83676243e4">LavaVK::Buffer::upload</a></div><div class="ttdeci">void upload(const void *data, size_t bytes)</div><div class="ttdoc">Uploads raw bytes into the buffer.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:187</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_ab101ca2089609dc1a6a22f59b76ba736"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#ab101ca2089609dc1a6a22f59b76ba736">LavaVK::Buffer::native</a></div><div class="ttdeci">VkBuffer native() const</div><div class="ttdoc">Returns the native Vulkan buffer handle.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:263</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_ad57af3cdf5f6be326bd9ab1b1bc8b1bd"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#ad57af3cdf5f6be326bd9ab1b1bc8b1bd">LavaVK::Buffer::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">Returns the size of the buffer.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:269</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_buffer_html_ada5126479a61c24847a289427472a329"><div class="ttname"><a href="class_lava_v_k_1_1_buffer.html#ada5126479a61c24847a289427472a329">LavaVK::Buffer::~Buffer</a></div><div class="ttdeci">~Buffer()</div><div class="ttdoc">Destroys the buffer and frees its backing memory.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:116</div></div>
 <div class="ttc" id="aclass_lava_v_k_1_1_device_html"><div class="ttname"><a href="class_lava_v_k_1_1_device.html">LavaVK::Device</a></div><div class="ttdoc">Manages the Vulkan physical device selection, logical device instantiation (VkDevice),...</div><div class="ttdef"><b>Definition</b> Device.hpp:230</div></div>
 <div class="ttc" id="aclass_lava_v_k_1_1_format_html"><div class="ttname"><a href="class_lava_v_k_1_1_format.html">LavaVK::Format</a></div><div class="ttdoc">Structured, human-readable representation of a Vulkan pixel format.</div><div class="ttdef"><b>Definition</b> Core.hpp:82</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_framebuffer_html_a13c2a85656ad5d710bd7beb1b960368e"><div class="ttname"><a href="class_lava_v_k_1_1_framebuffer.html#a13c2a85656ad5d710bd7beb1b960368e">LavaVK::Framebuffer::Framebuffer</a></div><div class="ttdeci">Framebuffer(Device &amp;device, RenderPass &amp;renderPass, const std::vector&lt; Image * &gt; &amp;attachments)</div><div class="ttdoc">Creates a framebuffer from a collection of image attachments.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:212</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_framebuffer_html_a2bf3e41791a9dbda664eb3462a32f110"><div class="ttname"><a href="class_lava_v_k_1_1_framebuffer.html#a2bf3e41791a9dbda664eb3462a32f110">LavaVK::Framebuffer::attachments</a></div><div class="ttdeci">const std::vector&lt; Image * &gt; &amp; attachments() const</div><div class="ttdoc">Returns the images attached to this framebuffer.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:345</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_framebuffer_html_a39fea7c9ea60ed3770e1d9e9fcd54bfe"><div class="ttname"><a href="class_lava_v_k_1_1_framebuffer.html#a39fea7c9ea60ed3770e1d9e9fcd54bfe">LavaVK::Framebuffer::~Framebuffer</a></div><div class="ttdeci">~Framebuffer()</div><div class="ttdoc">Destroys the framebuffer.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:249</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_framebuffer_html_aea765421bdb25305d77a43cc0908940a"><div class="ttname"><a href="class_lava_v_k_1_1_framebuffer.html#aea765421bdb25305d77a43cc0908940a">LavaVK::Framebuffer::native</a></div><div class="ttdeci">VkFramebuffer native() const</div><div class="ttdoc">Returns the native Vulkan framebuffer.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:336</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_image_html_a1420c5467583133130a351ae8561b66a"><div class="ttname"><a href="class_lava_v_k_1_1_image.html#a1420c5467583133130a351ae8561b66a">LavaVK::Image::format</a></div><div class="ttdeci">VkFormat format() const</div><div class="ttdoc">Returns the image format.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:243</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_image_html_a1865b91906d0f4f28c071f48db596388"><div class="ttname"><a href="class_lava_v_k_1_1_image.html#a1865b91906d0f4f28c071f48db596388">LavaVK::Image::extent</a></div><div class="ttdeci">VkExtent3D extent() const</div><div class="ttdoc">Returns the image dimensions.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:252</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_image_html_abf9e91b93d3bfcb554e69a91015cc2d4"><div class="ttname"><a href="class_lava_v_k_1_1_image.html#abf9e91b93d3bfcb554e69a91015cc2d4">LavaVK::Image::Image</a></div><div class="ttdeci">Image()=default</div><div class="ttdoc">Constructs an empty image.</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_image_html_ace8b47745ef03df9c7936fea5613b7ae"><div class="ttname"><a href="class_lava_v_k_1_1_image.html#ace8b47745ef03df9c7936fea5613b7ae">LavaVK::Image::image</a></div><div class="ttdeci">VkImage image() const</div><div class="ttdoc">Returns the underlying Vulkan image.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:225</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_image_html_ae156a328b5e29b0706d15d0158422a41"><div class="ttname"><a href="class_lava_v_k_1_1_image.html#ae156a328b5e29b0706d15d0158422a41">LavaVK::Image::~Image</a></div><div class="ttdeci">~Image()</div><div class="ttdoc">Destroys the image view and owned image resources.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:147</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_image_html_ae798fb44e9277eec633f663d9e509979"><div class="ttname"><a href="class_lava_v_k_1_1_image.html#ae798fb44e9277eec633f663d9e509979">LavaVK::Image::ownsImage</a></div><div class="ttdeci">bool ownsImage() const</div><div class="ttdoc">Returns whether this object owns the underlying image.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:266</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_image_html_afd9c6188f74389bb1be9287653d25e9b"><div class="ttname"><a href="class_lava_v_k_1_1_image.html#afd9c6188f74389bb1be9287653d25e9b">LavaVK::Image::view</a></div><div class="ttdeci">VkImageView view() const</div><div class="ttdoc">Returns the associated image view.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:234</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_framebuffer_html_a13c2a85656ad5d710bd7beb1b960368e"><div class="ttname"><a href="class_lava_v_k_1_1_framebuffer.html#a13c2a85656ad5d710bd7beb1b960368e">LavaVK::Framebuffer::Framebuffer</a></div><div class="ttdeci">Framebuffer(Device &amp;device, RenderPass &amp;renderPass, const std::vector&lt; Image * &gt; &amp;attachments)</div><div class="ttdoc">Creates a framebuffer from a collection of image attachments.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:8</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_framebuffer_html_a2bf3e41791a9dbda664eb3462a32f110"><div class="ttname"><a href="class_lava_v_k_1_1_framebuffer.html#a2bf3e41791a9dbda664eb3462a32f110">LavaVK::Framebuffer::attachments</a></div><div class="ttdeci">const std::vector&lt; Image * &gt; &amp; attachments() const</div><div class="ttdoc">Returns the images attached to this framebuffer.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:81</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_framebuffer_html_a39fea7c9ea60ed3770e1d9e9fcd54bfe"><div class="ttname"><a href="class_lava_v_k_1_1_framebuffer.html#a39fea7c9ea60ed3770e1d9e9fcd54bfe">LavaVK::Framebuffer::~Framebuffer</a></div><div class="ttdeci">~Framebuffer()</div><div class="ttdoc">Destroys the framebuffer.</div><div class="ttdef"><b>Definition</b> Buffer.cpp:45</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_framebuffer_html_aea765421bdb25305d77a43cc0908940a"><div class="ttname"><a href="class_lava_v_k_1_1_framebuffer.html#aea765421bdb25305d77a43cc0908940a">LavaVK::Framebuffer::native</a></div><div class="ttdeci">VkFramebuffer native() const</div><div class="ttdoc">Returns the native Vulkan framebuffer.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:72</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_image_html"><div class="ttname"><a href="class_lava_v_k_1_1_image.html">LavaVK::Image</a></div><div class="ttdoc">Represents a Vulkan image and its associated image view.</div><div class="ttdef"><b>Definition</b> Texture.hpp:146</div></div>
 <div class="ttc" id="aclass_lava_v_k_1_1_render_pass_html"><div class="ttname"><a href="class_lava_v_k_1_1_render_pass.html">LavaVK::RenderPass</a></div><div class="ttdoc">Wrapper for Vulkan VkRenderPass.</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:102</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html">LavaVK::VertexLayout</a></div><div class="ttdoc">Builder describing a vertex buffer&#39;s binding and per-attribute layout for a pipeline.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:640</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_a23f6cc315daacbff95341c303e984cae"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#a23f6cc315daacbff95341c303e984cae">LavaVK::VertexLayout::attribute</a></div><div class="ttdeci">VertexLayout &amp; attribute(uint32_t location, Format format)</div><div class="ttdoc">Adds a vertex attribute derived from a struct member pointer.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:679</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_a3a051452c47b81ea49e28791b42b93c7"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#a3a051452c47b81ea49e28791b42b93c7">LavaVK::VertexLayout::create</a></div><div class="ttdeci">static VertexLayout create(uint32_t binding=0, VkVertexInputRate inputRate=VK_VERTEX_INPUT_RATE_VERTEX)</div><div class="ttdoc">Creates a vertex layout bound to a given binding slot, with stride derived from Vertex.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:652</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_a74a3ed7252c33394927077b049526eb2"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#a74a3ed7252c33394927077b049526eb2">LavaVK::VertexLayout::bindings</a></div><div class="ttdeci">const std::vector&lt; VkVertexInputBindingDescription &gt; &amp; bindings() const</div><div class="ttdoc">Returns the binding description(s) for this layout.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:717</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_aaf238c24008e01681c097c067ecfe8d3"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#aaf238c24008e01681c097c067ecfe8d3">LavaVK::VertexLayout::bindingIndex</a></div><div class="ttdeci">uint32_t bindingIndex() const</div><div class="ttdoc">Returns the vertex input binding slot this layout describes.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:698</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_ac4b3bf92206e8a4ea9762ad0c8dd520e"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#ac4b3bf92206e8a4ea9762ad0c8dd520e">LavaVK::VertexLayout::attributes</a></div><div class="ttdeci">const std::vector&lt; VkVertexInputAttributeDescription &gt; &amp; attributes() const</div><div class="ttdoc">Returns the attribute descriptions added to this layout.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:727</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_af481d5b6e32b8b423de9d448043e75b4"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#af481d5b6e32b8b423de9d448043e75b4">LavaVK::VertexLayout::stride</a></div><div class="ttdeci">uint32_t stride() const</div><div class="ttdoc">Returns the byte stride between consecutive vertices.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:707</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_buffer_create_info_html"><div class="ttname"><a href="struct_lava_v_k_1_1_buffer_create_info.html">LavaVK::BufferCreateInfo</a></div><div class="ttdoc">Describes the properties of a buffer to be created.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:394</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_buffer_create_info_html_a45be35a889168f71d608aa3fdcdcc05a"><div class="ttname"><a href="struct_lava_v_k_1_1_buffer_create_info.html#a45be35a889168f71d608aa3fdcdcc05a">LavaVK::BufferCreateInfo::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Size of the buffer, in bytes.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:396</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_buffer_create_info_html_a8bd028fbcab252ad137e2d187b425f1b"><div class="ttname"><a href="struct_lava_v_k_1_1_buffer_create_info.html#a8bd028fbcab252ad137e2d187b425f1b">LavaVK::BufferCreateInfo::memory</a></div><div class="ttdeci">MemoryUsage memory</div><div class="ttdoc">Memory placement hint controlling CPU/GPU visibility of the buffer&#39;s memory.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:403</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_buffer_create_info_html_a90e2ce6082adfd17c7fbef5d16891bd3"><div class="ttname"><a href="struct_lava_v_k_1_1_buffer_create_info.html#a90e2ce6082adfd17c7fbef5d16891bd3">LavaVK::BufferCreateInfo::usage</a></div><div class="ttdeci">BufferUsage usage</div><div class="ttdoc">Intended usage of the buffer (vertex, index, uniform, storage, transfer src/dst).</div><div class="ttdef"><b>Definition</b> Buffer.hpp:399</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_image_create_info_html"><div class="ttname"><a href="struct_lava_v_k_1_1_image_create_info.html">LavaVK::ImageCreateInfo</a></div><div class="ttdoc">Describes the properties of an image to be created.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:59</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_image_create_info_html_a16f9666098e1b669ce44ce76fad22cc3"><div class="ttname"><a href="struct_lava_v_k_1_1_image_create_info.html#a16f9666098e1b669ce44ce76fad22cc3">LavaVK::ImageCreateInfo::format</a></div><div class="ttdeci">VkFormat format</div><div class="ttdoc">Pixel format of the image.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:78</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_image_create_info_html_a26ec0b3311e1b7be82c2aa973683c32d"><div class="ttname"><a href="struct_lava_v_k_1_1_image_create_info.html#a26ec0b3311e1b7be82c2aa973683c32d">LavaVK::ImageCreateInfo::memory</a></div><div class="ttdeci">VkMemoryPropertyFlags memory</div><div class="ttdoc">Memory properties required for the image allocation.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:105</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_image_create_info_html_a4a2313eec7bb043f6e13d8c7e02a8ee0"><div class="ttname"><a href="struct_lava_v_k_1_1_image_create_info.html#a4a2313eec7bb043f6e13d8c7e02a8ee0">LavaVK::ImageCreateInfo::aspect</a></div><div class="ttdeci">VkImageAspectFlags aspect</div><div class="ttdoc">Aspect(s) accessible through the image view.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:88</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_image_create_info_html_a71035eb8eb02bbc130dfa7a002bd50c7"><div class="ttname"><a href="struct_lava_v_k_1_1_image_create_info.html#a71035eb8eb02bbc130dfa7a002bd50c7">LavaVK::ImageCreateInfo::mipLevels</a></div><div class="ttdeci">uint32_t mipLevels</div><div class="ttdoc">Number of mip levels.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:111</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_image_create_info_html_a7471f7145d9d7136d84450cd506b9751"><div class="ttname"><a href="struct_lava_v_k_1_1_image_create_info.html#a7471f7145d9d7136d84450cd506b9751">LavaVK::ImageCreateInfo::samples</a></div><div class="ttdeci">VkSampleCountFlagBits samples</div><div class="ttdoc">Number of MSAA samples.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:93</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_image_create_info_html_a8ddbbcb2a35823df33262e0dc6970e19"><div class="ttname"><a href="struct_lava_v_k_1_1_image_create_info.html#a8ddbbcb2a35823df33262e0dc6970e19">LavaVK::ImageCreateInfo::usage</a></div><div class="ttdeci">ImageUsage usage</div><div class="ttdoc">Intended usage of the image.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:83</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_image_create_info_html_aa375f9fd0acbfcb2116f12516f053427"><div class="ttname"><a href="struct_lava_v_k_1_1_image_create_info.html#aa375f9fd0acbfcb2116f12516f053427">LavaVK::ImageCreateInfo::arrayLayers</a></div><div class="ttdeci">uint32_t arrayLayers</div><div class="ttdoc">Number of array layers.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:116</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_image_create_info_html_aaf779a68325954a9c5f783886c7a20a8"><div class="ttname"><a href="struct_lava_v_k_1_1_image_create_info.html#aaf779a68325954a9c5f783886c7a20a8">LavaVK::ImageCreateInfo::tiling</a></div><div class="ttdeci">VkImageTiling tiling</div><div class="ttdoc">Image tiling mode.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:99</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_image_create_info_html_abef2d37092138f5158bd7702524a48e9"><div class="ttname"><a href="struct_lava_v_k_1_1_image_create_info.html#abef2d37092138f5158bd7702524a48e9">LavaVK::ImageCreateInfo::extent</a></div><div class="ttdeci">VkExtent3D extent</div><div class="ttdoc">Image width, height, and depth.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:69</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_image_create_info_html_aeb301341d9a3d0c64494d35b4537c395"><div class="ttname"><a href="struct_lava_v_k_1_1_image_create_info.html#aeb301341d9a3d0c64494d35b4537c395">LavaVK::ImageCreateInfo::type</a></div><div class="ttdeci">ImageType type</div><div class="ttdoc">Image dimensionality.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:63</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4_html_a01902eb0bffae303979efb474962d191"><div class="ttname"><a href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a01902eb0bffae303979efb474962d191">LavaVK::MemberTraits&lt; MemberPtr &gt;::StructType</a></div><div class="ttdeci">S StructType</div><div class="ttdoc">The struct type containing the member.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:597</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4_html_a55cd85abc586e70c4c7f0b723302caa6"><div class="ttname"><a href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a55cd85abc586e70c4c7f0b723302caa6">LavaVK::MemberTraits&lt; MemberPtr &gt;::offset</a></div><div class="ttdeci">static size_t offset()</div><div class="ttdoc">Calculates byte offset of the member inside the struct.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:606</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4_html_ae69cc2b020f4bbd4ee651387490c224f"><div class="ttname"><a href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#ae69cc2b020f4bbd4ee651387490c224f">LavaVK::MemberTraits&lt; MemberPtr &gt;::MemberType</a></div><div class="ttdeci">M MemberType</div><div class="ttdoc">The type of the member pointed to by MemberPtr.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:595</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_member_traits_html"><div class="ttname"><a href="struct_lava_v_k_1_1_member_traits.html">LavaVK::MemberTraits</a></div><div class="ttdoc">Primary template declaration for extracting member-pointer metadata; see the pointer-to-member specia...</div><div class="ttdef"><b>Definition</b> Buffer.hpp:580</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html">LavaVK::VertexLayout</a></div><div class="ttdoc">Builder describing a vertex buffer&#39;s binding and per-attribute layout for a pipeline.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:376</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_a23f6cc315daacbff95341c303e984cae"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#a23f6cc315daacbff95341c303e984cae">LavaVK::VertexLayout::attribute</a></div><div class="ttdeci">VertexLayout &amp; attribute(uint32_t location, Format format)</div><div class="ttdoc">Adds a vertex attribute derived from a struct member pointer.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:415</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_a3a051452c47b81ea49e28791b42b93c7"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#a3a051452c47b81ea49e28791b42b93c7">LavaVK::VertexLayout::create</a></div><div class="ttdeci">static VertexLayout create(uint32_t binding=0, VkVertexInputRate inputRate=VK_VERTEX_INPUT_RATE_VERTEX)</div><div class="ttdoc">Creates a vertex layout bound to a given binding slot, with stride derived from Vertex.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:388</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_a74a3ed7252c33394927077b049526eb2"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#a74a3ed7252c33394927077b049526eb2">LavaVK::VertexLayout::bindings</a></div><div class="ttdeci">const std::vector&lt; VkVertexInputBindingDescription &gt; &amp; bindings() const</div><div class="ttdoc">Returns the binding description(s) for this layout.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:453</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_aaf238c24008e01681c097c067ecfe8d3"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#aaf238c24008e01681c097c067ecfe8d3">LavaVK::VertexLayout::bindingIndex</a></div><div class="ttdeci">uint32_t bindingIndex() const</div><div class="ttdoc">Returns the vertex input binding slot this layout describes.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:434</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_ac4b3bf92206e8a4ea9762ad0c8dd520e"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#ac4b3bf92206e8a4ea9762ad0c8dd520e">LavaVK::VertexLayout::attributes</a></div><div class="ttdeci">const std::vector&lt; VkVertexInputAttributeDescription &gt; &amp; attributes() const</div><div class="ttdoc">Returns the attribute descriptions added to this layout.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:463</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_vertex_layout_html_af481d5b6e32b8b423de9d448043e75b4"><div class="ttname"><a href="class_lava_v_k_1_1_vertex_layout.html#af481d5b6e32b8b423de9d448043e75b4">LavaVK::VertexLayout::stride</a></div><div class="ttdeci">uint32_t stride() const</div><div class="ttdoc">Returns the byte stride between consecutive vertices.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:443</div></div>
+<div class="ttc" id="astruct_lava_v_k_1_1_buffer_create_info_html"><div class="ttname"><a href="struct_lava_v_k_1_1_buffer_create_info.html">LavaVK::BufferCreateInfo</a></div><div class="ttdoc">Describes the properties of a buffer to be created.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:130</div></div>
+<div class="ttc" id="astruct_lava_v_k_1_1_buffer_create_info_html_a45be35a889168f71d608aa3fdcdcc05a"><div class="ttname"><a href="struct_lava_v_k_1_1_buffer_create_info.html#a45be35a889168f71d608aa3fdcdcc05a">LavaVK::BufferCreateInfo::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Size of the buffer, in bytes.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:132</div></div>
+<div class="ttc" id="astruct_lava_v_k_1_1_buffer_create_info_html_a8bd028fbcab252ad137e2d187b425f1b"><div class="ttname"><a href="struct_lava_v_k_1_1_buffer_create_info.html#a8bd028fbcab252ad137e2d187b425f1b">LavaVK::BufferCreateInfo::memory</a></div><div class="ttdeci">MemoryUsage memory</div><div class="ttdoc">Memory placement hint controlling CPU/GPU visibility of the buffer&#39;s memory.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:139</div></div>
+<div class="ttc" id="astruct_lava_v_k_1_1_buffer_create_info_html_a90e2ce6082adfd17c7fbef5d16891bd3"><div class="ttname"><a href="struct_lava_v_k_1_1_buffer_create_info.html#a90e2ce6082adfd17c7fbef5d16891bd3">LavaVK::BufferCreateInfo::usage</a></div><div class="ttdeci">BufferUsage usage</div><div class="ttdoc">Intended usage of the buffer (vertex, index, uniform, storage, transfer src/dst).</div><div class="ttdef"><b>Definition</b> Buffer.hpp:135</div></div>
+<div class="ttc" id="astruct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4_html_a01902eb0bffae303979efb474962d191"><div class="ttname"><a href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a01902eb0bffae303979efb474962d191">LavaVK::MemberTraits&lt; MemberPtr &gt;::StructType</a></div><div class="ttdeci">S StructType</div><div class="ttdoc">The struct type containing the member.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:333</div></div>
+<div class="ttc" id="astruct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4_html_a55cd85abc586e70c4c7f0b723302caa6"><div class="ttname"><a href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#a55cd85abc586e70c4c7f0b723302caa6">LavaVK::MemberTraits&lt; MemberPtr &gt;::offset</a></div><div class="ttdeci">static size_t offset()</div><div class="ttdoc">Calculates byte offset of the member inside the struct.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:342</div></div>
+<div class="ttc" id="astruct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4_html_ae69cc2b020f4bbd4ee651387490c224f"><div class="ttname"><a href="struct_lava_v_k_1_1_member_traits_3_01_member_ptr_01_4.html#ae69cc2b020f4bbd4ee651387490c224f">LavaVK::MemberTraits&lt; MemberPtr &gt;::MemberType</a></div><div class="ttdeci">M MemberType</div><div class="ttdoc">The type of the member pointed to by MemberPtr.</div><div class="ttdef"><b>Definition</b> Buffer.hpp:331</div></div>
+<div class="ttc" id="astruct_lava_v_k_1_1_member_traits_html"><div class="ttname"><a href="struct_lava_v_k_1_1_member_traits.html">LavaVK::MemberTraits</a></div><div class="ttdoc">Primary template declaration for extracting member-pointer metadata; see the pointer-to-member specia...</div><div class="ttdef"><b>Definition</b> Buffer.hpp:316</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

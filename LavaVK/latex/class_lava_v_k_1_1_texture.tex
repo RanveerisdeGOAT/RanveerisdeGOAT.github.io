@@ -1,0 +1,141 @@
+\doxysection{Lava\+VK::\+Texture Class Reference}
+\hypertarget{class_lava_v_k_1_1_texture}{}\label{class_lava_v_k_1_1_texture}\index{LavaVK::Texture@{LavaVK::Texture}}
+
+
+Loads an image file from disk into a GPU-\/resident, shader-\/sampleable texture.  
+
+
+
+
+{\ttfamily \+\#include $<$Texture.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_ab1f969ac5e632df7e56b47cd81ca8887}{Texture}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, const std::\+filesystem::\+path \&path, const \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info}{Texture\+Sampler\+Create\+Info}} \&sampler\+Info=\{\})
+\begin{DoxyCompactList}\small\item\em Loads an image from disk and uploads it to the GPU as a sampled texture. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a7205fb0a0bcababe35de7d92b0c8b295}{\texorpdfstring{$\sim$}{\string~}\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the texture\textquotesingle{}s sampler. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_texture_a01fac7f300e3379ae040f03168aa9c5f}\label{class_lava_v_k_1_1_texture_a01fac7f300e3379ae040f03168aa9c5f} 
+{\bfseries Texture} (const Texture \&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_texture_a0df8a954f35dec548b3ecf317fc931a4}\label{class_lava_v_k_1_1_texture_a0df8a954f35dec548b3ecf317fc931a4} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_ab1f969ac5e632df7e56b47cd81ca8887}{Texture}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_ab1f969ac5e632df7e56b47cd81ca8887}{Texture}} \&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_texture_a65980c2dcdb279c5c7c6a13adf219f90}\label{class_lava_v_k_1_1_texture_a65980c2dcdb279c5c7c6a13adf219f90} 
+{\bfseries Texture} (Texture \&\&)=delete
+\item 
+\Hypertarget{class_lava_v_k_1_1_texture_a8ee2aeddaf5b19b83178fd73cf311c56}\label{class_lava_v_k_1_1_texture_a8ee2aeddaf5b19b83178fd73cf311c56} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_ab1f969ac5e632df7e56b47cd81ca8887}{Texture}} \& {\bfseries operator=} (\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_ab1f969ac5e632df7e56b47cd81ca8887}{Texture}} \&\&)=delete
+\item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a299f5e149aa6d494db730d3b003eb102}{image}} () const
+\begin{DoxyCompactList}\small\item\em Returns the GPU image backing this texture. \end{DoxyCompactList}\item 
+Vk\+Sampler \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a89f84f7aa9c35f9183038cc47216a66c}{sampler}} () const
+\begin{DoxyCompactList}\small\item\em Returns the sampler created for this texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Loads an image file from disk into a GPU-\/resident, shader-\/sampleable texture. 
+
+{\ttfamily \doxylink{class_lava_v_k_1_1_texture}{Texture}} combines an \doxylink{class_lava_v_k_1_1_image}{Image} (created with {\ttfamily Image\+Usage::\+\+TRANSFER\+\_\+\+DST \texorpdfstring{$\vert$}{|} Image\+Usage::\+\+SAMPLED}) with a {\ttfamily Vk\+Sampler}. On construction it loads pixel data from {\ttfamily path} via stb\+\_\+image, uploads it to the GPU through a temporary staging buffer and a one-\/time command buffer (transitioning the image from {\ttfamily VK\+\_\+\+IMAGE\+\_\+\+LAYOUT\+\_\+\+UNDEFINED} to {\ttfamily VK\+\_\+\+IMAGE\+\_\+\+LAYOUT\+\_\+\+TRANSFER\+\_\+\+DST\+\_\+\+OPTIMAL} and finally to {\ttfamily VK\+\_\+\+IMAGE\+\_\+\+LAYOUT\+\_\+\+SHADER\+\_\+\+READ\+\_\+\+ONLY\+\_\+\+OPTIMAL}), and creates a {\ttfamily Vk\+Sampler} configured from {\ttfamily sampler\+Info}. The image is always loaded and uploaded as 4-\/channel (RGBA) {\ttfamily VK\+\_\+\+FORMAT\+\_\+\+R8\+G8\+B8\+A8\+\_\+\+SRGB} data, regardless of the source file\textquotesingle{}s original channel count.
+
+{\ttfamily \doxylink{class_lava_v_k_1_1_texture}{Texture}} is neither copyable nor movable; it must be constructed in place (e.\+g. via {\ttfamily std::\+unique\+\_\+ptr\texorpdfstring{$<$}{<}\doxylink{class_lava_v_k_1_1_texture}{Texture}\texorpdfstring{$>$}{>}} or emplaced directly) and its lifetime must not outlive the owning \doxylink{class_lava_v_k_1_1_device}{Device}.
+
+\begin{DoxyNote}{Note}
+The upload path submits and waits on a temporary, transient command pool synchronously, so construction blocks until the GPU finishes uploading the texture.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The sampler\textquotesingle{}s border color is currently always created as {\ttfamily VK\+\_\+\+BORDER\+\_\+\+COLOR\+\_\+\+INT\+\_\+\+OPAQUE\+\_\+\+BLACK}, regardless of any \+\#\+Border\+Color value; there is currently no way to customize it through \doxylink{struct_lava_v_k_1_1_texture_sampler_create_info}{Texture\+Sampler\+Create\+Info}.
+\end{DoxyWarning}
+Example:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LavaVK::Texture\ texture(device,\ \textcolor{stringliteral}{"{}assets/brick\_wall.png"{}},\ \{}
+\DoxyCodeLine{\ \ \ \ .magFilter\ =\ LavaVK::Filter::LINEAR,}
+\DoxyCodeLine{\ \ \ \ .minFilter\ =\ LavaVK::Filter::LINEAR,}
+\DoxyCodeLine{\ \ \ \ .addressModeU\ =\ LavaVK::SamplerAddressMode::REPEAT,}
+\DoxyCodeLine{\ \ \ \ .addressModeV\ =\ LavaVK::SamplerAddressMode::REPEAT,}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Later,\ when\ writing\ a\ descriptor\ set:}}
+\DoxyCodeLine{VkDescriptorImageInfo\ imageInfo\{\};}
+\DoxyCodeLine{imageInfo.imageLayout\ =\ VK\_IMAGE\_LAYOUT\_SHADER\_READ\_ONLY\_OPTIMAL;}
+\DoxyCodeLine{imageInfo.imageView\ =\ texture.image().view();}
+\DoxyCodeLine{imageInfo.sampler\ =\ texture.sampler();}
+
+\end{DoxyCode}
+ 
+
+\label{class_lava_v_k_1_1_texture_doc-constructors}
+\Hypertarget{class_lava_v_k_1_1_texture_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_lava_v_k_1_1_texture_ab1f969ac5e632df7e56b47cd81ca8887}\index{LavaVK::Texture@{LavaVK::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!LavaVK::Texture@{LavaVK::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_texture_ab1f969ac5e632df7e56b47cd81ca8887} 
+Lava\+VK::\+\+Texture::\+\+Texture (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{, }\item[{const std::\+filesystem::\+path \&}]{path}{, }\item[{const \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info}{Texture\+Sampler\+Create\+Info}} \&}]{sampler\+Info}{ = {\ttfamily \{\}}}\end{DoxyParamCaption})}
+
+
+
+Loads an image from disk and uploads it to the GPU as a sampled texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Logical device used to create the image, staging buffer, and sampler. \\
+\hline
+{\em path} & Filesystem path to the image file to load (any format supported by stb\+\_\+image). \\
+\hline
+{\em sampler\+Info} & Sampler configuration (filtering, addressing, anisotropy) to create alongside the image. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If the image file cannot be loaded, if command pool/\+buffer creation fails, or if sampler creation fails. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_lava_v_k_1_1_texture_a7205fb0a0bcababe35de7d92b0c8b295}\index{LavaVK::Texture@{LavaVK::Texture}!````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}}
+\index{````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}!LavaVK::Texture@{LavaVK::Texture}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Texture()}{\string~Texture()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_texture_a7205fb0a0bcababe35de7d92b0c8b295} 
+Lava\+VK::\+\+Texture::\+\texorpdfstring{$\sim$}{\string~}\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destroys the texture\textquotesingle{}s sampler. 
+
+The underlying \doxylink{class_lava_v_k_1_1_image}{Image} is destroyed automatically as a member of this object when its own destructor runs. 
+
+\label{class_lava_v_k_1_1_texture_doc-func-members}
+\Hypertarget{class_lava_v_k_1_1_texture_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lava_v_k_1_1_texture_a299f5e149aa6d494db730d3b003eb102}\index{LavaVK::Texture@{LavaVK::Texture}!image@{image}}
+\index{image@{image}!LavaVK::Texture@{LavaVK::Texture}}
+\doxysubsubsection{\texorpdfstring{image()}{image()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_texture_a299f5e149aa6d494db730d3b003eb102} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \& Lava\+VK::\+\+Texture::\+image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the GPU image backing this texture. 
+
+\begin{DoxyReturn}{Returns}
+Mutable reference to the underlying \doxylink{class_lava_v_k_1_1_image}{Image}, so its {\ttfamily Vk\+Image\+View} can be bound in a descriptor write. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_texture_a89f84f7aa9c35f9183038cc47216a66c}\index{LavaVK::Texture@{LavaVK::Texture}!sampler@{sampler}}
+\index{sampler@{sampler}!LavaVK::Texture@{LavaVK::Texture}}
+\doxysubsubsection{\texorpdfstring{sampler()}{sampler()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_texture_a89f84f7aa9c35f9183038cc47216a66c} 
+Vk\+Sampler Lava\+VK::\+\+Texture::\+sampler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the sampler created for this texture. 
+
+\begin{DoxyReturn}{Returns}
+The native {\ttfamily Vk\+Sampler} handle used to read this texture in a shader. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\+Lava\+VK/\+Texture.\+hpp\item 
+src/\+Texture.\+cpp\end{DoxyCompactItemize}

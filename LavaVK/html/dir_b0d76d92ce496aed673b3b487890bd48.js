@@ -13,5 +13,6 @@ var dir_b0d76d92ce496aed673b3b487890bd48 =
     [ "Shader.hpp", "_shader_8hpp_source.html", null ],
     [ "Surface.hpp", "_surface_8hpp_source.html", null ],
     [ "SwapChain.hpp", "_swap_chain_8hpp_source.html", null ],
-    [ "Sync.hpp", "_sync_8hpp_source.html", null ]
+    [ "Sync.hpp", "_sync_8hpp_source.html", null ],
+    [ "Texture.hpp", "_texture_8hpp_source.html", null ]
 ];
