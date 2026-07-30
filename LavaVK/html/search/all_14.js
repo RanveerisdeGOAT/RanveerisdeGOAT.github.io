@@ -3,15 +3,8 @@ var searchData=
   ['wait_0',['wait',['../class_lava_v_k_1_1_fence.html#a1b7335408c2fc7a5853736d5a8c6afb1',1,'LavaVK::Fence']]],
   ['waitidle_1',['waitIdle',['../class_lava_v_k_1_1_device.html#a3f7243b142b20cc71f541ec7a2444683',1,'LavaVK::Device::waitIdle()'],['../class_lava_v_k_1_1_queue.html#aef19252212737e63b05933084db55e36',1,'LavaVK::Queue::waitIdle()']]],
   ['why_20lavavk_2',['Why LavaVK?',['../index.html#autotoc_md1',1,'']]],
-  ['window_3',['Present to window.',['../index.html#autotoc_md25',1,'']]],
-  ['window_20api_4',['&lt;ul class=&quot;check&quot;&gt;
-&lt;li class=&quot;checked&quot;&gt;Compatible with any Window API&lt;/li&gt;
-&lt;/ul&gt;
-',['../index.html#autotoc_md5',1,'']]],
-  ['with_20any_20window_20api_5',['&lt;ul class=&quot;check&quot;&gt;
-&lt;li class=&quot;checked&quot;&gt;Compatible with any Window API&lt;/li&gt;
-&lt;/ul&gt;
-',['../index.html#autotoc_md5',1,'']]],
-  ['writebuffer_6',['writeBuffer',['../class_lava_v_k_1_1_descriptor_writer.html#a63e65c3bbda705a90abfb6742b8d4da8',1,'LavaVK::DescriptorWriter']]],
-  ['writeimage_7',['writeImage',['../class_lava_v_k_1_1_descriptor_writer.html#a1135f9ec80e11a01b2256f6e1a8884a3',1,'LavaVK::DescriptorWriter']]]
+  ['width_3',['width',['../struct_lava_v_k_1_1_extent2_d.html#aff4eac0b47cd1da7371732e93e82dc39',1,'LavaVK::Extent2D']]],
+  ['window_4',['Present to window.',['../index.html#autotoc_md25',1,'']]],
+  ['writebuffer_5',['writeBuffer',['../class_lava_v_k_1_1_descriptor_writer.html#a63e65c3bbda705a90abfb6742b8d4da8',1,'LavaVK::DescriptorWriter']]],
+  ['writeimage_6',['writeImage',['../class_lava_v_k_1_1_descriptor_writer.html#a1135f9ec80e11a01b2256f6e1a8884a3',1,'LavaVK::DescriptorWriter']]]
 ];

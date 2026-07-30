@@ -141,10 +141,16 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Encapsulates a Vulkan <span class="tt">VkPipelineLayout</span>. </p>
-<ul>
-<li>Defines descriptor set layouts and push constants used across pipeline stages. </li>
-</ul>
-</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p>Defines descriptor set layouts and push constants used across pipeline stages. A <span class="tt"><a class="el" href="class_lava_v_k_1_1_pipeline_layout.html" title="Encapsulates a Vulkan VkPipelineLayout.">PipelineLayout</a></span> is required to construct both a <span class="tt"><a class="el" href="class_lava_v_k_1_1_graphics_pipeline.html" title="Abstraction around Vulkan&#39;s graphics pipeline (VkPipeline).">GraphicsPipeline</a></span> and to record <span class="tt">pushConstants</span>/descriptor-binding commands against a command buffer, since it declares which resources and push constant ranges shaders may access. <span class="tt"><a class="el" href="class_lava_v_k_1_1_pipeline_layout.html" title="Encapsulates a Vulkan VkPipelineLayout.">PipelineLayout</a></span> is non-copyable RAII: the underlying <span class="tt">VkPipelineLayout</span> is created in the constructor and destroyed in the destructor.</p>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_struct" href="struct_lava_v_k_1_1_push_constant_range.html">LavaVK::PushConstantRange</a> mvpRange{</div>
+<div class="line">    .stageFlags = LavaVK::STAGE_VERTEX_BIT,</div>
+<div class="line">    .offset = 0,</div>
+<div class="line">    .size = <span class="keyword">sizeof</span>(glm::mat4)</div>
+<div class="line">};</div>
+<div class="line"><a class="code hl_class" href="class_lava_v_k_1_1_pipeline_layout.html">LavaVK::PipelineLayout</a> pipelineLayout(device, {}, { mvpRange });</div>
+<div class="ttc" id="aclass_lava_v_k_1_1_pipeline_layout_html"><div class="ttname"><a href="class_lava_v_k_1_1_pipeline_layout.html">LavaVK::PipelineLayout</a></div><div class="ttdoc">Encapsulates a Vulkan VkPipelineLayout.</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:46</div></div>
+<div class="ttc" id="astruct_lava_v_k_1_1_push_constant_range_html"><div class="ttname"><a href="struct_lava_v_k_1_1_push_constant_range.html">LavaVK::PushConstantRange</a></div><div class="ttdoc">Defines a push constant memory range accessible in shaders.</div><div class="ttdef"><b>Definition</b> Descriptor.hpp:40</div></div>
+</div><!-- fragment --> </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab046b1de3b8009b0d8dcd803af50043e" name="ab046b1de3b8009b0d8dcd803af50043e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab046b1de3b8009b0d8dcd803af50043e">&#9670;&#160;</a></span>PipelineLayout()</h2>
 
@@ -170,8 +176,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a pipeline layout. </p>
-<ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device</td><td>Reference to the LavaVK logical device. </td></tr>
     <tr><td class="paramname">descriptorSetLayouts</td><td>Collection of descriptor set layouts bound to this pipeline layout. </td></tr>
@@ -179,8 +184,12 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If <span class="tt">vkCreatePipelineLayout</span> fails. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -7,7 +7,7 @@ Encapsulates a Vulkan shader module ({\ttfamily Vk\+Shader\+Module}).
 
 
 
-{\ttfamily \+\#include $<$Pipeline.\+hpp$>$}
+{\ttfamily \+\#include $<$Shader.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -32,10 +32,23 @@ Vk\+Shader\+Module \doxymbox{\hyperlink{class_lava_v_k_1_1_shader_a1b7c1eb0a7539
 \doxysubsection{Detailed Description}
 Encapsulates a Vulkan shader module ({\ttfamily Vk\+Shader\+Module}). 
 
+Supports loading directly from raw SPIR-\/V binaries ({\ttfamily .spv}), raw SPIR-\/V byte vectors, or dynamically compiling GLSL source files ({\ttfamily .vert}, {\ttfamily .frag}, {\ttfamily .comp}) using embedded Shaderc compiler support. {\ttfamily \doxylink{class_lava_v_k_1_1_shader}{Shader}} is non-\/copyable RAII:\+ the underlying {\ttfamily Vk\+Shader\+Module} is created in the constructor and destroyed in the destructor.
 
-\begin{DoxyItemize}
-\item Supports loading directly from raw SPIR-\/V binaries ({\ttfamily .spv}), raw SPIR-\/V byte vectors, or dynamically compiling GLSL source files ({\ttfamily .vert}, {\ttfamily .frag}, {\ttfamily .comp}) using embedded Shaderc compiler support. 
-\end{DoxyItemize}
+Example, compiling GLSL source on load:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LavaVK::Shader\ vertexShader(device,\ \textcolor{stringliteral}{"{}shaders/tri.vert"{}});}
+\DoxyCodeLine{LavaVK::Shader\ fragmentShader(device,\ \textcolor{stringliteral}{"{}shaders/tri.frag"{}});}
+
+\end{DoxyCode}
+
+
+Example, loading precompiled SPIR-\/V words directly:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::vector<uint32\_t>\ spirv\ =\ loadSpirvWords(\textcolor{stringliteral}{"{}shaders/tri.vert.spv"{}});}
+\DoxyCodeLine{LavaVK::Shader\ vertexShader(device,\ spirv);}
+
+\end{DoxyCode}
+ 
 
 \label{class_lava_v_k_1_1_shader_doc-constructors}
 \Hypertarget{class_lava_v_k_1_1_shader_doc-constructors}
@@ -50,10 +63,7 @@ Lava\+VK::\+\+Shader::\+\+Shader (\begin{DoxyParamCaption}\item[{\doxymbox{\hype
 
 Loads and constructs a shader module from a file path. 
 
-
-\begin{DoxyItemize}
-\item Automatically detects file extension ({\ttfamily .spv} for compiled SPIR-\/V, {\ttfamily .vert}/\+{\ttfamily .frag}/\+{\ttfamily .comp} for GLSL source).
-\item 
+Automatically detects file extension ({\ttfamily .spv} for compiled SPIR-\/V, {\ttfamily .vert}/\+{\ttfamily .frag}/\+{\ttfamily .comp} for GLSL source, compiled at load time via the embedded Shaderc compiler). 
 \begin{DoxyParams}{Parameters}
 {\em device} & Reference to the logical Lava\+VK device. \\
 \hline
@@ -62,11 +72,10 @@ Loads and constructs a shader module from a file path.
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em std::\+runtime\+\_\+error} & If file opening or compilation fails. \\
+{\em std::\+runtime\+\_\+error} & If file opening, GLSL compilation, or Vulkan shader module creation fails. \\
 \hline
 \end{DoxyExceptions}
-
-\end{DoxyItemize}\Hypertarget{class_lava_v_k_1_1_shader_a9eae034b1f0bb7bb6a884f2b055da3a7}\index{LavaVK::Shader@{LavaVK::Shader}!Shader@{Shader}}
+\Hypertarget{class_lava_v_k_1_1_shader_a9eae034b1f0bb7bb6a884f2b055da3a7}\index{LavaVK::Shader@{LavaVK::Shader}!Shader@{Shader}}
 \index{Shader@{Shader}!LavaVK::Shader@{LavaVK::Shader}}
 \doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_lava_v_k_1_1_shader_a9eae034b1f0bb7bb6a884f2b055da3a7} 
@@ -77,8 +86,6 @@ Lava\+VK::\+\+Shader::\+\+Shader (\begin{DoxyParamCaption}\item[{\doxymbox{\hype
 Constructs a shader module directly from a vector of SPIR-\/V 32-\/bit words. 
 
 
-\begin{DoxyItemize}
-\item 
 \begin{DoxyParams}{Parameters}
 {\em device} & Reference to the logical Lava\+VK device. \\
 \hline
@@ -91,7 +98,6 @@ Constructs a shader module directly from a vector of SPIR-\/V 32-\/bit words.
 \hline
 \end{DoxyExceptions}
 
-\end{DoxyItemize}
 
 \label{class_lava_v_k_1_1_shader_doc-func-members}
 \Hypertarget{class_lava_v_k_1_1_shader_doc-func-members}
@@ -113,5 +119,5 @@ Raw Vk\+Shader\+Module handle.
 
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 
-include/\+\+Lava\+VK/\+Pipeline.\+hpp\item 
-src/\+Pipeline.\+cpp\end{DoxyCompactItemize}
+include/\+\+Lava\+VK/\+Shader.\+hpp\item 
+src/\+Shader.\+cpp\end{DoxyCompactItemize}

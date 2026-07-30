@@ -25,11 +25,9 @@ Wrapper for Vulkan {\ttfamily Vk\+Render\+Pass}.
 \Hypertarget{class_lava_v_k_1_1_render_pass_aad224f12da9292227e7564498e9d07a0}\label{class_lava_v_k_1_1_render_pass_aad224f12da9292227e7564498e9d07a0} 
 \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_af49eeebe8012a425427401f134f3bd2f}{Render\+Pass}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_af49eeebe8012a425427401f134f3bd2f}{Render\+Pass}} \&)=delete
 \item 
-\Hypertarget{class_lava_v_k_1_1_render_pass_ad7f7b26378e3dd0a2f118812d4a7db17}\label{class_lava_v_k_1_1_render_pass_ad7f7b26378e3dd0a2f118812d4a7db17} 
-Vk\+Format {\bfseries get\+Color\+Format} () const
+Vk\+Format \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_ad7f7b26378e3dd0a2f118812d4a7db17}{get\+Color\+Format}} () const
 \begin{DoxyCompactList}\small\item\em Get color format. \end{DoxyCompactList}\item 
-\Hypertarget{class_lava_v_k_1_1_render_pass_a4e38adef217b24e6eb918eeae736389f}\label{class_lava_v_k_1_1_render_pass_a4e38adef217b24e6eb918eeae736389f} 
-Vk\+Format {\bfseries get\+Depth\+Format} () const
+Vk\+Format \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_a4e38adef217b24e6eb918eeae736389f}{get\+Depth\+Format}} () const
 \begin{DoxyCompactList}\small\item\em Get depth format. \end{DoxyCompactList}\item 
 Vk\+Render\+Pass \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_a27d479cc899203dbd0a5e1198a024a69}{native}} () const
 \begin{DoxyCompactList}\small\item\em Gets the native Vulkan {\ttfamily Vk\+Render\+Pass} handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -38,10 +36,18 @@ Vk\+Render\+Pass \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass_a27d479cc89
 \doxysubsection{Detailed Description}
 Wrapper for Vulkan {\ttfamily Vk\+Render\+Pass}. 
 
+Configures attachments (color, depth/\+stencil), subpasses, and dependencies. Most applications only need a single color (+ optional depth) attachment render pass, provided by the convenience constructor; applications with more complex attachment layouts (multiple subpasses, input attachments, MSAA resolve targets, ...) can instead supply a raw {\ttfamily Vk\+Render\+Pass\+Create\+Info} directly. {\ttfamily \doxylink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} is non-\/copyable RAII:\+ the underlying {\ttfamily Vk\+Render\+Pass} is created in the constructor and destroyed in the destructor.
 
-\begin{DoxyItemize}
-\item Configures attachments (color, depth/\+stencil), subpasses, and dependencies. 
-\end{DoxyItemize}
+Example:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LavaVK::RenderPass\ renderPass(}
+\DoxyCodeLine{\ \ \ \ device,}
+\DoxyCodeLine{\ \ \ \ LavaVK::Format(LavaVK::ChannelOrder::BGRA,\ LavaVK::BitDepth::B8,\ LavaVK::NumericType::Srgb),}
+\DoxyCodeLine{\ \ \ \ LavaVK::Format(LavaVK::ChannelOrder::D,\ LavaVK::BitDepth::B32,\ LavaVK::NumericType::Float)}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+ 
 
 \label{class_lava_v_k_1_1_render_pass_doc-constructors}
 \Hypertarget{class_lava_v_k_1_1_render_pass_doc-constructors}
@@ -57,8 +63,6 @@ Lava\+VK::\+\+Render\+Pass::\+\+Render\+Pass (\begin{DoxyParamCaption}\item[{\do
 Helper constructor for a standard single-\/subpass color + depth render pass. 
 
 
-\begin{DoxyItemize}
-\item 
 \begin{DoxyParams}{Parameters}
 {\em device} & Reference to the Lava\+VK logical device. \\
 \hline
@@ -70,7 +74,11 @@ Helper constructor for a standard single-\/subpass color + depth render pass.
 \hline
 \end{DoxyParams}
 
-\end{DoxyItemize}\Hypertarget{class_lava_v_k_1_1_render_pass_ad3aefb60cabc547d9b67e7a71ba0ff40}\index{LavaVK::RenderPass@{LavaVK::RenderPass}!RenderPass@{RenderPass}}
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If {\ttfamily vk\+Create\+Render\+Pass} fails. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_lava_v_k_1_1_render_pass_ad3aefb60cabc547d9b67e7a71ba0ff40}\index{LavaVK::RenderPass@{LavaVK::RenderPass}!RenderPass@{RenderPass}}
 \index{RenderPass@{RenderPass}!LavaVK::RenderPass@{LavaVK::RenderPass}}
 \doxysubsubsection{\texorpdfstring{RenderPass()}{RenderPass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_lava_v_k_1_1_render_pass_ad3aefb60cabc547d9b67e7a71ba0ff40} 
@@ -80,9 +88,7 @@ Lava\+VK::\+\+Render\+Pass::\+\+Render\+Pass (\begin{DoxyParamCaption}\item[{\do
 
 Explicit constructor using full Vulkan create info. 
 
-
-\begin{DoxyItemize}
-\item 
+Intended for render passes whose attachment/\+subpass layout does not fit the single-\/color-\/plus-\/depth convenience constructor above (e.\+g. multiple subpasses or additional attachments); the caller is responsible for filling in {\ttfamily create\+Info} entirely. 
 \begin{DoxyParams}{Parameters}
 {\em device} & Reference to the Lava\+VK logical device. \\
 \hline
@@ -90,11 +96,41 @@ Explicit constructor using full Vulkan create info.
 \hline
 \end{DoxyParams}
 
-\end{DoxyItemize}
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If {\ttfamily vk\+Create\+Render\+Pass} fails. \\
+\hline
+\end{DoxyExceptions}
+
 
 \label{class_lava_v_k_1_1_render_pass_doc-func-members}
 \Hypertarget{class_lava_v_k_1_1_render_pass_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_lava_v_k_1_1_render_pass_ad7f7b26378e3dd0a2f118812d4a7db17}\index{LavaVK::RenderPass@{LavaVK::RenderPass}!getColorFormat@{getColorFormat}}
+\index{getColorFormat@{getColorFormat}!LavaVK::RenderPass@{LavaVK::RenderPass}}
+\doxysubsubsection{\texorpdfstring{getColorFormat()}{getColorFormat()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_render_pass_ad7f7b26378e3dd0a2f118812d4a7db17} 
+Vk\+Format Lava\+VK::\+\+Render\+Pass::\+get\+Color\+Format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get color format. 
+
+\begin{DoxyReturn}{Returns}
+The {\ttfamily Vk\+Format} used for this render pass\textquotesingle{}s color attachment. 
+\end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_render_pass_a4e38adef217b24e6eb918eeae736389f}\index{LavaVK::RenderPass@{LavaVK::RenderPass}!getDepthFormat@{getDepthFormat}}
+\index{getDepthFormat@{getDepthFormat}!LavaVK::RenderPass@{LavaVK::RenderPass}}
+\doxysubsubsection{\texorpdfstring{getDepthFormat()}{getDepthFormat()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_render_pass_a4e38adef217b24e6eb918eeae736389f} 
+Vk\+Format Lava\+VK::\+\+Render\+Pass::\+get\+Depth\+Format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get depth format. 
+
+\begin{DoxyReturn}{Returns}
+The {\ttfamily Vk\+Format} used for this render pass\textquotesingle{}s depth attachment, or {\ttfamily VK\+\_\+\+FORMAT\+\_\+\+UNDEFINED} if depth is disabled. 
+\end{DoxyReturn}
 \Hypertarget{class_lava_v_k_1_1_render_pass_a27d479cc899203dbd0a5e1198a024a69}\index{LavaVK::RenderPass@{LavaVK::RenderPass}!native@{native}}
 \index{native@{native}!LavaVK::RenderPass@{LavaVK::RenderPass}}
 \doxysubsubsection{\texorpdfstring{native()}{native()}}

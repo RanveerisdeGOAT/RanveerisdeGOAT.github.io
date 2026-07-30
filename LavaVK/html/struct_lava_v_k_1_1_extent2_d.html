@@ -119,15 +119,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('struct_lava_v_
   <div class="headertitle"><div class="title">LavaVK::Extent2D Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Simple two-dimensional unsigned extent, mirroring <span class="tt">VkExtent2D</span>.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_surface_8hpp_source.html">Surface.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aff4eac0b47cd1da7371732e93e82dc39" id="r_aff4eac0b47cd1da7371732e93e82dc39"><td class="memItemLeft"><a id="aff4eac0b47cd1da7371732e93e82dc39" name="aff4eac0b47cd1da7371732e93e82dc39"></a>
 uint32_t&#160;</td><td class="memItemRight"><b>width</b> = 0</td></tr>
+<tr class="memdesc:aff4eac0b47cd1da7371732e93e82dc39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width in pixels. <br /></td></tr>
 <tr class="memitem:a6789407ac51caeb03e836fac0dcba0c7" id="r_a6789407ac51caeb03e836fac0dcba0c7"><td class="memItemLeft"><a id="a6789407ac51caeb03e836fac0dcba0c7" name="a6789407ac51caeb03e836fac0dcba0c7"></a>
 uint32_t&#160;</td><td class="memItemRight"><b>height</b> = 0</td></tr>
+<tr class="memdesc:a6789407ac51caeb03e836fac0dcba0c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height in pixels. <br /></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Simple two-dimensional unsigned extent, mirroring <span class="tt">VkExtent2D</span>. </p>
+<p>Used throughout LavaVK (surface capabilities, swapchain extent, viewport/scissor sizing) wherever a width/height pair is needed without pulling in <span class="tt">vulkan.h</span>'s <span class="tt">VkExtent2D</span> directly. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/LavaVK/<a class="el" href="_surface_8hpp_source.html">Surface.hpp</a></li>
 </ul>
 </div><!-- contents -->

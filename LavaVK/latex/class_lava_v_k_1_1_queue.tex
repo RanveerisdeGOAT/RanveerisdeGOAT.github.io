@@ -31,6 +31,17 @@ uint32\+\_\+t \doxymbox{\hyperlink{class_lava_v_k_1_1_queue_a6f301c9ff710c86fd0e
 \doxysubsection{Detailed Description}
 Wrapper class managing execution operations on a Vulkan device queue ({\ttfamily Vk\+Queue}). 
 
+{\ttfamily \doxylink{class_lava_v_k_1_1_queue}{Queue}} is a lightweight, non-\/owning handle:\+ the underlying {\ttfamily Vk\+Queue} is owned by the Vulkan implementation (retrieved via {\ttfamily vk\+Get\+Device\+Queue}) and is implicitly destroyed when the parent {\ttfamily \doxylink{class_lava_v_k_1_1_device}{Device}} is destroyed, so {\ttfamily \doxylink{class_lava_v_k_1_1_queue}{Queue}} itself has no destructor to manage and is freely copyable. Lava\+VK\textquotesingle{}s {\ttfamily \doxylink{class_lava_v_k_1_1_device}{Device}} exposes one {\ttfamily \doxylink{class_lava_v_k_1_1_queue}{Queue}} per requested {\ttfamily Queue\+Type} (e.\+g. {\ttfamily GRAPHICS}, {\ttfamily TRANSFER}, {\ttfamily PRESENT}); a {\ttfamily \doxylink{class_lava_v_k_1_1_queue}{Queue}} is used to submit recorded command buffers for execution and to present swapchain images.
+
+Example:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LavaVK::Queue\ \&graphicsQueue\ =\ device.getQueue(LavaVK::QueueType::GRAPHICS);}
+\DoxyCodeLine{graphicsQueue.\doxymbox{\hyperlink{class_lava_v_k_1_1_queue_a30e9863baba3fa0ddc8faa169f1a587a}{submit}}(submitInfo,\ inFlightFence);}
+\DoxyCodeLine{graphicsQueue.\doxymbox{\hyperlink{class_lava_v_k_1_1_queue_aef19252212737e63b05933084db55e36}{waitIdle}}();}
+
+\end{DoxyCode}
+ 
+
 \label{class_lava_v_k_1_1_queue_doc-constructors}
 \Hypertarget{class_lava_v_k_1_1_queue_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -99,6 +110,11 @@ Submits work payloads to this queue for execution on the GPU.
 {\em fence} & \doxylink{class_lava_v_k_1_1_fence}{Fence} object signaled when all submitted command buffers finish execution. \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If {\ttfamily vk\+Queue\+Submit} fails. \\
+\hline
+\end{DoxyExceptions}
 
 
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}

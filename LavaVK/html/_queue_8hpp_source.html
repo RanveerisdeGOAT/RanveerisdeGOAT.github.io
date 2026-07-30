@@ -126,135 +126,133 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_queue_8hpp_so
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>LavaVK {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">class </span><a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>LavaVK {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">class </span><a class="code hl_class" href="class_lava_v_k_1_1_fence.html">Fence</a>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">enum class</span> QueueType : uint32_t {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        GRAPHICS = VK_QUEUE_GRAPHICS_BIT, </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        COMPUTE = VK_QUEUE_COMPUTE_BIT, </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        TRANSFER = VK_QUEUE_TRANSFER_BIT, </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        SPARSE = VK_QUEUE_SPARSE_BINDING_BIT, </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="comment">// Custom bit flag for Presentation (avoiding Vulkan&#39;s bit flags)</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        PRESENT = 0x00000020 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    };</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html">   34</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">SubmitInfo</a> {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">   39</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">SubmitInfo</a>() {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            m_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            m_info.pNext = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            m_info.waitSemaphoreCount = 0;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            m_info.pWaitSemaphores = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            m_info.pWaitDstStageMask = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            m_info.commandBufferCount = 0;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            m_info.pCommandBuffers = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            m_info.signalSemaphoreCount = 0;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            m_info.pSignalSemaphores = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
-</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html#ae273d89c01a38f374a9209b05931ad75">   57</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">SubmitInfo</a> &amp;<a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ae273d89c01a38f374a9209b05931ad75">setWaitSemaphores</a>(<span class="keyword">const</span> std::vector&lt;VkSemaphore&gt; &amp;semaphores,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                                      <span class="keyword">const</span> std::vector&lt;VkPipelineStageFlags&gt; &amp;stages) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            m_waitSemaphores = semaphores;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            m_waitDstStageMasks = stages;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            m_info.waitSemaphoreCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(m_waitSemaphores.size());</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            m_info.pWaitSemaphores = m_waitSemaphores.data();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            m_info.pWaitDstStageMask = m_waitDstStageMasks.data();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span>LavaVK {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">class </span><a class="code hl_class" href="class_lava_v_k_1_1_fence.html">Fence</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">class </span><a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">enum class</span> QueueType : uint32_t {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        GRAPHICS = VK_QUEUE_GRAPHICS_BIT, </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        COMPUTE = VK_QUEUE_COMPUTE_BIT, </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        TRANSFER = VK_QUEUE_TRANSFER_BIT, </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        SPARSE = VK_QUEUE_SPARSE_BINDING_BIT, </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="comment">// Custom bit flag for Presentation (avoiding Vulkan&#39;s bit flags)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        PRESENT = 0x00000020 </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    };</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html">   51</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">SubmitInfo</a> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">   56</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">SubmitInfo</a>() {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            m_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            m_info.pNext = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            m_info.waitSemaphoreCount = 0;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            m_info.pWaitSemaphores = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            m_info.pWaitDstStageMask = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            m_info.commandBufferCount = 0;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            m_info.pCommandBuffers = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            m_info.signalSemaphoreCount = 0;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            m_info.pSignalSemaphores = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
 </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
-<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html#adf43582cd5ad4a39e3bd9a360e67509c">   73</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">SubmitInfo</a> &amp;<a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#adf43582cd5ad4a39e3bd9a360e67509c">setCommandBuffers</a>(<span class="keyword">const</span> std::vector&lt;VkCommandBuffer&gt; &amp;commandBuffers) {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            m_commandBuffers = commandBuffers;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            m_info.commandBufferCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(m_commandBuffers.size());</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            m_info.pCommandBuffers = m_commandBuffers.data();</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html#ae273d89c01a38f374a9209b05931ad75">   74</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">SubmitInfo</a> &amp;<a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ae273d89c01a38f374a9209b05931ad75">setWaitSemaphores</a>(<span class="keyword">const</span> std::vector&lt;VkSemaphore&gt; &amp;semaphores,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                                      <span class="keyword">const</span> std::vector&lt;VkPipelineStageFlags&gt; &amp;stages) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            m_waitSemaphores = semaphores;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            m_waitDstStageMasks = stages;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            m_info.waitSemaphoreCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(m_waitSemaphores.size());</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            m_info.pWaitSemaphores = m_waitSemaphores.data();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            m_info.pWaitDstStageMask = m_waitDstStageMasks.data();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
 </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
-<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html#ac36f1f214fa36453ca25f26e72295498">   86</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">SubmitInfo</a> &amp;<a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac36f1f214fa36453ca25f26e72295498">setSignalSemaphores</a>(<span class="keyword">const</span> std::vector&lt;VkSemaphore&gt; &amp;semaphores) {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            m_signalSemaphores = semaphores;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            m_info.signalSemaphoreCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(m_signalSemaphores.size());</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            m_info.pSignalSemaphores = m_signalSemaphores.data();</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html#adf43582cd5ad4a39e3bd9a360e67509c">   90</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">SubmitInfo</a> &amp;<a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#adf43582cd5ad4a39e3bd9a360e67509c">setCommandBuffers</a>(<span class="keyword">const</span> std::vector&lt;VkCommandBuffer&gt; &amp;commandBuffers) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            m_commandBuffers = commandBuffers;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            m_info.commandBufferCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(m_commandBuffers.size());</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            m_info.pCommandBuffers = m_commandBuffers.data();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
 </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html#aa9de0c6e9e8c109e2c909bd0e72c2ff9">   98</a></span>        [[nodiscard]] <span class="keyword">const</span> VkSubmitInfo &amp;<a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#aa9de0c6e9e8c109e2c909bd0e72c2ff9">native</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_info; }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        VkSubmitInfo m_info{};</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        std::vector&lt;VkSemaphore&gt; m_waitSemaphores;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        std::vector&lt;VkPipelineStageFlags&gt; m_waitDstStageMasks;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        std::vector&lt;VkCommandBuffer&gt; m_commandBuffers;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        std::vector&lt;VkSemaphore&gt; m_signalSemaphores;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    };</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html#ac36f1f214fa36453ca25f26e72295498">  103</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">SubmitInfo</a> &amp;<a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#ac36f1f214fa36453ca25f26e72295498">setSignalSemaphores</a>(<span class="keyword">const</span> std::vector&lt;VkSemaphore&gt; &amp;semaphores) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            m_signalSemaphores = semaphores;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            m_info.signalSemaphoreCount = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(m_signalSemaphores.size());</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            m_info.pSignalSemaphores = m_signalSemaphores.data();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
 </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
-<div class="foldopen" id="foldopen00111" data-start="{" data-end="};">
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_queue.html">  111</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a102df77771a33d44f588a88b1b708893">Queue</a> {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_queue.html#a102df77771a33d44f588a88b1b708893">  116</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a102df77771a33d44f588a88b1b708893">Queue</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a102df77771a33d44f588a88b1b708893">Queue</a>(</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device,</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            uint32_t <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a6f301c9ff710c86fd0efb9245f177194">family</a></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        );</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a30e9863baba3fa0ddc8faa169f1a587a">submit</a>(</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            <span class="keyword">const</span> <a class="code hl_class" href="class_lava_v_k_1_1_submit_info.html">SubmitInfo</a> &amp;submitInfo,</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <a class="code hl_class" href="class_lava_v_k_1_1_fence.html">Fence</a> &amp;fence</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        ) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#aef19252212737e63b05933084db55e36">waitIdle</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
-<div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_queue.html#a83921619abb2298f075cdf843325acfe">  147</a></span>        [[nodiscard]] VkQueue <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a83921619abb2298f075cdf843325acfe">native</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <span class="keywordflow">return</span> m_queue;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_submit_info.html#aa9de0c6e9e8c109e2c909bd0e72c2ff9">  115</a></span>        [[nodiscard]] <span class="keyword">const</span> VkSubmitInfo &amp;<a class="code hl_function" href="class_lava_v_k_1_1_submit_info.html#aa9de0c6e9e8c109e2c909bd0e72c2ff9">native</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_info; }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        VkSubmitInfo m_info{};</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        std::vector&lt;VkSemaphore&gt; m_waitSemaphores;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        std::vector&lt;VkPipelineStageFlags&gt; m_waitDstStageMasks;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        std::vector&lt;VkCommandBuffer&gt; m_commandBuffers;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        std::vector&lt;VkSemaphore&gt; m_signalSemaphores;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    };</div>
 </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
-<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_queue.html#a6f301c9ff710c86fd0efb9245f177194">  155</a></span>        [[nodiscard]] uint32_t <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a6f301c9ff710c86fd0efb9245f177194">family</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keywordflow">return</span> m_family;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="};">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_queue.html">  145</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a102df77771a33d44f588a88b1b708893">Queue</a> {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_queue.html#a102df77771a33d44f588a88b1b708893">  150</a></span>        <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a102df77771a33d44f588a88b1b708893">Queue</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a102df77771a33d44f588a88b1b708893">Queue</a>(</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <a class="code hl_class" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device,</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            uint32_t <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a6f301c9ff710c86fd0efb9245f177194">family</a></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        );</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a30e9863baba3fa0ddc8faa169f1a587a">submit</a>(</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keyword">const</span> <a class="code hl_class" href="class_lava_v_k_1_1_submit_info.html">SubmitInfo</a> &amp;submitInfo,</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <a class="code hl_class" href="class_lava_v_k_1_1_fence.html">Fence</a> &amp;fence</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        ) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#aef19252212737e63b05933084db55e36">waitIdle</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span></div>
+<div class="foldopen" id="foldopen00182" data-start="{" data-end="}">
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_queue.html#a83921619abb2298f075cdf843325acfe">  182</a></span>        [[nodiscard]] VkQueue <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a83921619abb2298f075cdf843325acfe">native</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="keywordflow">return</span> m_queue;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        }</div>
 </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        VkQueue m_queue = VK_NULL_HANDLE; </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        uint32_t m_family = 0; </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    };</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span></div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="class_lava_v_k_1_1_queue.html#a6f301c9ff710c86fd0efb9245f177194">  190</a></span>        [[nodiscard]] uint32_t <a class="code hl_function" href="class_lava_v_k_1_1_queue.html#a6f301c9ff710c86fd0efb9245f177194">family</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            <span class="keywordflow">return</span> m_family;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        }</div>
 </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>} <span class="comment">// namespace LavaVK</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">#endif </span><span class="comment">// LAVAVK_QUEUE_H</span></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_device_html"><div class="ttname"><a href="class_lava_v_k_1_1_device.html">LavaVK::Device</a></div><div class="ttdoc">Manages the Vulkan physical device selection, logical device instantiation (VkDevice),...</div><div class="ttdef"><b>Definition</b> Device.hpp:120</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_fence_html"><div class="ttname"><a href="class_lava_v_k_1_1_fence.html">LavaVK::Fence</a></div><div class="ttdoc">CPU-GPU synchronization primitive.</div><div class="ttdef"><b>Definition</b> Sync.hpp:20</div></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        VkQueue m_queue = VK_NULL_HANDLE; </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        uint32_t m_family = 0; </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    };</div>
+</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>} <span class="comment">// namespace LavaVK</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="preprocessor">#endif </span><span class="comment">// LAVAVK_QUEUE_H</span></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_device_html"><div class="ttname"><a href="class_lava_v_k_1_1_device.html">LavaVK::Device</a></div><div class="ttdoc">Manages the Vulkan physical device selection, logical device instantiation (VkDevice),...</div><div class="ttdef"><b>Definition</b> Device.hpp:230</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_fence_html"><div class="ttname"><a href="class_lava_v_k_1_1_fence.html">LavaVK::Fence</a></div><div class="ttdoc">CPU-GPU synchronization primitive.</div><div class="ttdef"><b>Definition</b> Sync.hpp:34</div></div>
 <div class="ttc" id="aclass_lava_v_k_1_1_queue_html_a102df77771a33d44f588a88b1b708893"><div class="ttname"><a href="class_lava_v_k_1_1_queue.html#a102df77771a33d44f588a88b1b708893">LavaVK::Queue::Queue</a></div><div class="ttdeci">Queue()=default</div><div class="ttdoc">Default constructor. Constructs an uninitialized Queue handle.</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_queue_html_a30e9863baba3fa0ddc8faa169f1a587a"><div class="ttname"><a href="class_lava_v_k_1_1_queue.html#a30e9863baba3fa0ddc8faa169f1a587a">LavaVK::Queue::submit</a></div><div class="ttdeci">void submit(const SubmitInfo &amp;submitInfo, Fence &amp;fence) const</div><div class="ttdoc">Submits work payloads to this queue for execution on the GPU.</div><div class="ttdef"><b>Definition</b> Queue.cpp:12</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_queue_html_a6f301c9ff710c86fd0efb9245f177194"><div class="ttname"><a href="class_lava_v_k_1_1_queue.html#a6f301c9ff710c86fd0efb9245f177194">LavaVK::Queue::family</a></div><div class="ttdeci">uint32_t family() const</div><div class="ttdoc">Gets the queue family index associated with this queue.</div><div class="ttdef"><b>Definition</b> Queue.hpp:155</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_queue_html_a83921619abb2298f075cdf843325acfe"><div class="ttname"><a href="class_lava_v_k_1_1_queue.html#a83921619abb2298f075cdf843325acfe">LavaVK::Queue::native</a></div><div class="ttdeci">VkQueue native() const</div><div class="ttdoc">Gets the native Vulkan queue handle (VkQueue).</div><div class="ttdef"><b>Definition</b> Queue.hpp:147</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_queue_html_aef19252212737e63b05933084db55e36"><div class="ttname"><a href="class_lava_v_k_1_1_queue.html#aef19252212737e63b05933084db55e36">LavaVK::Queue::waitIdle</a></div><div class="ttdeci">void waitIdle() const</div><div class="ttdoc">Blocks host CPU execution until all submitted commands on this queue finish.</div><div class="ttdef"><b>Definition</b> Queue.cpp:22</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html">LavaVK::SubmitInfo</a></div><div class="ttdoc">Wrapper around VkSubmitInfo to simplify building queue submission payloads.</div><div class="ttdef"><b>Definition</b> Queue.hpp:34</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_aa9de0c6e9e8c109e2c909bd0e72c2ff9"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html#aa9de0c6e9e8c109e2c909bd0e72c2ff9">LavaVK::SubmitInfo::native</a></div><div class="ttdeci">const VkSubmitInfo &amp; native() const</div><div class="ttdoc">Gets the native Vulkan VkSubmitInfo structure.</div><div class="ttdef"><b>Definition</b> Queue.hpp:98</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_ac36f1f214fa36453ca25f26e72295498"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html#ac36f1f214fa36453ca25f26e72295498">LavaVK::SubmitInfo::setSignalSemaphores</a></div><div class="ttdeci">SubmitInfo &amp; setSignalSemaphores(const std::vector&lt; VkSemaphore &gt; &amp;semaphores)</div><div class="ttdoc">Configures semaphores that will be signaled once submitted command execution completes.</div><div class="ttdef"><b>Definition</b> Queue.hpp:86</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_ac4237581b5ae4b46a6099859c76111ad"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">LavaVK::SubmitInfo::SubmitInfo</a></div><div class="ttdeci">SubmitInfo()</div><div class="ttdoc">Default constructor. Initializes internal VkSubmitInfo struct fields to default values.</div><div class="ttdef"><b>Definition</b> Queue.hpp:39</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_adf43582cd5ad4a39e3bd9a360e67509c"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html#adf43582cd5ad4a39e3bd9a360e67509c">LavaVK::SubmitInfo::setCommandBuffers</a></div><div class="ttdeci">SubmitInfo &amp; setCommandBuffers(const std::vector&lt; VkCommandBuffer &gt; &amp;commandBuffers)</div><div class="ttdoc">Configures command buffers to be executed by the queue.</div><div class="ttdef"><b>Definition</b> Queue.hpp:73</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_ae273d89c01a38f374a9209b05931ad75"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html#ae273d89c01a38f374a9209b05931ad75">LavaVK::SubmitInfo::setWaitSemaphores</a></div><div class="ttdeci">SubmitInfo &amp; setWaitSemaphores(const std::vector&lt; VkSemaphore &gt; &amp;semaphores, const std::vector&lt; VkPipelineStageFlags &gt; &amp;stages)</div><div class="ttdoc">Configures semaphores that must be signaled before commands can execute.</div><div class="ttdef"><b>Definition</b> Queue.hpp:57</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_queue_html_a30e9863baba3fa0ddc8faa169f1a587a"><div class="ttname"><a href="class_lava_v_k_1_1_queue.html#a30e9863baba3fa0ddc8faa169f1a587a">LavaVK::Queue::submit</a></div><div class="ttdeci">void submit(const SubmitInfo &amp;submitInfo, Fence &amp;fence) const</div><div class="ttdoc">Submits work payloads to this queue for execution on the GPU.</div><div class="ttdef"><b>Definition</b> Queue.cpp:13</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_queue_html_a6f301c9ff710c86fd0efb9245f177194"><div class="ttname"><a href="class_lava_v_k_1_1_queue.html#a6f301c9ff710c86fd0efb9245f177194">LavaVK::Queue::family</a></div><div class="ttdeci">uint32_t family() const</div><div class="ttdoc">Gets the queue family index associated with this queue.</div><div class="ttdef"><b>Definition</b> Queue.hpp:190</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_queue_html_a83921619abb2298f075cdf843325acfe"><div class="ttname"><a href="class_lava_v_k_1_1_queue.html#a83921619abb2298f075cdf843325acfe">LavaVK::Queue::native</a></div><div class="ttdeci">VkQueue native() const</div><div class="ttdoc">Gets the native Vulkan queue handle (VkQueue).</div><div class="ttdef"><b>Definition</b> Queue.hpp:182</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_queue_html_aef19252212737e63b05933084db55e36"><div class="ttname"><a href="class_lava_v_k_1_1_queue.html#aef19252212737e63b05933084db55e36">LavaVK::Queue::waitIdle</a></div><div class="ttdeci">void waitIdle() const</div><div class="ttdoc">Blocks host CPU execution until all submitted commands on this queue finish.</div><div class="ttdef"><b>Definition</b> Queue.cpp:23</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html">LavaVK::SubmitInfo</a></div><div class="ttdoc">Wrapper around VkSubmitInfo to simplify building queue submission payloads.</div><div class="ttdef"><b>Definition</b> Queue.hpp:51</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_aa9de0c6e9e8c109e2c909bd0e72c2ff9"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html#aa9de0c6e9e8c109e2c909bd0e72c2ff9">LavaVK::SubmitInfo::native</a></div><div class="ttdeci">const VkSubmitInfo &amp; native() const</div><div class="ttdoc">Gets the native Vulkan VkSubmitInfo structure.</div><div class="ttdef"><b>Definition</b> Queue.hpp:115</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_ac36f1f214fa36453ca25f26e72295498"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html#ac36f1f214fa36453ca25f26e72295498">LavaVK::SubmitInfo::setSignalSemaphores</a></div><div class="ttdeci">SubmitInfo &amp; setSignalSemaphores(const std::vector&lt; VkSemaphore &gt; &amp;semaphores)</div><div class="ttdoc">Configures semaphores that will be signaled once submitted command execution completes.</div><div class="ttdef"><b>Definition</b> Queue.hpp:103</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_ac4237581b5ae4b46a6099859c76111ad"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html#ac4237581b5ae4b46a6099859c76111ad">LavaVK::SubmitInfo::SubmitInfo</a></div><div class="ttdeci">SubmitInfo()</div><div class="ttdoc">Default constructor. Initializes internal VkSubmitInfo struct fields to default values.</div><div class="ttdef"><b>Definition</b> Queue.hpp:56</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_adf43582cd5ad4a39e3bd9a360e67509c"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html#adf43582cd5ad4a39e3bd9a360e67509c">LavaVK::SubmitInfo::setCommandBuffers</a></div><div class="ttdeci">SubmitInfo &amp; setCommandBuffers(const std::vector&lt; VkCommandBuffer &gt; &amp;commandBuffers)</div><div class="ttdoc">Configures command buffers to be executed by the queue.</div><div class="ttdef"><b>Definition</b> Queue.hpp:90</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_ae273d89c01a38f374a9209b05931ad75"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html#ae273d89c01a38f374a9209b05931ad75">LavaVK::SubmitInfo::setWaitSemaphores</a></div><div class="ttdeci">SubmitInfo &amp; setWaitSemaphores(const std::vector&lt; VkSemaphore &gt; &amp;semaphores, const std::vector&lt; VkPipelineStageFlags &gt; &amp;stages)</div><div class="ttdoc">Configures semaphores that must be signaled before commands can execute.</div><div class="ttdef"><b>Definition</b> Queue.hpp:74</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

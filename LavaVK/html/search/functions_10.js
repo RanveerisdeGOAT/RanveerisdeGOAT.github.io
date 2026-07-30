@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['wait_0',['wait',['../class_lava_v_k_1_1_fence.html#a1b7335408c2fc7a5853736d5a8c6afb1',1,'LavaVK::Fence']]],
-  ['waitidle_1',['waitIdle',['../class_lava_v_k_1_1_device.html#a3f7243b142b20cc71f541ec7a2444683',1,'LavaVK::Device::waitIdle()'],['../class_lava_v_k_1_1_queue.html#aef19252212737e63b05933084db55e36',1,'LavaVK::Queue::waitIdle()']]],
-  ['writebuffer_2',['writeBuffer',['../class_lava_v_k_1_1_descriptor_writer.html#a63e65c3bbda705a90abfb6742b8d4da8',1,'LavaVK::DescriptorWriter']]],
-  ['writeimage_3',['writeImage',['../class_lava_v_k_1_1_descriptor_writer.html#a1135f9ec80e11a01b2256f6e1a8884a3',1,'LavaVK::DescriptorWriter']]]
+  ['unmap_0',['unmap',['../class_lava_v_k_1_1_buffer.html#a9240a18aadb722251e4653a5e25b4ddb',1,'LavaVK::Buffer']]],
+  ['upload_1',['upload',['../class_lava_v_k_1_1_buffer.html#a92e71f79f87085f93c0aba83676243e4',1,'LavaVK::Buffer::upload(const void *data, size_t bytes)'],['../class_lava_v_k_1_1_buffer.html#a114f30206a5b80a9576eb1df1cc1d533',1,'LavaVK::Buffer::upload(const T &amp;object)'],['../class_lava_v_k_1_1_buffer.html#a8754d3644d50dc7389b48d992e79a782',1,'LavaVK::Buffer::upload(const std::vector&lt; T &gt; &amp;data)']]]
 ];

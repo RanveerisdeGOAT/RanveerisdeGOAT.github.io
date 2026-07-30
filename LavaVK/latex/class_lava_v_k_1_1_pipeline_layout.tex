@@ -30,10 +30,19 @@ Vk\+Pipeline\+Layout \doxymbox{\hyperlink{class_lava_v_k_1_1_pipeline_layout_a1e
 \doxysubsection{Detailed Description}
 Encapsulates a Vulkan {\ttfamily Vk\+Pipeline\+Layout}. 
 
+Defines descriptor set layouts and push constants used across pipeline stages. A {\ttfamily \doxylink{class_lava_v_k_1_1_pipeline_layout}{Pipeline\+Layout}} is required to construct both a {\ttfamily \doxylink{class_lava_v_k_1_1_graphics_pipeline}{Graphics\+Pipeline}} and to record {\ttfamily push\+Constants}/\+descriptor-\/binding commands against a command buffer, since it declares which resources and push constant ranges shaders may access. {\ttfamily \doxylink{class_lava_v_k_1_1_pipeline_layout}{Pipeline\+Layout}} is non-\/copyable RAII:\+ the underlying {\ttfamily Vk\+Pipeline\+Layout} is created in the constructor and destroyed in the destructor.
 
-\begin{DoxyItemize}
-\item Defines descriptor set layouts and push constants used across pipeline stages. 
-\end{DoxyItemize}
+Example:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LavaVK::PushConstantRange\ mvpRange\{}
+\DoxyCodeLine{\ \ \ \ .stageFlags\ =\ LavaVK::STAGE\_VERTEX\_BIT,}
+\DoxyCodeLine{\ \ \ \ .offset\ =\ 0,}
+\DoxyCodeLine{\ \ \ \ .size\ =\ \textcolor{keyword}{sizeof}(glm::mat4)}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{LavaVK::PipelineLayout\ pipelineLayout(device,\ \{\},\ \{\ mvpRange\ \});}
+
+\end{DoxyCode}
+ 
 
 \label{class_lava_v_k_1_1_pipeline_layout_doc-constructors}
 \Hypertarget{class_lava_v_k_1_1_pipeline_layout_doc-constructors}
@@ -49,8 +58,6 @@ Lava\+VK::\+\+Pipeline\+Layout::\+\+Pipeline\+Layout (\begin{DoxyParamCaption}\i
 Constructs a pipeline layout. 
 
 
-\begin{DoxyItemize}
-\item 
 \begin{DoxyParams}{Parameters}
 {\em device} & Reference to the Lava\+VK logical device. \\
 \hline
@@ -60,7 +67,11 @@ Constructs a pipeline layout.
 \hline
 \end{DoxyParams}
 
-\end{DoxyItemize}
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If {\ttfamily vk\+Create\+Pipeline\+Layout} fails. \\
+\hline
+\end{DoxyExceptions}
+
 
 \label{class_lava_v_k_1_1_pipeline_layout_doc-func-members}
 \Hypertarget{class_lava_v_k_1_1_pipeline_layout_doc-func-members}

@@ -30,10 +30,10 @@ var NAVTREE =
       [ "Current Features:", "index.html#autotoc_md4", null ]
     ] ],
     [ "<ul class=\"check\">
-<li class=\"checked\">Compatible with any Window API</li>
+<li class=\"checked\">Buffers</li>
 </ul>
 ", "index.html#autotoc_md5", [
-      [ "Planned Features", "index.html#autotoc_md6", null ]
+      [ "Planned Features:", "index.html#autotoc_md6", null ]
     ] ],
     [ "Reqirements &amp; dependencies", "index.html#autotoc_md8", null ],
     [ "Installation", "index.html#autotoc_md9", [
@@ -63,8 +63,9 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -76,7 +77,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_buffer_8hpp_source.html",
-"index.html#autotoc_md5"
+"dir_b0d76d92ce496aed673b3b487890bd48.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

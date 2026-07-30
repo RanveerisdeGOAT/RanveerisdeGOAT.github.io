@@ -62,19 +62,19 @@ Currently in development.\hypertarget{index_autotoc_md4}{}\doxysubsection{\texor
 \item[\DoxyChecked] Automatic GLSSL → SPIR-\/V compilation using shaderc
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyChecked] Supports loading SPIR-\/V binaries directly 
+\item[\DoxyChecked] Supports loading SPIR-\/V binaries directly
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Compatible with any Window API 
 \end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{
 \begin{DoxyItemize}
-\item[\DoxyChecked] Compatible with any Window API
+\item[\DoxyChecked] Buffers
 \end{DoxyItemize}}{
 \begin{DoxyItemize}
-\item[\DoxyChecked] Compatible with any Window API
+\item[\DoxyChecked] Buffers
 \end{DoxyItemize}}}\label{index_autotoc_md5}
-\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Planned Features}{Planned Features}}\label{index_autotoc_md6}
+\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Planned Features:\+}{Planned Features:\+}}\label{index_autotoc_md6}
 
-\begin{DoxyItemize}
-\item[\DoxyUnchecked] Buffers:\+
-\end{DoxyItemize}
 \begin{DoxyItemize}
 \item[\DoxyUnchecked] Textures
 \end{DoxyItemize}
@@ -233,10 +233,10 @@ Wayland:\+
 
 \end{DoxyCode}
 \hypertarget{index_autotoc_md16}{}\doxysubsection{\texorpdfstring{Create device.}{Create device.}}\label{index_autotoc_md16}
-Select your GPU first, note that {\ttfamily Lava\+VK::\+\+GPUHardware::\+select\+Optimal\+GPU} does not chose the best GPU, it just selects descrete GPU\textquotesingle{}s over integrated. 
+Select your GPU first, note that {\ttfamily \doxylink{class_lava_v_k_1_1_g_p_u_hardware_af09d173c7b96ba8e154d76dae1c9488b}{Lava\+VK::\+\+GPUHardware::\+select\+Optimal\+GPU}} does not chose the best GPU, it just selects descrete GPU\textquotesingle{}s over integrated. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ GPU\ Selection\ \&\ Device\ Creation}}
-\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&selectedGPU\ =\ LavaVK::GPUHardware::selectOptimalGPU(instance,\ surface);}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&selectedGPU\ =\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_af09d173c7b96ba8e154d76dae1c9488b}{LavaVK::GPUHardware::selectOptimalGPU}}(instance,\ surface);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//\ Device\ automatically\ creates\ command\ pools\ for\ all\ passed\ QueueTypes}}
 \DoxyCodeLine{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{LavaVK::Device}}\ device(}

@@ -127,9 +127,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_lava_v_k
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a41af976109b6ee79722e33e9e45db162" id="r_a41af976109b6ee79722e33e9e45db162"><td class="memItemLeft"><a id="a41af976109b6ee79722e33e9e45db162" name="a41af976109b6ee79722e33e9e45db162"></a>
-&#160;</td><td class="memItemRight"><b>CommandBuffer</b> ()=default</td></tr>
-<tr class="memdesc:a41af976109b6ee79722e33e9e45db162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an uninitialized <a class="el" href="class_lava_v_k_1_1_command_buffer.html" title="Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions.">CommandBuffer</a> handle. <br /></td></tr>
+<tr class="memitem:a41af976109b6ee79722e33e9e45db162" id="r_a41af976109b6ee79722e33e9e45db162"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a41af976109b6ee79722e33e9e45db162">CommandBuffer</a> ()=default</td></tr>
+<tr class="memdesc:a41af976109b6ee79722e33e9e45db162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an uninitialized <a class="el" href="class_lava_v_k_1_1_command_buffer.html" title="Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions.">CommandBuffer</a> handle.  <br /></td></tr>
 <tr class="memitem:a9af1a3b839014a0b42a418cb1be65782" id="r_a9af1a3b839014a0b42a418cb1be65782"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9af1a3b839014a0b42a418cb1be65782">begin</a> () const</td></tr>
 <tr class="memdesc:a9af1a3b839014a0b42a418cb1be65782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins recording commands into the command buffer.  <br /></td></tr>
 <tr class="memitem:abb37dea67982113feb0acc7c26339020" id="r_abb37dea67982113feb0acc7c26339020"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abb37dea67982113feb0acc7c26339020">end</a> () const</td></tr>
@@ -148,16 +147,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a376522ef3814292226375f4ba02ff785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience overload to begin a render pass with sensible default clear values.  <br /></td></tr>
 <tr class="memitem:aa799785d1a4460451b6f04fea6b1483f" id="r_aa799785d1a4460451b6f04fea6b1483f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa799785d1a4460451b6f04fea6b1483f">record</a> (const <a class="el" href="class_lava_v_k_1_1_render_pass.html">RenderPass</a> &amp;renderPass, const <a class="el" href="class_lava_v_k_1_1_framebuffer.html">Framebuffer</a> &amp;framebuffer, VkExtent2D extent, const std::function&lt; void(<a class="el" href="#a41af976109b6ee79722e33e9e45db162">CommandBuffer</a> &amp;)&gt; &amp;drawCommands)</td></tr>
 <tr class="memdesc:aa799785d1a4460451b6f04fea6b1483f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Higher-level helper that manages the entire lifecycle of recording a render pass.  <br /></td></tr>
-<tr class="memitem:ada508b2a5afce09a8608becbc31d9e3e" id="r_ada508b2a5afce09a8608becbc31d9e3e"><td class="memItemLeft"><a id="ada508b2a5afce09a8608becbc31d9e3e" name="ada508b2a5afce09a8608becbc31d9e3e"></a>
-void&#160;</td><td class="memItemRight"><b>endRenderPass</b> () const</td></tr>
-<tr class="memdesc:ada508b2a5afce09a8608becbc31d9e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the active render pass. <br /></td></tr>
+<tr class="memitem:ada508b2a5afce09a8608becbc31d9e3e" id="r_ada508b2a5afce09a8608becbc31d9e3e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ada508b2a5afce09a8608becbc31d9e3e">endRenderPass</a> () const</td></tr>
+<tr class="memdesc:ada508b2a5afce09a8608becbc31d9e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the active render pass.  <br /></td></tr>
 <tr class="memitem:a0825edb9005f4cb63900ebf0e19df743" id="r_a0825edb9005f4cb63900ebf0e19df743"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0825edb9005f4cb63900ebf0e19df743">draw</a> (uint32_t vertexCount, uint32_t instanceCount=1, uint32_t firstVertex=0, uint32_t firstInstance=0) const</td></tr>
 <tr class="memdesc:a0825edb9005f4cb63900ebf0e19df743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Records a non-indexed draw command.  <br /></td></tr>
 <tr class="memitem:ad9aec4b8bec4c86b351d31a99dfa33dc" id="r_ad9aec4b8bec4c86b351d31a99dfa33dc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad9aec4b8bec4c86b351d31a99dfa33dc">drawIndexed</a> (uint32_t indexCount, uint32_t instanceCount=1, uint32_t firstIndex=0, int32_t vertexOffset=0, uint32_t firstInstance=0) const</td></tr>
 <tr class="memdesc:ad9aec4b8bec4c86b351d31a99dfa33dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Records an indexed draw command.  <br /></td></tr>
-<tr class="memitem:a6ff0db89cd8dd1d310d65f3c88888ff7" id="r_a6ff0db89cd8dd1d310d65f3c88888ff7"><td class="memItemLeft"><a id="a6ff0db89cd8dd1d310d65f3c88888ff7" name="a6ff0db89cd8dd1d310d65f3c88888ff7"></a>
-VkCommandBuffer&#160;</td><td class="memItemRight"><b>native</b> () const</td></tr>
-<tr class="memdesc:a6ff0db89cd8dd1d310d65f3c88888ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying Vulkan VkCommandBuffer handle. <br /></td></tr>
+<tr class="memitem:a75756008c1de0f66351e07d932285970" id="r_a75756008c1de0f66351e07d932285970"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a75756008c1de0f66351e07d932285970 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a75756008c1de0f66351e07d932285970">pushConstants</a> (const <a class="el" href="class_lava_v_k_1_1_pipeline_layout.html">PipelineLayout</a> &amp;layout, ShaderStageFlags stageFlags, const T &amp;data, uint32_t offset=0)</td></tr>
+<tr class="memdesc:a75756008c1de0f66351e07d932285970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes constants to a pipeline layout.  <br /></td></tr>
+<tr class="memitem:a470359a485aef4881c54126f60b897cc" id="r_a470359a485aef4881c54126f60b897cc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a470359a485aef4881c54126f60b897cc">bindVertexBuffer</a> (uint32_t binding, const <a class="el" href="class_lava_v_k_1_1_buffer.html">Buffer</a> &amp;vertexBuffer, VkDeviceSize offset=0) const</td></tr>
+<tr class="memdesc:a470359a485aef4881c54126f60b897cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a vertex buffer to a specific binding slot.  <br /></td></tr>
+<tr class="memitem:adb24d98cfaaa5e9e88d169abf9e9a7c6" id="r_adb24d98cfaaa5e9e88d169abf9e9a7c6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adb24d98cfaaa5e9e88d169abf9e9a7c6">bindVertexBuffer</a> (const <a class="el" href="class_lava_v_k_1_1_buffer.html">Buffer</a> &amp;vertexBuffer, VkDeviceSize offset=0)</td></tr>
+<tr class="memdesc:adb24d98cfaaa5e9e88d169abf9e9a7c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience overload defaulting to binding 0.  <br /></td></tr>
+<tr class="memitem:a92ff010f25662d901a82e86f19982097" id="r_a92ff010f25662d901a82e86f19982097"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a92ff010f25662d901a82e86f19982097">bindVertexBuffers</a> (uint32_t firstBinding, const std::vector&lt; const <a class="el" href="class_lava_v_k_1_1_buffer.html">Buffer</a> * &gt; &amp;buffers, const std::vector&lt; VkDeviceSize &gt; &amp;offsets) const</td></tr>
+<tr class="memdesc:a92ff010f25662d901a82e86f19982097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind multiple vertex buffers at once starting at firstBinding.  <br /></td></tr>
+<tr class="memitem:a444c9fecc4e4fb501a612c75bdb3a8c8" id="r_a444c9fecc4e4fb501a612c75bdb3a8c8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a444c9fecc4e4fb501a612c75bdb3a8c8">bindIndexBuffer</a> (const <a class="el" href="class_lava_v_k_1_1_buffer.html">Buffer</a> &amp;indexBuffer, VkIndexType indexType=VK_INDEX_TYPE_UINT16, VkDeviceSize offset=0) const</td></tr>
+<tr class="memdesc:a444c9fecc4e4fb501a612c75bdb3a8c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an index buffer (defaults to VK_INDEX_TYPE_UINT16).  <br /></td></tr>
+<tr class="memitem:a6ff0db89cd8dd1d310d65f3c88888ff7" id="r_a6ff0db89cd8dd1d310d65f3c88888ff7"><td class="memItemLeft">VkCommandBuffer&#160;</td><td class="memItemRight"><a class="el" href="#a6ff0db89cd8dd1d310d65f3c88888ff7">native</a> () const</td></tr>
+<tr class="memdesc:a6ff0db89cd8dd1d310d65f3c88888ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying Vulkan VkCommandBuffer handle.  <br /></td></tr>
 <tr class="memitem:a7a96e1ac3d0c4c782cb0481f59516345" id="r_a7a96e1ac3d0c4c782cb0481f59516345"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7a96e1ac3d0c4c782cb0481f59516345">setViewport</a> (VkExtent2D extent, float minDepth=0.0f, float maxDepth=1.0f) const</td></tr>
 <tr class="memdesc:a7a96e1ac3d0c4c782cb0481f59516345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets dynamic viewport dimensions using a VkExtent2D.  <br /></td></tr>
 <tr class="memitem:a66aedfe3742062165c701255c3ce5521" id="r_a66aedfe3742062165c701255c3ce5521"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a66aedfe3742062165c701255c3ce5521">setViewport</a> (float width, float height, float x=0.0f, float y=0.0f, float minDepth=0.0f, float maxDepth=1.0f) const</td></tr>
@@ -174,8 +182,59 @@ class&#160;</td><td class="memItemRight"><b>CommandPool</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions. </p>
-<p>Command buffers are allocated from a <a class="el" href="class_lava_v_k_1_1_command_pool.html" title="Opaque container managing GPU memory pools for command buffer allocation.">CommandPool</a> and submitted to a GPU queue for execution. Members are marked const as recording commands modifies the GPU recording state pointed to by the handle, rather than the C++ handle itself. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<p>Command buffers are allocated from a <a class="el" href="class_lava_v_k_1_1_command_pool.html" title="Opaque container managing GPU memory pools for command buffer allocation.">CommandPool</a> and submitted to a GPU queue for execution. Members are marked const as recording commands modifies the GPU recording state pointed to by the handle, rather than the C++ handle itself. <span class="tt"><a class="el" href="class_lava_v_k_1_1_command_buffer.html" title="Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions.">CommandBuffer</a></span> is a non-owning handle: it is allocated and freed by its owning <a class="el" href="class_lava_v_k_1_1_command_pool.html" title="Opaque container managing GPU memory pools for command buffer allocation.">CommandPool</a>, so it has no destructor of its own to manage and is freely copyable. Typical usage either records commands manually with <a class="el" href="#a9af1a3b839014a0b42a418cb1be65782" title="Begins recording commands into the command buffer.">begin()</a>/<a class="el" href="#a16541b9c8d52ccde1daffff059b1a224" title="Begins a render pass using explicit Vulkan begin info.">beginRenderPass()</a>/.../<a class="el" href="#abb37dea67982113feb0acc7c26339020" title="Ends command recording. Must be called before queue submission.">end()</a>, or uses the higher-level <a class="el" href="#aa799785d1a4460451b6f04fea6b1483f" title="Higher-level helper that manages the entire lifecycle of recording a render pass.">record()</a> helper that manages that whole lifecycle in one call.</p>
+<p>Example (manual recording): </p><div class="fragment"><div class="line">cmd.begin();</div>
+<div class="line">cmd.beginRenderPass(renderPass, framebuffer, extent);</div>
+<div class="line">cmd.bindPipeline(pipeline);</div>
+<div class="line">cmd.setViewportAndScissor(extent);</div>
+<div class="line">cmd.bindVertexBuffer(vertexBuffer);</div>
+<div class="line">cmd.bindIndexBuffer(indexBuffer);</div>
+<div class="line">cmd.drawIndexed(indexCount);</div>
+<div class="line">cmd.endRenderPass();</div>
+<div class="line">cmd.end();</div>
+</div><!-- fragment --><p>Example (using <a class="el" href="#aa799785d1a4460451b6f04fea6b1483f" title="Higher-level helper that manages the entire lifecycle of recording a render pass.">record()</a>): </p><div class="fragment"><div class="line">cmd.record(renderPass, framebuffer, extent, [&amp;](<a class="code hl_class" href="class_lava_v_k_1_1_command_buffer.html">LavaVK::CommandBuffer</a> &amp;cmd) {</div>
+<div class="line">    cmd.<a class="code hl_function" href="#a35985fdf1065c1aa1a7744e3f72a6a1e">bindPipeline</a>(pipeline);</div>
+<div class="line">    cmd.<a class="code hl_function" href="#a01b8e75d1436cb3cebbc2ef4713cceaf">setViewportAndScissor</a>(extent);</div>
+<div class="line">    cmd.<a class="code hl_function" href="#af754c88a5deb7f46cb63d2f39aa16e94">bindVertexBuffer</a>(vertexBuffer);</div>
+<div class="line">    cmd.<a class="code hl_function" href="#afeba5d6a21ad4970bbf976685c0824f8">bindIndexBuffer</a>(indexBuffer);</div>
+<div class="line">    cmd.<a class="code hl_function" href="#ad9aec4b8bec4c86b351d31a99dfa33dc">drawIndexed</a>(indexCount);</div>
+<div class="line">});</div>
+<div class="ttc" id="aclass_lava_v_k_1_1_command_buffer_html"><div class="ttname"><a href="class_lava_v_k_1_1_command_buffer.html">LavaVK::CommandBuffer</a></div><div class="ttdoc">Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions.</div><div class="ttdef"><b>Definition</b> Command.hpp:54</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_command_buffer_html_a01b8e75d1436cb3cebbc2ef4713cceaf"><div class="ttname"><a href="#a01b8e75d1436cb3cebbc2ef4713cceaf">LavaVK::CommandBuffer::setViewportAndScissor</a></div><div class="ttdeci">void setViewportAndScissor(VkExtent2D extent) const</div><div class="ttdoc">Convenience function to configure both viewport and scissor rectangle simultaneously.</div><div class="ttdef"><b>Definition</b> Command.cpp:126</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_command_buffer_html_a35985fdf1065c1aa1a7744e3f72a6a1e"><div class="ttname"><a href="#a35985fdf1065c1aa1a7744e3f72a6a1e">LavaVK::CommandBuffer::bindPipeline</a></div><div class="ttdeci">void bindPipeline(const GraphicsPipeline &amp;pipeline) const</div><div class="ttdoc">Binds a graphics pipeline to the command buffer.</div><div class="ttdef"><b>Definition</b> Command.cpp:28</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_command_buffer_html_ad9aec4b8bec4c86b351d31a99dfa33dc"><div class="ttname"><a href="#ad9aec4b8bec4c86b351d31a99dfa33dc">LavaVK::CommandBuffer::drawIndexed</a></div><div class="ttdeci">void drawIndexed(uint32_t indexCount, uint32_t instanceCount=1, uint32_t firstIndex=0, int32_t vertexOffset=0, uint32_t firstInstance=0) const</div><div class="ttdoc">Records an indexed draw command.</div><div class="ttdef"><b>Definition</b> Command.cpp:96</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_command_buffer_html_af754c88a5deb7f46cb63d2f39aa16e94"><div class="ttname"><a href="#af754c88a5deb7f46cb63d2f39aa16e94">LavaVK::CommandBuffer::bindVertexBuffer</a></div><div class="ttdeci">void bindVertexBuffer(VkBuffer buffer, VkDeviceSize offset=0) const</div><div class="ttdoc">Binds a vertex buffer to the pipeline.</div><div class="ttdef"><b>Definition</b> Command.cpp:32</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_command_buffer_html_afeba5d6a21ad4970bbf976685c0824f8"><div class="ttname"><a href="#afeba5d6a21ad4970bbf976685c0824f8">LavaVK::CommandBuffer::bindIndexBuffer</a></div><div class="ttdeci">void bindIndexBuffer(VkBuffer buffer, VkDeviceSize offset=0, VkIndexType indexType=VK_INDEX_TYPE_UINT32) const</div><div class="ttdoc">Binds an index buffer for indexed drawing commands.</div><div class="ttdef"><b>Definition</b> Command.cpp:38</div></div>
+</div><!-- fragment --> </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a41af976109b6ee79722e33e9e45db162" name="a41af976109b6ee79722e33e9e45db162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41af976109b6ee79722e33e9e45db162">&#9670;&#160;</a></span>CommandBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LavaVK::CommandBuffer::CommandBuffer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs an uninitialized <a class="el" href="class_lava_v_k_1_1_command_buffer.html" title="Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions.">CommandBuffer</a> handle. </p>
+<p><span class="tt"><a class="el" href="#a6ff0db89cd8dd1d310d65f3c88888ff7" title="Returns the underlying Vulkan VkCommandBuffer handle.">native()</a></span> returns <span class="tt">VK_NULL_HANDLE</span> until this handle is populated by #CommandPool::allocate(). </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a9af1a3b839014a0b42a418cb1be65782" name="a9af1a3b839014a0b42a418cb1be65782"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9af1a3b839014a0b42a418cb1be65782">&#9670;&#160;</a></span>begin()</h2>
 
@@ -281,7 +340,7 @@ class&#160;</td><td class="memItemRight"><b>CommandPool</b></td></tr>
 </div><div class="memdoc">
 
 <p>Begins a render pass using explicit Vulkan begin info. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Low-level entry point for callers that need full control over <span class="tt">VkRenderPassBeginInfo</span> (custom clear values, multiple attachments, render area offsets, etc.); most callers can instead use the #beginRenderPass(const RenderPass&amp;, const Framebuffer&amp;, VkExtent2D, ...) convenience overload below. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">renderPassInfo</td><td>Native VkRenderPassBeginInfo detailing framebuffers, clear values, and render area. </td></tr>
     <tr><td class="paramname">contents</td><td>Defines if instructions are recorded directly inline or via secondary command buffers. </td></tr>
@@ -291,8 +350,44 @@ class&#160;</td><td class="memItemRight"><b>CommandPool</b></td></tr>
 
 </div>
 </div>
+<a id="a444c9fecc4e4fb501a612c75bdb3a8c8" name="a444c9fecc4e4fb501a612c75bdb3a8c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a444c9fecc4e4fb501a612c75bdb3a8c8">&#9670;&#160;</a></span>bindIndexBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LavaVK::CommandBuffer::bindIndexBuffer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_lava_v_k_1_1_buffer.html">Buffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>indexBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkIndexType</td>          <td class="paramname"><span class="paramname"><em>indexType</em></span><span class="paramdefsep"> = </span><span class="paramdefval">VK_INDEX_TYPE_UINT16</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkDeviceSize</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Binds an index buffer (defaults to VK_INDEX_TYPE_UINT16). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indexBuffer</td><td>The LavaVK <a class="el" href="class_lava_v_k_1_1_buffer.html" title="Represents a Vulkan buffer (VkBuffer) and its backing device memory.">Buffer</a> containing index data. </td></tr>
+    <tr><td class="paramname">indexType</td><td>Type of indices stored in <code class="param">indexBuffer</code>. </td></tr>
+    <tr><td class="paramname">offset</td><td>Byte offset into <code class="param">indexBuffer</code> from which index reading starts. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="afeba5d6a21ad4970bbf976685c0824f8" name="afeba5d6a21ad4970bbf976685c0824f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afeba5d6a21ad4970bbf976685c0824f8">&#9670;&#160;</a></span>bindIndexBuffer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afeba5d6a21ad4970bbf976685c0824f8">&#9670;&#160;</a></span>bindIndexBuffer() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -343,7 +438,7 @@ class&#160;</td><td class="memItemRight"><b>CommandPool</b></td></tr>
 </div><div class="memdoc">
 
 <p>Binds a graphics pipeline to the command buffer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Wraps <span class="tt">vkCmdBindPipeline</span> with <span class="tt">VK_PIPELINE_BIND_POINT_GRAPHICS</span>. Must be called between <a class="el" href="#a9af1a3b839014a0b42a418cb1be65782" title="Begins recording commands into the command buffer.">begin()</a> (and typically <a class="el" href="#a16541b9c8d52ccde1daffff059b1a224" title="Begins a render pass using explicit Vulkan begin info.">beginRenderPass()</a>) and <a class="el" href="#abb37dea67982113feb0acc7c26339020" title="Ends command recording. Must be called before queue submission.">end()</a> before recording any draw calls. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pipeline</td><td>The <a class="el" href="class_lava_v_k_1_1_graphics_pipeline.html" title="Abstraction around Vulkan&#39;s graphics pipeline (VkPipeline).">GraphicsPipeline</a> instance containing shader stages and pipeline state. </td></tr>
   </table>
@@ -352,8 +447,82 @@ class&#160;</td><td class="memItemRight"><b>CommandPool</b></td></tr>
 
 </div>
 </div>
+<a id="adb24d98cfaaa5e9e88d169abf9e9a7c6" name="adb24d98cfaaa5e9e88d169abf9e9a7c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb24d98cfaaa5e9e88d169abf9e9a7c6">&#9670;&#160;</a></span>bindVertexBuffer() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LavaVK::CommandBuffer::bindVertexBuffer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_lava_v_k_1_1_buffer.html">Buffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vertexBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkDeviceSize</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convenience overload defaulting to binding 0. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertexBuffer</td><td>The LavaVK <a class="el" href="class_lava_v_k_1_1_buffer.html" title="Represents a Vulkan buffer (VkBuffer) and its backing device memory.">Buffer</a> containing vertex data. </td></tr>
+    <tr><td class="paramname">offset</td><td>Byte offset into <code class="param">vertexBuffer</code> from which vertex reading starts. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a470359a485aef4881c54126f60b897cc" name="a470359a485aef4881c54126f60b897cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a470359a485aef4881c54126f60b897cc">&#9670;&#160;</a></span>bindVertexBuffer() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LavaVK::CommandBuffer::bindVertexBuffer </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>binding</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_lava_v_k_1_1_buffer.html">Buffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vertexBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VkDeviceSize</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bind a vertex buffer to a specific binding slot. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">binding</td><td>Vertex input binding slot to bind <code class="param">vertexBuffer</code> to, matching a binding declared in the pipeline's <a class="el" href="class_lava_v_k_1_1_vertex_layout.html" title="Builder describing a vertex buffer&#39;s binding and per-attribute layout for a pipeline.">VertexLayout</a>. </td></tr>
+    <tr><td class="paramname">vertexBuffer</td><td>The LavaVK <a class="el" href="class_lava_v_k_1_1_buffer.html" title="Represents a Vulkan buffer (VkBuffer) and its backing device memory.">Buffer</a> containing vertex data. </td></tr>
+    <tr><td class="paramname">offset</td><td>Byte offset into <code class="param">vertexBuffer</code> from which vertex reading starts. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af754c88a5deb7f46cb63d2f39aa16e94" name="af754c88a5deb7f46cb63d2f39aa16e94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af754c88a5deb7f46cb63d2f39aa16e94">&#9670;&#160;</a></span>bindVertexBuffer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af754c88a5deb7f46cb63d2f39aa16e94">&#9670;&#160;</a></span>bindVertexBuffer() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -376,6 +545,42 @@ class&#160;</td><td class="memItemRight"><b>CommandPool</b></td></tr>
   <table class="params">
     <tr><td class="paramname">buffer</td><td>Native handle to the Vulkan vertex buffer. </td></tr>
     <tr><td class="paramname">offset</td><td>Byte offset into the buffer from which vertex reading starts. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a92ff010f25662d901a82e86f19982097" name="a92ff010f25662d901a82e86f19982097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ff010f25662d901a82e86f19982097">&#9670;&#160;</a></span>bindVertexBuffers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LavaVK::CommandBuffer::bindVertexBuffers </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>firstBinding</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; const <a class="el" href="class_lava_v_k_1_1_buffer.html">Buffer</a> * &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffers</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; VkDeviceSize &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>offsets</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bind multiple vertex buffers at once starting at firstBinding. </p>
+<p>Wraps <span class="tt">vkCmdBindVertexBuffers</span>, binding each buffer in <code class="param">buffers</code> to consecutive binding slots starting at <code class="param">firstBinding</code>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">firstBinding</td><td>First vertex input binding slot to bind to. </td></tr>
+    <tr><td class="paramname">buffers</td><td>Vertex buffers to bind, one per consecutive binding slot. </td></tr>
+    <tr><td class="paramname">offsets</td><td>Byte offsets into each corresponding buffer in <code class="param">buffers</code>; must be the same size as <code class="param">buffers</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -491,6 +696,112 @@ class&#160;</td><td class="memItemRight"><b>CommandPool</b></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::runtime_error</td><td>If ending recording fails. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ada508b2a5afce09a8608becbc31d9e3e" name="ada508b2a5afce09a8608becbc31d9e3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada508b2a5afce09a8608becbc31d9e3e">&#9670;&#160;</a></span>endRenderPass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LavaVK::CommandBuffer::endRenderPass </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the active render pass. </p>
+<p>Wraps <span class="tt">vkCmdEndRenderPass</span>. Must be called after all draw commands for the current render pass instance have been recorded, and before <a class="el" href="#abb37dea67982113feb0acc7c26339020" title="Ends command recording. Must be called before queue submission.">end()</a>. </p>
+
+</div>
+</div>
+<a id="a6ff0db89cd8dd1d310d65f3c88888ff7" name="a6ff0db89cd8dd1d310d65f3c88888ff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff0db89cd8dd1d310d65f3c88888ff7">&#9670;&#160;</a></span>native()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkCommandBuffer LavaVK::CommandBuffer::native </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the underlying Vulkan VkCommandBuffer handle. </p>
+<dl class="section return"><dt>Returns</dt><dd>The native <span class="tt">VkCommandBuffer</span> handle, or <span class="tt">VK_NULL_HANDLE</span> if unallocated. </dd></dl>
+
+</div>
+</div>
+<a id="a75756008c1de0f66351e07d932285970" name="a75756008c1de0f66351e07d932285970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75756008c1de0f66351e07d932285970">&#9670;&#160;</a></span>pushConstants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LavaVK::CommandBuffer::pushConstants </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_lava_v_k_1_1_pipeline_layout.html">PipelineLayout</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>layout</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ShaderStageFlags</td>          <td class="paramname"><span class="paramname"><em>stageFlags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pushes constants to a pipeline layout. </p>
+<p>Wraps <span class="tt">vkCmdPushConstants</span>, uploading <code class="param">data</code> as a fast, small block of shader-visible memory (typically used for per-draw values like a model-view-projection matrix). The push constant range covering <span class="tt">[offset, offset + sizeof(T))</span> and <code class="param">stageFlags</code> must match a range declared on <code class="param">layout</code>. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Trivially-copyable type of the data being pushed; its size (via <span class="tt">sizeof(T)</span>) determines how many bytes are uploaded. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">layout</td><td>The pipeline layout declaring the push constant range being written to. </td></tr>
+    <tr><td class="paramname">stageFlags</td><td><a class="el" href="class_lava_v_k_1_1_shader.html" title="Encapsulates a Vulkan shader module (VkShaderModule).">Shader</a> stages that will be able to access the pushed data. </td></tr>
+    <tr><td class="paramname">data</td><td>The value to upload as push constant data. </td></tr>
+    <tr><td class="paramname">offset</td><td>Byte offset into the push constant range to start writing at. </td></tr>
   </table>
   </dd>
 </dl>

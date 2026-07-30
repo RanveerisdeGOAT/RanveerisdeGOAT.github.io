@@ -28,10 +28,20 @@ const Vk\+Submit\+Info \& \doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_aa
 \doxysubsection{Detailed Description}
 Wrapper around Vk\+Submit\+Info to simplify building queue submission payloads. 
 
+Raw {\ttfamily Vk\+Submit\+Info} only stores pointers into arrays owned by the caller, which means those arrays must outlive the submit call. {\ttfamily \doxylink{class_lava_v_k_1_1_submit_info}{Submit\+Info}} instead owns copies of the wait semaphores, signal semaphores, wait stage masks, and command buffers passed to it, and keeps its internal {\ttfamily Vk\+Submit\+Info} pointers referencing that owned storage. This lets a {\ttfamily \doxylink{class_lava_v_k_1_1_submit_info}{Submit\+Info}} be built up with chained setter calls and safely passed to {\ttfamily \doxylink{class_lava_v_k_1_1_queue_a30e9863baba3fa0ddc8faa169f1a587a}{Queue::\+submit}} without the caller having to manage the lifetime of any backing arrays.
 
-\begin{DoxyItemize}
-\item Manages internal lifetime for wait semaphores, signal semaphores, pipeline stage masks, and command buffers to prevent pointer dangling during submission. 
-\end{DoxyItemize}
+Example:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LavaVK::SubmitInfo\ submitInfo;}
+\DoxyCodeLine{submitInfo}
+\DoxyCodeLine{\ \ \ \ .\doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_ae273d89c01a38f374a9209b05931ad75}{setWaitSemaphores}}(\{\ imageAvailable\ \},\ \{\ VK\_PIPELINE\_STAGE\_COLOR\_ATTACHMENT\_OUTPUT\_BIT\ \})}
+\DoxyCodeLine{\ \ \ \ .\doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_adf43582cd5ad4a39e3bd9a360e67509c}{setCommandBuffers}}(\{\ cmd.native()\ \})}
+\DoxyCodeLine{\ \ \ \ .\doxymbox{\hyperlink{class_lava_v_k_1_1_submit_info_ac36f1f214fa36453ca25f26e72295498}{setSignalSemaphores}}(\{\ renderFinished\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{queue.submit(submitInfo,\ inFlightFence);}
+
+\end{DoxyCode}
+ 
 
 \label{class_lava_v_k_1_1_submit_info_doc-func-members}
 \Hypertarget{class_lava_v_k_1_1_submit_info_doc-func-members}

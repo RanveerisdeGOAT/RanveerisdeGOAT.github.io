@@ -138,21 +138,24 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight"><b>RenderPass</b> (const RenderPass &amp;)=delete</td></tr>
 <tr class="memitem:aad224f12da9292227e7564498e9d07a0" id="r_aad224f12da9292227e7564498e9d07a0"><td class="memItemLeft"><a id="aad224f12da9292227e7564498e9d07a0" name="aad224f12da9292227e7564498e9d07a0"></a>
 <a class="el" href="#af49eeebe8012a425427401f134f3bd2f">RenderPass</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="#af49eeebe8012a425427401f134f3bd2f">RenderPass</a> &amp;)=delete</td></tr>
-<tr class="memitem:ad7f7b26378e3dd0a2f118812d4a7db17" id="r_ad7f7b26378e3dd0a2f118812d4a7db17"><td class="memItemLeft"><a id="ad7f7b26378e3dd0a2f118812d4a7db17" name="ad7f7b26378e3dd0a2f118812d4a7db17"></a>
-VkFormat&#160;</td><td class="memItemRight"><b>getColorFormat</b> () const</td></tr>
-<tr class="memdesc:ad7f7b26378e3dd0a2f118812d4a7db17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get color format. <br /></td></tr>
-<tr class="memitem:a4e38adef217b24e6eb918eeae736389f" id="r_a4e38adef217b24e6eb918eeae736389f"><td class="memItemLeft"><a id="a4e38adef217b24e6eb918eeae736389f" name="a4e38adef217b24e6eb918eeae736389f"></a>
-VkFormat&#160;</td><td class="memItemRight"><b>getDepthFormat</b> () const</td></tr>
-<tr class="memdesc:a4e38adef217b24e6eb918eeae736389f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get depth format. <br /></td></tr>
+<tr class="memitem:ad7f7b26378e3dd0a2f118812d4a7db17" id="r_ad7f7b26378e3dd0a2f118812d4a7db17"><td class="memItemLeft">VkFormat&#160;</td><td class="memItemRight"><a class="el" href="#ad7f7b26378e3dd0a2f118812d4a7db17">getColorFormat</a> () const</td></tr>
+<tr class="memdesc:ad7f7b26378e3dd0a2f118812d4a7db17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get color format.  <br /></td></tr>
+<tr class="memitem:a4e38adef217b24e6eb918eeae736389f" id="r_a4e38adef217b24e6eb918eeae736389f"><td class="memItemLeft">VkFormat&#160;</td><td class="memItemRight"><a class="el" href="#a4e38adef217b24e6eb918eeae736389f">getDepthFormat</a> () const</td></tr>
+<tr class="memdesc:a4e38adef217b24e6eb918eeae736389f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get depth format.  <br /></td></tr>
 <tr class="memitem:a27d479cc899203dbd0a5e1198a024a69" id="r_a27d479cc899203dbd0a5e1198a024a69"><td class="memItemLeft">VkRenderPass&#160;</td><td class="memItemRight"><a class="el" href="#a27d479cc899203dbd0a5e1198a024a69">native</a> () const</td></tr>
 <tr class="memdesc:a27d479cc899203dbd0a5e1198a024a69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native Vulkan <span class="tt">VkRenderPass</span> handle.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Wrapper for Vulkan <span class="tt">VkRenderPass</span>. </p>
-<ul>
-<li>Configures attachments (color, depth/stencil), subpasses, and dependencies. </li>
-</ul>
-</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p>Configures attachments (color, depth/stencil), subpasses, and dependencies. Most applications only need a single color (+ optional depth) attachment render pass, provided by the convenience constructor; applications with more complex attachment layouts (multiple subpasses, input attachments, MSAA resolve targets, ...) can instead supply a raw <span class="tt">VkRenderPassCreateInfo</span> directly. <span class="tt"><a class="el" href="class_lava_v_k_1_1_render_pass.html" title="Wrapper for Vulkan VkRenderPass.">RenderPass</a></span> is non-copyable RAII: the underlying <span class="tt">VkRenderPass</span> is created in the constructor and destroyed in the destructor.</p>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_lava_v_k_1_1_render_pass.html">LavaVK::RenderPass</a> renderPass(</div>
+<div class="line">    device,</div>
+<div class="line">    <a class="code hl_class" href="class_lava_v_k_1_1_format.html">LavaVK::Format</a>(LavaVK::ChannelOrder::BGRA, LavaVK::BitDepth::B8, LavaVK::NumericType::Srgb),</div>
+<div class="line">    <a class="code hl_class" href="class_lava_v_k_1_1_format.html">LavaVK::Format</a>(LavaVK::ChannelOrder::D, LavaVK::BitDepth::B32, LavaVK::NumericType::Float)</div>
+<div class="line">);</div>
+<div class="ttc" id="aclass_lava_v_k_1_1_format_html"><div class="ttname"><a href="class_lava_v_k_1_1_format.html">LavaVK::Format</a></div><div class="ttdoc">Structured, human-readable representation of a Vulkan pixel format.</div><div class="ttdef"><b>Definition</b> Core.hpp:82</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_render_pass_html"><div class="ttname"><a href="class_lava_v_k_1_1_render_pass.html">LavaVK::RenderPass</a></div><div class="ttdoc">Wrapper for Vulkan VkRenderPass.</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:102</div></div>
+</div><!-- fragment --> </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af49eeebe8012a425427401f134f3bd2f" name="af49eeebe8012a425427401f134f3bd2f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af49eeebe8012a425427401f134f3bd2f">&#9670;&#160;</a></span>RenderPass() <span class="overload">[1/2]</span></h2>
 
@@ -183,18 +186,21 @@ VkFormat&#160;</td><td class="memItemRight"><b>getDepthFormat</b> () const</td><
 </div><div class="memdoc">
 
 <p>Helper constructor for a standard single-subpass color + depth render pass. </p>
-<ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device</td><td>Reference to the LavaVK logical device. </td></tr>
-    <tr><td class="paramname">colorFormat</td><td><a class="el" href="class_lava_v_k_1_1_format.html">Format</a> for the color attachment. </td></tr>
-    <tr><td class="paramname">depthFormat</td><td><a class="el" href="class_lava_v_k_1_1_format.html">Format</a> for depth attachment (<span class="tt">VK_FORMAT_UNDEFINED</span> to disable depth). </td></tr>
+    <tr><td class="paramname">colorFormat</td><td><a class="el" href="class_lava_v_k_1_1_format.html" title="Structured, human-readable representation of a Vulkan pixel format.">Format</a> for the color attachment. </td></tr>
+    <tr><td class="paramname">depthFormat</td><td><a class="el" href="class_lava_v_k_1_1_format.html" title="Structured, human-readable representation of a Vulkan pixel format.">Format</a> for depth attachment (<span class="tt">VK_FORMAT_UNDEFINED</span> to disable depth). </td></tr>
     <tr><td class="paramname">samples</td><td>Multisample count flag (defaults to 1 sample). </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If <span class="tt">vkCreateRenderPass</span> fails. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -218,20 +224,79 @@ VkFormat&#160;</td><td class="memItemRight"><b>getDepthFormat</b> () const</td><
 </div><div class="memdoc">
 
 <p>Explicit constructor using full Vulkan create info. </p>
-<ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<p>Intended for render passes whose attachment/subpass layout does not fit the single-color-plus-depth convenience constructor above (e.g. multiple subpasses or additional attachments); the caller is responsible for filling in <code class="param">createInfo</code> entirely. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device</td><td>Reference to the LavaVK logical device. </td></tr>
     <tr><td class="paramname">createInfo</td><td>Raw Vulkan <span class="tt">VkRenderPassCreateInfo</span> structure. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If <span class="tt">vkCreateRenderPass</span> fails. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ad7f7b26378e3dd0a2f118812d4a7db17" name="ad7f7b26378e3dd0a2f118812d4a7db17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f7b26378e3dd0a2f118812d4a7db17">&#9670;&#160;</a></span>getColorFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkFormat LavaVK::RenderPass::getColorFormat </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get color format. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <span class="tt">VkFormat</span> used for this render pass's color attachment. </dd></dl>
+
+</div>
+</div>
+<a id="a4e38adef217b24e6eb918eeae736389f" name="a4e38adef217b24e6eb918eeae736389f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e38adef217b24e6eb918eeae736389f">&#9670;&#160;</a></span>getDepthFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VkFormat LavaVK::RenderPass::getDepthFormat </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get depth format. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <span class="tt">VkFormat</span> used for this render pass's depth attachment, or <span class="tt">VK_FORMAT_UNDEFINED</span> if depth is disabled. </dd></dl>
+
+</div>
+</div>
 <a id="a27d479cc899203dbd0a5e1198a024a69" name="a27d479cc899203dbd0a5e1198a024a69"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a27d479cc899203dbd0a5e1198a024a69">&#9670;&#160;</a></span>native()</h2>
 

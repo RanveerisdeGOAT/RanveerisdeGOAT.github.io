@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertexshader_0',['vertexShader',['../struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a422c04be6305ea23a5f1a0b57c6d56bb',1,'LavaVK::GraphicsPipelineCreateInfo']]]
+  ['usage_0',['usage',['../struct_lava_v_k_1_1_image_create_info.html#a8ddbbcb2a35823df33262e0dc6970e19',1,'LavaVK::ImageCreateInfo::usage'],['../struct_lava_v_k_1_1_buffer_create_info.html#a90e2ce6082adfd17c7fbef5d16891bd3',1,'LavaVK::BufferCreateInfo::usage']]]
 ];

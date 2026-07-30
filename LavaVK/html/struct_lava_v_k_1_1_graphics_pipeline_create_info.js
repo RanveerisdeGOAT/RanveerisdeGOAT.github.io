@@ -20,5 +20,6 @@ var struct_lava_v_k_1_1_graphics_pipeline_create_info =
     [ "srcAlphaBlendFactor", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a0d2a69b3d5fa40e9f4a503bb235d50e0", null ],
     [ "srcColorBlendFactor", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#aaa271963b99fd6be1edca87065a1c3cb", null ],
     [ "topology", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#ab13a71a703a39d18c897bb1ead885904", null ],
+    [ "vertexLayout", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a76a715705f04e4ae3325a6b37c41566d", null ],
     [ "vertexShader", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a422c04be6305ea23a5f1a0b57c6d56bb", null ]
 ];

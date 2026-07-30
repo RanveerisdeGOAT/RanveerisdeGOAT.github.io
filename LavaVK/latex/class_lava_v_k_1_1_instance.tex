@@ -14,8 +14,7 @@ Encapsulates a Vulkan instance ({\ttfamily Vk\+Instance}) handle, managing its c
 \item 
 \doxymbox{\hyperlink{class_lava_v_k_1_1_instance_a574c21c9318ebbd15334a7c502bac5e9}{Instance}} (const \doxymbox{\hyperlink{struct_lava_v_k_1_1_instance_create_info}{Instance\+Create\+Info}} \&info=\{\})
 \begin{DoxyCompactList}\small\item\em Constructs a new Lava\+VK \doxylink{class_lava_v_k_1_1_instance}{Instance} and initializes the underlying Vulkan context. \end{DoxyCompactList}\item 
-\Hypertarget{class_lava_v_k_1_1_instance_a0cdbb00095f6365b18bf23eee79f564f}\label{class_lava_v_k_1_1_instance_a0cdbb00095f6365b18bf23eee79f564f} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Instance} ()
+\doxymbox{\hyperlink{class_lava_v_k_1_1_instance_a0cdbb00095f6365b18bf23eee79f564f}{\texorpdfstring{$\sim$}{\string~}\+Instance}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. Destroys the managed {\ttfamily Vk\+Instance} handle if valid. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{class_lava_v_k_1_1_instance_aa6068c1c3c95b7845d261ced664f668d}{Instance}} (Instance \&\&other) noexcept
 \begin{DoxyCompactList}\small\item\em Move constructor. Transfers ownership of the Vulkan instance handle from another {\ttfamily \doxylink{class_lava_v_k_1_1_instance}{Instance}}. \end{DoxyCompactList}\item 
@@ -38,7 +37,22 @@ Vk\+Instance \doxymbox{\hyperlink{class_lava_v_k_1_1_instance_a892e9074597f00119
 \doxysubsection{Detailed Description}
 Encapsulates a Vulkan instance ({\ttfamily Vk\+Instance}) handle, managing its creation, lifetime, and cleanup. 
 
-This class implements RAII semantics and move operations. Copying is explicitly disabled to prevent multiple deletions of the underlying handle. 
+{\ttfamily \doxylink{class_lava_v_k_1_1_instance}{Instance}} is the entry point of any Lava\+VK application and the first object created before anything else (surfaces, GPU selection, devices, etc.), since those all require a valid {\ttfamily Vk\+Instance} to be queried or constructed. It owns the underlying {\ttfamily Vk\+Instance} handle, creating it in the constructor from an {\ttfamily \doxylink{struct_lava_v_k_1_1_instance_create_info}{Instance\+Create\+Info}} and destroying it in the destructor. In debug builds, validation layers are enabled automatically unless disabled via {\ttfamily \doxylink{struct_lava_v_k_1_1_instance_create_info_a10b43ab2ad355566b9074b010cd9841a}{Instance\+Create\+Info::\+enable\+Validation}}.
+
+This class implements RAII semantics and move operations. Copying is explicitly disabled to prevent multiple deletions of the underlying handle.
+
+Example usage, requesting the extensions GLFW needs to present to a window:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint32\_t\ extensionCount\ =\ 0;}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ **glfwExtensions\ =\ glfwGetRequiredInstanceExtensions(\&extensionCount);}
+\DoxyCodeLine{}
+\DoxyCodeLine{LavaVK::Instance\ instance(\{}
+\DoxyCodeLine{\ \ \ \ .applicationName\ =\ \textcolor{stringliteral}{"{}My\ Application"{}},}
+\DoxyCodeLine{\ \ \ \ .extensions\ =\ std::vector<const\ char\ *>(glfwExtensions,\ glfwExtensions\ +\ extensionCount)}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+ 
 
 \label{class_lava_v_k_1_1_instance_doc-constructors}
 \Hypertarget{class_lava_v_k_1_1_instance_doc-constructors}
@@ -66,7 +80,17 @@ Constructs a new Lava\+VK \doxylink{class_lava_v_k_1_1_instance}{Instance} and i
 \hline
 \end{DoxyExceptions}
 
-\end{DoxyItemize}\Hypertarget{class_lava_v_k_1_1_instance_aa6068c1c3c95b7845d261ced664f668d}\index{LavaVK::Instance@{LavaVK::Instance}!Instance@{Instance}}
+\end{DoxyItemize}\Hypertarget{class_lava_v_k_1_1_instance_a0cdbb00095f6365b18bf23eee79f564f}\index{LavaVK::Instance@{LavaVK::Instance}!````~Instance@{\texorpdfstring{$\sim$}{\string~}Instance}}
+\index{````~Instance@{\texorpdfstring{$\sim$}{\string~}Instance}!LavaVK::Instance@{LavaVK::Instance}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Instance()}{\string~Instance()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_instance_a0cdbb00095f6365b18bf23eee79f564f} 
+Lava\+VK::\+\+Instance::\+\texorpdfstring{$\sim$}{\string~}\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. Destroys the managed {\ttfamily Vk\+Instance} handle if valid. 
+
+Calls {\ttfamily vk\+Destroy\+Instance} on the owned handle if it is not {\ttfamily VK\+\_\+\+NULL\+\_\+\+HANDLE}; a moved-\/from {\ttfamily \doxylink{class_lava_v_k_1_1_instance}{Instance}} is a no-\/op. \Hypertarget{class_lava_v_k_1_1_instance_aa6068c1c3c95b7845d261ced664f668d}\index{LavaVK::Instance@{LavaVK::Instance}!Instance@{Instance}}
 \index{Instance@{Instance}!LavaVK::Instance@{LavaVK::Instance}}
 \doxysubsubsection{\texorpdfstring{Instance()}{Instance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_lava_v_k_1_1_instance_aa6068c1c3c95b7845d261ced664f668d} 

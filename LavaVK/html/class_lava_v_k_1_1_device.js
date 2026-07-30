@@ -4,6 +4,7 @@ var class_lava_v_k_1_1_device =
     [ "~Device", "class_lava_v_k_1_1_device.html#a288ad958754b393656dd6ef9e94d7c08", null ],
     [ "Device", "class_lava_v_k_1_1_device.html#a1589524d8415f94600b91675ec319f3d", null ],
     [ "getCommandPool", "class_lava_v_k_1_1_device.html#a22b0ab567bd146918dd2bdfe88fc93ab", null ],
+    [ "getQueue", "class_lava_v_k_1_1_device.html#ab7a2a10637019725efffc064f07b96ee", null ],
     [ "getQueue", "class_lava_v_k_1_1_device.html#a19246dc1b26956fff4638de045c2ba47", null ],
     [ "getQueueFamily", "class_lava_v_k_1_1_device.html#a6b6c18bc1f012ff319c9e4a196449361", null ],
     [ "native", "class_lava_v_k_1_1_device.html#a03cd2d1f5b5f977e4df4b4ed086494b9", null ],

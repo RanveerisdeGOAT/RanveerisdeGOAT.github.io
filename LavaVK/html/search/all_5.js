@@ -1,16 +1,17 @@
 var searchData=
 [
   ['family_0',['family',['../class_lava_v_k_1_1_queue.html#a6f301c9ff710c86fd0efb9245f177194',1,'LavaVK::Queue']]],
-  ['features_1',['Features',['../index.html#autotoc_md3',1,'Features'],['../index.html#autotoc_md6',1,'Planned Features']]],
-  ['features_3a_2',['Current Features:',['../index.html#autotoc_md4',1,'']]],
+  ['features_1',['Features',['../index.html#autotoc_md3',1,'']]],
+  ['features_3a_2',['Features:',['../index.html#autotoc_md4',1,'Current Features:'],['../index.html#autotoc_md6',1,'Planned Features:']]],
   ['fence_3',['Fence',['../class_lava_v_k_1_1_fence.html',1,'LavaVK::Fence'],['../class_lava_v_k_1_1_fence.html#aaff960a70983d2ea7945af615c0e1f43',1,'LavaVK::Fence::Fence()=default'],['../class_lava_v_k_1_1_fence.html#a7c26fe31f797cb16e1deee9d089e5838',1,'LavaVK::Fence::Fence(Device &amp;device, bool signaled=false)'],['../class_lava_v_k_1_1_fence.html#aa1ee49826f084389d23aa0b2416e3e5d',1,'LavaVK::Fence::Fence(Fence &amp;&amp;other) noexcept']]],
   ['findpresentqueuefamily_4',['findPresentQueueFamily',['../class_lava_v_k_1_1_g_p_u_hardware.html#a34ba9b55eb4cb529c7005ee8e4e9ef87',1,'LavaVK::GPUHardware']]],
   ['findqueuefamily_5',['findQueueFamily',['../class_lava_v_k_1_1_g_p_u_hardware.html#aa9bab6a220bdf618747e4d3a2c486dfa',1,'LavaVK::GPUHardware']]],
-  ['format_6',['Format',['../class_lava_v_k_1_1_format.html',1,'LavaVK']]],
-  ['format_7',['format',['../struct_lava_v_k_1_1_image_create_info.html#a16f9666098e1b669ce44ce76fad22cc3',1,'LavaVK::ImageCreateInfo::format'],['../class_lava_v_k_1_1_image.html#a1420c5467583133130a351ae8561b66a',1,'LavaVK::Image::format()'],['../class_lava_v_k_1_1_swap_chain.html#ada309bfd1b07944d450431f3e1a9fad2',1,'LavaVK::SwapChain::format()']]],
-  ['fragmentshader_8',['fragmentShader',['../struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a57b5d52cf053242e5f58cbb2dc954255',1,'LavaVK::GraphicsPipelineCreateInfo']]],
-  ['framebuffer_9',['Framebuffer',['../class_lava_v_k_1_1_framebuffer.html',1,'LavaVK::Framebuffer'],['../class_lava_v_k_1_1_framebuffer.html#a13c2a85656ad5d710bd7beb1b960368e',1,'LavaVK::Framebuffer::Framebuffer()']]],
-  ['framebuffer_10',['framebuffer',['../class_lava_v_k_1_1_swap_chain.html#a49d1fed77d0b1fa24f34bffa84f5e2ce',1,'LavaVK::SwapChain']]],
-  ['freedescriptorsets_11',['freeDescriptorSets',['../class_lava_v_k_1_1_descriptor_pool.html#aac99486e48a1a2e66dc02ea41090173a',1,'LavaVK::DescriptorPool']]],
-  ['frontface_12',['frontFace',['../struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a54761a76fae56e47dc9be69ef082d864',1,'LavaVK::GraphicsPipelineCreateInfo']]]
+  ['format_6',['Format',['../class_lava_v_k_1_1_format.html',1,'LavaVK::Format'],['../class_lava_v_k_1_1_format.html#aa19d2c388687fb58f5a4c8faf82cc03a',1,'LavaVK::Format::Format()'],['../class_lava_v_k_1_1_format.html#ac151b8bf275dc2930a67a65ec74f822e',1,'LavaVK::Format::Format(ChannelOrder channels, BitDepth bits, NumericType type)'],['../class_lava_v_k_1_1_format.html#a942fd050bbe0ca1b84af9716031ef3f7',1,'LavaVK::Format::Format(VkFormat format)']]],
+  ['format_7',['format',['../struct_lava_v_k_1_1_image_create_info.html#a16f9666098e1b669ce44ce76fad22cc3',1,'LavaVK::ImageCreateInfo::format'],['../struct_lava_v_k_1_1_surface_format_info.html#a5b4007b2dfe1104886b2cf0a3aa31136',1,'LavaVK::SurfaceFormatInfo::format'],['../class_lava_v_k_1_1_image.html#a1420c5467583133130a351ae8561b66a',1,'LavaVK::Image::format()'],['../class_lava_v_k_1_1_swap_chain.html#ada309bfd1b07944d450431f3e1a9fad2',1,'LavaVK::SwapChain::format()']]],
+  ['formats_8',['formats',['../struct_lava_v_k_1_1_surface_capabilities.html#af7e0b979e0745a14aa2251af3fff9f03',1,'LavaVK::SurfaceCapabilities']]],
+  ['fragmentshader_9',['fragmentShader',['../struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a57b5d52cf053242e5f58cbb2dc954255',1,'LavaVK::GraphicsPipelineCreateInfo']]],
+  ['framebuffer_10',['Framebuffer',['../class_lava_v_k_1_1_framebuffer.html',1,'LavaVK::Framebuffer'],['../class_lava_v_k_1_1_framebuffer.html#a13c2a85656ad5d710bd7beb1b960368e',1,'LavaVK::Framebuffer::Framebuffer()']]],
+  ['framebuffer_11',['framebuffer',['../class_lava_v_k_1_1_swap_chain.html#a49d1fed77d0b1fa24f34bffa84f5e2ce',1,'LavaVK::SwapChain']]],
+  ['freedescriptorsets_12',['freeDescriptorSets',['../class_lava_v_k_1_1_descriptor_pool.html#aac99486e48a1a2e66dc02ea41090173a',1,'LavaVK::DescriptorPool']]],
+  ['frontface_13',['frontFace',['../struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a54761a76fae56e47dc9be69ef082d864',1,'LavaVK::GraphicsPipelineCreateInfo']]]
 ];

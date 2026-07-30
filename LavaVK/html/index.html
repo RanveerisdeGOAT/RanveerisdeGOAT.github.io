@@ -174,18 +174,18 @@ Current Features:</h2>
 <li class="checked">Automatic GLSSL → SPIR-V compilation using shaderc</li>
 </ul>
 <ul class="check">
-<li class="checked">Supports loading SPIR-V binaries directly </li>
+<li class="checked">Supports loading SPIR-V binaries directly</li>
+</ul>
+<ul class="check">
+<li class="checked">Compatible with any Window API </li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 <ul class="check">
-<li class="checked">Compatible with any Window API</li>
+<li class="checked">Buffers</li>
 </ul>
 </h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
-Planned Features</h2>
-<ul class="check">
-<li class="unchecked">Buffers:</li>
-</ul>
+Planned Features:</h2>
 <ul class="check">
 <li class="unchecked">Textures</li>
 </ul>
@@ -268,7 +268,7 @@ Get application instance.</h2>
 <div class="line">    .applicationName = <span class="stringliteral">&quot;LavaVK Example: Hello triangle!&quot;</span>,</div>
 <div class="line">    .extensions = std::vector&lt;const char *&gt;(glfwExtensions, glfwExtensions + extensionCount)</div>
 <div class="line">});</div>
-<div class="ttc" id="aclass_lava_v_k_1_1_instance_html"><div class="ttname"><a href="class_lava_v_k_1_1_instance.html">LavaVK::Instance</a></div><div class="ttdoc">Encapsulates a Vulkan instance (VkInstance) handle, managing its creation, lifetime,...</div><div class="ttdef"><b>Definition</b> Instance.hpp:32</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_instance_html"><div class="ttname"><a href="class_lava_v_k_1_1_instance.html">LavaVK::Instance</a></div><div class="ttdoc">Encapsulates a Vulkan instance (VkInstance) handle, managing its creation, lifetime,...</div><div class="ttdef"><b>Definition</b> Instance.hpp:56</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 Create surface.</h2>
 <p>Creating surfaces depends on your graphics API.</p>
@@ -279,7 +279,7 @@ Create surface.</h2>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> rawSurface;</div>
 <div class="line">});</div>
-<div class="ttc" id="aclass_lava_v_k_1_1_surface_html"><div class="ttname"><a href="class_lava_v_k_1_1_surface.html">LavaVK::Surface</a></div><div class="ttdoc">Manages the lifetime of a VkSurfaceKHR handle without exposing Vulkan handles directly in its public ...</div><div class="ttdef"><b>Definition</b> Surface.hpp:86</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_surface_html"><div class="ttname"><a href="class_lava_v_k_1_1_surface.html">LavaVK::Surface</a></div><div class="ttdoc">Manages the lifetime of a VkSurfaceKHR handle without exposing Vulkan handles directly in its public ...</div><div class="ttdef"><b>Definition</b> Surface.hpp:132</div></div>
 </div><!-- fragment --><p>SDL: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_lava_v_k_1_1_surface.html">LavaVK::Surface</a> surface(instance, [sdlWindow](VkInstance vkInst) -&gt; VkSurfaceKHR {</div>
 <div class="line">    VkSurfaceKHR rawSurface = VK_NULL_HANDLE;</div>
 <div class="line">    <span class="keywordflow">if</span> (!SDL_Vulkan_CreateSurface(sdlWindow, vkInst, &amp;rawSurface)) {</div>
@@ -317,8 +317,8 @@ Create surface.</h2>
 <div class="line">});</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 Create device.</h2>
-<p>Select your GPU first, note that <span class="tt">LavaVK::GPUHardware::selectOptimalGPU</span> does not chose the best GPU, it just selects descrete GPU's over integrated. </p><div class="fragment"><div class="line"><span class="comment">// GPU Selection &amp; Device Creation</span></div>
-<div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> &amp;selectedGPU = LavaVK::GPUHardware::selectOptimalGPU(instance, surface);</div>
+<p>Select your GPU first, note that <span class="tt"><a class="el" href="class_lava_v_k_1_1_g_p_u_hardware.html#af09d173c7b96ba8e154d76dae1c9488b" title="Selects the most suitable GPU available for rendering to the given surface.">LavaVK::GPUHardware::selectOptimalGPU</a></span> does not chose the best GPU, it just selects descrete GPU's over integrated. </p><div class="fragment"><div class="line"><span class="comment">// GPU Selection &amp; Device Creation</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> &amp;selectedGPU = <a class="code hl_function" href="class_lava_v_k_1_1_g_p_u_hardware.html#af09d173c7b96ba8e154d76dae1c9488b">LavaVK::GPUHardware::selectOptimalGPU</a>(instance, surface);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Device automatically creates command pools for all passed QueueTypes</span></div>
 <div class="line"><a class="code hl_class" href="class_lava_v_k_1_1_device.html">LavaVK::Device</a> device(</div>
@@ -326,7 +326,8 @@ Create device.</h2>
 <div class="line">    {LavaVK::QueueType::GRAPHICS, LavaVK::QueueType::PRESENT},</div>
 <div class="line">    &amp;surface</div>
 <div class="line">);</div>
-<div class="ttc" id="aclass_lava_v_k_1_1_device_html"><div class="ttname"><a href="class_lava_v_k_1_1_device.html">LavaVK::Device</a></div><div class="ttdoc">Manages the Vulkan physical device selection, logical device instantiation (VkDevice),...</div><div class="ttdef"><b>Definition</b> Device.hpp:120</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_device_html"><div class="ttname"><a href="class_lava_v_k_1_1_device.html">LavaVK::Device</a></div><div class="ttdoc">Manages the Vulkan physical device selection, logical device instantiation (VkDevice),...</div><div class="ttdef"><b>Definition</b> Device.hpp:230</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_g_p_u_hardware_html_af09d173c7b96ba8e154d76dae1c9488b"><div class="ttname"><a href="class_lava_v_k_1_1_g_p_u_hardware.html#af09d173c7b96ba8e154d76dae1c9488b">LavaVK::GPUHardware::selectOptimalGPU</a></div><div class="ttdeci">static GPUHardware selectOptimalGPU(const Instance &amp;instance, const Surface &amp;surface)</div><div class="ttdoc">Selects the most suitable GPU available for rendering to the given surface.</div><div class="ttdef"><b>Definition</b> Device.cpp:34</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 Create graphics pipeline.</h2>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> setLayout = <a class="code hl_class" href="class_lava_v_k_1_1_descriptor_set_layout_1_1_builder.html">LavaVK::DescriptorSetLayout::Builder</a>(device)</div>
@@ -349,13 +350,13 @@ Create graphics pipeline.</h2>
 <div class="line"><span class="comment">// Render Pass</span></div>
 <div class="line"><a class="code hl_class" href="class_lava_v_k_1_1_render_pass.html">LavaVK::RenderPass</a> renderPass(device, <a class="code hl_class" href="class_lava_v_k_1_1_format.html">LavaVK::Format</a>(LavaVK::ChannelOrder::BGRA, LavaVK::BitDepth::B8, LavaVK::NumericType::Srgb),</div>
 <div class="line">    <a class="code hl_class" href="class_lava_v_k_1_1_format.html">LavaVK::Format</a>(LavaVK::ChannelOrder::D, LavaVK::BitDepth::B32, LavaVK::NumericType::Float));</div>
-<div class="ttc" id="aclass_lava_v_k_1_1_descriptor_set_layout_1_1_builder_html"><div class="ttname"><a href="class_lava_v_k_1_1_descriptor_set_layout_1_1_builder.html">LavaVK::DescriptorSetLayout::Builder</a></div><div class="ttdoc">Fluent builder helper for constructing DescriptorSetLayout instances.</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:144</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_descriptor_set_layout_1_1_builder_html_a40941877424d164d58384954ec29006e"><div class="ttname"><a href="class_lava_v_k_1_1_descriptor_set_layout_1_1_builder.html#a40941877424d164d58384954ec29006e">LavaVK::DescriptorSetLayout::Builder::addBinding</a></div><div class="ttdeci">Builder &amp; addBinding(uint32_t binding, DescriptorType descriptorType, uint32_t stageFlags, uint32_t count=1)</div><div class="ttdoc">Adds a resource binding specification to the layout.</div><div class="ttdef"><b>Definition</b> Pipeline.cpp:286</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_descriptor_set_layout_1_1_builder_html_a9e2813c009c9fe0c59644256d9a9d66d"><div class="ttname"><a href="class_lava_v_k_1_1_descriptor_set_layout_1_1_builder.html#a9e2813c009c9fe0c59644256d9a9d66d">LavaVK::DescriptorSetLayout::Builder::build</a></div><div class="ttdeci">std::unique_ptr&lt; DescriptorSetLayout &gt; build() const</div><div class="ttdoc">Builds and instantiates the DescriptorSetLayout.</div><div class="ttdef"><b>Definition</b> Pipeline.cpp:301</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_format_html"><div class="ttname"><a href="class_lava_v_k_1_1_format.html">LavaVK::Format</a></div><div class="ttdef"><b>Definition</b> Instance.hpp:113</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_pipeline_layout_html"><div class="ttname"><a href="class_lava_v_k_1_1_pipeline_layout.html">LavaVK::PipelineLayout</a></div><div class="ttdoc">Encapsulates a Vulkan VkPipelineLayout.</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:365</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_render_pass_html"><div class="ttname"><a href="class_lava_v_k_1_1_render_pass.html">LavaVK::RenderPass</a></div><div class="ttdoc">Wrapper for Vulkan VkRenderPass.</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:402</div></div>
-<div class="ttc" id="astruct_lava_v_k_1_1_push_constant_range_html"><div class="ttname"><a href="struct_lava_v_k_1_1_push_constant_range.html">LavaVK::PushConstantRange</a></div><div class="ttdoc">Defines a push constant memory range accessible in shaders.</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:126</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_descriptor_set_layout_1_1_builder_html"><div class="ttname"><a href="class_lava_v_k_1_1_descriptor_set_layout_1_1_builder.html">LavaVK::DescriptorSetLayout::Builder</a></div><div class="ttdoc">Fluent builder helper for constructing DescriptorSetLayout instances.</div><div class="ttdef"><b>Definition</b> Descriptor.hpp:55</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_descriptor_set_layout_1_1_builder_html_a40941877424d164d58384954ec29006e"><div class="ttname"><a href="class_lava_v_k_1_1_descriptor_set_layout_1_1_builder.html#a40941877424d164d58384954ec29006e">LavaVK::DescriptorSetLayout::Builder::addBinding</a></div><div class="ttdeci">Builder &amp; addBinding(uint32_t binding, DescriptorType descriptorType, uint32_t stageFlags, uint32_t count=1)</div><div class="ttdoc">Adds a resource binding specification to the layout.</div><div class="ttdef"><b>Definition</b> Descriptor.cpp:10</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_descriptor_set_layout_1_1_builder_html_a9e2813c009c9fe0c59644256d9a9d66d"><div class="ttname"><a href="class_lava_v_k_1_1_descriptor_set_layout_1_1_builder.html#a9e2813c009c9fe0c59644256d9a9d66d">LavaVK::DescriptorSetLayout::Builder::build</a></div><div class="ttdeci">std::unique_ptr&lt; DescriptorSetLayout &gt; build() const</div><div class="ttdoc">Builds and instantiates the DescriptorSetLayout.</div><div class="ttdef"><b>Definition</b> Descriptor.cpp:25</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_format_html"><div class="ttname"><a href="class_lava_v_k_1_1_format.html">LavaVK::Format</a></div><div class="ttdoc">Structured, human-readable representation of a Vulkan pixel format.</div><div class="ttdef"><b>Definition</b> Core.hpp:82</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_pipeline_layout_html"><div class="ttname"><a href="class_lava_v_k_1_1_pipeline_layout.html">LavaVK::PipelineLayout</a></div><div class="ttdoc">Encapsulates a Vulkan VkPipelineLayout.</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:46</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_render_pass_html"><div class="ttname"><a href="class_lava_v_k_1_1_render_pass.html">LavaVK::RenderPass</a></div><div class="ttdoc">Wrapper for Vulkan VkRenderPass.</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:102</div></div>
+<div class="ttc" id="astruct_lava_v_k_1_1_push_constant_range_html"><div class="ttname"><a href="struct_lava_v_k_1_1_push_constant_range.html">LavaVK::PushConstantRange</a></div><div class="ttdoc">Defines a push constant memory range accessible in shaders.</div><div class="ttdef"><b>Definition</b> Descriptor.hpp:40</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 Create graphics pipeline.</h2>
 <div class="fragment"><div class="line"><span class="comment">// Note: If your using glsl, you don&#39;t need to compile to SPIR-V</span></div>
@@ -383,8 +384,8 @@ Create graphics pipeline.</h2>
 <div class="line"> </div>
 <div class="line">        .blending = <span class="keyword">false</span></div>
 <div class="line">    });</div>
-<div class="ttc" id="aclass_lava_v_k_1_1_graphics_pipeline_html"><div class="ttname"><a href="class_lava_v_k_1_1_graphics_pipeline.html">LavaVK::GraphicsPipeline</a></div><div class="ttdoc">Abstraction around Vulkan&#39;s graphics pipeline (VkPipeline).</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:565</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_shader_html"><div class="ttname"><a href="class_lava_v_k_1_1_shader.html">LavaVK::Shader</a></div><div class="ttdoc">Encapsulates a Vulkan shader module (VkShaderModule).</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:34</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_graphics_pipeline_html"><div class="ttname"><a href="class_lava_v_k_1_1_graphics_pipeline.html">LavaVK::GraphicsPipeline</a></div><div class="ttdoc">Abstraction around Vulkan&#39;s graphics pipeline (VkPipeline).</div><div class="ttdef"><b>Definition</b> Pipeline.hpp:301</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_shader_html"><div class="ttname"><a href="class_lava_v_k_1_1_shader.html">LavaVK::Shader</a></div><div class="ttdoc">Encapsulates a Vulkan shader module (VkShaderModule).</div><div class="ttdef"><b>Definition</b> Shader.hpp:84</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
 Program shaders.</h2>
 <p>Vertex shader: </p><div class="fragment"><div class="line">#version 450</div>
@@ -431,7 +432,7 @@ Create swapchain.</h2>
 <div class="line">        renderPass.getDepthFormat(),</div>
 <div class="line">        {WIDTH, HEIGHT}</div>
 <div class="line">    );</div>
-<div class="ttc" id="aclass_lava_v_k_1_1_swap_chain_html"><div class="ttname"><a href="class_lava_v_k_1_1_swap_chain.html">LavaVK::SwapChain</a></div><div class="ttdoc">Manages the Vulkan Swapchain and associated frame/image synchronization primitives....</div><div class="ttdef"><b>Definition</b> SwapChain.hpp:30</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_swap_chain_html"><div class="ttname"><a href="class_lava_v_k_1_1_swap_chain.html">LavaVK::SwapChain</a></div><div class="ttdoc">Manages the Vulkan Swapchain and associated frame/image synchronization primitives....</div><div class="ttdef"><b>Definition</b> SwapChain.hpp:32</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 Create command buffers.</h2>
 <p>Because LavaVK::device automatically create a command pool, all you need to do is allocate your desired command buffers. </p><div class="fragment"><div class="line"><span class="comment">// Allocates the max amount of command buffers for every swapchain framebuffer</span></div>
@@ -453,7 +454,7 @@ Acquire swapchain image.</h2>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">size_t</span> frameIndex = swapchain.currentFrame();</div>
 <div class="line">}</div>
-<div class="ttc" id="astruct_lava_v_k_1_1_result_html"><div class="ttname"><a href="struct_lava_v_k_1_1_result.html">LavaVK::Result</a></div><div class="ttdef"><b>Definition</b> Instance.hpp:610</div></div>
+<div class="ttc" id="astruct_lava_v_k_1_1_result_html"><div class="ttname"><a href="struct_lava_v_k_1_1_result.html">LavaVK::Result</a></div><div class="ttdoc">Lightweight wrapper around VkResult with LavaVK-friendly comparisons and truthiness.</div><div class="ttdef"><b>Definition</b> Core.hpp:685</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 Record command buffers.</h2>
 <p>In LavaVK all you need is to pass a function of what you want to do LavaVK will handle the rest</p>
@@ -468,8 +469,8 @@ Record command buffers.</h2>
 <div class="line">        cmd.draw(3);</div>
 <div class="line">    }</div>
 <div class="line">);</div>
-<div class="ttc" id="aclass_lava_v_k_1_1_command_buffer_html"><div class="ttname"><a href="class_lava_v_k_1_1_command_buffer.html">LavaVK::CommandBuffer</a></div><div class="ttdoc">Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions.</div><div class="ttdef"><b>Definition</b> Command.hpp:22</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_command_buffer_html_aa799785d1a4460451b6f04fea6b1483f"><div class="ttname"><a href="class_lava_v_k_1_1_command_buffer.html#aa799785d1a4460451b6f04fea6b1483f">LavaVK::CommandBuffer::record</a></div><div class="ttdeci">void record(const RenderPass &amp;renderPass, const Framebuffer &amp;framebuffer, VkExtent2D extent, const std::function&lt; void(CommandBuffer &amp;)&gt; &amp;drawCommands)</div><div class="ttdoc">Higher-level helper that manages the entire lifecycle of recording a render pass.</div><div class="ttdef"><b>Definition</b> Command.cpp:70</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_command_buffer_html"><div class="ttname"><a href="class_lava_v_k_1_1_command_buffer.html">LavaVK::CommandBuffer</a></div><div class="ttdoc">Wrapper around VkCommandBuffer for recording GPU rendering and compute instructions.</div><div class="ttdef"><b>Definition</b> Command.hpp:54</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_command_buffer_html_aa799785d1a4460451b6f04fea6b1483f"><div class="ttname"><a href="class_lava_v_k_1_1_command_buffer.html#aa799785d1a4460451b6f04fea6b1483f">LavaVK::CommandBuffer::record</a></div><div class="ttdeci">void record(const RenderPass &amp;renderPass, const Framebuffer &amp;framebuffer, VkExtent2D extent, const std::function&lt; void(CommandBuffer &amp;)&gt; &amp;drawCommands)</div><div class="ttdoc">Higher-level helper that manages the entire lifecycle of recording a render pass.</div><div class="ttdef"><b>Definition</b> Command.cpp:71</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 Submit command buffers to GPU.</h2>
 <div class="fragment"><div class="line"><span class="comment">// Submit Command Buffer directly through Device using LavaVK Sync primitives</span></div>

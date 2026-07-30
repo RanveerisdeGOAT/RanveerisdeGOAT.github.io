@@ -141,10 +141,19 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Wrapper around VkSubmitInfo to simplify building queue submission payloads. </p>
-<ul>
-<li>Manages internal lifetime for wait semaphores, signal semaphores, pipeline stage masks, and command buffers to prevent pointer dangling during submission. </li>
-</ul>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<p>Raw <span class="tt">VkSubmitInfo</span> only stores pointers into arrays owned by the caller, which means those arrays must outlive the submit call. <span class="tt"><a class="el" href="class_lava_v_k_1_1_submit_info.html" title="Wrapper around VkSubmitInfo to simplify building queue submission payloads.">SubmitInfo</a></span> instead owns copies of the wait semaphores, signal semaphores, wait stage masks, and command buffers passed to it, and keeps its internal <span class="tt">VkSubmitInfo</span> pointers referencing that owned storage. This lets a <span class="tt"><a class="el" href="class_lava_v_k_1_1_submit_info.html" title="Wrapper around VkSubmitInfo to simplify building queue submission payloads.">SubmitInfo</a></span> be built up with chained setter calls and safely passed to <span class="tt"><a class="el" href="class_lava_v_k_1_1_queue.html#a30e9863baba3fa0ddc8faa169f1a587a" title="Submits work payloads to this queue for execution on the GPU.">Queue::submit</a></span> without the caller having to manage the lifetime of any backing arrays.</p>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_lava_v_k_1_1_submit_info.html">LavaVK::SubmitInfo</a> submitInfo;</div>
+<div class="line">submitInfo</div>
+<div class="line">    .<a class="code hl_function" href="#ae273d89c01a38f374a9209b05931ad75">setWaitSemaphores</a>({ imageAvailable }, { VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT })</div>
+<div class="line">    .<a class="code hl_function" href="#adf43582cd5ad4a39e3bd9a360e67509c">setCommandBuffers</a>({ cmd.native() })</div>
+<div class="line">    .<a class="code hl_function" href="#ac36f1f214fa36453ca25f26e72295498">setSignalSemaphores</a>({ renderFinished });</div>
+<div class="line"> </div>
+<div class="line">queue.submit(submitInfo, inFlightFence);</div>
+<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html"><div class="ttname"><a href="class_lava_v_k_1_1_submit_info.html">LavaVK::SubmitInfo</a></div><div class="ttdoc">Wrapper around VkSubmitInfo to simplify building queue submission payloads.</div><div class="ttdef"><b>Definition</b> Queue.hpp:51</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_ac36f1f214fa36453ca25f26e72295498"><div class="ttname"><a href="#ac36f1f214fa36453ca25f26e72295498">LavaVK::SubmitInfo::setSignalSemaphores</a></div><div class="ttdeci">SubmitInfo &amp; setSignalSemaphores(const std::vector&lt; VkSemaphore &gt; &amp;semaphores)</div><div class="ttdoc">Configures semaphores that will be signaled once submitted command execution completes.</div><div class="ttdef"><b>Definition</b> Queue.hpp:103</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_adf43582cd5ad4a39e3bd9a360e67509c"><div class="ttname"><a href="#adf43582cd5ad4a39e3bd9a360e67509c">LavaVK::SubmitInfo::setCommandBuffers</a></div><div class="ttdeci">SubmitInfo &amp; setCommandBuffers(const std::vector&lt; VkCommandBuffer &gt; &amp;commandBuffers)</div><div class="ttdoc">Configures command buffers to be executed by the queue.</div><div class="ttdef"><b>Definition</b> Queue.hpp:90</div></div>
+<div class="ttc" id="aclass_lava_v_k_1_1_submit_info_html_ae273d89c01a38f374a9209b05931ad75"><div class="ttname"><a href="#ae273d89c01a38f374a9209b05931ad75">LavaVK::SubmitInfo::setWaitSemaphores</a></div><div class="ttdeci">SubmitInfo &amp; setWaitSemaphores(const std::vector&lt; VkSemaphore &gt; &amp;semaphores, const std::vector&lt; VkPipelineStageFlags &gt; &amp;stages)</div><div class="ttdoc">Configures semaphores that must be signaled before commands can execute.</div><div class="ttdef"><b>Definition</b> Queue.hpp:74</div></div>
+</div><!-- fragment --> </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aa9de0c6e9e8c109e2c909bd0e72c2ff9" name="aa9de0c6e9e8c109e2c909bd0e72c2ff9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9de0c6e9e8c109e2c909bd0e72c2ff9">&#9670;&#160;</a></span>native()</h2>
 

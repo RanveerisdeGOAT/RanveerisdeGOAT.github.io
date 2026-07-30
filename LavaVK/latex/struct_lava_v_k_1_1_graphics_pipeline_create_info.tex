@@ -20,6 +20,8 @@ Comprehensive configuration structure for creating a {\ttfamily \doxylink{class_
 \item 
 \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{struct_lava_v_k_1_1_graphics_pipeline_create_info_a8071b51330ee9da9547c25d489e93269}{render\+Pass}} = nullptr
 \item 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout}{Vertex\+Layout}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{struct_lava_v_k_1_1_graphics_pipeline_create_info_a76a715705f04e4ae3325a6b37c41566d}{vertex\+Layout}} = nullptr
+\item 
 Topology \doxymbox{\hyperlink{struct_lava_v_k_1_1_graphics_pipeline_create_info_ab13a71a703a39d18c897bb1ead885904}{topology}} = Topology::\+\+TRIANGLES
 \item 
 Polygon\+Mode \doxymbox{\hyperlink{struct_lava_v_k_1_1_graphics_pipeline_create_info_a2be83a2e1eaf7b6b1f7fe350c30adbae}{polygon\+Mode}} = Polygon\+Mode::\+\+FILL
@@ -182,7 +184,13 @@ Source color factor \Hypertarget{struct_lava_v_k_1_1_graphics_pipeline_create_in
 {\footnotesize\ttfamily \label{struct_lava_v_k_1_1_graphics_pipeline_create_info_ab13a71a703a39d18c897bb1ead885904} 
 Topology Lava\+VK::\+\+Graphics\+Pipeline\+Create\+Info::\+topology = Topology::\+\+TRIANGLES}
 
-Primitive topology type \Hypertarget{struct_lava_v_k_1_1_graphics_pipeline_create_info_a422c04be6305ea23a5f1a0b57c6d56bb}\index{LavaVK::GraphicsPipelineCreateInfo@{LavaVK::GraphicsPipelineCreateInfo}!vertexShader@{vertexShader}}
+Primitive topology type \Hypertarget{struct_lava_v_k_1_1_graphics_pipeline_create_info_a76a715705f04e4ae3325a6b37c41566d}\index{LavaVK::GraphicsPipelineCreateInfo@{LavaVK::GraphicsPipelineCreateInfo}!vertexLayout@{vertexLayout}}
+\index{vertexLayout@{vertexLayout}!LavaVK::GraphicsPipelineCreateInfo@{LavaVK::GraphicsPipelineCreateInfo}}
+\doxysubsubsection{\texorpdfstring{vertexLayout}{vertexLayout}}
+{\footnotesize\ttfamily \label{struct_lava_v_k_1_1_graphics_pipeline_create_info_a76a715705f04e4ae3325a6b37c41566d} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout}{Vertex\+Layout}}\texorpdfstring{$\ast$}{*} Lava\+VK::\+\+Graphics\+Pipeline\+Create\+Info::\+vertex\+Layout = nullptr}
+
+Vertex input binding/\+attribute layout; leave {\ttfamily nullptr} for pipelines with no vertex input. \Hypertarget{struct_lava_v_k_1_1_graphics_pipeline_create_info_a422c04be6305ea23a5f1a0b57c6d56bb}\index{LavaVK::GraphicsPipelineCreateInfo@{LavaVK::GraphicsPipelineCreateInfo}!vertexShader@{vertexShader}}
 \index{vertexShader@{vertexShader}!LavaVK::GraphicsPipelineCreateInfo@{LavaVK::GraphicsPipelineCreateInfo}}
 \doxysubsubsection{\texorpdfstring{vertexShader}{vertexShader}}
 {\footnotesize\ttfamily \label{struct_lava_v_k_1_1_graphics_pipeline_create_info_a422c04be6305ea23a5f1a0b57c6d56bb} 

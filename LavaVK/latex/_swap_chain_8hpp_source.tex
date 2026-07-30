@@ -8,132 +8,135 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vulkan/vulkan.h>}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Buffer.hpp"{}}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Surface.hpp"{}}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Sync.hpp"{}}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }LavaVK\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}};}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{RenderPass}};}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer}{Framebuffer}};}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Buffer.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Surface.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Sync.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Device.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Surface.hpp"{}}}
 \DoxyCodeLine{00016\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ MAX\_FRAMES\_IN\_FLIGHT\ =\ 2;}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}(}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&device,}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a80a196f7b7418e06aa01b1cbc703635d}{surface}},}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{RenderPass}}\ \&renderPass,}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ VkFormat\ colorFormat,}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ VkFormat\ depthFormat,}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ VkExtent2D\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a6adc5dcdb0b629e02817bd984671101c}{extent}});}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ad281472f2bfb2481291edbadc08481be}{\string~SwapChain}}();}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Disable\ copy\ semantics\ as\ swapchain\ and\ sync\ primitives\ own\ unique\ Vulkan\ handles}}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&operator=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}(\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&\&other)\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&operator=(\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&\&other)\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result}{Result}}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a94c3ed6a3e35f153479e58039bfae990}{acquireImage}}(uint32\_t\ \&imageIndex);}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result}{Result}}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a6dc5eafd83ed848d8bb912df571c0307}{present}}(uint32\_t\ imageIndex);}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a3af5def3eec1f678a8e0a53c67da69af}{imageCount}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(m\_images.size());}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac2482f22c1f7c9b629e4c760ccfc5c9c}{image}}(uint32\_t\ index)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_images[index];}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_acc2598a0ccb8ab6d5ebbe3c28d243d30}{image}}(uint32\_t\ index)\ \{}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_images[index];}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::vector<Image>\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac90f12c1b47ac6fa3bc62adacab49c64}{images}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_images;}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkExtent2D\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a6adc5dcdb0b629e02817bd984671101c}{extent}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_extent;}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkFormat\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ada309bfd1b07944d450431f3e1a9fad2}{format}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_format;}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00141\ }
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkSwapchainKHR\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a0c829d3f220bbd50ba50b191871b8f4d}{native}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_swapchain;}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00149\ }
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a80a196f7b7418e06aa01b1cbc703635d}{surface}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_surface;}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_adb79bd90d8fce3661bf9d29d4e482ffc}{currentFrame}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_currentFrame;}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Synchronization\ Accessors\ -\/-\/-\/}}
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a4d7545a1b7f5e3fc4773327f037a42e1}{imageAvailableSemaphore}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_imageAvailable[m\_currentFrame];}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00176\ }
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a3f40543d23de10d609186599a46d68ca}{renderFinishedSemaphore}}(uint32\_t\ imageIndex)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_renderFinished[imageIndex];}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00186\ }
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_fence}{Fence}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a207da8099ee8caf481b20f4132cbfd2e}{inFlightFence}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_inFlightFences[m\_currentFrame];}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00195\ }
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer}{Framebuffer}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a49d1fed77d0b1fa24f34bffa84f5e2ce}{framebuffer}}(uint32\_t\ index)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_framebuffers[index];}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00202\ }
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a3baf50360b8422af2335161949ac9472}{recreate}}();}
-\DoxyCodeLine{00207\ }
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkExtent2D\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a84af9a1ce101467e69017d5594262c32}{getLatestExtent}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00212\ }
-\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ create();}
-\DoxyCodeLine{00218\ }
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ cleanup();}
-\DoxyCodeLine{00223\ }
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&m\_device;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&m\_surface;\ \ \ \ \ \ }
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{RenderPass}}\ \&m\_renderPass;}
-\DoxyCodeLine{00227\ }
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ VkSwapchainKHR\ m\_swapchain\ =\ VK\_NULL\_HANDLE;\ }
-\DoxyCodeLine{00229\ }
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ VkFormat\ m\_colorFormat\ =\ VK\_FORMAT\_UNDEFINED;}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ VkFormat\ m\_depthFormat\ =\ VK\_FORMAT\_UNDEFINED;}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ VkFormat\ m\_format\ =\ VK\_FORMAT\_UNDEFINED;\ \ \ \ \ }
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ VkExtent2D\ m\_extent\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00234\ }
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ std::vector<Image>\ m\_images;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ std::unique\_ptr<Image>\ m\_depthImage;\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ std::vector<Framebuffer>\ m\_framebuffers;\ \ \ \ \ }
-\DoxyCodeLine{00238\ }
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_currentFrame\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00240\ }
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Synchronization\ Primitives\ (Per\ Frame\ in\ Flight)}}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ std::vector<Semaphore>\ m\_imageAvailable;\ \ \ \ \ }
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ std::vector<Fence>\ m\_inFlightFences;\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00244\ }
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Synchronization\ Primitives\ (Per\ Swapchain\ Image)}}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ std::vector<Semaphore>\ m\_renderFinished;\ \ \ \ \ }
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ std::vector<VkFence>\ m\_imagesInFlight;\ \ \ \ \ \ \ }
-\DoxyCodeLine{00248\ \ \ \ \ \};}
-\DoxyCodeLine{00249\ \}\ \textcolor{comment}{//\ namespace\ LavaVK}}
-\DoxyCodeLine{00250\ }
-\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LAVAVK\_SWAPCHAIN\_HPP}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }LavaVK\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{RenderPass}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ MAX\_FRAMES\_IN\_FLIGHT\ =\ 2;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&device,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a80a196f7b7418e06aa01b1cbc703635d}{surface}},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{RenderPass}}\ \&renderPass,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ VkFormat\ colorFormat,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ VkFormat\ depthFormat,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ VkExtent2D\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a6adc5dcdb0b629e02817bd984671101c}{extent}});}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ad281472f2bfb2481291edbadc08481be}{\string~SwapChain}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Disable\ copy\ semantics\ as\ swapchain\ and\ sync\ primitives\ own\ unique\ Vulkan\ handles}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&operator=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}(\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&\&other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&operator=(\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{SwapChain}}\ \&\&other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result}{Result}}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a94c3ed6a3e35f153479e58039bfae990}{acquireImage}}(uint32\_t\ \&imageIndex);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result}{Result}}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a6dc5eafd83ed848d8bb912df571c0307}{present}}(uint32\_t\ imageIndex);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a3af5def3eec1f678a8e0a53c67da69af}{imageCount}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(m\_images.size());}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac2482f22c1f7c9b629e4c760ccfc5c9c}{image}}(uint32\_t\ index)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_images[index];}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_acc2598a0ccb8ab6d5ebbe3c28d243d30}{image}}(uint32\_t\ index)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_images[index];}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::vector<Image>\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac90f12c1b47ac6fa3bc62adacab49c64}{images}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_images;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkExtent2D\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a6adc5dcdb0b629e02817bd984671101c}{extent}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_extent;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkFormat\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ada309bfd1b07944d450431f3e1a9fad2}{format}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_format;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkSwapchainKHR\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a0c829d3f220bbd50ba50b191871b8f4d}{native}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_swapchain;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a80a196f7b7418e06aa01b1cbc703635d}{surface}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_surface;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_adb79bd90d8fce3661bf9d29d4e482ffc}{currentFrame}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_currentFrame;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Synchronization\ Accessors\ -\/-\/-\/}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a4d7545a1b7f5e3fc4773327f037a42e1}{imageAvailableSemaphore}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_imageAvailable[m\_currentFrame];}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_semaphore}{Semaphore}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a3f40543d23de10d609186599a46d68ca}{renderFinishedSemaphore}}(uint32\_t\ imageIndex)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_renderFinished[imageIndex];}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_fence}{Fence}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a207da8099ee8caf481b20f4132cbfd2e}{inFlightFence}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_inFlightFences[m\_currentFrame];}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer}{Framebuffer}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a49d1fed77d0b1fa24f34bffa84f5e2ce}{framebuffer}}(uint32\_t\ index)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_framebuffers[index];}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a3baf50360b8422af2335161949ac9472}{recreate}}();}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkExtent2D\ \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a84af9a1ce101467e69017d5594262c32}{getLatestExtent}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ create();}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ cleanup();}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&m\_device;\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&m\_surface;\ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{RenderPass}}\ \&m\_renderPass;\ }
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ VkSwapchainKHR\ m\_swapchain\ =\ VK\_NULL\_HANDLE;\ }
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ VkFormat\ m\_colorFormat\ =\ VK\_FORMAT\_UNDEFINED;\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ VkFormat\ m\_depthFormat\ =\ VK\_FORMAT\_UNDEFINED;\ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ VkFormat\ m\_format\ =\ VK\_FORMAT\_UNDEFINED;\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ VkExtent2D\ m\_extent\{\};\ }
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ std::vector<Image>\ m\_images;\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ std::unique\_ptr<Image>\ m\_depthImage;\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ std::vector<Framebuffer>\ m\_framebuffers;\ }
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_currentFrame\ =\ 0;\ }
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Synchronization\ Primitives\ (Per\ Frame\ in\ Flight)}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ std::vector<Semaphore>\ m\_imageAvailable;\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ std::vector<Fence>\ m\_inFlightFences;\ }
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Synchronization\ Primitives\ (Per\ Swapchain\ Image)}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ std::vector<Semaphore>\ m\_renderFinished;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ std::vector<VkFence>\ m\_imagesInFlight;}
+\DoxyCodeLine{00253\ \ \ \ \ \};}
+\DoxyCodeLine{00254\ \}\ \textcolor{comment}{//\ namespace\ LavaVK}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LAVAVK\_SWAPCHAIN\_HPP}}
 
 \end{DoxyCode}

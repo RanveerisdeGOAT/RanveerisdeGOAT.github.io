@@ -6,5 +6,7 @@ var searchData=
   ['allocate_3',['allocate',['../class_lava_v_k_1_1_command_pool.html#a6ae48ce3bb16545a0439d7602a09e9e8',1,'LavaVK::CommandPool::allocate()'],['../class_lava_v_k_1_1_command_pool.html#a5bd905725aedecf87d5028203fb71e76',1,'LavaVK::CommandPool::allocate(uint32_t count)']]],
   ['allocatedescriptorset_4',['allocateDescriptorSet',['../class_lava_v_k_1_1_descriptor_pool.html#a60d2cae2ecd6a050ee42e4b542b4e8f0',1,'LavaVK::DescriptorPool']]],
   ['apiversion_5',['apiVersion',['../class_lava_v_k_1_1_g_p_u_hardware.html#adc881ab4d9041b8c5f24da36cda942fd',1,'LavaVK::GPUHardware']]],
-  ['attachments_6',['attachments',['../class_lava_v_k_1_1_framebuffer.html#a2bf3e41791a9dbda664eb3462a32f110',1,'LavaVK::Framebuffer']]]
+  ['attachments_6',['attachments',['../class_lava_v_k_1_1_framebuffer.html#a2bf3e41791a9dbda664eb3462a32f110',1,'LavaVK::Framebuffer']]],
+  ['attribute_7',['attribute',['../class_lava_v_k_1_1_vertex_layout.html#a23f6cc315daacbff95341c303e984cae',1,'LavaVK::VertexLayout']]],
+  ['attributes_8',['attributes',['../class_lava_v_k_1_1_vertex_layout.html#ac4b3bf92206e8a4ea9762ad0c8dd520e',1,'LavaVK::VertexLayout']]]
 ];
