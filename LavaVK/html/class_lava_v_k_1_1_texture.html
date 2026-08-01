@@ -120,55 +120,78 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_lava_v_k
 </div><!--header-->
 <div class="contents">
 
-<p>Loads an image file from disk into a GPU-resident, shader-sampleable texture.  
+<p>Represents a GPU texture: an <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a> paired with a <span class="tt">VkSampler</span>.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a530f6bfdda3df5d60e0f7c3339197308" id="r_a530f6bfdda3df5d60e0f7c3339197308"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a530f6bfdda3df5d60e0f7c3339197308">Texture</a> (<a class="el" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device, const <a class="el" href="struct_lava_v_k_1_1_texture_create_info.html">TextureCreateInfo</a> &amp;info)</td></tr>
+<tr class="memdesc:a530f6bfdda3df5d60e0f7c3339197308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty texture GPU resource (e.g., storage image or compute target).  <br /></td></tr>
 <tr class="memitem:ab1f969ac5e632df7e56b47cd81ca8887" id="r_ab1f969ac5e632df7e56b47cd81ca8887"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab1f969ac5e632df7e56b47cd81ca8887">Texture</a> (<a class="el" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device, const std::filesystem::path &amp;path, const <a class="el" href="struct_lava_v_k_1_1_texture_sampler_create_info.html">TextureSamplerCreateInfo</a> &amp;samplerInfo={})</td></tr>
-<tr class="memdesc:ab1f969ac5e632df7e56b47cd81ca8887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an image from disk and uploads it to the GPU as a sampled texture.  <br /></td></tr>
+<tr class="memdesc:ab1f969ac5e632df7e56b47cd81ca8887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an image file from disk and uploads it to the GPU as a sampled texture.  <br /></td></tr>
 <tr class="memitem:a7205fb0a0bcababe35de7d92b0c8b295" id="r_a7205fb0a0bcababe35de7d92b0c8b295"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7205fb0a0bcababe35de7d92b0c8b295">~Texture</a> ()</td></tr>
-<tr class="memdesc:a7205fb0a0bcababe35de7d92b0c8b295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the texture's sampler.  <br /></td></tr>
+<tr class="memdesc:a7205fb0a0bcababe35de7d92b0c8b295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the sampler and the owned <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a>.  <br /></td></tr>
 <tr class="memitem:a01fac7f300e3379ae040f03168aa9c5f" id="r_a01fac7f300e3379ae040f03168aa9c5f"><td class="memItemLeft"><a id="a01fac7f300e3379ae040f03168aa9c5f" name="a01fac7f300e3379ae040f03168aa9c5f"></a>
 &#160;</td><td class="memItemRight"><b>Texture</b> (const Texture &amp;)=delete</td></tr>
 <tr class="memitem:a0df8a954f35dec548b3ecf317fc931a4" id="r_a0df8a954f35dec548b3ecf317fc931a4"><td class="memItemLeft"><a id="a0df8a954f35dec548b3ecf317fc931a4" name="a0df8a954f35dec548b3ecf317fc931a4"></a>
-<a class="el" href="#ab1f969ac5e632df7e56b47cd81ca8887">Texture</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="#ab1f969ac5e632df7e56b47cd81ca8887">Texture</a> &amp;)=delete</td></tr>
-<tr class="memitem:a65980c2dcdb279c5c7c6a13adf219f90" id="r_a65980c2dcdb279c5c7c6a13adf219f90"><td class="memItemLeft"><a id="a65980c2dcdb279c5c7c6a13adf219f90" name="a65980c2dcdb279c5c7c6a13adf219f90"></a>
-&#160;</td><td class="memItemRight"><b>Texture</b> (Texture &amp;&amp;)=delete</td></tr>
-<tr class="memitem:a8ee2aeddaf5b19b83178fd73cf311c56" id="r_a8ee2aeddaf5b19b83178fd73cf311c56"><td class="memItemLeft"><a id="a8ee2aeddaf5b19b83178fd73cf311c56" name="a8ee2aeddaf5b19b83178fd73cf311c56"></a>
-<a class="el" href="#ab1f969ac5e632df7e56b47cd81ca8887">Texture</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (<a class="el" href="#ab1f969ac5e632df7e56b47cd81ca8887">Texture</a> &amp;&amp;)=delete</td></tr>
-<tr class="memitem:a299f5e149aa6d494db730d3b003eb102" id="r_a299f5e149aa6d494db730d3b003eb102"><td class="memItemLeft"><a class="el" href="class_lava_v_k_1_1_image.html">Image</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a299f5e149aa6d494db730d3b003eb102">image</a> () const</td></tr>
-<tr class="memdesc:a299f5e149aa6d494db730d3b003eb102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GPU image backing this texture.  <br /></td></tr>
+<a class="el" href="#a530f6bfdda3df5d60e0f7c3339197308">Texture</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="#a530f6bfdda3df5d60e0f7c3339197308">Texture</a> &amp;)=delete</td></tr>
+<tr class="memitem:ac222a0194fc78e2f169b419af604738f" id="r_ac222a0194fc78e2f169b419af604738f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac222a0194fc78e2f169b419af604738f">Texture</a> (Texture &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:ac222a0194fc78e2f169b419af604738f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_texture.html" title="Represents a GPU texture: an Image paired with a VkSampler.">Texture</a>.  <br /></td></tr>
+<tr class="memitem:a9c9ed3bafde891d1bb317cdeb721ae0d" id="r_a9c9ed3bafde891d1bb317cdeb721ae0d"><td class="memItemLeft"><a class="el" href="#a530f6bfdda3df5d60e0f7c3339197308">Texture</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a9c9ed3bafde891d1bb317cdeb721ae0d">operator=</a> (<a class="el" href="#a530f6bfdda3df5d60e0f7c3339197308">Texture</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:a9c9ed3bafde891d1bb317cdeb721ae0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_texture.html" title="Represents a GPU texture: an Image paired with a VkSampler.">Texture</a>.  <br /></td></tr>
+<tr class="memitem:a4b218ecc4bbdcf3b0aa1f235881d56a9" id="r_a4b218ecc4bbdcf3b0aa1f235881d56a9"><td class="memItemLeft">const <a class="el" href="class_lava_v_k_1_1_image.html">Image</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4b218ecc4bbdcf3b0aa1f235881d56a9">image</a> () const</td></tr>
+<tr class="memdesc:a4b218ecc4bbdcf3b0aa1f235881d56a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the texture's underlying image.  <br /></td></tr>
+<tr class="memitem:a4a687214516264242f0edfda7675859a" id="r_a4a687214516264242f0edfda7675859a"><td class="memItemLeft"><a class="el" href="class_lava_v_k_1_1_image.html">Image</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4a687214516264242f0edfda7675859a">image</a> ()</td></tr>
+<tr class="memdesc:a4a687214516264242f0edfda7675859a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the texture's underlying image.  <br /></td></tr>
 <tr class="memitem:a89f84f7aa9c35f9183038cc47216a66c" id="r_a89f84f7aa9c35f9183038cc47216a66c"><td class="memItemLeft">VkSampler&#160;</td><td class="memItemRight"><a class="el" href="#a89f84f7aa9c35f9183038cc47216a66c">sampler</a> () const</td></tr>
-<tr class="memdesc:a89f84f7aa9c35f9183038cc47216a66c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sampler created for this texture.  <br /></td></tr>
+<tr class="memdesc:a89f84f7aa9c35f9183038cc47216a66c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the native Vulkan sampler handle.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Loads an image file from disk into a GPU-resident, shader-sampleable texture. </p>
-<p><span class="tt"><a class="el" href="class_lava_v_k_1_1_texture.html" title="Loads an image file from disk into a GPU-resident, shader-sampleable texture.">Texture</a></span> combines an <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a> (created with <span class="tt">ImageUsage::TRANSFER_DST |
-ImageUsage::SAMPLED</span>) with a <span class="tt">VkSampler</span>. On construction it loads pixel data from <code class="param">path</code> via stb_image, uploads it to the GPU through a temporary staging buffer and a one-time command buffer (transitioning the image from <span class="tt">VK_IMAGE_LAYOUT_UNDEFINED</span> to <span class="tt">VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</span> and finally to <span class="tt">VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL</span>), and creates a <span class="tt">VkSampler</span> configured from <code class="param">samplerInfo</code>. The image is always loaded and uploaded as 4-channel (RGBA) <span class="tt">VK_FORMAT_R8G8B8A8_SRGB</span> data, regardless of the source file's original channel count.</p>
-<p><span class="tt"><a class="el" href="class_lava_v_k_1_1_texture.html" title="Loads an image file from disk into a GPU-resident, shader-sampleable texture.">Texture</a></span> is neither copyable nor movable; it must be constructed in place (e.g. via <span class="tt">std::unique_ptr&lt;<a class="el" href="class_lava_v_k_1_1_texture.html" title="Loads an image file from disk into a GPU-resident, shader-sampleable texture.">Texture</a>&gt;</span> or emplaced directly) and its lifetime must not outlive the owning <a class="el" href="class_lava_v_k_1_1_device.html" title="Manages the Vulkan physical device selection, logical device instantiation (VkDevice),...">Device</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>The upload path submits and waits on a temporary, transient command pool synchronously, so construction blocks until the GPU finishes uploading the texture.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>The sampler's border color is currently always created as <span class="tt">VK_BORDER_COLOR_INT_OPAQUE_BLACK</span>, regardless of any #BorderColor value; there is currently no way to customize it through <a class="el" href="struct_lava_v_k_1_1_texture_sampler_create_info.html" title="Describes the sampler settings used to read a Texture in a shader.">TextureSamplerCreateInfo</a>.</dd></dl>
-<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_lava_v_k_1_1_texture.html">LavaVK::Texture</a> texture(device, <span class="stringliteral">&quot;assets/brick_wall.png&quot;</span>, {</div>
-<div class="line">    .magFilter = LavaVK::Filter::LINEAR,</div>
-<div class="line">    .minFilter = LavaVK::Filter::LINEAR,</div>
-<div class="line">    .addressModeU = LavaVK::SamplerAddressMode::REPEAT,</div>
-<div class="line">    .addressModeV = LavaVK::SamplerAddressMode::REPEAT,</div>
-<div class="line">});</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Later, when writing a descriptor set:</span></div>
-<div class="line">VkDescriptorImageInfo imageInfo{};</div>
-<div class="line">imageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;</div>
-<div class="line">imageInfo.imageView = texture.<a class="code hl_function" href="#a299f5e149aa6d494db730d3b003eb102">image</a>().<a class="code hl_function" href="class_lava_v_k_1_1_image.html#afd9c6188f74389bb1be9287653d25e9b">view</a>();</div>
-<div class="line">imageInfo.sampler = texture.sampler();</div>
-<div class="ttc" id="aclass_lava_v_k_1_1_image_html_afd9c6188f74389bb1be9287653d25e9b"><div class="ttname"><a href="class_lava_v_k_1_1_image.html#afd9c6188f74389bb1be9287653d25e9b">LavaVK::Image::view</a></div><div class="ttdeci">VkImageView view() const</div><div class="ttdoc">Returns the associated image view.</div><div class="ttdef"><b>Definition</b> Texture.hpp:232</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_texture_html"><div class="ttname"><a href="class_lava_v_k_1_1_texture.html">LavaVK::Texture</a></div><div class="ttdoc">Loads an image file from disk into a GPU-resident, shader-sampleable texture.</div><div class="ttdef"><b>Definition</b> Texture.hpp:388</div></div>
-<div class="ttc" id="aclass_lava_v_k_1_1_texture_html_a299f5e149aa6d494db730d3b003eb102"><div class="ttname"><a href="#a299f5e149aa6d494db730d3b003eb102">LavaVK::Texture::image</a></div><div class="ttdeci">Image &amp; image() const</div><div class="ttdoc">Returns the GPU image backing this texture.</div><div class="ttdef"><b>Definition</b> Texture.cpp:406</div></div>
+<div class="textblock"><p>Represents a GPU texture: an <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a> paired with a <span class="tt">VkSampler</span>. </p>
+<p><span class="tt"><a class="el" href="class_lava_v_k_1_1_texture.html" title="Represents a GPU texture: an Image paired with a VkSampler.">Texture</a></span> combines the two resources most shader sampling operations need together: an <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a> (with its view) and a <span class="tt">VkSampler</span> describing how that image is filtered and addressed. It supports two creation paths: allocating an empty GPU-only image (e.g. a storage image or render target) from a <a class="el" href="struct_lava_v_k_1_1_texture_create_info.html" title="Creation parameters for empty GPU textures (e.g., storage images, render targets).">TextureCreateInfo</a>, or loading image data from disk and uploading it to a new sampled image. <span class="tt"><a class="el" href="class_lava_v_k_1_1_texture.html" title="Represents a GPU texture: an Image paired with a VkSampler.">Texture</a></span> is move-only RAII: the sampler is created in the constructor and destroyed, along with the owned <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a>, in the destructor.</p>
+<p>Example, loading a texture from disk: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_lava_v_k_1_1_texture.html">LavaVK::Texture</a> texture(device, <span class="stringliteral">&quot;assets/textures/brick.png&quot;</span>);</div>
+<div class="ttc" id="aclass_lava_v_k_1_1_texture_html"><div class="ttname"><a href="class_lava_v_k_1_1_texture.html">LavaVK::Texture</a></div><div class="ttdoc">Represents a GPU texture: an Image paired with a VkSampler.</div><div class="ttdef"><b>Definition</b> Texture.hpp:344</div></div>
 </div><!-- fragment --> </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a530f6bfdda3df5d60e0f7c3339197308" name="a530f6bfdda3df5d60e0f7c3339197308"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a530f6bfdda3df5d60e0f7c3339197308">&#9670;&#160;</a></span>Texture() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LavaVK::Texture::Texture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_lava_v_k_1_1_device.html">Device</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>device</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_lava_v_k_1_1_texture_create_info.html">TextureCreateInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>info</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an empty texture GPU resource (e.g., storage image or compute target). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Logical device used to create the underlying image and sampler. </td></tr>
+    <tr><td class="paramname">info</td><td><a class="el" href="class_lava_v_k_1_1_texture.html" title="Represents a GPU texture: an Image paired with a VkSampler.">Texture</a> creation parameters (dimensions, format, usage, sampler settings). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If image or sampler creation fails. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab1f969ac5e632df7e56b47cd81ca8887" name="ab1f969ac5e632df7e56b47cd81ca8887"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1f969ac5e632df7e56b47cd81ca8887">&#9670;&#160;</a></span>Texture()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f969ac5e632df7e56b47cd81ca8887">&#9670;&#160;</a></span>Texture() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,18 +214,18 @@ ImageUsage::SAMPLED</span>) with a <span class="tt">VkSampler</span>. On constru
       </table>
 </div><div class="memdoc">
 
-<p>Loads an image from disk and uploads it to the GPU as a sampled texture. </p>
+<p>Loads an image file from disk and uploads it to the GPU as a sampled texture. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">device</td><td>Logical device used to create the image, staging buffer, and sampler. </td></tr>
-    <tr><td class="paramname">path</td><td>Filesystem path to the image file to load (any format supported by stb_image). </td></tr>
-    <tr><td class="paramname">samplerInfo</td><td>Sampler configuration (filtering, addressing, anisotropy) to create alongside the image. </td></tr>
+    <tr><td class="paramname">device</td><td>Logical device used to create the underlying image and sampler. </td></tr>
+    <tr><td class="paramname">path</td><td>Filesystem path to the image file to load. </td></tr>
+    <tr><td class="paramname">samplerInfo</td><td>Sampler parameters used to sample the texture in shaders. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>If the image file cannot be loaded, if command pool/buffer creation fails, or if sampler creation fails. </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>If the file cannot be loaded, or if image/sampler creation or upload fails. </td></tr>
   </table>
   </dd>
 </dl>
@@ -224,29 +247,132 @@ ImageUsage::SAMPLED</span>) with a <span class="tt">VkSampler</span>. On constru
       </table>
 </div><div class="memdoc">
 
-<p>Destroys the texture's sampler. </p>
-<p>The underlying <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a> is destroyed automatically as a member of this object when its own destructor runs. </p>
+<p>Destroys the sampler and the owned <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a>. </p>
+<p>A moved-from <span class="tt"><a class="el" href="class_lava_v_k_1_1_texture.html" title="Represents a GPU texture: an Image paired with a VkSampler.">Texture</a></span> is a no-op. </p>
+
+</div>
+</div>
+<a id="ac222a0194fc78e2f169b419af604738f" name="ac222a0194fc78e2f169b419af604738f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac222a0194fc78e2f169b419af604738f">&#9670;&#160;</a></span>Texture() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LavaVK::Texture::Texture </td>
+          <td>(</td>
+          <td class="paramtype">Texture &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_texture.html" title="Represents a GPU texture: an Image paired with a VkSampler.">Texture</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The texture being moved from; left in an empty, destructible state. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a299f5e149aa6d494db730d3b003eb102" name="a299f5e149aa6d494db730d3b003eb102"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a299f5e149aa6d494db730d3b003eb102">&#9670;&#160;</a></span>image()</h2>
+<a id="a4a687214516264242f0edfda7675859a" name="a4a687214516264242f0edfda7675859a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a687214516264242f0edfda7675859a">&#9670;&#160;</a></span>image() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_lava_v_k_1_1_image.html">Image</a> &amp; LavaVK::Texture::image </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the texture's underlying image. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a> backing this texture. </dd></dl>
+
+</div>
+</div>
+<a id="a4b218ecc4bbdcf3b0aa1f235881d56a9" name="a4b218ecc4bbdcf3b0aa1f235881d56a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b218ecc4bbdcf3b0aa1f235881d56a9">&#9670;&#160;</a></span>image() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_lava_v_k_1_1_image.html">Image</a> &amp; LavaVK::Texture::image </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Returns the GPU image backing this texture. </p>
-<dl class="section return"><dt>Returns</dt><dd>Mutable reference to the underlying <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a>, so its <span class="tt">VkImageView</span> can be bound in a descriptor write. </dd></dl>
+<p>Returns the texture's underlying image. </p>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a> backing this texture. </dd></dl>
+
+</div>
+</div>
+<a id="a9c9ed3bafde891d1bb317cdeb721ae0d" name="a9c9ed3bafde891d1bb317cdeb721ae0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c9ed3bafde891d1bb317cdeb721ae0d">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a530f6bfdda3df5d60e0f7c3339197308">Texture</a> &amp; LavaVK::Texture::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a530f6bfdda3df5d60e0f7c3339197308">Texture</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_texture.html" title="Represents a GPU texture: an Image paired with a VkSampler.">Texture</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The texture being moved from; left in an empty, destructible state. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to this texture. </dd></dl>
 
 </div>
 </div>
@@ -255,6 +381,9 @@ ImageUsage::SAMPLED</span>) with a <span class="tt">VkSampler</span>. On constru
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">VkSampler LavaVK::Texture::sampler </td>
@@ -263,10 +392,15 @@ ImageUsage::SAMPLED</span>) with a <span class="tt">VkSampler</span>. On constru
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Returns the sampler created for this texture. </p>
-<dl class="section return"><dt>Returns</dt><dd>The native <span class="tt">VkSampler</span> handle used to read this texture in a shader. </dd></dl>
+<p>Returns the native Vulkan sampler handle. </p>
+<dl class="section return"><dt>Returns</dt><dd>The underlying <span class="tt">VkSampler</span> handle, or <span class="tt">VK_NULL_HANDLE</span> if unconstructed/moved-from. </dd></dl>
 
 </div>
 </div>

@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_lava_v_k
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a Vulkan image and its associated image view.  
+<p>Represents a Vulkan image (<span class="tt">VkImage</span>) together with its backing memory and a default <span class="tt">VkImageView</span>.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_texture_8hpp_source.html">Texture.hpp</a>&gt;</code></p>
@@ -128,45 +128,36 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_lava_v_k
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abf9e91b93d3bfcb554e69a91015cc2d4" id="r_abf9e91b93d3bfcb554e69a91015cc2d4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> ()=default</td></tr>
-<tr class="memdesc:abf9e91b93d3bfcb554e69a91015cc2d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty image.  <br /></td></tr>
+<tr class="memdesc:abf9e91b93d3bfcb554e69a91015cc2d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty image handle.  <br /></td></tr>
 <tr class="memitem:ae9fe0f009b9969a29cd965ff8637a404" id="r_ae9fe0f009b9969a29cd965ff8637a404"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae9fe0f009b9969a29cd965ff8637a404">Image</a> (<a class="el" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device, const <a class="el" href="struct_lava_v_k_1_1_image_create_info.html">ImageCreateInfo</a> &amp;info)</td></tr>
-<tr class="memdesc:ae9fe0f009b9969a29cd965ff8637a404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new Vulkan image.  <br /></td></tr>
+<tr class="memdesc:ae9fe0f009b9969a29cd965ff8637a404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a new Vulkan image, backing memory, and default view.  <br /></td></tr>
 <tr class="memitem:a28bb4b65efd4d3425bb62304a2f4c61b" id="r_a28bb4b65efd4d3425bb62304a2f4c61b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a28bb4b65efd4d3425bb62304a2f4c61b">Image</a> (<a class="el" href="class_lava_v_k_1_1_device.html">Device</a> &amp;device, VkImage image, VkFormat format, VkImageAspectFlags aspect, VkExtent3D extent)</td></tr>
-<tr class="memdesc:a28bb4b65efd4d3425bb62304a2f4c61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps an existing Vulkan image.  <br /></td></tr>
+<tr class="memdesc:a28bb4b65efd4d3425bb62304a2f4c61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps an externally-owned <span class="tt">VkImage</span> (e.g. a swapchain image) and creates a view for it.  <br /></td></tr>
 <tr class="memitem:ae156a328b5e29b0706d15d0158422a41" id="r_ae156a328b5e29b0706d15d0158422a41"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae156a328b5e29b0706d15d0158422a41">~Image</a> ()</td></tr>
-<tr class="memdesc:ae156a328b5e29b0706d15d0158422a41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the image view and owned image resources.  <br /></td></tr>
+<tr class="memdesc:ae156a328b5e29b0706d15d0158422a41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the image view, and the image and its memory if owned.  <br /></td></tr>
 <tr class="memitem:ab4b77493332be9f211f2e0163d595396" id="r_ab4b77493332be9f211f2e0163d595396"><td class="memItemLeft"><a id="ab4b77493332be9f211f2e0163d595396" name="ab4b77493332be9f211f2e0163d595396"></a>
 &#160;</td><td class="memItemRight"><b>Image</b> (const Image &amp;)=delete</td></tr>
 <tr class="memitem:a71e02899cc35651cd6204c7ac11ba101" id="r_a71e02899cc35651cd6204c7ac11ba101"><td class="memItemLeft"><a id="a71e02899cc35651cd6204c7ac11ba101" name="a71e02899cc35651cd6204c7ac11ba101"></a>
 <a class="el" href="#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> &amp;)=delete</td></tr>
 <tr class="memitem:a5630d9d83df23e083bdc823d7df55d94" id="r_a5630d9d83df23e083bdc823d7df55d94"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5630d9d83df23e083bdc823d7df55d94">Image</a> (Image &amp;&amp;other) noexcept</td></tr>
-<tr class="memdesc:a5630d9d83df23e083bdc823d7df55d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a>.  <br /></td></tr>
+<tr class="memdesc:a5630d9d83df23e083bdc823d7df55d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a>.  <br /></td></tr>
 <tr class="memitem:a85f95ad6079bec7051a10bfbedc4f1a3" id="r_a85f95ad6079bec7051a10bfbedc4f1a3"><td class="memItemLeft"><a class="el" href="#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a85f95ad6079bec7051a10bfbedc4f1a3">operator=</a> (<a class="el" href="#abf9e91b93d3bfcb554e69a91015cc2d4">Image</a> &amp;&amp;other) noexcept</td></tr>
-<tr class="memdesc:a85f95ad6079bec7051a10bfbedc4f1a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a>.  <br /></td></tr>
+<tr class="memdesc:a85f95ad6079bec7051a10bfbedc4f1a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a>.  <br /></td></tr>
 <tr class="memitem:ace8b47745ef03df9c7936fea5613b7ae" id="r_ace8b47745ef03df9c7936fea5613b7ae"><td class="memItemLeft">VkImage&#160;</td><td class="memItemRight"><a class="el" href="#ace8b47745ef03df9c7936fea5613b7ae">image</a> () const</td></tr>
-<tr class="memdesc:ace8b47745ef03df9c7936fea5613b7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying Vulkan image.  <br /></td></tr>
+<tr class="memdesc:ace8b47745ef03df9c7936fea5613b7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the native Vulkan image handle.  <br /></td></tr>
 <tr class="memitem:afd9c6188f74389bb1be9287653d25e9b" id="r_afd9c6188f74389bb1be9287653d25e9b"><td class="memItemLeft">VkImageView&#160;</td><td class="memItemRight"><a class="el" href="#afd9c6188f74389bb1be9287653d25e9b">view</a> () const</td></tr>
-<tr class="memdesc:afd9c6188f74389bb1be9287653d25e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the associated image view.  <br /></td></tr>
+<tr class="memdesc:afd9c6188f74389bb1be9287653d25e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the native Vulkan image view handle covering the whole image.  <br /></td></tr>
 <tr class="memitem:a1420c5467583133130a351ae8561b66a" id="r_a1420c5467583133130a351ae8561b66a"><td class="memItemLeft">VkFormat&#160;</td><td class="memItemRight"><a class="el" href="#a1420c5467583133130a351ae8561b66a">format</a> () const</td></tr>
-<tr class="memdesc:a1420c5467583133130a351ae8561b66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the image format.  <br /></td></tr>
+<tr class="memdesc:a1420c5467583133130a351ae8561b66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pixel format of the image.  <br /></td></tr>
 <tr class="memitem:a1865b91906d0f4f28c071f48db596388" id="r_a1865b91906d0f4f28c071f48db596388"><td class="memItemLeft">VkExtent3D&#160;</td><td class="memItemRight"><a class="el" href="#a1865b91906d0f4f28c071f48db596388">extent</a> () const</td></tr>
-<tr class="memdesc:a1865b91906d0f4f28c071f48db596388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the image dimensions.  <br /></td></tr>
+<tr class="memdesc:a1865b91906d0f4f28c071f48db596388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimensions of the image.  <br /></td></tr>
 <tr class="memitem:ae798fb44e9277eec633f663d9e509979" id="r_ae798fb44e9277eec633f663d9e509979"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae798fb44e9277eec633f663d9e509979">ownsImage</a> () const</td></tr>
-<tr class="memdesc:ae798fb44e9277eec633f663d9e509979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this object owns the underlying image.  <br /></td></tr>
+<tr class="memdesc:ae798fb44e9277eec633f663d9e509979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this <span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a></span> owns its underlying <span class="tt">VkImage</span>/<span class="tt">VkDeviceMemory</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a Vulkan image and its associated image view. </p>
-<p>An <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a> may either own its underlying VkImage and allocated memory, or simply wrap an externally created image (such as a swapchain image). Owning images allocate device memory and create both the <span class="tt">VkImage</span> and <span class="tt">VkImageView</span> in the constructor, tearing both down in the destructor. Wrapped (non-owning) images — for example swapchain images, which are owned and destroyed by the swapchain itself — only create the <span class="tt">VkImageView</span>, leaving the underlying <span class="tt">VkImage</span> and its memory alone. <span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a></span> is move-only RAII; copying is disabled.</p>
-<p>Example, creating an owned depth attachment: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_lava_v_k_1_1_image.html">LavaVK::Image</a> depthImage(device, {</div>
-<div class="line">    .extent = { WIDTH, HEIGHT, 1 },</div>
-<div class="line">    .format = VK_FORMAT_D32_SFLOAT,</div>
-<div class="line">    .usage = LavaVK::ImageUsage::DEPTH_ATTACHMENT,</div>
-<div class="line">    .aspect = VK_IMAGE_ASPECT_DEPTH_BIT</div>
-<div class="line">});</div>
-<div class="ttc" id="aclass_lava_v_k_1_1_image_html"><div class="ttname"><a href="class_lava_v_k_1_1_image.html">LavaVK::Image</a></div><div class="ttdoc">Represents a Vulkan image and its associated image view.</div><div class="ttdef"><b>Definition</b> Texture.hpp:146</div></div>
-</div><!-- fragment --><p>Example, wrapping a swapchain-owned image: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_lava_v_k_1_1_image.html">LavaVK::Image</a> swapchainImage(device, rawSwapchainImage, colorFormat,</div>
-<div class="line">                              VK_IMAGE_ASPECT_COLOR_BIT, { WIDTH, HEIGHT, 1 });</div>
-</div><!-- fragment --> </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p>Represents a Vulkan image (<span class="tt">VkImage</span>) together with its backing memory and a default <span class="tt">VkImageView</span>. </p>
+<p><span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a></span> supports two modes of construction: it can allocate and own a brand-new <span class="tt">VkImage</span> and <span class="tt">VkDeviceMemory</span> from an <a class="el" href="struct_lava_v_k_1_1_image_create_info.html" title="Describes the properties of an Image to be created.">ImageCreateInfo</a>, or it can wrap an externally-owned <span class="tt">VkImage</span> (for example, a swapchain image) without taking ownership of the underlying handle — see <a class="el" href="#ae798fb44e9277eec633f663d9e509979" title="Returns whether this Image owns its underlying VkImage/VkDeviceMemory.">ownsImage()</a>. In both cases a <span class="tt">VkImageView</span> covering the whole image is created and owned by this object. <span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a></span> is move-only RAII; the destructor destroys the view, and additionally the image and memory if they are owned. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abf9e91b93d3bfcb554e69a91015cc2d4" name="abf9e91b93d3bfcb554e69a91015cc2d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf9e91b93d3bfcb554e69a91015cc2d4">&#9670;&#160;</a></span>Image() <span class="overload">[1/4]</span></h2>
 
@@ -190,8 +181,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs an empty image. </p>
-<p>Leaves the image in an unowned state (<span class="tt"><a class="el" href="#ace8b47745ef03df9c7936fea5613b7ae" title="Returns the underlying Vulkan image.">image()</a></span> and <span class="tt"><a class="el" href="#afd9c6188f74389bb1be9287653d25e9b" title="Returns the associated image view.">view()</a></span> return <span class="tt">VK_NULL_HANDLE</span>) until move-assigned from a constructed <span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a></span>. </p>
+<p>Constructs an empty image handle. </p>
+<p>Leaves the image in an unowned state (<span class="tt"><a class="el" href="#ace8b47745ef03df9c7936fea5613b7ae" title="Returns the native Vulkan image handle.">image()</a></span> returns <span class="tt">VK_NULL_HANDLE</span>) until move-assigned from a constructed <span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a></span>. </p>
 
 </div>
 </div>
@@ -214,18 +205,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a new Vulkan image. </p>
-<p>Allocates and binds device memory satisfying <code class="param">info.memory</code>, then creates an image view covering all mip levels and array layers described by <code class="param">info</code>. The resulting <span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a></span> owns both the <span class="tt">VkImage</span> and its memory.</p>
+<p>Allocates a new Vulkan image, backing memory, and default view. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device</td><td>Logical device used to create the image. </td></tr>
-    <tr><td class="paramname">info</td><td><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a> creation parameters. </td></tr>
+    <tr><td class="paramname">info</td><td><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a> creation parameters (type, extent, format, usage, ...). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>If image creation, memory allocation, or image view creation fails. </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>If image creation, memory allocation/binding, or view creation fails. </td></tr>
   </table>
   </dd>
 </dl>
@@ -266,21 +256,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Wraps an existing Vulkan image. </p>
-<p>No image memory is allocated and the image will not be destroyed by this object.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Wraps an externally-owned <span class="tt">VkImage</span> (e.g. a swapchain image) and creates a view for it. </p>
+<p>The resulting <span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a></span> does not own <code class="param">image:</code> the destructor destroys only the created view, leaving <code class="param">image's</code> lifetime managed by its original owner. See <a class="el" href="#ae798fb44e9277eec633f663d9e509979" title="Returns whether this Image owns its underlying VkImage/VkDeviceMemory.">ownsImage()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">device</td><td>Logical device owning the image. </td></tr>
-    <tr><td class="paramname">image</td><td>Existing Vulkan image. </td></tr>
-    <tr><td class="paramname">format</td><td><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a> format. </td></tr>
-    <tr><td class="paramname">aspect</td><td><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a> aspect used for the created image view. </td></tr>
-    <tr><td class="paramname">extent</td><td><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a> dimensions. </td></tr>
+    <tr><td class="paramname">device</td><td>Logical device used to create the image view. </td></tr>
+    <tr><td class="paramname">image</td><td>Existing, externally-owned <span class="tt">VkImage</span> handle to wrap. </td></tr>
+    <tr><td class="paramname">format</td><td><a class="el" href="class_lava_v_k_1_1_format.html" title="Structured, human-readable representation of a Vulkan pixel format.">Format</a> of <code class="param">image</code>, used to create its view. </td></tr>
+    <tr><td class="paramname">aspect</td><td>Aspect mask used to create <code class="param">image's</code> view. </td></tr>
+    <tr><td class="paramname">extent</td><td>Dimensions of <code class="param">image</code>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>If image view creation fails. </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>If view creation fails. </td></tr>
   </table>
   </dd>
 </dl>
@@ -302,8 +291,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Destroys the image view and owned image resources. </p>
-<p>Always destroys the <span class="tt">VkImageView</span>. Additionally destroys the <span class="tt">VkImage</span> and frees its <span class="tt">VkDeviceMemory</span> only if <a class="el" href="#ae798fb44e9277eec633f663d9e509979" title="Returns whether this object owns the underlying image.">ownsImage()</a> is <span class="tt">true</span>; a moved-from <span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a></span> is a no-op. </p>
+<p>Destroys the image view, and the image and its memory if owned. </p>
+<p>A moved-from <span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a></span> is a no-op. See <a class="el" href="#ae798fb44e9277eec633f663d9e509979" title="Returns whether this Image owns its underlying VkImage/VkDeviceMemory.">ownsImage()</a>. </p>
 
 </div>
 </div>
@@ -330,7 +319,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a>. </p>
+<p>Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>The image being moved from; left in an empty, destructible state. </td></tr>
@@ -364,8 +353,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the image dimensions. </p>
-<dl class="section return"><dt>Returns</dt><dd>The image's width, height, and depth as a <span class="tt">VkExtent3D</span>. </dd></dl>
+<p>Returns the dimensions of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <span class="tt">VkExtent3D</span> (width, height, depth) this image was created with. </dd></dl>
 
 </div>
 </div>
@@ -392,8 +381,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the image format. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <span class="tt">VkFormat</span> this image was created or wrapped with. </dd></dl>
+<p>Returns the pixel format of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <span class="tt">VkFormat</span> this image was created with. </dd></dl>
 
 </div>
 </div>
@@ -420,8 +409,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the underlying Vulkan image. </p>
-<dl class="section return"><dt>Returns</dt><dd>The native <span class="tt">VkImage</span> handle, or <span class="tt">VK_NULL_HANDLE</span> if unconstructed/moved-from. </dd></dl>
+<p>Returns the native Vulkan image handle. </p>
+<dl class="section return"><dt>Returns</dt><dd>The underlying <span class="tt">VkImage</span> handle, or <span class="tt">VK_NULL_HANDLE</span> if unconstructed/moved-from. </dd></dl>
 
 </div>
 </div>
@@ -448,7 +437,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a>. </p>
+<p>Transfers ownership from another <a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>The image being moved from; left in an empty, destructible state. </td></tr>
@@ -482,9 +471,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns whether this object owns the underlying image. </p>
-<p>Images wrapping swapchain images return false.</p>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if this <span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image and its associated image view.">Image</a></span> allocated and will destroy the underlying <span class="tt">VkImage</span>/memory itself; <span class="tt">false</span> if it merely wraps an externally owned image. </dd></dl>
+<p>Returns whether this <span class="tt"><a class="el" href="class_lava_v_k_1_1_image.html" title="Represents a Vulkan image (VkImage) together with its backing memory and a default VkImageView.">Image</a></span> owns its underlying <span class="tt">VkImage</span>/<span class="tt">VkDeviceMemory</span>. </p>
+<p>True for images allocated via the <a class="el" href="struct_lava_v_k_1_1_image_create_info.html" title="Describes the properties of an Image to be created.">ImageCreateInfo</a> constructor; false for images wrapping an externally-owned handle (e.g. constructed from a swapchain image), in which case the destructor will not destroy the <span class="tt">VkImage</span> itself. </p><dl class="section return"><dt>Returns</dt><dd>True if the destructor will destroy the underlying <span class="tt">VkImage</span> and its memory. </dd></dl>
 
 </div>
 </div>
@@ -511,8 +499,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the associated image view. </p>
-<dl class="section return"><dt>Returns</dt><dd>The native <span class="tt">VkImageView</span> handle, or <span class="tt">VK_NULL_HANDLE</span> if unconstructed/moved-from. </dd></dl>
+<p>Returns the native Vulkan image view handle covering the whole image. </p>
+<dl class="section return"><dt>Returns</dt><dd>The underlying <span class="tt">VkImageView</span> handle. </dd></dl>
 
 </div>
 </div>

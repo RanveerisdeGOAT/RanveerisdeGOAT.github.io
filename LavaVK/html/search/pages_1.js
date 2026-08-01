@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['buffers_0',['&lt;ul class=&quot;check&quot;&gt;
-&lt;li class=&quot;checked&quot;&gt;Buffers&lt;/li&gt;
-&lt;/ul&gt;
-',['../index.html#autotoc_md5',1,'']]],
-  ['buffers_1',['buffers',['../index.html#autotoc_md21',1,'Create command buffers.'],['../index.html#autotoc_md23',1,'Record command buffers.']]],
-  ['buffers_20to_20gpu_2',['Submit command buffers to GPU.',['../index.html#autotoc_md24',1,'']]]
+  ['13_200_20indev_0',['LavaVK 0.13.0-indev',['../index.html',1,'']]],
+  ['1_3a_20add_20lavavk_20as_20a_20cmake_20subdirectory_1',['Option 1: Add LavaVK as a CMake subdirectory',['../index.html#autotoc_md11',1,'']]]
 ];

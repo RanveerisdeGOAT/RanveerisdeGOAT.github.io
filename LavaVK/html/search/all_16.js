@@ -1,20 +1,11 @@
 var searchData=
 [
-  ['_7ebuffer_0',['~Buffer',['../class_lava_v_k_1_1_buffer.html#ada5126479a61c24847a289427472a329',1,'LavaVK::Buffer']]],
-  ['_7ecommandpool_1',['~CommandPool',['../class_lava_v_k_1_1_command_pool.html#aa5b1fe4c7944ea3407060034c0a106c2',1,'LavaVK::CommandPool']]],
-  ['_7edescriptorpool_2',['~DescriptorPool',['../class_lava_v_k_1_1_descriptor_pool.html#aac7afad389ca32b3261dc0fc41981c97',1,'LavaVK::DescriptorPool']]],
-  ['_7edescriptorsetlayout_3',['~DescriptorSetLayout',['../class_lava_v_k_1_1_descriptor_set_layout.html#a169afc8c437b263dbdab11768dba4aa4',1,'LavaVK::DescriptorSetLayout']]],
-  ['_7edevice_4',['~Device',['../class_lava_v_k_1_1_device.html#a288ad958754b393656dd6ef9e94d7c08',1,'LavaVK::Device']]],
-  ['_7efence_5',['~Fence',['../class_lava_v_k_1_1_fence.html#ab3c979a9968a9fdf03cf5051f3cae0bd',1,'LavaVK::Fence']]],
-  ['_7eframebuffer_6',['~Framebuffer',['../class_lava_v_k_1_1_framebuffer.html#a39fea7c9ea60ed3770e1d9e9fcd54bfe',1,'LavaVK::Framebuffer']]],
-  ['_7egraphicspipeline_7',['~GraphicsPipeline',['../class_lava_v_k_1_1_graphics_pipeline.html#a49161fba268f6028fa0189bdb3e2b039',1,'LavaVK::GraphicsPipeline']]],
-  ['_7eimage_8',['~Image',['../class_lava_v_k_1_1_image.html#ae156a328b5e29b0706d15d0158422a41',1,'LavaVK::Image']]],
-  ['_7einstance_9',['~Instance',['../class_lava_v_k_1_1_instance.html#a0cdbb00095f6365b18bf23eee79f564f',1,'LavaVK::Instance']]],
-  ['_7epipelinelayout_10',['~PipelineLayout',['../class_lava_v_k_1_1_pipeline_layout.html#a0409738ff60d2eaaeacf98bc5ec8a647',1,'LavaVK::PipelineLayout']]],
-  ['_7erenderpass_11',['~RenderPass',['../class_lava_v_k_1_1_render_pass.html#a98c62209832152ee96227c14d902f837',1,'LavaVK::RenderPass']]],
-  ['_7esemaphore_12',['~Semaphore',['../class_lava_v_k_1_1_semaphore.html#a7a482c8ce0c64b0efb36cbfe85bc7698',1,'LavaVK::Semaphore']]],
-  ['_7eshader_13',['~Shader',['../class_lava_v_k_1_1_shader.html#a72c764c096a432608c53662bf4d0d683',1,'LavaVK::Shader']]],
-  ['_7esurface_14',['~Surface',['../class_lava_v_k_1_1_surface.html#ab7b9d7ae5b3925496f03dadbf4d6efe5',1,'LavaVK::Surface']]],
-  ['_7eswapchain_15',['~SwapChain',['../class_lava_v_k_1_1_swap_chain.html#ad281472f2bfb2481291edbadc08481be',1,'LavaVK::SwapChain']]],
-  ['_7etexture_16',['~Texture',['../class_lava_v_k_1_1_texture.html#a7205fb0a0bcababe35de7d92b0c8b295',1,'LavaVK::Texture']]]
+  ['value_0',['value',['../struct_lava_v_k_1_1_result.html#a1d8335716f828158c116b6ddc041857d',1,'LavaVK::Result']]],
+  ['vendorid_1',['vendorID',['../class_lava_v_k_1_1_g_p_u_hardware.html#a1c0bfc53b5e574e237f3cbd7563c5edb',1,'LavaVK::GPUHardware']]],
+  ['vertexcount_2',['vertexCount',['../struct_lava_v_k_1_1_indirect_command.html#ab7d2371f556eca2ab176d2836da26fdd',1,'LavaVK::IndirectCommand']]],
+  ['vertexlayout_3',['VertexLayout',['../class_lava_v_k_1_1_vertex_layout.html',1,'LavaVK']]],
+  ['vertexlayout_4',['vertexLayout',['../struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a76a715705f04e4ae3325a6b37c41566d',1,'LavaVK::GraphicsPipelineCreateInfo']]],
+  ['vertexoffset_5',['vertexOffset',['../struct_lava_v_k_1_1_indexed_indirect_command.html#acbb399cb2e96c3dad753c7855d7aa8c2',1,'LavaVK::IndexedIndirectCommand']]],
+  ['vertexshader_6',['vertexShader',['../struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a422c04be6305ea23a5f1a0b57c6d56bb',1,'LavaVK::GraphicsPipelineCreateInfo']]],
+  ['view_7',['view',['../class_lava_v_k_1_1_image.html#afd9c6188f74389bb1be9287653d25e9b',1,'LavaVK::Image']]]
 ];

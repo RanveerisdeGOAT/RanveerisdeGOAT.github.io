@@ -45,7 +45,9 @@ size\+\_\+t \doxymbox{\hyperlink{class_lava_v_k_1_1_buffer_ad57af3cdf5f6be326bd9
 Buffer\+Usage \doxymbox{\hyperlink{class_lava_v_k_1_1_buffer_a08d56e68ab0e3792b5ad7e144e90ba09}{buffer}} () const
 \begin{DoxyCompactList}\small\item\em Returns the usage flags this buffer was created with. \end{DoxyCompactList}\item 
 Memory\+Usage \doxymbox{\hyperlink{class_lava_v_k_1_1_buffer_a7aa710c684b547355fe86bf1f382d1fa}{memory}} () const
-\begin{DoxyCompactList}\small\item\em Returns the memory placement this buffer was created with. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the memory placement this buffer was created with. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_buffer_a888529a932d6f3ec94fd45d03de911a1}{copy\+To\+Buffer}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_buffer_a0bbc6acb1d0662403cf08fa1abc2f769}{Buffer}} \&dst\+Buffer) const
+\begin{DoxyCompactList}\small\item\em Copies to a buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -145,6 +147,21 @@ Returns the usage flags this buffer was created with.
 \begin{DoxyReturn}{Returns}
 The Buffer\+Usage this buffer was created with. 
 \end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_buffer_a888529a932d6f3ec94fd45d03de911a1}\index{LavaVK::Buffer@{LavaVK::Buffer}!copyToBuffer@{copyToBuffer}}
+\index{copyToBuffer@{copyToBuffer}!LavaVK::Buffer@{LavaVK::Buffer}}
+\doxysubsubsection{\texorpdfstring{copyToBuffer()}{copyToBuffer()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_buffer_a888529a932d6f3ec94fd45d03de911a1} 
+void Lava\+VK::\+\+Buffer::\+copy\+To\+Buffer (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_buffer_a0bbc6acb1d0662403cf08fa1abc2f769}{Buffer}} \&}]{dst\+Buffer}{}\end{DoxyParamCaption}) const}
+
+
+
+Copies to a buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst\+Buffer} & \doxylink{class_lava_v_k_1_1_buffer}{Buffer} to copy to. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_lava_v_k_1_1_buffer_a4c38f9aa95fa71b777cc8993bd29f7da}\index{LavaVK::Buffer@{LavaVK::Buffer}!map@{map}}
 \index{map@{map}!LavaVK::Buffer@{LavaVK::Buffer}}
 \doxysubsubsection{\texorpdfstring{map()}{map()}}

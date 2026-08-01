@@ -227,14 +227,45 @@
 \DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ );}
 \DoxyCodeLine{00396\ \ \ \ \ \}}
 \DoxyCodeLine{00397\ }
-\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keyword}{enum\ class}\ PipelineBindPoint\{}
-\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ Graphics\ =\ VK\_PIPELINE\_BIND\_POINT\_GRAPHICS,}
-\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ Compute\ =\ VK\_PIPELINE\_BIND\_POINT\_COMPUTE,}
-\DoxyCodeLine{00401\ \ \ \ \ \};}
-\DoxyCodeLine{00402\ }
-\DoxyCodeLine{00403\ }
-\DoxyCodeLine{00404\ \}\ \textcolor{comment}{//\ namespace\ LavaVK}}
-\DoxyCodeLine{00405\ }
-\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LAVAVK\_PIPELINE\_HPP}}
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keyword}{enum\ class}\ PipelineBindPoint\{}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ Graphics\ =\ VK\_PIPELINE\_BIND\_POINT\_GRAPHICS,\ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ Compute\ =\ VK\_PIPELINE\_BIND\_POINT\_COMPUTE,\ }
+\DoxyCodeLine{00405\ \ \ \ \ \};}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_lava_v_k_1_1_compute_pipeline_create_info}{ComputePipelineCreateInfo}}\ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_shader}{Shader}}\ *\doxymbox{\hyperlink{struct_lava_v_k_1_1_compute_pipeline_create_info_a475e1aa78012f097f6d178a489199eea}{computeShader}}\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_pipeline_layout}{PipelineLayout}}\ *\doxymbox{\hyperlink{struct_lava_v_k_1_1_compute_pipeline_create_info_ae13a09998a97b64fb772a9396abcca61}{layout}}\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00413\ \ \ \ \ \};}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_a86cb0aa186cc742a32a73f85428532ab}{ComputePipeline}}\ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_a86cb0aa186cc742a32a73f85428532ab}{ComputePipeline}}(\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&device,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_compute_pipeline_create_info}{ComputePipelineCreateInfo}}\ \&info);}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_ab3d3d4c88d89b86041a9694f2c4aeb44}{\string~ComputePipeline}}();}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Non-\/copyable}}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_a86cb0aa186cc742a32a73f85428532ab}{ComputePipeline}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_a86cb0aa186cc742a32a73f85428532ab}{ComputePipeline}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_a86cb0aa186cc742a32a73f85428532ab}{ComputePipeline}}\&\ operator=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_a86cb0aa186cc742a32a73f85428532ab}{ComputePipeline}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Moveable}}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_a86cb0aa186cc742a32a73f85428532ab}{ComputePipeline}}(\doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_a86cb0aa186cc742a32a73f85428532ab}{ComputePipeline}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_a86cb0aa186cc742a32a73f85428532ab}{ComputePipeline}}\&\ operator=(\doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_a86cb0aa186cc742a32a73f85428532ab}{ComputePipeline}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_ada1fbfd650f42fbe773d5227a8f2a533}{bind}}(VkCommandBuffer\ commandBuffer)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ VkPipeline\ \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline_ad56252d6eb574d5160c10de4f16d293b}{native}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_pipeline;}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00486\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&m\_device;}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ VkPipeline\ m\_pipeline\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00489\ \ \ \ \ \};}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00492\ \}\ \textcolor{comment}{//\ namespace\ LavaVK}}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LAVAVK\_PIPELINE\_HPP}}
 
 \end{DoxyCode}

@@ -22,6 +22,8 @@ void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a62e7362c3477a44e3eb
 \begin{DoxyCompactList}\small\item\em Clears all pre-\/recorded commands from the buffer. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a35985fdf1065c1aa1a7744e3f72a6a1e}{bind\+Pipeline}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_graphics_pipeline}{Graphics\+Pipeline}} \&pipeline) const
 \begin{DoxyCompactList}\small\item\em Binds a graphics pipeline to the command buffer. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a7f5cd4d9b8af0eebba015e673ef22de8}{bind\+Pipeline}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline}{Compute\+Pipeline}} \&pipeline) const
+\begin{DoxyCompactList}\small\item\em Binds a compute pipeline to the command buffer. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_af754c88a5deb7f46cb63d2f39aa16e94}{bind\+Vertex\+Buffer}} (Vk\+Buffer buffer, Vk\+Device\+Size offset=0) const
 \begin{DoxyCompactList}\small\item\em Binds a vertex buffer to the pipeline. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_afeba5d6a21ad4970bbf976685c0824f8}{bind\+Index\+Buffer}} (Vk\+Buffer buffer, Vk\+Device\+Size offset=0, Vk\+Index\+Type index\+Type=VK\+\_\+\+INDEX\+\_\+\+TYPE\+\_\+\+UINT32) const
@@ -32,12 +34,20 @@ void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a376522ef38142922263
 \begin{DoxyCompactList}\small\item\em Convenience overload to begin a render pass with sensible default clear values. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_aa799785d1a4460451b6f04fea6b1483f}{record}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \&render\+Pass, const \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer}{Framebuffer}} \&framebuffer, Vk\+Extent2D extent, const std::\+function$<$ void(\doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a41af976109b6ee79722e33e9e45db162}{Command\+Buffer}} \&)$>$ \&draw\+Commands)
 \begin{DoxyCompactList}\small\item\em Higher-\/level helper that manages the entire lifecycle of recording a render pass. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_aad62cf12b5bdc5a8a08826a74794a127}{record}} (const std::\+function$<$ void(\doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a41af976109b6ee79722e33e9e45db162}{Command\+Buffer}} \&)$>$ \&commands)
+\begin{DoxyCompactList}\small\item\em Start recording commands to command buffer. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_ada508b2a5afce09a8608becbc31d9e3e}{end\+Render\+Pass}} () const
 \begin{DoxyCompactList}\small\item\em Ends the active render pass. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a0825edb9005f4cb63900ebf0e19df743}{draw}} (uint32\+\_\+t vertex\+Count, uint32\+\_\+t instance\+Count=1, uint32\+\_\+t first\+Vertex=0, uint32\+\_\+t first\+Instance=0) const
 \begin{DoxyCompactList}\small\item\em Records a non-\/indexed draw command. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_ad9aec4b8bec4c86b351d31a99dfa33dc}{draw\+Indexed}} (uint32\+\_\+t index\+Count, uint32\+\_\+t instance\+Count=1, uint32\+\_\+t first\+Index=0, int32\+\_\+t vertex\+Offset=0, uint32\+\_\+t first\+Instance=0) const
 \begin{DoxyCompactList}\small\item\em Records an indexed draw command. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a558fe8df0f72eff02c0ffbbcda3843f4}{draw\+Indirect}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_buffer}{Buffer}} \&buffer, Vk\+Device\+Size offset=0, uint32\+\_\+t draw\+Count=1, uint32\+\_\+t stride=sizeof(Vk\+Draw\+Indirect\+Command)) const
+\begin{DoxyCompactList}\small\item\em Records an indirect draw command. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a04253758925808606233cb39bf104749}{draw\+Indexed\+Indirect}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_buffer}{Buffer}} \&buffer, Vk\+Device\+Size offset=0, uint32\+\_\+t draw\+Count=1, uint32\+\_\+t stride=sizeof(Vk\+Draw\+Indexed\+Indirect\+Command)) const
+\begin{DoxyCompactList}\small\item\em Records an indexed indirect draw command. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a2893958e5bbf683c4a51cd7aa6c01ca2}{dispatch}} (uint32\+\_\+t group\+CountX, uint32\+\_\+t group\+CountY, uint32\+\_\+t group\+CountZ) const
+\begin{DoxyCompactList}\small\item\em Dispatch workers to compute shader. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T$>$ }\\void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a75756008c1de0f66351e07d932285970}{push\+Constants}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_pipeline_layout}{Pipeline\+Layout}} \&layout, Shader\+Stage\+Flags stage\+Flags, const T \&data, uint32\+\_\+t offset=0)
 \begin{DoxyCompactList}\small\item\em Pushes constants to a pipeline layout. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a470359a485aef4881c54126f60b897cc}{bind\+Vertex\+Buffer}} (uint32\+\_\+t binding, const \doxymbox{\hyperlink{class_lava_v_k_1_1_buffer}{Buffer}} \&vertex\+Buffer, Vk\+Device\+Size offset=0) const
@@ -59,7 +69,15 @@ void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a66aedfe3742062165c7
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_aa3dfe2948318f1875491a7af51a2a72f}{set\+Scissor}} (Vk\+Extent2D extent, Vk\+Offset2D offset=\{0, 0\}) const
 \begin{DoxyCompactList}\small\item\em Sets the dynamic scissor rectangle. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a01b8e75d1436cb3cebbc2ef4713cceaf}{set\+Viewport\+And\+Scissor}} (Vk\+Extent2D extent) const
-\begin{DoxyCompactList}\small\item\em Convenience function to configure both viewport and scissor rectangle simultaneously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Convenience function to configure both viewport and scissor rectangle simultaneously. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a142a256922be5f068b2a41b091134084}{pipeline\+Barrier}} (Vk\+Image image, Image\+Layout old\+Layout, Image\+Layout new\+Layout, Pipeline\+Stage src\+Stage, Pipeline\+Stage dst\+Stage, Access\+Flag\+Bits src\+Access, Access\+Flag\+Bits dst\+Access, Image\+Aspect\+Flag\+Bits aspect\+Mask=Image\+Aspect\+Flag\+Bits::\+\+COLOR\+\_\+\+BIT)
+\begin{DoxyCompactList}\small\item\em Records an image layout transition and memory barrier using Lava\+VK enums. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a392c90e1ea71b47ae557bad71b570192}{pipeline\+Barrier}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \&image, Image\+Layout old\+Layout, Image\+Layout new\+Layout, Pipeline\+Stage src\+Stage, Pipeline\+Stage dst\+Stage, Access\+Flag\+Bits src\+Access, Access\+Flag\+Bits dst\+Access, Image\+Aspect\+Flag\+Bits aspect\+Mask=Image\+Aspect\+Flag\+Bits::\+\+COLOR\+\_\+\+BIT)
+\begin{DoxyCompactList}\small\item\em Convenience overload accepting a Lava\+VK \doxylink{class_lava_v_k_1_1_image}{Image} wrapper. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_aa9f39085d16cb61d946606769128fe9f}{copy\+Image}} (Vk\+Image src\+Image, Image\+Layout src\+Layout, Vk\+Image dst\+Image, Image\+Layout dst\+Layout, uint32\+\_\+t width, uint32\+\_\+t height, Image\+Aspect\+Flag\+Bits aspect\+Mask=Image\+Aspect\+Flag\+Bits::\+\+COLOR\+\_\+\+BIT)
+\begin{DoxyCompactList}\small\item\em Copies a rectangular region between two GPU images ({\ttfamily vk\+Cmd\+Copy\+Image}). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a24a38a9a9da094b2d460cc8e6044a728}{copy\+Image}} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \&src\+Image, Image\+Layout src\+Layout, const \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \&dst\+Image, Image\+Layout dst\+Layout, uint32\+\_\+t width, uint32\+\_\+t height, Image\+Aspect\+Flag\+Bits aspect\+Mask=Image\+Aspect\+Flag\+Bits::\+\+COLOR\+\_\+\+BIT)
+\begin{DoxyCompactList}\small\item\em Convenience overload accepting Lava\+VK \doxylink{class_lava_v_k_1_1_image}{Image} wrappers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -235,9 +253,24 @@ Binds an index buffer for indexed drawing commands.
 {\em index\+Type} & Type of indices stored in the buffer (e.\+g., VK\+\_\+\+INDEX\+\_\+\+TYPE\+\_\+\+UINT16 or VK\+\_\+\+INDEX\+\_\+\+TYPE\+\_\+\+UINT32). \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a7f5cd4d9b8af0eebba015e673ef22de8}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!bindPipeline@{bindPipeline}}
+\index{bindPipeline@{bindPipeline}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{bindPipeline()}{bindPipeline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a7f5cd4d9b8af0eebba015e673ef22de8} 
+void Lava\+VK::\+\+Command\+Buffer::\+bind\+Pipeline (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_compute_pipeline}{Compute\+Pipeline}} \&}]{pipeline}{}\end{DoxyParamCaption}) const}
+
+
+
+Binds a compute pipeline to the command buffer. 
+
+Wraps {\ttfamily vk\+Cmd\+Bind\+Pipeline} with {\ttfamily VK\+\_\+\+PIPELINE\+\_\+\+BIND\+\_\+\+POINT\+\_\+\+GRAPHICS}. Must be called between \doxylink{class_lava_v_k_1_1_command_buffer_a9af1a3b839014a0b42a418cb1be65782}{begin()} and \doxylink{class_lava_v_k_1_1_command_buffer_abb37dea67982113feb0acc7c26339020}{end()} before recording any draw calls. 
+\begin{DoxyParams}{Parameters}
+{\em pipeline} & The \doxylink{class_lava_v_k_1_1_compute_pipeline}{Compute\+Pipeline} instance containing shader stages and pipeline state. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_lava_v_k_1_1_command_buffer_a35985fdf1065c1aa1a7744e3f72a6a1e}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!bindPipeline@{bindPipeline}}
 \index{bindPipeline@{bindPipeline}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
-\doxysubsubsection{\texorpdfstring{bindPipeline()}{bindPipeline()}}
+\doxysubsubsection{\texorpdfstring{bindPipeline()}{bindPipeline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a35985fdf1065c1aa1a7744e3f72a6a1e} 
 void Lava\+VK::\+\+Command\+Buffer::\+bind\+Pipeline (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_graphics_pipeline}{Graphics\+Pipeline}} \&}]{pipeline}{}\end{DoxyParamCaption}) const}
 
@@ -322,6 +355,79 @@ Wraps {\ttfamily vk\+Cmd\+Bind\+Vertex\+Buffers}, binding each buffer in {\ttfam
 {\em offsets} & Byte offsets into each corresponding buffer in {\ttfamily buffers}; must be the same size as {\ttfamily buffers}. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a24a38a9a9da094b2d460cc8e6044a728}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!copyImage@{copyImage}}
+\index{copyImage@{copyImage}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{copyImage()}{copyImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a24a38a9a9da094b2d460cc8e6044a728} 
+void Lava\+VK::\+\+Command\+Buffer::\+copy\+Image (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \&}]{src\+Image}{, }\item[{Image\+Layout}]{src\+Layout}{, }\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \&}]{dst\+Image}{, }\item[{Image\+Layout}]{dst\+Layout}{, }\item[{uint32\+\_\+t}]{width}{, }\item[{uint32\+\_\+t}]{height}{, }\item[{Image\+Aspect\+Flag\+Bits}]{aspect\+Mask}{ = {\ttfamily ImageAspectFlagBits:\+:\+COLOR\+\_\+BIT}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Convenience overload accepting Lava\+VK \doxylink{class_lava_v_k_1_1_image}{Image} wrappers. 
+
+Equivalent to the {\ttfamily Vk\+Image} overload above, using each image\textquotesingle{}s native handle. See that overload for parameter details. 
+\begin{DoxyParams}{Parameters}
+{\em src\+Image} & The source Lava\+VK \doxylink{class_lava_v_k_1_1_image}{Image}. \\
+\hline
+{\em src\+Layout} & Current layout of {\ttfamily src\+Image}. \\
+\hline
+{\em dst\+Image} & The destination Lava\+VK \doxylink{class_lava_v_k_1_1_image}{Image}. \\
+\hline
+{\em dst\+Layout} & Current layout of {\ttfamily dst\+Image}. \\
+\hline
+{\em width} & Width, in texels, of the region to copy. \\
+\hline
+{\em height} & Height, in texels, of the region to copy. \\
+\hline
+{\em aspect\+Mask} & Aspect(s) of the images to copy (default:\+ color). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_aa9f39085d16cb61d946606769128fe9f}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!copyImage@{copyImage}}
+\index{copyImage@{copyImage}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{copyImage()}{copyImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_aa9f39085d16cb61d946606769128fe9f} 
+void Lava\+VK::\+\+Command\+Buffer::\+copy\+Image (\begin{DoxyParamCaption}\item[{Vk\+Image}]{src\+Image}{, }\item[{Image\+Layout}]{src\+Layout}{, }\item[{Vk\+Image}]{dst\+Image}{, }\item[{Image\+Layout}]{dst\+Layout}{, }\item[{uint32\+\_\+t}]{width}{, }\item[{uint32\+\_\+t}]{height}{, }\item[{Image\+Aspect\+Flag\+Bits}]{aspect\+Mask}{ = {\ttfamily ImageAspectFlagBits:\+:\+COLOR\+\_\+BIT}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copies a rectangular region between two GPU images ({\ttfamily vk\+Cmd\+Copy\+Image}). 
+
+Both images must already be in a layout compatible with transfer operations (typically \+\#\+Image\+Layout::\+\+TRANSFER\+\_\+\+SRC\+\_\+\+OPTIMAL and \+\#\+Image\+Layout::\+\+TRANSFER\+\_\+\+DST\+\_\+\+OPTIMAL respectively; see \doxylink{class_lava_v_k_1_1_command_buffer_a142a256922be5f068b2a41b091134084}{pipeline\+Barrier()}). Copies a single mip level/\+array layer, starting at the origin of both images, covering {\ttfamily width} x {\ttfamily height} texels. 
+\begin{DoxyParams}{Parameters}
+{\em src\+Image} & Native handle of the source Vulkan image. \\
+\hline
+{\em src\+Layout} & Current layout of {\ttfamily src\+Image}. \\
+\hline
+{\em dst\+Image} & Native handle of the destination Vulkan image. \\
+\hline
+{\em dst\+Layout} & Current layout of {\ttfamily dst\+Image}. \\
+\hline
+{\em width} & Width, in texels, of the region to copy. \\
+\hline
+{\em height} & Height, in texels, of the region to copy. \\
+\hline
+{\em aspect\+Mask} & Aspect(s) of the images to copy (default:\+ color). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a2893958e5bbf683c4a51cd7aa6c01ca2}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!dispatch@{dispatch}}
+\index{dispatch@{dispatch}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{dispatch()}{dispatch()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a2893958e5bbf683c4a51cd7aa6c01ca2} 
+void Lava\+VK::\+\+Command\+Buffer::\+dispatch (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{group\+CountX}{, }\item[{uint32\+\_\+t}]{group\+CountY}{, }\item[{uint32\+\_\+t}]{group\+CountZ}{}\end{DoxyParamCaption}) const}
+
+
+
+Dispatch workers to compute shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+CountX} & X invokers, \\
+\hline
+{\em group\+CountY} & Y invokers, \\
+\hline
+{\em group\+CountZ} & Z INvokers \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_lava_v_k_1_1_command_buffer_a0825edb9005f4cb63900ebf0e19df743}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!draw@{draw}}
 \index{draw@{draw}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
@@ -366,6 +472,48 @@ Records an indexed draw command.
 {\em first\+Instance} & \doxylink{class_lava_v_k_1_1_instance}{Instance} ID of the first instance. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a04253758925808606233cb39bf104749}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!drawIndexedIndirect@{drawIndexedIndirect}}
+\index{drawIndexedIndirect@{drawIndexedIndirect}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{drawIndexedIndirect()}{drawIndexedIndirect()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a04253758925808606233cb39bf104749} 
+void Lava\+VK::\+\+Command\+Buffer::\+draw\+Indexed\+Indirect (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_buffer}{Buffer}} \&}]{buffer}{, }\item[{Vk\+Device\+Size}]{offset}{ = {\ttfamily 0}, }\item[{uint32\+\_\+t}]{draw\+Count}{ = {\ttfamily 1}, }\item[{uint32\+\_\+t}]{stride}{ = {\ttfamily sizeof(VkDrawIndexedIndirectCommand)}}\end{DoxyParamCaption}) const}
+
+
+
+Records an indexed indirect draw command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & \doxylink{class_lava_v_k_1_1_buffer}{Buffer} containing Vk\+Draw\+Indexed\+Indirect\+Command structures. \\
+\hline
+{\em offset} & Byte offset into buffer where parameters begin. \\
+\hline
+{\em draw\+Count} & Number of draws to execute. \\
+\hline
+{\em stride} & Byte stride between successive sets of draw parameters. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a558fe8df0f72eff02c0ffbbcda3843f4}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!drawIndirect@{drawIndirect}}
+\index{drawIndirect@{drawIndirect}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{drawIndirect()}{drawIndirect()}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a558fe8df0f72eff02c0ffbbcda3843f4} 
+void Lava\+VK::\+\+Command\+Buffer::\+draw\+Indirect (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_buffer}{Buffer}} \&}]{buffer}{, }\item[{Vk\+Device\+Size}]{offset}{ = {\ttfamily 0}, }\item[{uint32\+\_\+t}]{draw\+Count}{ = {\ttfamily 1}, }\item[{uint32\+\_\+t}]{stride}{ = {\ttfamily sizeof(VkDrawIndirectCommand)}}\end{DoxyParamCaption}) const}
+
+
+
+Records an indirect draw command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & \doxylink{class_lava_v_k_1_1_buffer}{Buffer} containing Vk\+Draw\+Indirect\+Command structures. \\
+\hline
+{\em offset} & Byte offset into buffer where parameters begin. \\
+\hline
+{\em draw\+Count} & Number of draws to execute. \\
+\hline
+{\em stride} & Byte stride between successive sets of draw parameters. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_lava_v_k_1_1_command_buffer_abb37dea67982113feb0acc7c26339020}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!end@{end}}
 \index{end@{end}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
 \doxysubsubsection{\texorpdfstring{end()}{end()}}
@@ -404,6 +552,64 @@ Returns the underlying Vulkan Vk\+Command\+Buffer handle.
 \begin{DoxyReturn}{Returns}
 The native {\ttfamily Vk\+Command\+Buffer} handle, or {\ttfamily VK\+\_\+\+NULL\+\_\+\+HANDLE} if unallocated. 
 \end{DoxyReturn}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a392c90e1ea71b47ae557bad71b570192}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!pipelineBarrier@{pipelineBarrier}}
+\index{pipelineBarrier@{pipelineBarrier}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{pipelineBarrier()}{pipelineBarrier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a392c90e1ea71b47ae557bad71b570192} 
+void Lava\+VK::\+\+Command\+Buffer::\+pipeline\+Barrier (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \&}]{image}{, }\item[{Image\+Layout}]{old\+Layout}{, }\item[{Image\+Layout}]{new\+Layout}{, }\item[{Pipeline\+Stage}]{src\+Stage}{, }\item[{Pipeline\+Stage}]{dst\+Stage}{, }\item[{Access\+Flag\+Bits}]{src\+Access}{, }\item[{Access\+Flag\+Bits}]{dst\+Access}{, }\item[{Image\+Aspect\+Flag\+Bits}]{aspect\+Mask}{ = {\ttfamily ImageAspectFlagBits:\+:\+COLOR\+\_\+BIT}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Convenience overload accepting a Lava\+VK \doxylink{class_lava_v_k_1_1_image}{Image} wrapper. 
+
+Equivalent to the {\ttfamily Vk\+Image} overload above, using {\ttfamily image\textquotesingle{}s} native handle. See that overload for parameter details. 
+\begin{DoxyParams}{Parameters}
+{\em image} & The Lava\+VK \doxylink{class_lava_v_k_1_1_image}{Image} being transitioned. \\
+\hline
+{\em old\+Layout} & Layout the image is transitioning from. \\
+\hline
+{\em new\+Layout} & Layout the image is transitioning to. \\
+\hline
+{\em src\+Stage} & Pipeline stage(s) that must complete before the barrier. \\
+\hline
+{\em dst\+Stage} & Pipeline stage(s) that must wait on the barrier. \\
+\hline
+{\em src\+Access} & Access types performed by {\ttfamily src\+Stage} that must be made visible. \\
+\hline
+{\em dst\+Access} & Access types performed by {\ttfamily dst\+Stage} that must wait for those writes. \\
+\hline
+{\em aspect\+Mask} & Aspect(s) of the image affected by the transition (default:\+ color). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_a142a256922be5f068b2a41b091134084}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!pipelineBarrier@{pipelineBarrier}}
+\index{pipelineBarrier@{pipelineBarrier}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{pipelineBarrier()}{pipelineBarrier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_a142a256922be5f068b2a41b091134084} 
+void Lava\+VK::\+\+Command\+Buffer::\+pipeline\+Barrier (\begin{DoxyParamCaption}\item[{Vk\+Image}]{image}{, }\item[{Image\+Layout}]{old\+Layout}{, }\item[{Image\+Layout}]{new\+Layout}{, }\item[{Pipeline\+Stage}]{src\+Stage}{, }\item[{Pipeline\+Stage}]{dst\+Stage}{, }\item[{Access\+Flag\+Bits}]{src\+Access}{, }\item[{Access\+Flag\+Bits}]{dst\+Access}{, }\item[{Image\+Aspect\+Flag\+Bits}]{aspect\+Mask}{ = {\ttfamily ImageAspectFlagBits:\+:\+COLOR\+\_\+BIT}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Records an image layout transition and memory barrier using Lava\+VK enums. 
+
+Wraps {\ttfamily vk\+Cmd\+Pipeline\+Barrier} for the common case of a single image memory barrier, transitioning {\ttfamily image} from {\ttfamily old\+Layout} to {\ttfamily new\+Layout} between the given pipeline stages/\+access masks. \doxylink{class_lava_v_k_1_1_queue}{Queue} family ownership is left unchanged ({\ttfamily VK\+\_\+\+QUEUE\+\_\+\+FAMILY\+\_\+\+IGNORED}), and the barrier covers mip level 0 and array layer 0 only. 
+\begin{DoxyParams}{Parameters}
+{\em image} & Native handle of the Vulkan image being transitioned. \\
+\hline
+{\em old\+Layout} & Layout the image is transitioning from. \\
+\hline
+{\em new\+Layout} & Layout the image is transitioning to. \\
+\hline
+{\em src\+Stage} & Pipeline stage(s) that must complete before the barrier. \\
+\hline
+{\em dst\+Stage} & Pipeline stage(s) that must wait on the barrier. \\
+\hline
+{\em src\+Access} & Access types performed by {\ttfamily src\+Stage} that must be made visible. \\
+\hline
+{\em dst\+Access} & Access types performed by {\ttfamily dst\+Stage} that must wait for those writes. \\
+\hline
+{\em aspect\+Mask} & Aspect(s) of the image affected by the transition (default:\+ color). \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_lava_v_k_1_1_command_buffer_a75756008c1de0f66351e07d932285970}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!pushConstants@{pushConstants}}
 \index{pushConstants@{pushConstants}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
 \doxysubsubsection{\texorpdfstring{pushConstants()}{pushConstants()}}
@@ -433,7 +639,7 @@ Wraps {\ttfamily vk\+Cmd\+Push\+Constants}, uploading {\ttfamily data} as a fast
 \end{DoxyParams}
 \Hypertarget{class_lava_v_k_1_1_command_buffer_aa799785d1a4460451b6f04fea6b1483f}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!record@{record}}
 \index{record@{record}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
-\doxysubsubsection{\texorpdfstring{record()}{record()}}
+\doxysubsubsection{\texorpdfstring{record()}{record()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_aa799785d1a4460451b6f04fea6b1483f} 
 void Lava\+VK::\+\+Command\+Buffer::\+record (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \&}]{render\+Pass}{, }\item[{const \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer}{Framebuffer}} \&}]{framebuffer}{, }\item[{Vk\+Extent2D}]{extent}{, }\item[{const std::\+function$<$ void(\doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a41af976109b6ee79722e33e9e45db162}{Command\+Buffer}} \&)$>$ \&}]{draw\+Commands}{}\end{DoxyParamCaption})}
 
@@ -452,6 +658,21 @@ Automatically handles reset, begin, begin\+Render\+Pass, executing the draw call
 {\em extent} & Rendering extent. \\
 \hline
 {\em draw\+Commands} & Lambda callback containing draw calls and pipeline bindings. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lava_v_k_1_1_command_buffer_aad62cf12b5bdc5a8a08826a74794a127}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!record@{record}}
+\index{record@{record}!LavaVK::CommandBuffer@{LavaVK::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{record()}{record()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_command_buffer_aad62cf12b5bdc5a8a08826a74794a127} 
+void Lava\+VK::\+\+Command\+Buffer::\+record (\begin{DoxyParamCaption}\item[{const std::\+function$<$ void(\doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer_a41af976109b6ee79722e33e9e45db162}{Command\+Buffer}} \&)$>$ \&}]{commands}{}\end{DoxyParamCaption})}
+
+
+
+Start recording commands to command buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em commands} & Lambda callback containing draw calls and pipeline bindings. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_lava_v_k_1_1_command_buffer_a62e7362c3477a44e3eb0bf4bafec83cb}\index{LavaVK::CommandBuffer@{LavaVK::CommandBuffer}!reset@{reset}}

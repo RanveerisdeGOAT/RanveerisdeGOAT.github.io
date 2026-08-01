@@ -5,6 +5,7 @@ var class_lava_v_k_1_1_buffer =
     [ "~Buffer", "class_lava_v_k_1_1_buffer.html#ada5126479a61c24847a289427472a329", null ],
     [ "Buffer", "class_lava_v_k_1_1_buffer.html#a699d03d4863cea942507f5258c17d815", null ],
     [ "buffer", "class_lava_v_k_1_1_buffer.html#a08d56e68ab0e3792b5ad7e144e90ba09", null ],
+    [ "copyToBuffer", "class_lava_v_k_1_1_buffer.html#a888529a932d6f3ec94fd45d03de911a1", null ],
     [ "map", "class_lava_v_k_1_1_buffer.html#a4c38f9aa95fa71b777cc8993bd29f7da", null ],
     [ "memory", "class_lava_v_k_1_1_buffer.html#a7aa710c684b547355fe86bf1f382d1fa", null ],
     [ "native", "class_lava_v_k_1_1_buffer.html#ab101ca2089609dc1a6a22f59b76ba736", null ],

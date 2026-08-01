@@ -517,44 +517,87 @@
 \DoxyCodeLine{00650\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ResultCode\ \{}
 \DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ Success\ =\ VK\_SUCCESS,\ }
 \DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ Suboptimal\ =\ VK\_SUBOPTIMAL\_KHR,\ }
-\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ OutOfDate\ =\ VK\_ERROR\_OUT\_OF\_DATE\_KHR,\ }
-\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ Timeout\ =\ VK\_TIMEOUT,\ }
-\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ NotReady\ =\ VK\_NOT\_READY,\ }
-\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ ErrorDeviceLost\ =\ VK\_ERROR\_DEVICE\_LOST,\ }
-\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ ErrorOutOfMemory\ =\ VK\_ERROR\_OUT\_OF\_DATE\_KHR,\ }
-\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ UnknownError\ =\ VK\_ERROR\_UNKNOWN,\ }
-\DoxyCodeLine{00659\ \ \ \ \ \};}
-\DoxyCodeLine{00660\ }
-\DoxyCodeLine{00685\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a4e83fd3e880ecef3c16d116d76eee2e2}{Result}}\ \{}
-\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ VkResult\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}};}
-\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ ResultCode\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}};}
-\DoxyCodeLine{00690\ }
-\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a4e83fd3e880ecef3c16d116d76eee2e2}{Result}}(VkResult\ res)}
-\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}}(res),\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}(static\_cast<ResultCode>(res))\ \{}
-\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00698\ }
-\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_afcab7fb19dd541f6ad4a982ccfaff94c}{Result}}(ResultCode\ resCode)}
-\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}}(static\_cast<VkResult>(resCode)),\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}(resCode)\ \{}
-\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00706\ }
-\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}\ ==\ ResultCode::Success\ ||\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}\ ==\ ResultCode::Suboptimal;}
-\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00715\ }
-\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_ac8a8061e1f3df8367feeec7d6ba25a3c}{operator==}}(VkResult\ res)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}}\ ==\ res;\ \}}
-\DoxyCodeLine{00722\ }
-\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_aace05bf793b4da71509d7ee0bcb30477}{operator!=}}(VkResult\ res)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}}\ !=\ res;\ \}}
-\DoxyCodeLine{00729\ }
-\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a3c10b122df922200a7362a6fe5ac8924}{operator==}}(ResultCode\ resCode)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}\ ==\ resCode;\ \}}
-\DoxyCodeLine{00736\ }
-\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1009d9de7c56615b5eea3ac17cfe4853}{operator!=}}(ResultCode\ resCode)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}\ !=\ resCode;\ \}}
-\DoxyCodeLine{00743\ }
-\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ VkResult()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}};\ \}}
-\DoxyCodeLine{00749\ }
-\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ ResultCode()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}};\ \}}
-\DoxyCodeLine{00755\ \ \ \ \ \};}
-\DoxyCodeLine{00756\ \}}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ OutOfDate\ =\ VK\_ERROR\_OUT\_OF\_DATE\_KHR,}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ Timeout\ =\ VK\_TIMEOUT,\ }
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ NotReady\ =\ VK\_NOT\_READY,\ }
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ ErrorDeviceLost\ =\ VK\_ERROR\_DEVICE\_LOST,\ }
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ ErrorOutOfMemory\ =\ VK\_ERROR\_OUT\_OF\_DATE\_KHR,\ }
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ UnknownError\ =\ VK\_ERROR\_UNKNOWN,\ }
+\DoxyCodeLine{00660\ \ \ \ \ \};}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00686\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a4e83fd3e880ecef3c16d116d76eee2e2}{Result}}\ \{}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ VkResult\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}};}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ ResultCode\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}};}
+\DoxyCodeLine{00691\ }
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a4e83fd3e880ecef3c16d116d76eee2e2}{Result}}(VkResult\ res)}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}}(res),\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}(static\_cast<ResultCode>(res))\ \{}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00699\ }
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_afcab7fb19dd541f6ad4a982ccfaff94c}{Result}}(ResultCode\ resCode)}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}}(static\_cast<VkResult>(resCode)),\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}(resCode)\ \{}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}\ ==\ ResultCode::Success\ ||\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}\ ==\ ResultCode::Suboptimal;}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00716\ }
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_ac8a8061e1f3df8367feeec7d6ba25a3c}{operator==}}(VkResult\ res)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}}\ ==\ res;\ \}}
+\DoxyCodeLine{00723\ }
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_aace05bf793b4da71509d7ee0bcb30477}{operator!=}}(VkResult\ res)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}}\ !=\ res;\ \}}
+\DoxyCodeLine{00730\ }
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a3c10b122df922200a7362a6fe5ac8924}{operator==}}(ResultCode\ resCode)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}\ ==\ resCode;\ \}}
+\DoxyCodeLine{00737\ }
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1009d9de7c56615b5eea3ac17cfe4853}{operator!=}}(ResultCode\ resCode)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}}\ !=\ resCode;\ \}}
+\DoxyCodeLine{00744\ }
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ VkResult()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a1d8335716f828158c116b6ddc041857d}{value}};\ \}}
+\DoxyCodeLine{00750\ }
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ ResultCode()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_result_a6f80bfbad420d644b42b40753dc8a2ea}{code}};\ \}}
+\DoxyCodeLine{00756\ \ \ \ \ \};}
 \DoxyCodeLine{00757\ }
-\DoxyCodeLine{00758\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//LAVAVK\_CORE\_HPP}}
+\DoxyCodeLine{00758\ \ \ \ \ \textcolor{keyword}{enum\ class}\ AccessFlagBits\ \{}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ INDIRECT\_COMMAND\_READ\_BIT\ =\ VK\_ACCESS\_INDIRECT\_COMMAND\_READ\_BIT,}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ INDEX\_READ\_BIT\ =\ VK\_ACCESS\_INDEX\_READ\_BIT,}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ VERTEX\_ATTRIBUTE\_READ\_BIT\ =\ VK\_ACCESS\_VERTEX\_ATTRIBUTE\_READ\_BIT,}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ UNIFORM\_READ\_BIT\ =\ VK\_ACCESS\_UNIFORM\_READ\_BIT,}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ INPUT\_ATTACHMENT\_READ\_BIT\ =\ VK\_ACCESS\_INPUT\_ATTACHMENT\_READ\_BIT,}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ SHADER\_READ\_BIT\ =\ VK\_ACCESS\_SHADER\_READ\_BIT,}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ SHADER\_WRITE\_BIT\ =\ VK\_ACCESS\_SHADER\_WRITE\_BIT,}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ COLOR\_ATTACHMENT\_READ\_BIT\ =\ VK\_ACCESS\_COLOR\_ATTACHMENT\_READ\_BIT,}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ COLOR\_ATTACHMENT\_WRITE\_BIT\ =\ VK\_ACCESS\_COLOR\_ATTACHMENT\_WRITE\_BIT,}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ DEPTH\_STENCIL\_ATTACHMENT\_READ\_BIT\ =\ VK\_ACCESS\_DEPTH\_STENCIL\_ATTACHMENT\_READ\_BIT,}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ DEPTH\_STENCIL\_ATTACHMENT\_WRITE\_BIT\ =\ VK\_ACCESS\_DEPTH\_STENCIL\_ATTACHMENT\_WRITE\_BIT,}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ TRANSFER\_READ\_BIT\ =\ VK\_ACCESS\_TRANSFER\_READ\_BIT,}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ TRANSFER\_WRITE\_BIT\ =\ VK\_ACCESS\_TRANSFER\_WRITE\_BIT,}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ HOST\_READ\_BIT\ =\ VK\_ACCESS\_HOST\_READ\_BIT,}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ HOST\_WRITE\_BIT\ =\ VK\_ACCESS\_HOST\_WRITE\_BIT,}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ MEMORY\_READ\_BIT\ =\ VK\_ACCESS\_MEMORY\_READ\_BIT,}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ MEMORY\_WRITE\_BIT\ =\ VK\_ACCESS\_MEMORY\_WRITE\_BIT,}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ NONE\ =\ VK\_ACCESS\_NONE,}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ TRANSFORM\_FEEDBACK\_WRITE\_BIT\_EXT\ =\ VK\_ACCESS\_TRANSFORM\_FEEDBACK\_WRITE\_BIT\_EXT,}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ TRANSFORM\_FEEDBACK\_COUNTER\_READ\_BIT\_EXT\ =\ VK\_ACCESS\_TRANSFORM\_FEEDBACK\_COUNTER\_READ\_BIT\_EXT,}
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ TRANSFORM\_FEEDBACK\_COUNTER\_WRITE\_BIT\_EXT\ =\ VK\_ACCESS\_TRANSFORM\_FEEDBACK\_COUNTER\_WRITE\_BIT\_EXT,}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ CONDITIONAL\_RENDERING\_READ\_BIT\_EXT\ =\ VK\_ACCESS\_CONDITIONAL\_RENDERING\_READ\_BIT\_EXT,}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ COLOR\_ATTACHMENT\_READ\_NONCOHERENT\_BIT\_EXT\ =\ VK\_ACCESS\_COLOR\_ATTACHMENT\_READ\_NONCOHERENT\_BIT\_EXT,}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ ACCELERATION\_STRUCTURE\_READ\_BIT\_KHR\ =\ VK\_ACCESS\_ACCELERATION\_STRUCTURE\_READ\_BIT\_KHR,}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ ACCELERATION\_STRUCTURE\_WRITE\_BIT\_KHR\ =\ VK\_ACCESS\_ACCELERATION\_STRUCTURE\_WRITE\_BIT\_KHR,}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ FRAGMENT\_DENSITY\_MAP\_READ\_BIT\_EXT\ =\ VK\_ACCESS\_FRAGMENT\_DENSITY\_MAP\_READ\_BIT\_EXT,}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ FRAGMENT\_SHADING\_RATE\_ATTACHMENT\_READ\_BIT\_KHR\ =\ VK\_ACCESS\_FRAGMENT\_SHADING\_RATE\_ATTACHMENT\_READ\_BIT\_KHR,}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ COMMAND\_PREPROCESS\_READ\_BIT\_EXT\ =\ VK\_ACCESS\_COMMAND\_PREPROCESS\_READ\_BIT\_EXT,}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ COMMAND\_PREPROCESS\_WRITE\_BIT\_EXT\ =\ VK\_ACCESS\_COMMAND\_PREPROCESS\_WRITE\_BIT\_EXT,}
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ SHADING\_RATE\_IMAGE\_READ\_BIT\_NV\ =\ VK\_ACCESS\_SHADING\_RATE\_IMAGE\_READ\_BIT\_NV,}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ ACCELERATION\_STRUCTURE\_READ\_BIT\_NV\ =\ VK\_ACCESS\_ACCELERATION\_STRUCTURE\_READ\_BIT\_NV,}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ ACCELERATION\_STRUCTURE\_WRITE\_BIT\_NV\ =\ VK\_ACCESS\_ACCELERATION\_STRUCTURE\_WRITE\_BIT\_NV,}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ COMMAND\_PREPROCESS\_READ\_BIT\_NV\ =\ VK\_ACCESS\_COMMAND\_PREPROCESS\_READ\_BIT\_NV,}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ COMMAND\_PREPROCESS\_WRITE\_BIT\_NV\ =\ VK\_ACCESS\_COMMAND\_PREPROCESS\_WRITE\_BIT\_NV,}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ \ \ NONE\_KHR\ =\ VK\_ACCESS\_NONE\_KHR,}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ FLAG\_BITS\_MAX\_ENUM\ =\ VK\_ACCESS\_FLAG\_BITS\_MAX\_ENUM}
+\DoxyCodeLine{00795\ \ \ \ \ \};}
+\DoxyCodeLine{00796\ }
+\DoxyCodeLine{00797\ \ \ \ \ \textcolor{keyword}{inline}\ AccessFlagBits\ operator|(AccessFlagBits\ lhs,\ AccessFlagBits\ rhs)\ \{}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}AccessFlagBits\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(lhs)\ |\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(rhs));}
+\DoxyCodeLine{00799\ \ \ \ \ \}}
+\DoxyCodeLine{00800\ \}}
+\DoxyCodeLine{00801\ }
+\DoxyCodeLine{00802\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//LAVAVK\_CORE\_HPP}}
 
 \end{DoxyCode}

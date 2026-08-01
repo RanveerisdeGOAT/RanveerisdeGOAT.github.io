@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['wait_0',['wait',['../class_lava_v_k_1_1_fence.html#a1b7335408c2fc7a5853736d5a8c6afb1',1,'LavaVK::Fence']]],
-  ['waitidle_1',['waitIdle',['../class_lava_v_k_1_1_device.html#a3f7243b142b20cc71f541ec7a2444683',1,'LavaVK::Device::waitIdle()'],['../class_lava_v_k_1_1_queue.html#aef19252212737e63b05933084db55e36',1,'LavaVK::Queue::waitIdle()']]],
-  ['why_20lavavk_2',['Why LavaVK?',['../index.html#autotoc_md1',1,'']]],
-  ['width_3',['width',['../struct_lava_v_k_1_1_extent2_d.html#aff4eac0b47cd1da7371732e93e82dc39',1,'LavaVK::Extent2D']]],
-  ['window_4',['Present to window.',['../index.html#autotoc_md25',1,'']]],
-  ['writebuffer_5',['writeBuffer',['../class_lava_v_k_1_1_descriptor_writer.html#a63e65c3bbda705a90abfb6742b8d4da8',1,'LavaVK::DescriptorWriter']]],
-  ['writeimage_6',['writeImage',['../class_lava_v_k_1_1_descriptor_writer.html#a1135f9ec80e11a01b2256f6e1a8884a3',1,'LavaVK::DescriptorWriter']]]
+  ['texture_0',['Texture',['../class_lava_v_k_1_1_texture.html',1,'LavaVK::Texture'],['../class_lava_v_k_1_1_texture.html#a530f6bfdda3df5d60e0f7c3339197308',1,'LavaVK::Texture::Texture(Device &amp;device, const TextureCreateInfo &amp;info)'],['../class_lava_v_k_1_1_texture.html#ab1f969ac5e632df7e56b47cd81ca8887',1,'LavaVK::Texture::Texture(Device &amp;device, const std::filesystem::path &amp;path, const TextureSamplerCreateInfo &amp;samplerInfo={})'],['../class_lava_v_k_1_1_texture.html#ac222a0194fc78e2f169b419af604738f',1,'LavaVK::Texture::Texture(Texture &amp;&amp;other) noexcept']]],
+  ['texturecreateinfo_1',['TextureCreateInfo',['../struct_lava_v_k_1_1_texture_create_info.html',1,'LavaVK']]],
+  ['texturesamplercreateinfo_2',['TextureSamplerCreateInfo',['../struct_lava_v_k_1_1_texture_sampler_create_info.html',1,'LavaVK']]],
+  ['the_20far_20future_3',['Maybe in the Far Future ;)',['../index.html#autotoc_md6',1,'']]],
+  ['tiling_4',['tiling',['../struct_lava_v_k_1_1_image_create_info.html#aaf779a68325954a9c5f783886c7a20a8',1,'LavaVK::ImageCreateInfo']]],
+  ['topology_5',['topology',['../struct_lava_v_k_1_1_graphics_pipeline_create_info.html#ab13a71a703a39d18c897bb1ead885904',1,'LavaVK::GraphicsPipelineCreateInfo']]],
+  ['type_6',['type',['../struct_lava_v_k_1_1_image_create_info.html#aeb301341d9a3d0c64494d35b4537c395',1,'LavaVK::ImageCreateInfo::type'],['../class_lava_v_k_1_1_g_p_u_hardware.html#a0a7a4158146aa5a66083142b5ead9f26',1,'LavaVK::GPUHardware::type()']]]
 ];

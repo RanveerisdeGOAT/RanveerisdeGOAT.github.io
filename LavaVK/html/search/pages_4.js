@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['features_0',['Features',['../index.html#autotoc_md3',1,'']]],
-  ['features_3a_1',['Features:',['../index.html#autotoc_md4',1,'Current Features:'],['../index.html#autotoc_md6',1,'Planned Features:']]]
+  ['cmake_20package_0',['Option 2: Install LavaVK as a CMake package',['../index.html#autotoc_md13',1,'']]],
+  ['cmake_20subdirectory_1',['Option 1: Add LavaVK as a CMake subdirectory',['../index.html#autotoc_md11',1,'']]],
+  ['contributing_2',['Contributing',['../index.html#autotoc_md18',1,'']]],
+  ['current_20features_3',['Current Features',['../index.html#autotoc_md4',1,'']]]
 ];
