@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "LavaVK", "index.html", [
-    [ "LavaVK 0.13.0-indev", "index.html", "index" ],
+    [ "LavaVK 0.14.0-indev", "index.html", "index" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -45,7 +45,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_buffer_8hpp_source.html",
-"class_lava_v_k_1_1_swap_chain.html#ada309bfd1b07944d450431f3e1a9fad2"
+"class_lava_v_k_1_1_swap_chain.html#a6dc5eafd83ed848d8bb912df571c0307"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

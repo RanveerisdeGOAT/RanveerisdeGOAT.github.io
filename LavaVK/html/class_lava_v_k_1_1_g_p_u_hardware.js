@@ -5,6 +5,7 @@ var class_lava_v_k_1_1_g_p_u_hardware =
     [ "apiVersion", "class_lava_v_k_1_1_g_p_u_hardware.html#adc881ab4d9041b8c5f24da36cda942fd", null ],
     [ "deviceID", "class_lava_v_k_1_1_g_p_u_hardware.html#aad25570cc9cc96f107b99e03106af965", null ],
     [ "driverVersion", "class_lava_v_k_1_1_g_p_u_hardware.html#a098ec418d46e1511329d2359bc38efa0", null ],
+    [ "features", "class_lava_v_k_1_1_g_p_u_hardware.html#a435cc99e00113d78abceffb673c62fc1", null ],
     [ "findPresentQueueFamily", "class_lava_v_k_1_1_g_p_u_hardware.html#a34ba9b55eb4cb529c7005ee8e4e9ef87", null ],
     [ "findQueueFamily", "class_lava_v_k_1_1_g_p_u_hardware.html#aa9bab6a220bdf618747e4d3a2c486dfa", null ],
     [ "getSurfaceCapabilities", "class_lava_v_k_1_1_g_p_u_hardware.html#a65a8820aa7ec5c64f5a76a4f84124cf8", null ],

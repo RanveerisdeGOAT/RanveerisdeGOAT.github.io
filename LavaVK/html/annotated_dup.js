@@ -1,6 +1,7 @@
 var annotated_dup =
 [
     [ "LavaVK", null, [
+      [ "BindlessTextureSet", "class_lava_v_k_1_1_bindless_texture_set.html", "class_lava_v_k_1_1_bindless_texture_set" ],
       [ "Buffer", "class_lava_v_k_1_1_buffer.html", "class_lava_v_k_1_1_buffer" ],
       [ "BufferCreateInfo", "struct_lava_v_k_1_1_buffer_create_info.html", "struct_lava_v_k_1_1_buffer_create_info" ],
       [ "CommandBuffer", "class_lava_v_k_1_1_command_buffer.html", "class_lava_v_k_1_1_command_buffer" ],
@@ -17,6 +18,7 @@ var annotated_dup =
       [ "Fence", "class_lava_v_k_1_1_fence.html", "class_lava_v_k_1_1_fence" ],
       [ "Format", "class_lava_v_k_1_1_format.html", "class_lava_v_k_1_1_format" ],
       [ "Framebuffer", "class_lava_v_k_1_1_framebuffer.html", "class_lava_v_k_1_1_framebuffer" ],
+      [ "GPUFeatures", "struct_lava_v_k_1_1_g_p_u_features.html", null ],
       [ "GPUHardware", "class_lava_v_k_1_1_g_p_u_hardware.html", "class_lava_v_k_1_1_g_p_u_hardware" ],
       [ "GraphicsPipeline", "class_lava_v_k_1_1_graphics_pipeline.html", "class_lava_v_k_1_1_graphics_pipeline" ],
       [ "GraphicsPipelineCreateInfo", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html", "struct_lava_v_k_1_1_graphics_pipeline_create_info" ],

@@ -39,105 +39,117 @@
 \DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ CPU\ }
 \DoxyCodeLine{00041\ \ \ \ \ \};}
 \DoxyCodeLine{00042\ }
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a1317c8fedfeaaed73af2292e10b735b0}{GPUHardware}}\ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a1317c8fedfeaaed73af2292e10b735b0}{GPUHardware}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a1317c8fedfeaaed73af2292e10b735b0}{GPUHardware}}(VkPhysicalDevice\ device);}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::vector<GPUHardware>\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a2d844ff8c3ab6da2f42eac379dc745db}{enumerate}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_instance}{Instance}}\ \&instance);}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::string\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_aa85ca5dbcbbedcfc7ecc9e670f4f4b26}{name}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ [[nodiscard]]\ GPUType\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a0a7a4158146aa5a66083142b5ead9f26}{type}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_adc881ab4d9041b8c5f24da36cda942fd}{apiVersion}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_lava_v_k_1_1_g_p_u_features}{GPUFeatures}}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ descriptorIndexing\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ runtimeDescriptorArray\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ partiallyBound\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ variableDescriptorCount\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ nonUniformIndexing\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ updateAfterBind\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00053\ \ \ \ \ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a1317c8fedfeaaed73af2292e10b735b0}{GPUHardware}}\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a1317c8fedfeaaed73af2292e10b735b0}{GPUHardware}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a1317c8fedfeaaed73af2292e10b735b0}{GPUHardware}}(VkPhysicalDevice\ device);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::vector<GPUHardware>\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a2d844ff8c3ab6da2f42eac379dc745db}{enumerate}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_instance}{Instance}}\ \&instance);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::string\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_aa85ca5dbcbbedcfc7ecc9e670f4f4b26}{name}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00110\ }
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a098ec418d46e1511329d2359bc38efa0}{driverVersion}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ [[nodiscard]]\ GPUType\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a0a7a4158146aa5a66083142b5ead9f26}{type}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00116\ }
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a1c0bfc53b5e574e237f3cbd7563c5edb}{vendorID}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_adc881ab4d9041b8c5f24da36cda942fd}{apiVersion}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00122\ }
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_aad25570cc9cc96f107b99e03106af965}{deviceID}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a098ec418d46e1511329d2359bc38efa0}{driverVersion}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00128\ }
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_aa9bab6a220bdf618747e4d3a2c486dfa}{findQueueFamily}}(QueueType\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a0a7a4158146aa5a66083142b5ead9f26}{type}},\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ *surface)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00141\ }
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkPhysicalDevice\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a8fbacd4ba6e4e6634ab0284d2daaa08b}{native}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a34ba9b55eb4cb529c7005ee8e4e9ef87}{findPresentQueueFamily}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&surface)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00155\ }
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_ac8a59ab62edf8b76aeca0664e87c2ac5}{supportsPresentation}}(uint32\_t\ queueFamilyIndex,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&surface)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00163\ }
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a6bf46c24c82c40b2c041ace9d349a3e7}{isSurfaceSupported}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&surface)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a1317c8fedfeaaed73af2292e10b735b0}{GPUHardware}}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_af09d173c7b96ba8e154d76dae1c9488b}{selectOptimalGPU}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_instance}{Instance}}\ \&instance,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&surface);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a1c0bfc53b5e574e237f3cbd7563c5edb}{vendorID}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_aad25570cc9cc96f107b99e03106af965}{deviceID}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_aa9bab6a220bdf618747e4d3a2c486dfa}{findQueueFamily}}(QueueType\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a0a7a4158146aa5a66083142b5ead9f26}{type}},\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ *surface)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkPhysicalDevice\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a8fbacd4ba6e4e6634ab0284d2daaa08b}{native}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a34ba9b55eb4cb529c7005ee8e4e9ef87}{findPresentQueueFamily}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&surface)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_ac8a59ab62edf8b76aeca0664e87c2ac5}{supportsPresentation}}(uint32\_t\ queueFamilyIndex,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&surface)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a6bf46c24c82c40b2c041ace9d349a3e7}{isSurfaceSupported}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&surface)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00183\ }
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_surface_capabilities}{SurfaceCapabilities}}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a65a8820aa7ec5c64f5a76a4f84124cf8}{getSurfaceCapabilities}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&surface)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00191\ }
-\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }Device;}
-\DoxyCodeLine{00194\ }
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ VkPhysicalDevice\ m\_device\ =\ VK\_NULL\_HANDLE;}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ VkPhysicalDeviceProperties\ m\_properties\{\};}
-\DoxyCodeLine{00197\ \ \ \ \ \};}
-\DoxyCodeLine{00198\ }
-\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \{}
-\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware}{GPUHardware}}\ \&gpu\_hardware,\ \textcolor{keyword}{const}\ std::vector<QueueType>\ \&requestedQueues,}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ *surface);}
-\DoxyCodeLine{00246\ }
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a288ad958754b393656dd6ef9e94d7c08}{\string~Device}}();}
-\DoxyCodeLine{00253\ }
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00257\ }
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&operator=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00259\ }
-\DoxyCodeLine{00261\ }
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}(\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&\&other)\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00267\ }
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&operator=(\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&\&other)\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00274\ }
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkDevice\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a03cd2d1f5b5f977e4df4b4ed086494b9}{native}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_device;\ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a1317c8fedfeaaed73af2292e10b735b0}{GPUHardware}}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_af09d173c7b96ba8e154d76dae1c9488b}{selectOptimalGPU}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_instance}{Instance}}\ \&instance,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&surface);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_surface_capabilities}{SurfaceCapabilities}}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a65a8820aa7ec5c64f5a76a4f84124cf8}{getSurfaceCapabilities}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ \&surface)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_g_p_u_features}{GPUFeatures}}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware_a435cc99e00113d78abceffb673c62fc1}{features}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_features;\ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ VkPhysicalDevice\ m\_device\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ VkPhysicalDeviceProperties\ m\_properties\{\};}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ GPUFeatures\ m\_features;}
+\DoxyCodeLine{00216\ \ \ \ \ \};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_g_p_u_hardware}{GPUHardware}}\ \&gpu\_hardware,\ \textcolor{keyword}{const}\ std::vector<QueueType>\ \&requestedQueues,}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}}\ *surface);}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a288ad958754b393656dd6ef9e94d7c08}{\string~Device}}();}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&operator=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00278\ }
 \DoxyCodeLine{00280\ }
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkPhysicalDevice\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a8bed146bb80384eadbb4719f398a9285}{physical}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_physicalDevice;\ \}}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}(\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&\&other)\ \textcolor{keyword}{noexcept};}
 \DoxyCodeLine{00286\ }
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_queue}{Queue}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a19246dc1b26956fff4638de045c2ba47}{getQueue}}(QueueType\ type)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00294\ }
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \doxymbox{\hyperlink{class_lava_v_k_1_1_queue}{Queue}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a19246dc1b26956fff4638de045c2ba47}{getQueue}}(QueueType\ type);}
-\DoxyCodeLine{00302\ }
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a6b6c18bc1f012ff319c9e4a196449361}{getQueueFamily}}(QueueType\ type)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00310\ }
-\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a3f7243b142b20cc71f541ec7a2444683}{waitIdle}}()\textcolor{keyword}{\ const\ }\{\ vkDeviceWaitIdle(\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a03cd2d1f5b5f977e4df4b4ed086494b9}{native}}());\ \}}
-\DoxyCodeLine{00318\ }
-\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \doxymbox{\hyperlink{class_lava_v_k_1_1_command_pool}{CommandPool}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a22b0ab567bd146918dd2bdfe88fc93ab}{getCommandPool}}(QueueType\ queueType);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&operator=(\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a742abfb418291d8c02a3beced8389ac2}{Device}}\ \&\&other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkDevice\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a03cd2d1f5b5f977e4df4b4ed086494b9}{native}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_device;\ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkPhysicalDevice\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a8bed146bb80384eadbb4719f398a9285}{physical}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_physicalDevice;\ \}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_queue}{Queue}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a19246dc1b26956fff4638de045c2ba47}{getQueue}}(QueueType\ type)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \doxymbox{\hyperlink{class_lava_v_k_1_1_queue}{Queue}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a19246dc1b26956fff4638de045c2ba47}{getQueue}}(QueueType\ type);}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ [[nodiscard]]\ uint32\_t\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a6b6c18bc1f012ff319c9e4a196449361}{getQueueFamily}}(QueueType\ type)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00329\ }
-\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_ab7bd0f3a7aa436b39579aefa5249c41a}{submit}}(}
-\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ QueueType\ queueType,}
-\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer}{CommandBuffer}}\ \&cmdBuffer,}
-\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::reference\_wrapper<const\ Semaphore>\ >\ \&waitSemaphores\ =\ \{\},}
-\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<PipelineStage>\ \&waitStages\ =\ \{\},}
-\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::reference\_wrapper<const\ Semaphore>\ >\ \&signalSemaphores\ =\ \{\},}
-\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Fence\ *fence\ =\ nullptr}
-\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00352\ }
-\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_ab7bd0f3a7aa436b39579aefa5249c41a}{submit}}(}
-\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ QueueType\ queueType,}
-\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ commandBufferIndex,}
-\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::reference\_wrapper<const\ Semaphore>\ >\ \&waitSemaphores\ =\ \{\},}
-\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<PipelineStage>\ \&waitStages\ =\ \{\},}
-\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::reference\_wrapper<const\ Semaphore>\ >\ \&signalSemaphores\ =\ \{\},}
-\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Fence\ *fence\ =\ nullptr}
-\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00376\ }
-\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ VkPhysicalDevice\ m\_physicalDevice\ =\ VK\_NULL\_HANDLE;}
-\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ VkDevice\ m\_device\ =\ VK\_NULL\_HANDLE;}
-\DoxyCodeLine{00380\ }
-\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ std::unordered\_map<QueueType,\ Queue>\ m\_queues;}
-\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ std::unordered\_map<QueueType,\ uint32\_t>\ m\_queueFamilies;}
-\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ std::unordered\_map<QueueType,\ std::unique\_ptr<CommandPool>\ >\ m\_commandPools;}
-\DoxyCodeLine{00384\ \ \ \ \ \};}
-\DoxyCodeLine{00385\ \}\ \textcolor{comment}{//\ namespace\ LavaVK}}
-\DoxyCodeLine{00386\ }
-\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LAVAVK\_DEVICE\_H}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_a3f7243b142b20cc71f541ec7a2444683}{waitIdle}}()\textcolor{keyword}{\ const\ }\{\ vkDeviceWaitIdle(\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a03cd2d1f5b5f977e4df4b4ed086494b9}{native}}());\ \}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \doxymbox{\hyperlink{class_lava_v_k_1_1_command_pool}{CommandPool}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_device_a22b0ab567bd146918dd2bdfe88fc93ab}{getCommandPool}}(QueueType\ queueType);}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_ab7bd0f3a7aa436b39579aefa5249c41a}{submit}}(}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ QueueType\ queueType,}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_command_buffer}{CommandBuffer}}\ \&cmdBuffer,}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::reference\_wrapper<const\ Semaphore>\ >\ \&waitSemaphores\ =\ \{\},}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<PipelineStage>\ \&waitStages\ =\ \{\},}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::reference\_wrapper<const\ Semaphore>\ >\ \&signalSemaphores\ =\ \{\},}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Fence\ *fence\ =\ nullptr}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_device_ab7bd0f3a7aa436b39579aefa5249c41a}{submit}}(}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ QueueType\ queueType,}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ commandBufferIndex,}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::reference\_wrapper<const\ Semaphore>\ >\ \&waitSemaphores\ =\ \{\},}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<PipelineStage>\ \&waitStages\ =\ \{\},}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::reference\_wrapper<const\ Semaphore>\ >\ \&signalSemaphores\ =\ \{\},}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Fence\ *fence\ =\ nullptr}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ VkPhysicalDevice\ m\_physicalDevice\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ VkDevice\ m\_device\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ std::unordered\_map<QueueType,\ Queue>\ m\_queues;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ std::unordered\_map<QueueType,\ uint32\_t>\ m\_queueFamilies;}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ std::unordered\_map<QueueType,\ std::unique\_ptr<CommandPool>\ >\ m\_commandPools;}
+\DoxyCodeLine{00403\ \ \ \ \ \};}
+\DoxyCodeLine{00404\ \}\ \textcolor{comment}{//\ namespace\ LavaVK}}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LAVAVK\_DEVICE\_H}}
 
 \end{DoxyCode}
