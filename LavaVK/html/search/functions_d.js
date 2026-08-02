@@ -2,7 +2,7 @@ var searchData=
 [
   ['rawhandle_0',['rawHandle',['../class_lava_v_k_1_1_surface.html#a85776c5feea856629ae185f34a0937d2',1,'LavaVK::Surface']]],
   ['record_1',['record',['../class_lava_v_k_1_1_command_buffer.html#aa799785d1a4460451b6f04fea6b1483f',1,'LavaVK::CommandBuffer::record(const RenderPass &amp;renderPass, const Framebuffer &amp;framebuffer, VkExtent2D extent, const std::function&lt; void(CommandBuffer &amp;)&gt; &amp;drawCommands)'],['../class_lava_v_k_1_1_command_buffer.html#aad62cf12b5bdc5a8a08826a74794a127',1,'LavaVK::CommandBuffer::record(const std::function&lt; void(CommandBuffer &amp;)&gt; &amp;commands)']]],
-  ['recreate_2',['recreate',['../class_lava_v_k_1_1_swap_chain.html#a3baf50360b8422af2335161949ac9472',1,'LavaVK::SwapChain']]],
+  ['recreate_2',['recreate',['../class_lava_v_k_1_1_swap_chain.html#a47cf38b67d39eb78b16f5480f3d3012c',1,'LavaVK::SwapChain']]],
   ['remove_3',['remove',['../class_lava_v_k_1_1_bindless_texture_set.html#a26ea3349706061c8823be4517f840927',1,'LavaVK::BindlessTextureSet']]],
   ['renderfinishedsemaphore_4',['renderFinishedSemaphore',['../class_lava_v_k_1_1_swap_chain.html#a3f40543d23de10d609186599a46d68ca',1,'LavaVK::SwapChain']]],
   ['renderpass_5',['RenderPass',['../class_lava_v_k_1_1_render_pass.html#af49eeebe8012a425427401f134f3bd2f',1,'LavaVK::RenderPass::RenderPass(Device &amp;device, Format colorFormat, Format depthFormat=Format(ChannelOrder::Undefined, BitDepth::Undefined, NumericType::Undefined), VkSampleCountFlagBits samples=VK_SAMPLE_COUNT_1_BIT)'],['../class_lava_v_k_1_1_render_pass.html#ad3aefb60cabc547d9b67e7a71ba0ff40',1,'LavaVK::RenderPass::RenderPass(Device &amp;device, const VkRenderPassCreateInfo &amp;createInfo)']]],

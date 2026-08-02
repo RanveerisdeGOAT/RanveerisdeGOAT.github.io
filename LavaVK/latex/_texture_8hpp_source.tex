@@ -147,101 +147,112 @@
 \DoxyCodeLine{00248\ }
 \DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image_ae798fb44e9277eec633f663d9e509979}{ownsImage}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_ownsImage;\ \}}
 \DoxyCodeLine{00258\ }
-\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ *m\_device\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ VkImage\ m\_image\ =\ VK\_NULL\_HANDLE;}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ VkImageView\ m\_view\ =\ VK\_NULL\_HANDLE;}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ VkDeviceMemory\ m\_memory\ =\ VK\_NULL\_HANDLE;}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ VkExtent3D\ m\_extent\{\};}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ VkFormat\ m\_format\ =\ VK\_FORMAT\_UNDEFINED;}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_ownsImage\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00267\ \ \ \ \ \};}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ ImageLayout\ layout()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00260\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_layout;}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setLayout(ImageLayout\ layout)}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ m\_layout\ =\ layout;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00268\ }
-\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keyword}{enum\ class}\ BorderColor\ \{}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ FLOAT\_TRANSPARENT\_BLACK\ =\ VK\_BORDER\_COLOR\_FLOAT\_TRANSPARENT\_BLACK,\ }
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ INT\_TRANSPARENT\_BLACK\ =\ VK\_BORDER\_COLOR\_INT\_TRANSPARENT\_BLACK,\ }
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ FLOAT\_OPAQUE\_BLACK\ =\ VK\_BORDER\_COLOR\_FLOAT\_OPAQUE\_BLACK,\ }
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ INT\_OPAQUE\_BLACK\ =\ VK\_BORDER\_COLOR\_INT\_OPAQUE\_BLACK,\ }
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ FLOAT\_OPAQUE\_WHITE\ =\ VK\_BORDER\_COLOR\_FLOAT\_OPAQUE\_WHITE,\ }
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ INT\_OPAQUE\_WHITE\ =\ VK\_BORDER\_COLOR\_INT\_OPAQUE\_WHITE,\ }
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ FLOAT\_CUSTOM\_EXT\ =\ VK\_BORDER\_COLOR\_FLOAT\_CUSTOM\_EXT,\ }
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ INT\_CUSTOM\_EXT\ =\ VK\_BORDER\_COLOR\_INT\_CUSTOM\_EXT,\ }
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ MAX\_ENUM\ =\ VK\_BORDER\_COLOR\_MAX\_ENUM\ }
-\DoxyCodeLine{00280\ \ \ \ \ \};}
-\DoxyCodeLine{00281\ }
-\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Filter\ \{}
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ NEAREST\ =\ VK\_FILTER\_NEAREST,\ }
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ LINEAR\ =\ VK\_FILTER\_LINEAR,\ }
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ CUBIC\_EXT\ =\ VK\_FILTER\_CUBIC\_EXT,\ }
-\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ CUBIC\_IMG\ =\ VK\_FILTER\_CUBIC\_IMG,\ }
-\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ MAX\_ENUM\ =\ VK\_FILTER\_MAX\_ENUM,\ }
-\DoxyCodeLine{00289\ \ \ \ \ \};}
-\DoxyCodeLine{00290\ }
-\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keyword}{enum\ class}\ SamplerAddressMode\ \{}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ REPEAT\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_REPEAT,\ }
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ MIRRORED\_REPEAT\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_MIRRORED\_REPEAT,\ }
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ CLAMP\_TO\_EDGE\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_CLAMP\_TO\_EDGE,\ }
-\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ CLAMP\_TO\_BORDER\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_CLAMP\_TO\_BORDER,\ }
-\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ MIRROR\_CLAMP\_TO\_EDGE\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_MIRROR\_CLAMP\_TO\_EDGE,\ }
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ MIRROR\_CLAMP\_TO\_EDGE\_KHR\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_MIRROR\_CLAMP\_TO\_EDGE\_KHR,\ }
-\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ MAX\_ENUM\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_MAX\_ENUM\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ Device\ *m\_device\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ VkImage\ m\_image\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ VkImageView\ m\_view\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ VkDeviceMemory\ m\_memory\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ VkExtent3D\ m\_extent\{\};}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ VkFormat\ m\_format\ =\ VK\_FORMAT\_UNDEFINED;}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_ownsImage\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ ImageLayout\ m\_layout\ =\ ImageLayout::UNDEFINED;}
+\DoxyCodeLine{00278\ \ \ \ \ \};}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{enum\ class}\ BorderColor\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ FLOAT\_TRANSPARENT\_BLACK\ =\ VK\_BORDER\_COLOR\_FLOAT\_TRANSPARENT\_BLACK,\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ INT\_TRANSPARENT\_BLACK\ =\ VK\_BORDER\_COLOR\_INT\_TRANSPARENT\_BLACK,\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ FLOAT\_OPAQUE\_BLACK\ =\ VK\_BORDER\_COLOR\_FLOAT\_OPAQUE\_BLACK,\ }
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ INT\_OPAQUE\_BLACK\ =\ VK\_BORDER\_COLOR\_INT\_OPAQUE\_BLACK,\ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ FLOAT\_OPAQUE\_WHITE\ =\ VK\_BORDER\_COLOR\_FLOAT\_OPAQUE\_WHITE,\ }
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ INT\_OPAQUE\_WHITE\ =\ VK\_BORDER\_COLOR\_INT\_OPAQUE\_WHITE,\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ FLOAT\_CUSTOM\_EXT\ =\ VK\_BORDER\_COLOR\_FLOAT\_CUSTOM\_EXT,\ }
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ INT\_CUSTOM\_EXT\ =\ VK\_BORDER\_COLOR\_INT\_CUSTOM\_EXT,\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ MAX\_ENUM\ =\ VK\_BORDER\_COLOR\_MAX\_ENUM\ }
+\DoxyCodeLine{00291\ \ \ \ \ \};}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Filter\ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ NEAREST\ =\ VK\_FILTER\_NEAREST,\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ LINEAR\ =\ VK\_FILTER\_LINEAR,\ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ CUBIC\_EXT\ =\ VK\_FILTER\_CUBIC\_EXT,\ }
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ CUBIC\_IMG\ =\ VK\_FILTER\_CUBIC\_IMG,\ }
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ MAX\_ENUM\ =\ VK\_FILTER\_MAX\_ENUM,\ }
 \DoxyCodeLine{00300\ \ \ \ \ \};}
 \DoxyCodeLine{00301\ }
-\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info}{TextureSamplerCreateInfo}}\ \{}
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ Filter\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_a21c1d08faa1ca650307a03a7101a5509}{magFilter}}\ =\ Filter::LINEAR;\ }
-\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ Filter\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_aa81badcdb401e79e1c1b73b85a9303cd}{minFilter}}\ =\ Filter::LINEAR;\ }
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ SamplerAddressMode\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_a2a2745e460c515d0bb2632ed9d5128c4}{addressModeU}}\ =\ SamplerAddressMode::REPEAT;\ }
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ SamplerAddressMode\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_a6e011e6c678f66097916ed41b1b4ff36}{addressModeV}}\ =\ SamplerAddressMode::REPEAT;\ }
-\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ SamplerAddressMode\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_af915efc5a8a9279127e5381ee24aac95}{addressModeW}}\ =\ SamplerAddressMode::REPEAT;\ }
-\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_ac8f4ba29f4f5b9ccfd0ceb90085e650c}{enableAnisotropy}}\ =\ \textcolor{keyword}{false};\ }
-\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_a34a22465fa4f656cd8a53e04bff36ce3}{maxAnisotropy}}\ =\ 1.0f;\ }
-\DoxyCodeLine{00313\ \ \ \ \ \};}
-\DoxyCodeLine{00314\ }
-\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info}{TextureCreateInfo}}\ \{}
-\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info_aa010638324056b38f1e96cc4866c3527}{width}}\ =\ 0;\ }
-\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info_a20c15d8fbf094a081a6bdeadc1bb1615}{height}}\ =\ 0;\ }
-\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info_a3c03ab43e5f2952f3ba1b8c555625372}{format}}\ =\ \doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}}(ChannelOrder::RGBA,\ BitDepth::B8,\ NumericType::Unorm);\ }
-\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ ImageUsage\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info_a48ef88440b1180f6cce05fe28a55904b}{usage}}\ =\ ImageUsage::SAMPLED;\ }
-\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info}{TextureSamplerCreateInfo}}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info_a05a3259f7c7c80368d7320f7955fa60f}{samplerInfo}}\{\};\ }
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keyword}{enum\ class}\ SamplerAddressMode\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ REPEAT\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_REPEAT,\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ MIRRORED\_REPEAT\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_MIRRORED\_REPEAT,\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ CLAMP\_TO\_EDGE\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_CLAMP\_TO\_EDGE,\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ CLAMP\_TO\_BORDER\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_CLAMP\_TO\_BORDER,\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ MIRROR\_CLAMP\_TO\_EDGE\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_MIRROR\_CLAMP\_TO\_EDGE,\ }
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ MIRROR\_CLAMP\_TO\_EDGE\_KHR\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_MIRROR\_CLAMP\_TO\_EDGE\_KHR,\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ MAX\_ENUM\ =\ VK\_SAMPLER\_ADDRESS\_MODE\_MAX\_ENUM\ }
+\DoxyCodeLine{00311\ \ \ \ \ \};}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info}{TextureSamplerCreateInfo}}\ \{}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ Filter\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_a21c1d08faa1ca650307a03a7101a5509}{magFilter}}\ =\ Filter::LINEAR;\ }
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ Filter\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_aa81badcdb401e79e1c1b73b85a9303cd}{minFilter}}\ =\ Filter::LINEAR;\ }
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ SamplerAddressMode\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_a2a2745e460c515d0bb2632ed9d5128c4}{addressModeU}}\ =\ SamplerAddressMode::REPEAT;\ }
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ SamplerAddressMode\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_a6e011e6c678f66097916ed41b1b4ff36}{addressModeV}}\ =\ SamplerAddressMode::REPEAT;\ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ SamplerAddressMode\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_af915efc5a8a9279127e5381ee24aac95}{addressModeW}}\ =\ SamplerAddressMode::REPEAT;\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_ac8f4ba29f4f5b9ccfd0ceb90085e650c}{enableAnisotropy}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info_a34a22465fa4f656cd8a53e04bff36ce3}{maxAnisotropy}}\ =\ 1.0f;\ }
 \DoxyCodeLine{00324\ \ \ \ \ \};}
 \DoxyCodeLine{00325\ }
-\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\ \{}
-\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}(\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&device,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info}{TextureCreateInfo}}\ \&info);}
-\DoxyCodeLine{00353\ }
-\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}(}
-\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&device,}
-\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\ \&path,}
-\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info}{TextureSamplerCreateInfo}}\ \&samplerInfo\ =\ \{\}}
-\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00366\ }
-\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a7205fb0a0bcababe35de7d92b0c8b295}{\string~Texture}}();}
-\DoxyCodeLine{00372\ }
-\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\ \&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\ \&operator=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\ \&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00375\ }
-\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}(\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00381\ }
-\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\&\ operator=(\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00388\ }
-\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a4b218ecc4bbdcf3b0aa1f235881d56a9}{image}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_image;\ \}}
-\DoxyCodeLine{00394\ }
-\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a4a687214516264242f0edfda7675859a}{image}}()\ \{\ \textcolor{keywordflow}{return}\ m\_image;\ \}}
-\DoxyCodeLine{00400\ }
-\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkSampler\ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a89f84f7aa9c35f9183038cc47216a66c}{sampler}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_sampler;\ \}}
-\DoxyCodeLine{00406\ }
-\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ createSampler(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info}{TextureSamplerCreateInfo}}\ \&samplerInfo);}
-\DoxyCodeLine{00414\ }
-\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&m\_device;}
-\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}}\ m\_image\{\};}
-\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ VkSampler\ m\_sampler\ =\ VK\_NULL\_HANDLE;}
-\DoxyCodeLine{00418\ \ \ \ \ \};}
-\DoxyCodeLine{00419\ }
-\DoxyCodeLine{00420\ }
-\DoxyCodeLine{00421\ }
-\DoxyCodeLine{00422\ \}}
-\DoxyCodeLine{00423\ }
-\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LAVAVK\_TEXTURE\_HPP}}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info}{TextureCreateInfo}}\ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info_aa010638324056b38f1e96cc4866c3527}{width}}\ =\ 0;\ }
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info_a20c15d8fbf094a081a6bdeadc1bb1615}{height}}\ =\ 0;\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info_a3c03ab43e5f2952f3ba1b8c555625372}{format}}\ =\ \doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}}(ChannelOrder::RGBA,\ BitDepth::B8,\ NumericType::Unorm);\ }
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ ImageUsage\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info_a48ef88440b1180f6cce05fe28a55904b}{usage}}\ =\ ImageUsage::SAMPLED;\ }
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info}{TextureSamplerCreateInfo}}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info_a05a3259f7c7c80368d7320f7955fa60f}{samplerInfo}}\{\};\ }
+\DoxyCodeLine{00335\ \ \ \ \ \};}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}(\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&device,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_create_info}{TextureCreateInfo}}\ \&info);}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}(}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&device,}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\ \&path,}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info}{TextureSamplerCreateInfo}}\ \&samplerInfo\ =\ \{\}}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a7205fb0a0bcababe35de7d92b0c8b295}{\string~Texture}}();}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\ \&operator=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}(\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\&\ operator=(\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a530f6bfdda3df5d60e0f7c3339197308}{Texture}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a4b218ecc4bbdcf3b0aa1f235881d56a9}{image}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_image;\ \}}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}}\ \&\doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a4a687214516264242f0edfda7675859a}{image}}()\ \{\ \textcolor{keywordflow}{return}\ m\_image;\ \}}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ [[nodiscard]]\ VkSampler\ \doxymbox{\hyperlink{class_lava_v_k_1_1_texture_a89f84f7aa9c35f9183038cc47216a66c}{sampler}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_sampler;\ \}}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ createSampler(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_lava_v_k_1_1_texture_sampler_create_info}{TextureSamplerCreateInfo}}\ \&samplerInfo);}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}}\ \&m\_device;}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}}\ m\_image\{\};}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ VkSampler\ m\_sampler\ =\ VK\_NULL\_HANDLE;}
+\DoxyCodeLine{00429\ \ \ \ \ \};}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \}}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LAVAVK\_TEXTURE\_HPP}}
 
 \end{DoxyCode}

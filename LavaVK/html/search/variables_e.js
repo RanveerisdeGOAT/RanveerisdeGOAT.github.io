@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['tiling_0',['tiling',['../struct_lava_v_k_1_1_image_create_info.html#aaf779a68325954a9c5f783886c7a20a8',1,'LavaVK::ImageCreateInfo']]],
-  ['topology_1',['topology',['../struct_lava_v_k_1_1_graphics_pipeline_create_info.html#ab13a71a703a39d18c897bb1ead885904',1,'LavaVK::GraphicsPipelineCreateInfo']]],
-  ['type_2',['type',['../struct_lava_v_k_1_1_image_create_info.html#aeb301341d9a3d0c64494d35b4537c395',1,'LavaVK::ImageCreateInfo']]]
+  ['usage_0',['usage',['../struct_lava_v_k_1_1_buffer_create_info.html#a90e2ce6082adfd17c7fbef5d16891bd3',1,'LavaVK::BufferCreateInfo::usage'],['../struct_lava_v_k_1_1_image_create_info.html#a8ddbbcb2a35823df33262e0dc6970e19',1,'LavaVK::ImageCreateInfo::usage'],['../struct_lava_v_k_1_1_texture_create_info.html#a48ef88440b1180f6cce05fe28a55904b',1,'LavaVK::TextureCreateInfo::usage']]]
 ];

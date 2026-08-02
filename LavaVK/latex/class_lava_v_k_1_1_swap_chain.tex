@@ -12,8 +12,11 @@ Manages the Vulkan Swapchain and associated frame/\+image synchronization primit
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{Swap\+Chain}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&surface, \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \&render\+Pass, Vk\+Format color\+Format, Vk\+Format depth\+Format, Vk\+Extent2D extent)
+\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_aeb7d2c6188258438a1865fb77905a9c2}{Swap\+Chain}} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&surface, \doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \texorpdfstring{$\ast$}{*}render\+Pass, Vk\+Format color\+Format, Vk\+Format depth\+Format, Vk\+Extent2D extent)
 \begin{DoxyCompactList}\small\item\em Constructs a Lava\+VK \doxylink{class_lava_v_k_1_1_swap_chain}{Swap\+Chain} instance and creates internal synchronization objects. Queries physical device capabilities, chooses optimal surface formats, present modes, and extents, constructs the Vk\+Swapchain\+KHR, and creates per-\/frame and per-\/image sync objects. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_swap_chain_abc3cc87cd9534394b8342f9c0aae9c9d}\label{class_lava_v_k_1_1_swap_chain_abc3cc87cd9534394b8342f9c0aae9c9d} 
+{\bfseries Swap\+Chain} (\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&device, \doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&surface, Vk\+Format color\+Format, Vk\+Format depth\+Format, Vk\+Extent2D extent)
+\item 
 \Hypertarget{class_lava_v_k_1_1_swap_chain_ad281472f2bfb2481291edbadc08481be}\label{class_lava_v_k_1_1_swap_chain_ad281472f2bfb2481291edbadc08481be} 
 {\bfseries \texorpdfstring{$\sim$}{\string~}\+Swap\+Chain} ()
 \begin{DoxyCompactList}\small\item\em Destroys the swapchain object and releases the native Vk\+Swapchain\+KHR handle. \end{DoxyCompactList}\item 
@@ -21,13 +24,13 @@ Manages the Vulkan Swapchain and associated frame/\+image synchronization primit
 {\bfseries Swap\+Chain} (const Swap\+Chain \&)=delete
 \item 
 \Hypertarget{class_lava_v_k_1_1_swap_chain_a091b8056d88afdeaa8c2139c307100e4}\label{class_lava_v_k_1_1_swap_chain_a091b8056d88afdeaa8c2139c307100e4} 
-\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{Swap\+Chain}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{Swap\+Chain}} \&)=delete
+\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_aeb7d2c6188258438a1865fb77905a9c2}{Swap\+Chain}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_aeb7d2c6188258438a1865fb77905a9c2}{Swap\+Chain}} \&)=delete
 \item 
 \Hypertarget{class_lava_v_k_1_1_swap_chain_a6a614e45caeed72532eaf403002c4280}\label{class_lava_v_k_1_1_swap_chain_a6a614e45caeed72532eaf403002c4280} 
 {\bfseries Swap\+Chain} (Swap\+Chain \&\&other) noexcept
 \begin{DoxyCompactList}\small\item\em Move constructor. Transfers ownership of Vulkan swapchain handles and synchronization vectors. \end{DoxyCompactList}\item 
 \Hypertarget{class_lava_v_k_1_1_swap_chain_a6c84880a85bbadb3baedcb768dffb250}\label{class_lava_v_k_1_1_swap_chain_a6c84880a85bbadb3baedcb768dffb250} 
-\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{Swap\+Chain}} \& {\bfseries operator=} (\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}{Swap\+Chain}} \&\&other) noexcept
+\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_aeb7d2c6188258438a1865fb77905a9c2}{Swap\+Chain}} \& {\bfseries operator=} (\doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_aeb7d2c6188258438a1865fb77905a9c2}{Swap\+Chain}} \&\&other) noexcept
 \begin{DoxyCompactList}\small\item\em Move assignment operator. Cleans up existing swapchain resources and transfers ownership from {\ttfamily other}. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{struct_lava_v_k_1_1_result}{Result}} \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a94c3ed6a3e35f153479e58039bfae990}{acquire\+Image}} (uint32\+\_\+t \&image\+Index)
 \begin{DoxyCompactList}\small\item\em Prepares for rendering the next frame by waiting on fences and acquiring an image index. \end{DoxyCompactList}\item 
@@ -39,6 +42,12 @@ const \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \& \doxymbox{\hyper
 \begin{DoxyCompactList}\small\item\em Retrieves a const reference to a wrapped swapchain image by index. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \& \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_acc2598a0ccb8ab6d5ebbe3c28d243d30}{image}} (uint32\+\_\+t index)
 \begin{DoxyCompactList}\small\item\em Retrieves a mutable reference to a wrapped swapchain image by index. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_swap_chain_a3bb37dcde9382263bfd439f695a0f8a4}\label{class_lava_v_k_1_1_swap_chain_a3bb37dcde9382263bfd439f695a0f8a4} 
+const \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \& {\bfseries depth} () const
+\begin{DoxyCompactList}\small\item\em Retrieves a const reference to a wrapped swapchain depth image. \end{DoxyCompactList}\item 
+\Hypertarget{class_lava_v_k_1_1_swap_chain_a3e3aae503ba60cfd01bbcf10e6c3580f}\label{class_lava_v_k_1_1_swap_chain_a3e3aae503ba60cfd01bbcf10e6c3580f} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} \& {\bfseries depth} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a mutable reference to a wrapped swapchain depth image.\+e. \end{DoxyCompactList}\item 
 const std::\+vector$<$ \doxymbox{\hyperlink{class_lava_v_k_1_1_image}{Image}} $>$ \& \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_ac90f12c1b47ac6fa3bc62adacab49c64}{images}} () const
 \begin{DoxyCompactList}\small\item\em Retrieves all wrapped swapchain images. \end{DoxyCompactList}\item 
 Vk\+Extent2D \doxymbox{\hyperlink{class_lava_v_k_1_1_swap_chain_a6adc5dcdb0b629e02817bd984671101c}{extent}} () const
@@ -60,8 +69,8 @@ const \doxymbox{\hyperlink{class_lava_v_k_1_1_fence}{Fence}} \& \doxymbox{\hyper
 \Hypertarget{class_lava_v_k_1_1_swap_chain_a49d1fed77d0b1fa24f34bffa84f5e2ce}\label{class_lava_v_k_1_1_swap_chain_a49d1fed77d0b1fa24f34bffa84f5e2ce} 
 const \doxymbox{\hyperlink{class_lava_v_k_1_1_framebuffer}{Framebuffer}} \& {\bfseries framebuffer} (uint32\+\_\+t index) const
 \begin{DoxyCompactList}\small\item\em Returns reference to \doxylink{class_lava_v_k_1_1_framebuffer}{Framebuffer} bound to swapchain image index. \end{DoxyCompactList}\item 
-\Hypertarget{class_lava_v_k_1_1_swap_chain_a3baf50360b8422af2335161949ac9472}\label{class_lava_v_k_1_1_swap_chain_a3baf50360b8422af2335161949ac9472} 
-void {\bfseries recreate} ()
+\Hypertarget{class_lava_v_k_1_1_swap_chain_a47cf38b67d39eb78b16f5480f3d3012c}\label{class_lava_v_k_1_1_swap_chain_a47cf38b67d39eb78b16f5480f3d3012c} 
+void {\bfseries recreate} (bool passed=true)
 \begin{DoxyCompactList}\small\item\em Recreates the swapchain when the window size or surface capabilities change. \end{DoxyCompactList}\item 
 \Hypertarget{class_lava_v_k_1_1_swap_chain_a84af9a1ce101467e69017d5594262c32}\label{class_lava_v_k_1_1_swap_chain_a84af9a1ce101467e69017d5594262c32} 
 Vk\+Extent2D {\bfseries get\+Latest\+Extent} () const
@@ -74,11 +83,11 @@ Manages the Vulkan Swapchain and associated frame/\+image synchronization primit
 \label{class_lava_v_k_1_1_swap_chain_doc-constructors}
 \Hypertarget{class_lava_v_k_1_1_swap_chain_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!SwapChain@{SwapChain}}
+\Hypertarget{class_lava_v_k_1_1_swap_chain_aeb7d2c6188258438a1865fb77905a9c2}\index{LavaVK::SwapChain@{LavaVK::SwapChain}!SwapChain@{SwapChain}}
 \index{SwapChain@{SwapChain}!LavaVK::SwapChain@{LavaVK::SwapChain}}
 \doxysubsubsection{\texorpdfstring{SwapChain()}{SwapChain()}}
-{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_ac7aee2875e0746e555d273560a4b8f73} 
-Lava\+VK::\+\+Swap\+Chain::\+\+Swap\+Chain (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{, }\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&}]{surface}{, }\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \&}]{render\+Pass}{, }\item[{Vk\+Format}]{color\+Format}{, }\item[{Vk\+Format}]{depth\+Format}{, }\item[{Vk\+Extent2D}]{extent}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_lava_v_k_1_1_swap_chain_aeb7d2c6188258438a1865fb77905a9c2} 
+Lava\+VK::\+\+Swap\+Chain::\+\+Swap\+Chain (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_device}{Device}} \&}]{device}{, }\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_surface}{Surface}} \&}]{surface}{, }\item[{\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \texorpdfstring{$\ast$}{*}}]{render\+Pass}{, }\item[{Vk\+Format}]{color\+Format}{, }\item[{Vk\+Format}]{depth\+Format}{, }\item[{Vk\+Extent2D}]{extent}{}\end{DoxyParamCaption})}
 
 
 

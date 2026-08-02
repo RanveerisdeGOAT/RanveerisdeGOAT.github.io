@@ -15,7 +15,6 @@ var struct_lava_v_k_1_1_graphics_pipeline_create_info =
     [ "frontFace", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a54761a76fae56e47dc9be69ef082d864", null ],
     [ "layout", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a3f5804cb5c7e98c7bb7b39cdb3d184f7", null ],
     [ "polygonMode", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a2be83a2e1eaf7b6b1f7fe350c30adbae", null ],
-    [ "renderPass", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a8071b51330ee9da9547c25d489e93269", null ],
     [ "samples", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#ab4fa8833276d11a34debbf6c30b131a7", null ],
     [ "srcAlphaBlendFactor", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#a0d2a69b3d5fa40e9f4a503bb235d50e0", null ],
     [ "srcColorBlendFactor", "struct_lava_v_k_1_1_graphics_pipeline_create_info.html#aaa271963b99fd6be1edca87065a1c3cb", null ],

@@ -27,5 +27,5 @@ var searchData=
   ['surface_24',['surface',['../class_lava_v_k_1_1_swap_chain.html#a80a196f7b7418e06aa01b1cbc703635d',1,'LavaVK::SwapChain']]],
   ['surfacecapabilities_25',['SurfaceCapabilities',['../struct_lava_v_k_1_1_surface_capabilities.html',1,'LavaVK']]],
   ['surfaceformatinfo_26',['SurfaceFormatInfo',['../struct_lava_v_k_1_1_surface_format_info.html',1,'LavaVK']]],
-  ['swapchain_27',['SwapChain',['../class_lava_v_k_1_1_swap_chain.html',1,'LavaVK::SwapChain'],['../class_lava_v_k_1_1_swap_chain.html#ac7aee2875e0746e555d273560a4b8f73',1,'LavaVK::SwapChain::SwapChain(Device &amp;device, Surface &amp;surface, RenderPass &amp;renderPass, VkFormat colorFormat, VkFormat depthFormat, VkExtent2D extent)'],['../class_lava_v_k_1_1_swap_chain.html#a6a614e45caeed72532eaf403002c4280',1,'LavaVK::SwapChain::SwapChain(SwapChain &amp;&amp;other) noexcept']]]
+  ['swapchain_27',['SwapChain',['../class_lava_v_k_1_1_swap_chain.html',1,'LavaVK::SwapChain'],['../class_lava_v_k_1_1_swap_chain.html#aeb7d2c6188258438a1865fb77905a9c2',1,'LavaVK::SwapChain::SwapChain(Device &amp;device, Surface &amp;surface, RenderPass *renderPass, VkFormat colorFormat, VkFormat depthFormat, VkExtent2D extent)'],['../class_lava_v_k_1_1_swap_chain.html#a6a614e45caeed72532eaf403002c4280',1,'LavaVK::SwapChain::SwapChain(SwapChain &amp;&amp;other) noexcept']]]
 ];

@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="LavaVK_logo_32.png"/></td>
   <td id="projectalign">
-   <div id="projectname">LavaVK<span id="projectnumber">&#160;0.14.0</span>
+   <div id="projectname">LavaVK<span id="projectnumber">&#160;1.0.0</span>
    </div>
    <div id="projectbrief">A modern, user-friendly C++ wrapper around the Vulkan graphics API.</div>
   </td>
@@ -132,7 +132,14 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a422c04be6305ea23a5f1a0b57c6d56bb" id="r_a422c04be6305ea23a5f1a0b57c6d56bb"><td class="memItemLeft"><a class="el" href="class_lava_v_k_1_1_shader.html">Shader</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a422c04be6305ea23a5f1a0b57c6d56bb">vertexShader</a> = nullptr</td></tr>
 <tr class="memitem:a57b5d52cf053242e5f58cbb2dc954255" id="r_a57b5d52cf053242e5f58cbb2dc954255"><td class="memItemLeft"><a class="el" href="class_lava_v_k_1_1_shader.html">Shader</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a57b5d52cf053242e5f58cbb2dc954255">fragmentShader</a> = nullptr</td></tr>
 <tr class="memitem:a3f5804cb5c7e98c7bb7b39cdb3d184f7" id="r_a3f5804cb5c7e98c7bb7b39cdb3d184f7"><td class="memItemLeft"><a class="el" href="class_lava_v_k_1_1_pipeline_layout.html">PipelineLayout</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a3f5804cb5c7e98c7bb7b39cdb3d184f7">layout</a> = nullptr</td></tr>
-<tr class="memitem:a8071b51330ee9da9547c25d489e93269" id="r_a8071b51330ee9da9547c25d489e93269"><td class="memItemLeft"><a class="el" href="class_lava_v_k_1_1_render_pass.html">RenderPass</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a8071b51330ee9da9547c25d489e93269">renderPass</a> = nullptr</td></tr>
+<tr class="memitem:a8071b51330ee9da9547c25d489e93269" id="r_a8071b51330ee9da9547c25d489e93269"><td class="memItemLeft"><a id="a8071b51330ee9da9547c25d489e93269" name="a8071b51330ee9da9547c25d489e93269"></a>
+<a class="el" href="class_lava_v_k_1_1_render_pass.html">RenderPass</a> *&#160;</td><td class="memItemRight"><b>renderPass</b> = nullptr</td></tr>
+<tr class="memitem:a898952bccc8852ca7bb17faf9b130f9c" id="r_a898952bccc8852ca7bb17faf9b130f9c"><td class="memItemLeft"><a id="a898952bccc8852ca7bb17faf9b130f9c" name="a898952bccc8852ca7bb17faf9b130f9c"></a>
+std::vector&lt; <a class="el" href="class_lava_v_k_1_1_format.html">Format</a> &gt;&#160;</td><td class="memItemRight"><b>colorFormats</b></td></tr>
+<tr class="memitem:aa5c6f03ad4f459f3875b4cd1177548c6" id="r_aa5c6f03ad4f459f3875b4cd1177548c6"><td class="memItemLeft"><a id="aa5c6f03ad4f459f3875b4cd1177548c6" name="aa5c6f03ad4f459f3875b4cd1177548c6"></a>
+std::optional&lt; <a class="el" href="class_lava_v_k_1_1_format.html">Format</a> &gt;&#160;</td><td class="memItemRight"><b>depthFormat</b></td></tr>
+<tr class="memitem:a5804686d03d6485aaaeb2e6cde34fb67" id="r_a5804686d03d6485aaaeb2e6cde34fb67"><td class="memItemLeft"><a id="a5804686d03d6485aaaeb2e6cde34fb67" name="a5804686d03d6485aaaeb2e6cde34fb67"></a>
+std::optional&lt; <a class="el" href="class_lava_v_k_1_1_format.html">Format</a> &gt;&#160;</td><td class="memItemRight"><b>stencilFormat</b></td></tr>
 <tr class="memitem:a76a715705f04e4ae3325a6b37c41566d" id="r_a76a715705f04e4ae3325a6b37c41566d"><td class="memItemLeft"><a class="el" href="class_lava_v_k_1_1_vertex_layout.html">VertexLayout</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a76a715705f04e4ae3325a6b37c41566d">vertexLayout</a> = nullptr</td></tr>
 <tr class="memitem:ab13a71a703a39d18c897bb1ead885904" id="r_ab13a71a703a39d18c897bb1ead885904"><td class="memItemLeft">Topology&#160;</td><td class="memItemRight"><a class="el" href="#ab13a71a703a39d18c897bb1ead885904">topology</a> = Topology::TRIANGLES</td></tr>
 <tr class="memitem:a2be83a2e1eaf7b6b1f7fe350c30adbae" id="r_a2be83a2e1eaf7b6b1f7fe350c30adbae"><td class="memItemLeft">PolygonMode&#160;</td><td class="memItemRight"><a class="el" href="#a2be83a2e1eaf7b6b1f7fe350c30adbae">polygonMode</a> = PolygonMode::FILL</td></tr>
@@ -377,21 +384,6 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Rasterization mode </p>
-
-</div>
-</div>
-<a id="a8071b51330ee9da9547c25d489e93269" name="a8071b51330ee9da9547c25d489e93269"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8071b51330ee9da9547c25d489e93269">&#9670;&#160;</a></span>renderPass</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_lava_v_k_1_1_render_pass.html">RenderPass</a>* LavaVK::GraphicsPipelineCreateInfo::renderPass = nullptr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Compatible render pass </p>
 
 </div>
 </div>

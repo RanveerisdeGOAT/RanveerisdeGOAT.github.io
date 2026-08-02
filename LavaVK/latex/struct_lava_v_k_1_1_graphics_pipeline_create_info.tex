@@ -18,7 +18,17 @@ Comprehensive configuration structure for creating a {\ttfamily \doxylink{class_
 \item 
 \doxymbox{\hyperlink{class_lava_v_k_1_1_pipeline_layout}{Pipeline\+Layout}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{struct_lava_v_k_1_1_graphics_pipeline_create_info_a3f5804cb5c7e98c7bb7b39cdb3d184f7}{layout}} = nullptr
 \item 
-\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{struct_lava_v_k_1_1_graphics_pipeline_create_info_a8071b51330ee9da9547c25d489e93269}{render\+Pass}} = nullptr
+\Hypertarget{struct_lava_v_k_1_1_graphics_pipeline_create_info_a8071b51330ee9da9547c25d489e93269}\label{struct_lava_v_k_1_1_graphics_pipeline_create_info_a8071b51330ee9da9547c25d489e93269} 
+\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}} \texorpdfstring{$\ast$}{*} {\bfseries render\+Pass} = nullptr
+\item 
+\Hypertarget{struct_lava_v_k_1_1_graphics_pipeline_create_info_a898952bccc8852ca7bb17faf9b130f9c}\label{struct_lava_v_k_1_1_graphics_pipeline_create_info_a898952bccc8852ca7bb17faf9b130f9c} 
+std::\+vector$<$ \doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}} $>$ {\bfseries color\+Formats}
+\item 
+\Hypertarget{struct_lava_v_k_1_1_graphics_pipeline_create_info_aa5c6f03ad4f459f3875b4cd1177548c6}\label{struct_lava_v_k_1_1_graphics_pipeline_create_info_aa5c6f03ad4f459f3875b4cd1177548c6} 
+std::\+optional$<$ \doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}} $>$ {\bfseries depth\+Format}
+\item 
+\Hypertarget{struct_lava_v_k_1_1_graphics_pipeline_create_info_a5804686d03d6485aaaeb2e6cde34fb67}\label{struct_lava_v_k_1_1_graphics_pipeline_create_info_a5804686d03d6485aaaeb2e6cde34fb67} 
+std::\+optional$<$ \doxymbox{\hyperlink{class_lava_v_k_1_1_format}{Format}} $>$ {\bfseries stencil\+Format}
 \item 
 \doxymbox{\hyperlink{class_lava_v_k_1_1_vertex_layout}{Vertex\+Layout}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{struct_lava_v_k_1_1_graphics_pipeline_create_info_a76a715705f04e4ae3325a6b37c41566d}{vertex\+Layout}} = nullptr
 \item 
@@ -154,13 +164,7 @@ Required pipeline layout configuration \Hypertarget{struct_lava_v_k_1_1_graphics
 {\footnotesize\ttfamily \label{struct_lava_v_k_1_1_graphics_pipeline_create_info_a2be83a2e1eaf7b6b1f7fe350c30adbae} 
 Polygon\+Mode Lava\+VK::\+\+Graphics\+Pipeline\+Create\+Info::\+polygon\+Mode = Polygon\+Mode::\+\+FILL}
 
-Rasterization mode \Hypertarget{struct_lava_v_k_1_1_graphics_pipeline_create_info_a8071b51330ee9da9547c25d489e93269}\index{LavaVK::GraphicsPipelineCreateInfo@{LavaVK::GraphicsPipelineCreateInfo}!renderPass@{renderPass}}
-\index{renderPass@{renderPass}!LavaVK::GraphicsPipelineCreateInfo@{LavaVK::GraphicsPipelineCreateInfo}}
-\doxysubsubsection{\texorpdfstring{renderPass}{renderPass}}
-{\footnotesize\ttfamily \label{struct_lava_v_k_1_1_graphics_pipeline_create_info_a8071b51330ee9da9547c25d489e93269} 
-\doxymbox{\hyperlink{class_lava_v_k_1_1_render_pass}{Render\+Pass}}\texorpdfstring{$\ast$}{*} Lava\+VK::\+\+Graphics\+Pipeline\+Create\+Info::\+render\+Pass = nullptr}
-
-Compatible render pass \Hypertarget{struct_lava_v_k_1_1_graphics_pipeline_create_info_ab4fa8833276d11a34debbf6c30b131a7}\index{LavaVK::GraphicsPipelineCreateInfo@{LavaVK::GraphicsPipelineCreateInfo}!samples@{samples}}
+Rasterization mode \Hypertarget{struct_lava_v_k_1_1_graphics_pipeline_create_info_ab4fa8833276d11a34debbf6c30b131a7}\index{LavaVK::GraphicsPipelineCreateInfo@{LavaVK::GraphicsPipelineCreateInfo}!samples@{samples}}
 \index{samples@{samples}!LavaVK::GraphicsPipelineCreateInfo@{LavaVK::GraphicsPipelineCreateInfo}}
 \doxysubsubsection{\texorpdfstring{samples}{samples}}
 {\footnotesize\ttfamily \label{struct_lava_v_k_1_1_graphics_pipeline_create_info_ab4fa8833276d11a34debbf6c30b131a7} 
